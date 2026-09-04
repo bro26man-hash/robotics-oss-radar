@@ -1,91 +1,77 @@
-# 🤖 Robotics OSS Radar
+# 🤖 Robotics & Autonomous Systems — Open-Source Radar
 
-**Tracking the most active open-source robotics & autonomous vehicle repos on GitHub — with recent commits, development highlights, and podcast episode ideas.**
-
-*Last updated: September 2026*
+> A living radar for the most active open-source robotics and autonomous-vehicles repos, with commit summaries and podcast episode ideas.
 
 ---
 
-## 🔭 Tracked Projects
+## 🔥 Top 3 Most Recently Active Repos
 
-### 1. NVIDIA Elements — `NVIDIA/elements` ⭐ 85 | 🟢 TypeScript
+### 1. [AtsushiSakai / PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)
+⭐ 30,437 stars · 🐍 Python
 
-> **NVIDIA Design System and UI Agent Harness for AI/ML Factories, Robotics, and Autonomous Vehicles**
+**About:** Python sample codes and textbook-style implementations of core robotics algorithms — path planning, simultaneous localization and mapping (SLAM), particulate filters, and more.
 
-**What it is:** NVIDIA's unified design system and UI component library purpose-built for robotics, autonomous vehicle tooling, and AI/ML infrastructure dashboards. Framework-agnostic Web Components that work across React, Angular, Vue, Svelte, and Lit.
+**Latest Commits (Sep 2026):**
+- `08b453a` — build(deps): bump github/codeql-action from 4.37.4 → 4.37.9 *(Sep 2)*
+- `8c3f761` — build(deps): bump ruff from 0.16.1 → 0.16.5 in /requirements *(Sep 2)*
+- `069e0fb` — build(deps): bump scipy from 1.17.1 → 1.18.1 in /requirements *(Sep 2)*
 
-**Recent Development Highlights:**
-- **v2.7.3 released** (Sep 3, 2026) — semantic-release automated the latest version bump
-- **CI dependency updates** — Chore commit keeping the monorepo build pipeline current
-- **Core icon fixes** — Aspect ratio corrections in the core UI component library
-- Active agent-ready tooling: CLI + MCP (Model Context Protocol) expose component APIs, tokens, and validation to AI assistants
+**What's Cooking:** Dependabot is actively bumping security-related tooling (CodeQL, Ruff, SciPy). Core algorithm code hasn't changed recently — a sign of a mature, stable project.
 
-**Why it matters for your podcast:** NVIDIA is the heavyweight in autonomous vehicle hardware, and now they're building the *software interface layer* — design systems and agent harnesses that make it possible for AV operators and robotics engineers to interact with AI infrastructure through consistent, toolable UIs. This is the bridge between raw autonomy stacks and the human-in-the-loop dashboards that operators actually use.
-
-**🎙️ Episode Topic Ideas:**
-- "How NVIDIA is building the UI layer for autonomous vehicle fleets"
-- "Web Components for robotics: framework-agnostic UI in a polyglot world"
-- "Agent-ready design systems: when your UI needs to be machine-readable too"
+**🎙️ Episode Ideas:**
+- *"Why PythonRobotics Still Matters in 2026"* — How this reference repo shapes robotics education.
+- *"Dependabot & Supply-Chain Security in Robotics Software"* — What the latest security bumps mean for autonomous systems.
+- *"From Textbook to Track: Implementing SLAM in Python"* — Deep-dive on one of the repo's flagship algorithms.
 
 ---
 
-### 2. Flight Core — `mingley/flight-core`
+### 2. [cyberbotics / webots](https://github.com/cyberbotics/webots)
+⭐ 4,596 stars · 🖥️ C++ / Simulation
 
-> **Strongly typed Rust SDK for autonomous vehicle control: typestate APIs, units/frames, PX4 SITL, deterministic sim/replay, and verified state machines**
+**About:** Open-source 3D robot simulator used in education, research, and industry. Supports outdoor robots, drones, and plugins for ROS, Maya, and SolidWorks.
 
-**What it is:** A groundbreaking Rust control boundary for autonomous vehicles that makes physically invalid or unsafe control software *impossible to express*. Uses typestate patterns, revocable actuation permits, typed units/frames, and formal verification (Kani, Creusot) to prove safety invariants at compile time.
+**Latest Commits (Aug 2026):**
+- `c0fd435` — Fix negative identity quaternion conversion *(Aug 24)* — quaternion math fix for accurate 3D rotation
+- `841f16a` — Serve SVG files with `image/svg+xml` MIME type *(Aug 20)* — better web-based visualization
+- `12f381a` — Fix OSM importer crash on multiple layer values *(Aug 7)* — GIS/terrain import stability
 
-**Recent Development Highlights:**
-- **Agent-executable civilization plan** (Sep 3, 2026) — New commit adding the control-boundary end-state spec for agentic autonomy systems
-- **Takeoff state machine fixes** — Leftover state handling refined: Takeoff can no longer declare airborne after revoke; climb-complete after revoke is properly refused
-- **Active Kani verification pipeline** — 45 proof harnesses running in CI covering actuators, drive, thrust, contact, drag, buoyancy, HITL miss, position-hold restore, and permit epoch invariants
-- **Creusot 0.5.0 integration** — 81 libraries discharged via formal verification for discrete machine contracts
-- PX4 SITL, ArduPilot GUIDED, ROS 2 Jazzy, and HITL rack backends all actively maintained
-- New scenario workloads: GPS-loss, heartbeat-stale, hitl-miss, imu-loss, revoke-table, motor-efficiency, imu-delay
+**What's Cooking:** Active dev on simulation fidelity — quaternion fixes for correct physics, SVG serving for visualization pipelines, and OSM terrain import stability. All under-the-hood improvements matter for realistic autonomous-vehicle simulation.
 
-**Why it matters for your podcast:** This is the bleeding edge of *verified autonomy*. While most robotics codebases rely on conventions and runtime checks, flight-core puts physical safety invariants into the type system itself. If a drone isn't armed, the code literally won't compile to send motor commands. This is the kind of work that could redefine safety standards for autonomous vehicles.
-
-**🎙️ Episode Topic Ideas:**
-- "What if your drone firmware had a type error? Compile-time safety for autonomous vehicles"
-- "Kani and Creusot: formal verification meets robotics control"
-- "Typestate machines in Rust: the future of safe autonomy?"
-- "From PX4 SITL to verified world simulation: the new testing paradigm"
+**🎙️ Episode Ideas:**
+- *"Sim-to-Real: Why Simulation Quality Is the Bottleneck"* — Using quaternion and terrain fixes as a jumping-off point.
+- *"How Webots Powers Offline Autonomous-Vehicle Testing"* — A tour of the simulator's self-driving research capabilities.
+- *"GIS Meets Robotics: Importing Real-World Terrain Into Webots"* — Deep-dive on the OSM importer.
 
 ---
 
-### 3. MOOS-IvP CC — `HeroCC/moos-ivp-cc` ⭐ 16 | ⚫ C++
+### 3. [ai-winter / ros_motion_planning](https://github.com/ai-winter/ros_motion_planning)
+⭐ 3,584 stars · 🖥️ C++ / ROS
 
-> **A collection of MOOS-IvP tools and utilities used in MIT 2.680, Aquaticus, and containerized missions**
+**About:** Navigation plugin for AGVs and AMRs on ROS. Implements A*, JPS, D*, LPA*, D* Lite, Theta*, RRT, RRT*, RRT-Connect, Informed RRT*, and more — with nested-namespace ROS2 packaging.
 
-**What it is:** Community-maintained extensions and utilities for the MOOS-IvP autonomy framework, heavily used in MIT's autonomous marine vehicles course (2.680) and the Aquaticus underwater robotics project. Docker-first deployment with pre-built images on DockerHub.
+**Latest Commits (Mar 2026):**
+- `a6f21b0` — doc(system): nested namespaces style *(Mar 28)* — ROS2 namespace reorganization
+- `301ea29` — Merge PR #122 (develop) *(Feb 19)* — feature branch merged
+- `77b2fe9` — doc(README): add explanation in README *(Feb 19)* — docs cleanup
 
-**Recent Development Highlights:**
-- **Docker image updated** (Sep 4, 2026) — Latest container build with current dependencies
-- **Home directory discovery fixed** (Jul 29, 2026) — Resolve MOOS-IvP path detection in containerized environments
-- **macOS socket bind fix** (Jul 29, 2026) — Socket resolution corrected for macOS deployment
-- Active mission packs for MIT 2.680 coursework and custom aquatic missions
+**What's Cooking:** Reorganizing to ROS2-style nested namespaces — a significant architectural shift for a navigation stack. The `gzy/develop` branch merged in Feb 2026 likely contains new features.
 
-**Why it matters for your podcast:** MOOS-IvP is one of the oldest and most battle-tested marine autonomy frameworks in the world. It powers real ocean-going AUVs and is the backbone of MIT's hands-on autonomy curriculum. The ongoing Docker modernization and cross-platform fixes show a project that's bridging 20+ years of legacy C++ robotics with modern containerized deployment workflows.
-
-**🎙️ Episode Topic Ideas:**
-- "MOOS-IvP at 20: how MIT teaches autonomous ocean robots"
-- "From Docker containers to ocean-going AUVs: modernizing legacy robotics frameworks"
-- "The Aquaticus project and the future of underwater autonomy"
+**🎙️ Episode Ideas:**
+- *"Navigating the Future: ROS2 Motion-Planning Deep Dive"* — A*, RRT*, D* Lite in a production stack.
+- *"ROS2 Best Practices: Nested Namespaces Explained"* — Why namespace reorganization matters for real robots.
+- *"AGVs vs AMRs: What's the Difference and Why It Matters for Path Planning"* — Using this repo as a case study.
 
 ---
 
-## 📋 Quick Stats
+## 📋 How This Repo Is Used
 
-| Project | Language | Stars | Last Active | Focus Area |
-|---------|----------|-------|-------------|------------|
-| NVIDIA Elements | TypeScript | 85 | Sep 4, 2026 | AV UI / Agent Harness |
-| Flight Core | Rust | 0 | Sep 4, 2026 | Verified AV Control |
-| MOOS-IvP CC | C++ | 16 | Sep 4, 2026 | Marine Autonomy |
+| Goal | How |
+|---|---|
+| **Discovery** | Track the most recently updated repos in robotics/autonomous-vehicles |
+| **Pre-Episode Research** | Review commit history before recording |
+| **Release Tracking** | Monitor repos for upcoming releases and major merges |
+| **Community Engagement** | Star, fork, and contribute feedback |
 
 ---
 
-## 🎙️ About This Radar
-
-This repository is curated for the **Robotics OSS Podcast** — a show exploring the people, tools, and ideas shaping open-source robotics and autonomous systems. Every tracked project represents a different facet of the autonomy ecosystem: from the UI layer that operators touch, to the formally-verified control plane that keeps vehicles safe, to the decades-old frameworks still powering real ocean missions.
-
-*Want to suggest a project for the radar? Open an issue!*
+*🎙️ Hosted on GitHub — because every great open-source project starts with a README.*
