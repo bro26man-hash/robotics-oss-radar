@@ -2,76 +2,83 @@
 
 > A living radar for the most active open-source robotics and autonomous-vehicles repos, with commit summaries and podcast episode ideas.
 
+_Sourced on 2026-09-10. Activity verified via live latest-commit checks._
+
 ---
 
 ## 🔥 Top 3 Most Recently Active Repos
 
-### 1. [AtsushiSakai / PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)
-⭐ 30,437 stars · 🐍 Python
+### 1. [commaai / openpilot](https://github.com/commaai/openpilot)
+⭐ 63,626 stars · 🐍 Python · License: MIT · Forks: 11,360
 
-**About:** Python sample codes and textbook-style implementations of core robotics algorithms — path planning, simultaneous localization and mapping (SLAM), particulate filters, and more.
+**About:** openpilot is "an operating system for robotics." It upgrades the driver-assistance system on 300+ supported cars and runs an entire stacked driving model on commodity edge hardware (the comma four). It's the largest and most-proven open-source ADAS stack in the wild.
 
-**Latest Commits (Sep 2026):**
-- `08b453a` — build(deps): bump github/codeql-action from 4.37.4 → 4.37.9 *(Sep 2)*
-- `8c3f761` — build(deps): bump ruff from 0.16.1 → 0.16.5 in /requirements *(Sep 2)*
-- `069e0fb` — build(deps): bump scipy from 1.17.1 → 1.18.1 in /requirements *(Sep 2)*
+**Latest Commits (Sep 10, 2026):**
+- `511c1f1` — chestnut updater: close files explicitly
+- `443967d` — enable caching in chestnut CI
+- `633117b` — test_onroad in chestnut CI
+- `f174e39` — add powertest for mici
+- `68d829c` — selfdrived: no localizer alerts from capnp defaults
 
-**What's Cooking:** Dependabot is actively bumping security-related tooling (CodeQL, Ruff, SciPy). Core algorithm code hasn't changed recently — a sign of a mature, stable project.
-
-**🎙️ Episode Ideas:**
-- *"Why PythonRobotics Still Matters in 2026"* — How this reference repo shapes robotics education.
-- *"Dependabot & Supply-Chain Security in Robotics Software"* — What the latest security bumps mean for autonomous systems.
-- *"From Textbook to Track: Implementing SLAM in Python"* — Deep-dive on one of the repo's flagship algorithms.
-
----
-
-### 2. [cyberbotics / webots](https://github.com/cyberbotics/webots)
-⭐ 4,596 stars · 🖥️ C++ / Simulation
-
-**About:** Open-source 3D robot simulator used in education, research, and industry. Supports outdoor robots, drones, and plugins for ROS, Maya, and SolidWorks.
-
-**Latest Commits (Aug 2026):**
-- `c0fd435` — Fix negative identity quaternion conversion *(Aug 24)* — quaternion math fix for accurate 3D rotation
-- `841f16a` — Serve SVG files with `image/svg+xml` MIME type *(Aug 20)* — better web-based visualization
-- `12f381a` — Fix OSM importer crash on multiple layer values *(Aug 7)* — GIS/terrain import stability
-
-**What's Cooking:** Active dev on simulation fidelity — quaternion fixes for correct physics, SVG serving for visualization pipelines, and OSM terrain import stability. All under-the-hood improvements matter for realistic autonomous-vehicle simulation.
+**What's Cooking:** Platoon of quick, focused commits all titled around the new **Chestnut** hardware branch — file-handle hygiene, CI caching, on-road testing, and a powertest. The cadence (5 commits in one day by Daniel Koepping and Zeph) is the rhythm of a production embedded stack preparing a release branch. Meanwhile the internal model/inference side ("selfdrived") is being quietly hardened. This is a mature project where most work is incremental CI/hardware readiness, not flashy algorithmic PRs.
 
 **🎙️ Episode Ideas:**
-- *"Sim-to-Real: Why Simulation Quality Is the Bottleneck"* — Using quaternion and terrain fixes as a jumping-off point.
-- *"How Webots Powers Offline Autonomous-Vehicle Testing"* — A tour of the simulator's self-driving research capabilities.
-- *"GIS Meets Robotics: Importing Real-World Terrain Into Webots"* — Deep-dive on the OSM importer.
+- *"openpilot Is an Operating System for Robotics"* — What it actually means to run a full driving stack on a $500 edge device.
+- *"Deploying Autonomy at 60 mph: How openpilot Tests for Safety"* — ISO26262, SIL/HIL tests, and the 10-closet replay rig.
+- *"From Dashcam to Driver: The openpilot Release Pipeline"* — Walking the release/staging/nightly/chestnut branches.
+- *"The Business of Open-Source Autonomy"* — comma.ai's model (hardware shop, bounties, hired core devs).
 
 ---
 
-### 3. [ai-winter / ros_motion_planning](https://github.com/ai-winter/ros_motion_planning)
-⭐ 3,584 stars · 🖥️ C++ / ROS
+### 2. [NVIDIA / elements](https://github.com/NVIDIA/elements)
+⭐ 85 stars · TypeScript · License: Apache-2.0 · Forks: 16
 
-**About:** Navigation plugin for AGVs and AMRs on ROS. Implements A*, JPS, D*, LPA*, D* Lite, Theta*, RRT, RRT*, RRT-Connect, Informed RRT*, and more — with nested-namespace ROS2 packaging.
+**About:** NVIDIA Design System and UI Agent Harness for AI/ML Factories, Robotics, and Autonomous Vehicles. Framework-agnostic Web Components (React, Angular, Vue, Svelte, Lit, plain HTML) plus a CLI/MCP layer that exposes components, tokens, and validation to terminals and AI assistants.
 
-**Latest Commits (Mar 2026):**
-- `a6f21b0` — doc(system): nested namespaces style *(Mar 28)* — ROS2 namespace reorganization
-- `301ea29` — Merge PR #122 (develop) *(Feb 19)* — feature branch merged
-- `77b2fe9` — doc(README): add explanation in README *(Feb 19)* — docs cleanup
+**Latest Commits (Sep 8–10, 2026):**
+- `9577c5c` — chore(ci): update svgo *(Cory Rylan)*
+- `5b9b0ee` — chore(starters): update dependencies
+- `2c79c02` — chore(forms): drop unnecessary boolean conversions in checkbox mixin *(Cursor Agent)*
+- `d6dc590` — chore(core): cover connected move in format-truncate *(Cursor Agent)*
+- `6126e1c` — fix(docs): update responsive pattern icon *(Cormac Rada)*
 
-**What's Cooking:** Reorganizing to ROS2-style nested namespaces — a significant architectural shift for a navigation stack. The `gzy/develop` branch merged in Feb 2026 likely contains new features.
+**What's Cooking:** A healthy mix of CI/tool-maintenance (svgo bump, starter deps) and real feature work in the forms + core libraries — specifically cleaning up mixin logic and covering edge cases in utility components like `format-truncate`. Notably, **Cursor AI agents** are authoring a couple of the commits, which is itself a podcast-worthy signal about how NVIDIA's design-system ergonomics are being shaped by AI-assisted development. Semantic Release + commitlint governs publish.
 
 **🎙️ Episode Ideas:**
-- *"Navigating the Future: ROS2 Motion-Planning Deep Dive"* — A*, RRT*, D* Lite in a production stack.
-- *"ROS2 Best Practices: Nested Namespaces Explained"* — Why namespace reorganization matters for real robots.
-- *"AGVs vs AMRs: What's the Difference and Why It Matters for Path Planning"* — Using this repo as a case study.
+- *"Building a Design System for Autonomous-Vehicle Consoles"* — Why UI for AV/robotics dashboards is a different beast.
+- *"AI Agents Are Committing to NVIDIA's Repo"* — The rises of agent-authored design-system contributions.
+- *"Web Components as the Universal Runtime for Robotics UIs"* — Framework agnosticism in practice.
+- *"MCP, CLI, and AI Agent Harnesses"* — How NVIDIA exposes a design system to LLM tooling.
 
 ---
 
-## 📋 How This Repo Is Used
+### 3. [willv678 / autolab-harness](https://github.com/willv678/autolab-harness)
+⭐ 0 stars · 🐍 Python · (No license yet) · Forks: 0
 
-| Goal | How |
-|---|---|
-| **Discovery** | Track the most recently updated repos in robotics/autonomous-vehicles |
-| **Pre-Episode Research** | Review commit history before recording |
-| **Release Tracking** | Monitor repos for upcoming releases and major merges |
-| **Community Engagement** | Star, fork, and contribute feedback |
+**About:** An agentic test harness and orchestration framework for LLM-driven autonomous vehicle safety verification and automated red-teaming in closed-loop simulation. Runs inside NVIDIA AlpaSim: a local reasoning model (Qwen 2.5) evaluates rollout telemetry and iteratively mutates control/init boundaries to discover failures.
+
+**Latest Commits (Sep 9–10, 2026):**
+- `71513c0` — [draft] training script *(Will Varner, Sep 10)*
+- `bdeb1b2` — result processing shell script *(Sep 10)*
+- `068b046` — feat: complete initial harness, SFT formatter, and failure boundary plotting *(Sep 10)*
+- `9f4f7ab` — feat: Initial commit of AutoLab agent harness and orchestrator *(Sep 9)*
+
+**What's Cooking:** Brand-new repo (initial commit just yesterday) with a burst of focused work: the full orchestration loop, an SFT trace formatter (ChatML JSONL), failure-boundary plotting, and a draft training script. The entire arc — from "initial commit" to a working red-teaming + data-formatting pipeline — landed in ~48 hours. It's a fascinating micro-case of an individual researcher bootstrapping an LLM-as-judge / red-team tool for AV safety in simulation. Watch this one: it may be the smallest and newest on the radar but it points at a real trend (AI red-teaming autonomy).
+
+**🎙️ Episode Ideas:**
+- *"Red-Teaming Self-Driving Cars with LLMs"* — Using an agentic harness to break AV controllers in simulation.
+- *"From Zero to Red-Team Pipeline in 48 Hours"* — A solo dev builds an AV safety tool (autolab story).
+- *"Failure Boundaries & SFT: Turning Rollouts into Training Data"* — Deep-dive on plot_boundaries + format_sft.
+- *"Is Autonomous-Vehicle Safety Verified by Simulation + AI?"* — Promise and limits of closed-loop red-teaming.
 
 ---
 
-*🎙️ Hosted on GitHub — because every great open-source project starts with a README.*
+## 📡 How This Radar Works
+
+Repos are sourced by topic (`:autonomous-vehicles`, `:robotics`) filtered for genuine, high-signal projects, then verified against their **latest commits** so the highlights reflect what's actually being worked on right now — not stale marketing copy. Star counts are a signal but not the only one; see "What's Cooking" for the real story behind each repo's activity.
+
+---
+
+## 🎙️ About This Project
+
+`robotics-oss-radar` is the research backbone for an open-source robotics & autonomous-systems podcast. Each entry ties a live GitHub repo to concrete recent development highlights and a menu of potential episode topics.
