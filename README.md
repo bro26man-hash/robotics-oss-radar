@@ -1,84 +1,117 @@
-# 🤖 Robotics & Autonomous Systems — Open-Source Radar
+# 🤖 Robotics OSS Radar
 
-> A living radar for the most active open-source robotics and autonomous-vehicles repos, with commit summaries and podcast episode ideas.
+A living research hub tracking the most active open-source robotics and autonomous-systems projects on GitHub — curated for the **Robotics OSS Podcast**. Each entry captures recent development highlights and angles worth turning into an episode.
 
-_Sourced on 2026-09-10. Activity verified via live latest-commit checks._
-
----
-
-## 🔥 Top 3 Most Recently Active Repos
-
-### 1. [commaai / openpilot](https://github.com/commaai/openpilot)
-⭐ 63,626 stars · 🐍 Python · License: MIT · Forks: 11,360
-
-**About:** openpilot is "an operating system for robotics." It upgrades the driver-assistance system on 300+ supported cars and runs an entire stacked driving model on commodity edge hardware (the comma four). It's the largest and most-proven open-source ADAS stack in the wild.
-
-**Latest Commits (Sep 10, 2026):**
-- `511c1f1` — chestnut updater: close files explicitly
-- `443967d` — enable caching in chestnut CI
-- `633117b` — test_onroad in chestnut CI
-- `f174e39` — add powertest for mici
-- `68d829c` — selfdrived: no localizer alerts from capnp defaults
-
-**What's Cooking:** Platoon of quick, focused commits all titled around the new **Chestnut** hardware branch — file-handle hygiene, CI caching, on-road testing, and a powertest. The cadence (5 commits in one day by Daniel Koepping and Zeph) is the rhythm of a production embedded stack preparing a release branch. Meanwhile the internal model/inference side ("selfdrived") is being quietly hardened. This is a mature project where most work is incremental CI/hardware readiness, not flashy algorithmic PRs.
-
-**🎙️ Episode Ideas:**
-- *"openpilot Is an Operating System for Robotics"* — What it actually means to run a full driving stack on a $500 edge device.
-- *"Deploying Autonomy at 60 mph: How openpilot Tests for Safety"* — ISO26262, SIL/HIL tests, and the 10-closet replay rig.
-- *"From Dashcam to Driver: The openpilot Release Pipeline"* — Walking the release/staging/nightly/chestnut branches.
-- *"The Business of Open-Source Autonomy"* — comma.ai's model (hardware shop, bounties, hired core devs).
+_Last radar sweep: 2026-09-10._
 
 ---
 
-### 2. [NVIDIA / elements](https://github.com/NVIDIA/elements)
-⭐ 85 stars · TypeScript · License: Apache-2.0 · Forks: 16
+## How to Use This Repo
 
-**About:** NVIDIA Design System and UI Agent Harness for AI/ML Factories, Robotics, and Autonomous Vehicles. Framework-agnostic Web Components (React, Angular, Vue, Svelte, Lit, plain HTML) plus a CLI/MCP layer that exposes components, tokens, and validation to terminals and AI assistants.
-
-**Latest Commits (Sep 8–10, 2026):**
-- `9577c5c` — chore(ci): update svgo *(Cory Rylan)*
-- `5b9b0ee` — chore(starters): update dependencies
-- `2c79c02` — chore(forms): drop unnecessary boolean conversions in checkbox mixin *(Cursor Agent)*
-- `d6dc590` — chore(core): cover connected move in format-truncate *(Cursor Agent)*
-- `6126e1c` — fix(docs): update responsive pattern icon *(Cormac Rada)*
-
-**What's Cooking:** A healthy mix of CI/tool-maintenance (svgo bump, starter deps) and real feature work in the forms + core libraries — specifically cleaning up mixin logic and covering edge cases in utility components like `format-truncate`. Notably, **Cursor AI agents** are authoring a couple of the commits, which is itself a podcast-worthy signal about how NVIDIA's design-system ergonomics are being shaped by AI-assisted development. Semantic Release + commitlint governs publish.
-
-**🎙️ Episode Ideas:**
-- *"Building a Design System for Autonomous-Vehicle Consoles"* — Why UI for AV/robotics dashboards is a different beast.
-- *"AI Agents Are Committing to NVIDIA's Repo"* — The rises of agent-authored design-system contributions.
-- *"Web Components as the Universal Runtime for Robotics UIs"* — Framework agnosticism in practice.
-- *"MCP, CLI, and AI Agent Harnesses"* — How NVIDIA exposes a design system to LLM tooling.
+- **Top Projects** — the 3 most recently active, high-impact repos we're tracking.
+- **Episode Ideas** — podcast angles drawn from each project's current work.
+- **Projects to Revisit & Upcoming Releases** — a living checklist (see the issue of the same name) for follow-up episodes.
+- Raise a PR or issue to suggest adding / retiring a project from the radar.
 
 ---
 
-### 3. [willv678 / autolab-harness](https://github.com/willv678/autolab-harness)
-⭐ 0 stars · 🐍 Python · (No license yet) · Forks: 0
+## 🔭 Top 3 Most Recently Active Projects
 
-**About:** An agentic test harness and orchestration framework for LLM-driven autonomous vehicle safety verification and automated red-teaming in closed-loop simulation. Runs inside NVIDIA AlpaSim: a local reasoning model (Qwen 2.5) evaluates rollout telemetry and iteratively mutates control/init boundaries to discover failures.
+All three below were among the most recently updated in the week of 2026-09-10 and sit at the intersection of community momentum and technical substance.
 
-**Latest Commits (Sep 9–10, 2026):**
-- `71513c0` — [draft] training script *(Will Varner, Sep 10)*
-- `bdeb1b2` — result processing shell script *(Sep 10)*
-- `068b046` — feat: complete initial harness, SFT formatter, and failure boundary plotting *(Sep 10)*
-- `9f4f7ab` — feat: Initial commit of AutoLab agent harness and orchestrator *(Sep 9)*
+### 1. NVIDIA Cosmos ⭐ 11,794
 
-**What's Cooking:** Brand-new repo (initial commit just yesterday) with a burst of focused work: the full orchestration loop, an SFT trace formatter (ChatML JSONL), failure-boundary plotting, and a draft training script. The entire arc — from "initial commit" to a working red-teaming + data-formatting pipeline — landed in ~48 hours. It's a fascinating micro-case of an individual researcher bootstrapping an LLM-as-judge / red-team tool for AV safety in simulation. Watch this one: it may be the smallest and newest on the radar but it points at a real trend (AI red-teaming autonomy).
+**Repo:** [NVIDIA/cosmos](https://github.com/NVIDIA/cosmos) · **License:** NOASSERTION (NVIDIA release) · **Language:** Jupyter Notebook
 
-**🎙️ Episode Ideas:**
-- *"Red-Teaming Self-Driving Cars with LLMs"* — Using an agentic harness to break AV controllers in simulation.
-- *"From Zero to Red-Team Pipeline in 48 Hours"* — A solo dev builds an AV safety tool (autolab story).
-- *"Failure Boundaries & SFT: Turning Rollouts into Training Data"* — Deep-dive on plot_boundaries + format_sft.
-- *"Is Autonomous-Vehicle Safety Verified by Simulation + AI?"* — Promise and limits of closed-loop red-teaming.
+**What it is:** An open platform of world models, datasets, and tools for building **Physical AI** — robots, autonomous vehicles, and smart infrastructure. The newest generation, **Cosmos 3**, is an omnimodal world model (Mixture-of-Transformers) that unifies a **Reasoner** (text/vision → text) and a **Generator** (text/vision/sound/action → vision/sound/action) in a single framework.
+
+**Recent dev highlights:**
+- Active Cosmos 3 rollout in the 9/4–9/10 window: NIM docs, the "Certified NIM" environment-setup guide, a SGLang transfer-test script, and a new **RoboCasa mobile-manipulation post-training recipe** (#318).
+- Rich inference serving stack — vLLM-Omni, SGLang Diffusion, TensorRT-LLM, and NVIDIA NIM containers — plus a full Diffusers research path and Transformers Reasoner path.
+- Post-training focus: supervised fine-tuning (SFT) recipes for action, vision, and reasoner workflows are landing ("Coming Soon" → in progress), along with distill/export tooling.
+
+**Why it matters for the show:** Cosmos is effectively NVIDIA's open bet that *world models* are the next substrate for robotics and autonomy — blending video generation with action/physics reasoning. It's a rich "foundation model meets the physical world" story.
+
+**🎙️ Episode angles:**
+- "World Models for Robotics" — from simulated rollouts to real policies (generator vs. reasoner modes).
+- Democratizing Physical AI — how open weight/model access (Cosmos 3 Nano/Super/Edge) changes who can build AV and robot policies.
+- Synthetic data & sim-to-real: generating training rollouts instead of collecting them.
+- The serving jungle — vLLM-Omni, SGLang, TensorRT-LLM, NIM — what's actually shipping today.
+
+**⚠️ Note:** Resource-heavy (large downloads, CUDA 12.8/13, strong GPU). Good "how to get started" episode, not a 5-min showcase.
 
 ---
 
-## 📡 How This Radar Works
+### 2. OpenBot ⭐ 3,485
 
-Repos are sourced by topic (`:autonomous-vehicles`, `:robotics`) filtered for genuine, high-signal projects, then verified against their **latest commits** so the highlights reflect what's actually being worked on right now — not stale marketing copy. Star counts are a signal but not the only one; see "What's Cooking" for the real story behind each repo's activity.
+**Repo:** [ob-f/OpenBot](https://github.com/ob-f/OpenBot) · **License:** MIT · **Language:** Swift
+
+**What it is:** Turns **smartphones into robot brains**. A ~$50 electric vehicle body plus an Android (and now iOS) software stack supporting person following and real-time autonomous navigation. Built on work from the Intel Labs / Vladlen Koltun group (ICRA 2021 paper).
+
+**Recent dev highlights:**
+- Ongoing mobile-app hardening in Aug 2026: updated Android package name + target API/Gradle (#534), iOS bundle identifier standardization (#535), iOS in-app language support with flag icons + Settings redesign (#531), and Node.js controller compatibility widened to Node 18–25 (#511).
+- New **node-js controller command tests** and a `DriveValue.read` rounding fix (#537) — signs of a maturing cross-platform controller layer.
+- Multi-language documentation (EN, ZH-CN, DE, FR, ES, KO) and an active community (Slack, videos, 3rd-party builds).
+
+**Why it matters for the show:** The ultimate "democratization" story — $50 hardware + a smartphone gives you perception and navigation. It's the counterpoint to massive-budget AV: what autonomy looks like at the bottom of the cost curve.
+
+**🎙️ Episode angles:**
+- "Autonomy on $50" — smartphone-as-brain vs. custom compute; what you gain and lose.
+- Cross-platform robotics software — building one stack that runs on Android *and* iOS.
+- From sample deployment to your own driving policy (the `policy/` module and RL-on-phone ideas).
+- Community corner: cool DIY builds built on OpenBot (tank, cardboard chassis, etc.).
+
+**⚠️ Note:** Relies on physical hardware to fully demo; can still be covered via the software stack, controller/web UI, and policy-training story.
 
 ---
 
-## 🎙️ About This Project
+### 3. NVIDIA Alpamayo ⭐ 2,019
 
-`robotics-oss-radar` is the research backbone for an open-source robotics & autonomous-systems podcast. Each entry ties a live GitHub repo to concrete recent development highlights and a menu of potential episode topics.
+**Repo:** [NVlabs/alpamayo](https://github.com/NVlabs/alpamayo) · **License:** Apache-2.0 (code) / OpenMDW-1.1 (weights) · **Language:** Python
+
+**What it is:** An open **10B-parameter reasoning Vision-Language-Action (VLA) model for autonomous vehicles**. Alpamayo-R1 pairs driving trajectories with **Chain-of-Causation (CoC) reasoning** — a Cosmos-Reason backbone + action diffusion expert delivering a 6.4s, 64-waypoint @10Hz trajectory forecast. Note: this repo is in maintenance mode; active development has moved to **[NVlabs/alpamayo-recipes](https://github.com/NVlabs/alpamayo-recipes)** (SFT + RL post-training) and the newer **Alpamayo 1.5 / Alpamayo 2** family.
+
+**Recent dev highlights:**
+- Fine-tuning + post-training landed: SFT script (April 2026), RL pipeline via Cosmos-RL; both subsequently migrated to the **Alpamayo Recipes** hub.
+- CUDA-graph acceleration for the diffusion expert (`enable_diffusion_expert_cuda_graph`) to cut inference launch overhead on repeated trajectory queries.
+- Maintenance-state note: the maintainers explicitly redirect users to `alpamayo-recipes` and the Alpamayo 1.5/2 models — a signal that the *post-trained* generations are where the action is.
+
+**Why it matters for the show:** Alpamayo is the "reasoning driver" — a model that doesn't just predict a trajectory but *explains* its reasoning chain, bridging the gap between coherent world-model reasoning and low-level vehicle control. The migration to a recipes + newer-model ecosystem is itself an interesting governance/community story.
+
+**🎙️ Episode angles:**
+- "The reasoning driver" — Chain-of-Causation reasoning behind the wheel; why traceability matters for AV safety.
+- VLA models 101 — how a single vision-language-action backbone replaces modular perception→planning→control stacks.
+- From model to ecosystem: release, maintenance-mode, recipes hub — how NVIDIA is open-sourcing *process*, not just weights.
+- Alpamayo 1.5 vs. 1.0: what the newer generations add (compare with latest commit cadence on `alpamayo-recipes`).
+
+**⚠️ Note:** 24 GB+ VRAM GPU required for inference. Weigh the "newer versions available / maintenance mode" caveat carefully in the episode framing.
+
+---
+
+## 🎬 Cross-Cutting Podcast Themes
+
+| Theme | Projects | Angle |
+|-------|----------|-------|
+| **World models + synthetic data** | Cosmos, Alpamayo (VLA reasoning) | Sim-to-real, generating driving data instead of collecting it |
+| **Democratization of autonomy** | OpenBot, Cosmos (Edge) | High-end AV vs. $50 robot; open tooling lowering the bar |
+| **Reasoning + action** | Alpamayo, Cosmos Reasoner | From chain-of-thought to steering/throttle |
+| **Open vs. "open"** | All three | Apache/MIT/NVIDIA release licenses; what "open" really means for weights, data & governance |
+| **Serving & deployment** | Cosmos (vLLM/SGLang/NIM), OpenBot (Node controller, mobile) | How you actually run these things in production |
+
+---
+
+## 📅 Suggested Release/Revisit Cadence
+
+- **Per-project deep dives** — one episode each for Cosmos, OpenBot, Alpamayo (in this order works well: big-vision → low-cost → reasoning-driver).
+- **Ecosystem check-ins** — revisit this radar monthly / snapshots of commit cadence, new releases, and episode-worthy moves.
+- **Listener challenge** — spin up a Cosmos Generator path / train an OpenBot policy / run Alpamayo inference; report back.
+
+---
+
+## Contributing
+
+Found a more recently active repo? Spot a stale commit detail? Open an issue or PR and we'll cross-check against the latest `git log` before updating the radar.
+
+---
+
+_Data sourced from GitHub repository metadata and latest-commit inspection (week of 2026-09-10). All repository names, logos, and trademarks are property of their respective owners._
