@@ -8,66 +8,60 @@ _Last scan: 2026-09-17 · Sources: GitHub topic search on `autonomous-vehicles` 
 
 ## 🔥 Top 3 Most Recently Active Repos
 
-### 1. [commaai / openpilot](https://github.com/commaai/openpilot)
-⭐ 63,671 stars · 💻 C++ · 📄 [Apache-2.0](https://github.com/commaai/openpilot/blob/master/LICENSE)
+### 1. [gazebosim / gz-sim](https://github.com/gazebosim/gz-sim)
+⭐ 1,504 stars · 💻 C++ · 📄 [Apache-2.0](https://github.com/gazebosim/gz-sim/blob/main/LICENSE)
 
-**About:** openpilot is an open-source operating system for robotics — currently upgrading the driver-assistance system on 300+ supported production vehicles. It's one of the most starred robotics repos on GitHub and the backbone of comma.ai's research into open autonomous driving.
+**About:** Gazebo is the most widely used open-source robotics simulator. The next-generation engine (Gazebo Harmonic / gz-sim) powers simulation for research, education, and industrial robotics — from warehouse bots to humanoids. It integrates with ROS 2 seamlessly and supports realistic sensor models, multi-robot scenarios, and plugin-based extensibility.
 
-**Latest Commits (Sep 16–17, 2026):**
-- `bd176cb` — ui: remove question marks (#38938) *(9/17)*
-- `4d9d1bc` — ui: not paired bookmark alert (#38936) *(9/17)*
-- `cab5343` — AGNOS 19.8 release (#38935) *(9/17)*
-- `6080cc6` — Use a precompiled eGPU driving model (#38930) *(9/16)*
-- `81ae1a2` — Use tinygrad generic ONNX compiler artifacts (#38926) *(9/16)*
+**Latest Commits (Sep 15–17, 2026):**
+- `6cdb9b3` — `JointStatePublisher: build joint message once, update fields in place` (#3853) *(9/17)* — Performance optimization: reuse the JointState message instead of reconstructing it each time.
+- `7a6d8c4` — `ECM Implementation with Entt` (#3447) *(9/15)* — A major architectural shift: a new Entity-Component-Manager built on the [EnTT](https://github.com/skypjack/entt) ECS library, modernizing how simulation entities are managed.
+- `f33f82e` — `Fix: Preserve PYTHONPATH in INTEGRATION_python_system_loader` (#3890) *(9/15)* — Python sandboxing fix ensuring correct module resolution in plugin-loaded Python systems.
 
-**What's Cooking:** openpilot is in the middle of a **model-compilation revolution**. The team is shipping precompiled eGPU driving-model artifacts using the tinygrad ONNX compiler — a major step toward reproducible, hardware-accelerated model runs on comma's custom hardware. The AGNOS 19.8 release is landing alongside UI polish (removing question marks, adding pairing alerts). Expect a big wave of community testing as new builds roll out to devices in the field.
+**What's Cooking:** gz-sim is undergoing a **fundamental architecture overhaul**. The new ECM built on EnTT replaces the legacy component system, promising faster entity lookups, cleaner plugin APIs, and better alignment with modern C++ ECS patterns. Meanwhile, performance optimizations in state publishing and Python sandbox reliability fixes show a project maturing under heavy community use.
 
 **🎙️ Episode Ideas:**
-- *"63K Stars and No Google: Inside openpilot's Open-Source AV Stack"* — how comma.ai built the most-starred robotics repo without any automaker backing.
-- *"eGPU Driving Models & tinygrad: The Compiler Wars Come to Cars"* — precompiled model artifacts and what they mean for on-device inference.
-- *"AGNOS: comma's Secret Operating System for Vehicles"* — the release cycle, the custom hardware, and why it matters.
+- *"From Entity-Component to Robot PHD: Inside Gazebo's ECM Overhaul"* — why the simulation engine switched to EnTT and what it means for robotics developers.
+- *"Speedin' Up State Publishing: Micro-Optimizations That Matter at Scale"* — the art of avoiding redundant copies in real-time simulation loops.
+- *"Python Plugins & Sandbox Escapes: Keeping Simulation Safe"* — how gz-sim isolates user code and what can go wrong.
 
 ---
 
-### 2. [carla-simulator / carla](https://github.com/carla-simulator/carla)
-⭐ 14,403 stars · 💻 C++ · 📄 [MIT](https://github.com/carla-simulator/carla/blob/master/LICENSE)
+### 2. [autowarefoundation / autoware_universe](https://github.com/autowarefoundation/autoware_universe)
+⭐ 1,756 stars · 💻 C++ · 📄 [Apache-2.0](https://github.com/autowarefoundation/autoware_universe/blob/main/LICENSE)
 
-**About:** CARLA is the go-to open-source simulator for autonomous-driving research — built on Unreal Engine, it provides high-fidelity sensor simulation (LiDAR, camera, radar), urban scenarios, and a rich API for benchmarking perception, planning, and control stacks.
+**About:** Autoware is the world's first open-source software stack for autonomous driving. The unified repo (`autoware_universe`) aggregates all sub-projects — perception, planning, control, mapping, and simulation — into a single, continuously integrated codebase. It's backed by the Autoware Foundation and used in production autonomy stacks worldwide.
 
-**Latest Commits (Jul 10–Sep 2, 2026):**
-- `1360bb9` — Deploy UE5 nightly to Cloudflare R2 (#9859) *(9/2)*
-- `0a5ce0d` — Fix lidar smoke helper signature *(7/14)*
-- `39c4fda` — fix(nav): guard against null traffic light in WalkerManager *(7/14)*
-- `dd3a9d7` — feat(sensor): add V2X sensor family — CAM service, path-loss, CustomV2X, V2I *(7/13)*
-- `6279162` — feat(cmake): add CARLA_MAPS_TO_COOK for packaged maps *(7/10)*
+**Latest Commits (Sep 17, 2026):**
+- `3886fd6` — `feat(autoware_topic_relay_controller): add throttle mode` (#13395) — New throttle-mode support in the topic relay controller, enabling actuator command passthrough for testing and development.
+- `9ff8961` — `fix(pid_long): fix slope sign` (#13247) — Critical bugfix correcting the slope sign in the longitudinal PID controller, which directly impacts vehicle stability on grades.
+- `d52d236` — `feat(autoware_traffic_light_pipeline): add traffic_light_recognition node` (#13367) — A new perception node dedicated to traffic-light recognition, expanding the existing pipeline.
 
-**What's Cooking:** CARLA is pushing hard on **V2X communication simulation** — a new sensor family covers C-V2X (Cellular Vehicle-to-Everything), including path-loss modeling and V2I/V2V message exchange. The UE5 nightly deployment to Cloudflare R2 means cloud-based simulation is becoming a first-class use case. Navigation fixes (null traffic-light guard) and map-packaging tooling round out a busy cycle that bridges real-world connectivity and realistic urban simulation.
+**What's Cooking:** Autoware is shipping **real production fixes alongside new features**. The slope sign bug in the PID controller is the kind of bug that could cause real-world safety issues — finding and fixing it shows the project's maturity. The traffic-light recognition node adds a new perception capability, and the throttle mode in the relay controller improves the development/testing workflow. This is a "hitting stride" release cycle.
 
 **🎙️ Episode Ideas:**
-- *"Simulating the Connected Car: CARLA's V2X Sensor Family"* — why vehicle-to-everything simulation matters for AV safety validation.
-- *"From Unreal Engine to Cloudflare: Cloud-Based Autonomous Driving Simulation"* — the R2 deployment and the future of remote sim infrastructure.
-- *"The traffic_light that Wasn't There: Defensive Programming in AV Simulators"* — null-pointer safety in autonomous-stack simulation.
+- *"The Bug That Could've Caused a Crash: Inside Autoware's Slope Sign Fix"* — how a sign error in a PID controller could destabilize a vehicle on a hill, and how the community caught it.
+- *"Traffic Lights, Please! Autoware's New Perception Node"* — building a dedicated traffic-light recognition pipeline from sensor fusion to launch.
+- *"Throttle Mode & the Development Sandwich: Testing Autonomy Safely"* — how relay controllers and simulated actuator commands speed up AV development without endangering anyone.
 
 ---
 
-### 3. [isaac-sim / IsaacLab](https://github.com/isaac-sim/IsaacLab)
-⭐ 8,151 stars · 💻 Python · 📄 [Apache-2.0](https://github.com/isaac-sim/IsaacLab/blob/main/LICENSE)
+### 3. [carla-simulator / carla](https://github.com/carla-simulator/carla)
+⭐ 14,404 stars · 💻 C++ · 📄 [MIT](https://github.com/carla-simulator/carla/blob/master/LICENSE)
 
-**About:** Isaac Lab is NVIDIA's unified framework for robot learning — built on Isaac Sim's multi-physics simulation renderer, it gives researchers an end-to-end environment for training, evaluating, and deploying robot policies via RL, imitation learning, and world models.
+**About:** CARLA is the go-to open-source simulator for autonomous-driving research — built on Unreal Engine, it provides high-fidelity sensor simulation (LiDAR, camera, radar), urban scenarios, and a rich API for benchmarking perception, planning, and control stacks. Used by academic labs, OEMs, and startups worldwide.
 
-**Latest Commits (Sep 16–17, 2026):**
-- `237fe2b` — [CI][Auto Version Bump] Compile changelog fragments (schedule) *(9/17)*
-- `7a7575d` — [Docs] Fix develop README documentation links (#7770) *(9/16)*
-- `8b58e0c` — [CI] Prepare develop as repository and docs default *(9/16)*
-- `94a8ad5` — [Bump] Bump Newton to 1.6.0 *(9/16)*
-- `0c12bab` — Avoid Newton VBD graph coloring hangs *(9/16)*
+**Latest Commits (Jul 2, 2026):**
+- `1360bb9` — `Deploy UE5 nightly to Cloudflare R2` (#9859) — Automated CI pipeline that pushes Unreal Engine 5 nightly builds to Cloudflare R2 object storage, enabling cloud-based simulation and distribution.
+- `0a5ce0d` — `Fix lidar smoke helper signature` (#9791) — Corrects a parameter mismatch in the LiDAR sensor's smoke rendering helper, fixing visual artifacts.
+- `39c4fda` — `fix(nav): guard against null traffic light in WalkerManager` (#9758) — Defensive null-pointer check in the pedestrian (Walker) manager's navigation code, preventing crashes when traffic-light references are missing.
 
-**What's Cooking:** Isaac Lab is in a **release-cadence sprint** — auto version-bumping and changelog compilation signal a mature CI pipeline gearing up for the next stable release. The Newton physics engine just bumped to 1.6.0 with a fix for VBD (Velocity-Based Dynamics) graph-coloring hangs — a performance issue that could stall large-scale parallel simulation. Docs are being cleaned up for the develop branch, suggesting a documentation refresh alongside the upcoming Isaac Lab release.
+**What's Cooking:** CARLA's recent work focuses on **cloud-deployable simulation infrastructure** and **robustness hardening**. The UE5 nightly-to-R2 pipeline is a CI breakthrough that lets researchers pull the latest Unreal integration without rebuilding from scratch. Defensive programming fixes (null traffic-light guard, LiDAR signature fix) show a codebase being battle-tested for automation and headless runs.
 
 **🎙️ Episode Ideas:**
-- *"Newton 1.6: The Physics Engine Behind Robot Learning at Scale"* — VBD, graph coloring, and why physics simformance matters for RL.
-- *"Training a Robot in a Simulator: Inside Isaac Lab's Pipeline"* — from URDF to trained policy, end-to-end.
-- *"NVIDIA's Playbook for Open-Source Robot Learning"* — how Isaac Lab fits into the broader Isaac ecosystem and the AV research stack.
+- *"From UE5 to the Cloud: CARLA's R2 Deployment Pipeline"* — how automated nightly builds to object storage are changing how researchers get simulation assets.
+- *"When the Traffic Light Disappears: Null-Safety in AV Stack Code"* — the hidden crash sinks that only appear in simulation at 3 AM.
+- *"LiDAR Smoke & Sensor Debugging: The Visual Tools Making Sim Sensors Trustworthy"* — why rendering helpers matter for validating sensor models.
 
 ---
 
@@ -78,7 +72,7 @@ Curated for the **Robotics OSS** podcast and refreshed periodically. Selection p
 - Active recent commit cadence (truly "being worked on")
 - Strong narrative potential for podcast episodes
 
-See the companion issue **[Projects to Revisit & Upcoming Releases](../../issues/13)** for the tracking checklist.
+See the companion issue **[Projects to Revisit & Upcoming Releases](#)** for the tracking checklist.
 
 ---
 
