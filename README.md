@@ -1,93 +1,93 @@
 # 🤖 Robotics OSS Radar
 
-> Open-source robotics & autonomous systems radar — tracking the most active projects, recent commits, and podcast episode opportunities.
+> Tracking the most active open-source robotics & autonomous vehicle projects — for our podcast.
 
-This repo is a companion to the **Robotics OSS Radar** podcast — a show dedicated to the people, projects, and technologies powering the future of autonomous systems.
+## 📡 Top 3 Projects Under the Lens
 
 ---
 
-## 📡 Tracked Projects
+### 1. [carla-simulator/carla](https://github.com/carla-simulator/carla)
+**⭐ 14,405 stars | Language: C++ | License: MIT | Last updated: Sept 2026**
 
-### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
-**⭐ 63,671 | Language: Python | The open-source robotics operating system**
+*Open-source simulator for autonomous driving research — developed from the ground up to support development, training, and validation of autonomous driving systems.*
 
-openpilot is an operating system for robotics that currently upgrades the driver assistance system on 300+ supported cars. It encompasses everything from vision-based driving models to UI/UX, vehicle interface, and model compilation pipelines.
-
-**Recent Development Highlights (Sept 2026):**
-- **AGNOS 19.8 release** — Daniel Koepping shipped the latest AGNOS (Apollo General Neighborhood Operations System) update, the on-device firmware layer that ties the model pipeline to the vehicle.
-- **Precompiled eGPU driving model** — Harald Schäfer added a precompiled external GPU driving model, making deployment on edge hardware with eGPUs significantly easier and more accessible.
-- **tinygrad generic ONNX compiler artifacts** — Integration with tinygrad's ONNX compiler for more flexible and efficient model artifact generation, widening the hardware support surface.
-- **UI polish** — Removed stray question marks and added a "not paired" bookmark alert for improved driver-facing UX and safety feedback.
+**Recent Development Highlights:**
+- **UE5 nightly deployed to Cloudflare R2** (`1360bb9`, Sept 2, 2026) — the Unreal Engine 5.5 version of CARLA is now readily accessible via cloud storage, lowering the barrier to entry for researchers
+- **Lidar smoke helper signature fix** (`0a5ce0d`, July 14, 2026) — bug fix improving sensor simulation accuracy
+- **Null traffic light guard in WalkerManager** (`39c4fda`, July 14, 2026) — critical safety fix preventing crashes when traffic light data is missing in scenarios
+- **V2X sensor family added** (`dd3a9d7`, July 13, 2026) — new Vehicle-to-Everything sensor family (CAM service, path-loss, CustomV2X, V2I) enabling connected-autonomy research
+- **CARLA_MAPS_TO_COOK CMake option** (`6279162`, July 10, 2026) — lets developers select packaged maps at build time, streamlining custom scenario setups
+- Currently on the `ue5-dev` branch (Unreal Engine 5.5), with the `ue4-dev` branch (UE 4.26) maintained in parallel
 
 **🎙️ Potential Episode Topics:**
-- "From Model to Road: How openpilot Compiles and Deploys Driving Models on Edge Hardware"
-- "The AGNOS Pipeline: What Happens Between a Model Commit and a Car Update"
-- "Open- versus Closed-Source ADAS: What Does the 300-Car Ecosystem Teach Us?"
-- "tinygrad & ONNX: How Open-Source Model Compilers Are Reshaping Autonomous Stacks"
+- "CARLA goes UE5: how the latest simulator upgrade changes autonomous driving research"
+- "Why sensor fidelity matters: inside CARLA's lidar and traffic light fixes"
+- "V2X in simulation: why connected-autonomy research needs CARLA's new sensor family"
+- "Open-source simulators vs. proprietary tools — can CARLA compete with Waymo/Cruise's internal stacks?"
+- "Building a self-driving car from scratch using CARLA's Python API"
 
 ---
 
-### 2. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
-**⭐ 26,829 | Language: C++ | An open autonomous driving platform**
+### 2. [autowarefoundation/autoware](https://github.com/autowarefoundation/autoware)
+**⭐ 12,067 stars | Language: C++ / Docker | License: Apache-2.0 | Last updated: Sept 2026**
 
-Apollo is Baidu's full-stack open-source autonomous driving platform, covering perception, planning, control, simulation, and cloud services. It targets L4/L5 autonomy and is widely used in research and industrial pilots across China and beyond.
+*Autoware — the world's leading open-source software project for autonomous driving. A full-stack AV stack enabling everything from sensing and perception to planning and control.*
 
-**Recent Development Highlights (2026):**
-- **Apollo 11.0 — BEV + OCC** — Added Bird's-Eye-View perception and Occupancy Grid prediction, a major architectural step toward end-to-end neural driving stacks. This positions Apollo alongside Tesla's occupied-space approach and Waymo's geometric perception.
-- **Seyond LiDAR Driver** — Integrated support for the Seyond solid-state LiDAR, confirmed working via new configuration and documentation updates. Expands Apollo's hardware compatibility for perception pipelines.
-- **Beyond LiDAR Recovery** — Merged PR #15762 to recover the "Beyond" LiDAR driver, keeping hardware support broad and ensuring legacy sensor configurations remain functional.
-- **Documentation & Maintenance** — README cleanup and build status badge fixes indicate a focus on onboarding quality and community health.
+**Recent Development Highlights:**
+- **Managed transform buffer v0.3.0** (`a45f9ba`, Sept 16, 2026) — dependency update improving coordinate-frame transformation handling, critical for multi-sensor fusion
+- **CARLA 0.10 Town10HD_Opt map added to demo artifacts** (`79446c0`, Sept 9, 2026) — high-definition map integration for more realistic simulation demos
+- **Simple planning simulator build fix with core** (`87f7b60`, Sept 8, 2026) — CI/Docker fix ensuring the planning simulator builds correctly alongside core components
+- **CasADi pinned to 3.7.2 for Humble ARM64** (`3354a27`, Sept 7, 2026) — dependency pin fix for ARM64 builds, improving accessibility for embedded/edge developers
+- **CI health-check matrix trimmed** (`c0a32e8`, Sept 7, 2026) — build optimization reducing CI runtime by focusing on amd64 main legs
 
 **🎙️ Potential Episode Topics:**
-- "BEV + OCC: How Apollo 11.0 Is Reshaping the Perception Stack"
-- "LiDAR Diversity in Open-Source stacks: What Apollo Supports and Why It Matters"
-- "From Apollo to Rider: The Journey of Baidu's Open-Source Autonomy"
-- "Occupancy Networks in Autonomous Driving: The Trend That Links Apollo, Tesla, and Waymo"
+- "Inside Autoware: the full-stack open-source AV stack that's powering real-world deployments"
+- "Why transform buffers matter: the hidden complexity of multi-sensor fusion"
+- "From simulation to street: how Autoware bridges CARLA and real-world HD maps"
+- "ARM64 and edge: can open-source AV stacks run on embedded hardware?"
+- "The Autoware Foundation ecosystem — how managed repositories scale open-source AV development"
 
 ---
 
-### 3. [AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)
-**⭐ 30,533 | Language: Python | Python sample codes and textbook for robotics algorithms**
+### 3. [ros-navigation/navigation2](https://github.com/ros-navigation/navigation2)
+**⭐ 4,715 stars | Language: C++ | License: Apache-2.0 | Last updated: Sept 2026**
 
-PythonRobotics is a widely-cited educational collection of robotics algorithms implemented in Python — covering localization, mapping, SLAM, path planning, and control. It's the go-to reference for students and practitioners learning the fundamentals of autonomous systems.
+*ROS 2 Navigation Framework and System — the standard for autonomous mobile robot navigation in the ROS 2 ecosystem, used from research labs to warehouse robots.*
 
-**Recent Development Highlights (Aug–Sept 2026):**
-- **Dependency Maintenance** — Regular dependabot bumps for ruff, scipy, and GitHub CodeQL, keeping the project secure, modern, and reproducible. Recent bumps include ruff 0.16.x and scipy 1.18.x.
-- **Stable Educational Content** — No major new algorithm additions recently, but the codebase remains a gold standard for clean, readable robotics implementations. The maintenance activity signals long-term sustainability.
-- **Code Quality Tools** — Active linter and security scanning via ruff and CodeQL ensures the educational examples remain best-practice templates.
+**Recent Development Highlights:**
+- **Assisted Teleop lateral projection sign fix + unit tests** (`76b2d4d`, Sept 17, 2026) — critical bug fix ensuring correct lateral movement in teleop mode, plus new test coverage
+- **MPPI cost clearing between optimization iterations** (`e9e77d6`, Sept 17, 2026) — fix preventing cost accumulation across iterations, improving path-planning stability
+- **Missing fstream include fix in Nav2 panel** (`c8a2812`, Sept 17, 2026) — build fix for the GUI panel component
+- **MPPI noise distribution refresh on reset** (`f1f8070`, Sept 16, 2026) — ensures stochastic planner resets properly between planning runs
+- **Steep footprint edge cell fix** (`0e572ba`, Sept 16, 2026) — grid map fix preventing navigation failures on sharp obstacle edges
 
 **🎙️ Potential Episode Topics:**
-- "Why Python Robotics Education Still Matters in the Age of LLMs and Foundation Models"
-- "From Textbook to Deployment: Bridging the Gap Between Algorithmic Learning and Real Systems"
-- "The Role of Educational Open-Source in Building the Robotics Workforce"
-- "AETS, RSL, and the Chronopolitans: Counter-Path Planning and Decision-Making in Deep Mode"
-
----
-
-## 🎙️ About the Podcast
-
-**Robotics OSS Radio** explores the open-source projects that are making autonomous systems real — from perception and planning to deployment and UX. Each episode dives into a tracked project, interviews maintainers, and discusses where the field is headed next.
+- "MPPI deep-dive: how Model Predictive Path Integral control is changing robot navigation"
+- "The unsung heroes: bug fixes that prevent real-world robot crashes"
+- "ROS 2 Navigation2 vs. custom stacks — why the standard matters"
+- "From teleop to autonomy: the full stack of mobile robot development"
+- "Testing the untestable: how unit tests are improving navigation reliability"
 
 ---
 
 ## 📊 Quick Comparison
 
 | Project | Stars | Language | Focus | Latest Activity |
-|---|---|---|---|---|
-| commaai/openpilot | 63.6K | Python | ADAS / Autonomous Driving OS | Daily — model compilation, UI, firmware |
-| ApolloAuto/apollo | 26.8K | C++ | Full-stack Autonomous Driving | Monthly — BEV+OCC, LiDAR drivers |
-| PythonRobotics | 30.5K | Python | Educational Algorithms | Ongoing — dependency maintenance |
+|---------|-------|----------|-------|-----------------|
+| CARLA | 14.4K | C++ | Autonomous Driving Simulator | UE5 migration, V2X sensors, safety fixes |
+| Autoware | 12.1K | C++/Docker | Full-Stack AV Software | Dependency updates, HD map integration, CI optimization |
+| Nav2 | 4.7K | C++ | ROS 2 Robot Navigation | MPPI improvements, teleop fixes, grid map bug fixes |
 
 ---
 
 ## 📋 Tracking Checklist
 
-See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues)** for a detailed tracking checklist of all 3 projects, review dates, and episode outreach status.
+See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/22)** for a detailed tracking checklist of these 3 projects.
 
-## 🤝 Contributing
+## 🎙️ About This Project
 
-Have a project you think we should track? Found a major release or PR worth highlighting? Open an issue or submit a PR — this radar is community-driven!
+This repo is a companion to our podcast on open-source robotics and autonomous systems. We track the most active GitHub projects, analyze their latest commits, and develop episode ideas — so listeners can follow along and contribute.
 
-## 📜 License
+---
 
-MIT — use it, remix it, track your own radar.
+*Generated for the Robotics OSS Radar podcast. Stay curious, stay open-source.*
