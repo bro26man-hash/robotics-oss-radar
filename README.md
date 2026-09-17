@@ -12,9 +12,9 @@
 *Open-source operating system for robotics — currently upgrading driver assistance on 300+ supported cars.*
 
 **Recent Development Highlights:**
-- **AGNOS 19.8 release** — the latest openpilot firmware generation, bringing updated model and control pipelines (commit `cab5343`, Sept 17, 2026)
-- **UI polish & safety alerts** — removal of legacy question-mark icons and new "not paired" bookmark alert in the driving UI (commits `bd176cb` & `4d9d1bc`, Sept 17, 2026)
-- Very active: multiple commits daily, strong community PR flow
+- **AGNOS 19.8 release** (`cab5343`, Sept 17, 2026) — the latest openpilot firmware generation, bringing updated model and control pipelines
+- **UI polish & safety alerts** — removal of legacy question-mark icons (`bd176cb`) and new "not paired" bookmark alert (`4d9d1bc`), both Sept 17, 2026
+- **Daily commit cadence** — multiple commits per day, strong community PR flow, active maintainer team
 
 **🎙️ Potential Episode Topics:**
 - "How openpilot turned 300+ car models into a fleet lab for democratic AV development"
@@ -46,9 +46,9 @@
 *Baidu's open autonomous driving platform — one of the most complete end-to-end AV stacks in the open source world.*
 
 **Recent Development Highlights:**
-- **Apollo 11.0 bev+occ** — new bird's-eye-view + occupancy perception stack (commit `539f546`, Feb 27, 2026)
-- **LiDAR driver recovery** — PR #15762 restored beyond-lidar driver support for broader sensor compatibility (commit `40c8a01`, Feb 28, 2026)
-- **Docs cleanup** — removed invalid build status badges from README (commit `d53aa3d`, Apr 16, 2026)
+- **Apollo 11.0 bev+occ** (`539f546`, Feb 27, 2026) — new bird's-eye-view + occupancy perception stack, a major perception upgrade
+- **LiDAR driver recovery** (`40c8a01`, Feb 28, 2026) — PR #15762 restored beyond-lidar driver support for broader sensor compatibility
+- **Docs cleanup** (`d53aa3d`, Apr 16, 2026) — removed invalid build status badges from README
 - Development pace has slowed compared to previous years but major perception upgrades still land
 
 **🎙️ Potential Episode Topics:**
@@ -58,9 +58,19 @@
 
 ---
 
+## 📊 Quick Comparison
+
+| Project | Stars | Language | Focus | Latest Activity |
+|---------|-------|----------|-------|-----------------|
+| openpilot | 63.7K | Python | Production ADAS | Daily commits |
+| PythonRobotics | 30.5K | Python | Education / Algorithms | Weekly maintenance |
+| Apollo | 26.8K | C++ | Full AV Stack | Major releases |
+
+---
+
 ## 📋 Tracking Checklist
 
-See the open issue **[Projects to Revisit & Upcoming Releases](#)** for a detailed tracking checklist of these 3 projects.
+See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues)** for a detailed tracking checklist of these 3 projects.
 
 ## 🎙️ About This Project
 
