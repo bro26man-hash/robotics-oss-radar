@@ -1,87 +1,93 @@
 # 🤖 Robotics OSS Radar
 
-> Tracking the most active open-source robotics & autonomous vehicle projects — for our podcast.
+> Open-source robotics & autonomous systems radar — tracking the most active projects, recent commits, and podcast episode opportunities.
 
-## 📡 Top 3 Projects Under the Lens
-
----
-
-### 1. [carla-simulator/carla](https://github.com/carla-simulator/carla)
-**⭐ 14,404 stars | Language: C++ | License: MIT | Last updated: Sept 2026**
-
-*Open-source simulator for autonomous driving research — developed from the ground up to support development, training, and validation of autonomous driving systems.*
-
-**Recent Development Highlights:**
-- **UE5 nightly deployed to Cloudflare R2** (`1360bb9`, Sept 2, 2026) — the Unreal Engine 5.5 version of CARLA is now readily accessible via cloud storage, lowering the barrier to entry for researchers
-- **Lidar smoke helper signature fix** (`0a5ce0d`, July 14, 2026) — bug fix improving sensor simulation accuracy
-- **Null traffic light guard in WalkerManager** (`39c4fda`, July 14, 2026) — critical safety fix preventing crashes when traffic light data is missing in scenarios
-- Currently on the `ue5-dev` branch (Unreal Engine 5.5), with the `ue4-dev` branch (UE 4.26) maintained in parallel
-
-**🎙️ Potential Episode Topics:**
-- "CARLA goes UE5: how the latest simulator upgrade changes autonomous driving research"
-- "Why sensor fidelity matters: inside CARLA's lidar and traffic light fixes"
-- "Open-source simulators vs. proprietary tools — can CARLA compete with Waymo/Cruise's internal stacks?"
-- "Building a self-driving car from scratch using CARLA's Python API"
+This repo is a companion to the **Robotics OSS Radar** podcast — a show dedicated to the people, projects, and technologies powering the future of autonomous systems.
 
 ---
 
-### 2. [cyberbotics/webots](https://github.com/cyberbotics/webots)
-**⭐ 4,634 stars | Language: C++ | License: Apache-2.0 | Last updated: Sept 2026**
+## 📡 Tracked Projects
 
-*Webots provides a complete development environment to model, program, and simulate robots, vehicles, and mechanical systems — beginner-friendly and used in academia & industry worldwide.*
+### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
+**⭐ 63,671 | Language: Python | The open-source robotics operating system**
 
-**Recent Development Highlights:**
-- **Controller pose cache removal fix** (`d2ba706`, Sept 16, 2026) — recent bug fix ensuring accurate robot pose tracking during controller updates
-- **Released version sync** (`777eee4`, Sept 12, 2026) — maintainer Olivier Michel synced the released branch, keeping stable builds aligned
-- **Active CI/CD across all platforms** — nightly tests running on Linux, Windows, and macOS for both `master` and `develop` branches
-- Originally designed at EPFL (1996), open-sourced in 2018, now commercially supported by Cyberbotics
+openpilot is an operating system for robotics that currently upgrades the driver assistance system on 300+ supported cars. It encompasses everything from vision-based driving models to UI/UX, vehicle interface, and model compilation pipelines.
+
+**Recent Development Highlights (Sept 2026):**
+- **AGNOS 19.8 release** — Daniel Koepping shipped the latest AGNOS (Apollo General Neighborhood Operations System) update, the on-device firmware layer that ties the model pipeline to the vehicle.
+- **Precompiled eGPU driving model** — Harald Schäfer added a precompiled external GPU driving model, making deployment on edge hardware with eGPUs significantly easier and more accessible.
+- **tinygrad generic ONNX compiler artifacts** — Integration with tinygrad's ONNX compiler for more flexible and efficient model artifact generation, widening the hardware support surface.
+- **UI polish** — Removed stray question marks and added a "not paired" bookmark alert for improved driver-facing UX and safety feedback.
 
 **🎙️ Potential Episode Topics:**
-- "From EPFL lab to industry: the 30-year journey of Webots"
-- "How robot simulators bridge the gap between academia and real-world deployment"
-- "Webots vs. Gazebo vs. Isaac Sim — choosing the right simulator for your robot project"
-- "The business model behind open-source robotics software"
+- "From Model to Road: How openpilot Compiles and Deploys Driving Models on Edge Hardware"
+- "The AGNOS Pipeline: What Happens Between a Model Commit and a Car Update"
+- "Open- versus Closed-Source ADAS: What Does the 300-Car Ecosystem Teach Us?"
+- "tinygrad & ONNX: How Open-Source Model Compilers Are Reshaping Autonomous Stacks"
 
 ---
 
-### 3. [leofan90/Awesome-World-Models](https://github.com/leofan90/Awesome-World-Models)
-**⭐ 2,017 stars | Language: Python | License: BSD-3-Clause | Last updated: Sept 2026**
+### 2. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
+**⭐ 26,829 | Language: C++ | An open autonomous driving platform**
 
-*A curated, continuously updated list of papers on World Models for General Video Generation, Embodied AI, and Autonomous Driving — the go-to knowledge hub for the hottest research frontier in robotics.*
+Apollo is Baidu's full-stack open-source autonomous driving platform, covering perception, planning, control, simulation, and cloud services. It targets L4/L5 autonomy and is widely used in research and industrial pilots across China and beyond.
 
-**Recent Development Highlights:**
-- **Automated arXiv paper ingestion** (`3e788af`, Sept 16, 2026) — the repo's automation pipeline just added 128+ new arXiv candidates, keeping the list current with the latest research
-- **Reviewed world model papers added** (`5d81eb5`, Sept 16, 2026) — human-reviewed additions ensure quality alongside the automated pipeline
-- **Rapidly growing corpus** — the list now covers foundational World Model papers through cutting-edge 2026 publications, including NVIDIA Cosmos, GAIA-2, SimWorld, and dozens of new models
-- Key subsections: Foundation Models, Embodied AI, VLA, Autonomous Driving, Datasets & Benchmarks
+**Recent Development Highlights (2026):**
+- **Apollo 11.0 — BEV + OCC** — Added Bird's-Eye-View perception and Occupancy Grid prediction, a major architectural step toward end-to-end neural driving stacks. This positions Apollo alongside Tesla's occupied-space approach and Waymo's geometric perception.
+- **Seyond LiDAR Driver** — Integrated support for the Seyond solid-state LiDAR, confirmed working via new configuration and documentation updates. Expands Apollo's hardware compatibility for perception pipelines.
+- **Beyond LiDAR Recovery** — Merged PR #15762 to recover the "Beyond" LiDAR driver, keeping hardware support broad and ensuring legacy sensor configurations remain functional.
+- **Documentation & Maintenance** — README cleanup and build status badge fixes indicate a focus on onboarding quality and community health.
 
 **🎙️ Potential Episode Topics:**
-- "World Models 101: why LeCun says they're the future of AI — and what they mean for robotics"
-- "From NVIDIA Cosmos to GAIA-2: a tour of the open-source world model ecosystem"
-- "Can world models replace simulation? The CARLA vs. learned-simulator debate"
-- "Embodied AI's hidden dependency: how world model paper lists are shaping research directions"
-- "The benchmark explosion: evaluating what world models can actually do"
+- "BEV + OCC: How Apollo 11.0 Is Reshaping the Perception Stack"
+- "LiDAR Diversity in Open-Source stacks: What Apollo Supports and Why It Matters"
+- "From Apollo to Rider: The Journey of Baidu's Open-Source Autonomy"
+- "Occupancy Networks in Autonomous Driving: The Trend That Links Apollo, Tesla, and Waymo"
+
+---
+
+### 3. [AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)
+**⭐ 30,533 | Language: Python | Python sample codes and textbook for robotics algorithms**
+
+PythonRobotics is a widely-cited educational collection of robotics algorithms implemented in Python — covering localization, mapping, SLAM, path planning, and control. It's the go-to reference for students and practitioners learning the fundamentals of autonomous systems.
+
+**Recent Development Highlights (Aug–Sept 2026):**
+- **Dependency Maintenance** — Regular dependabot bumps for ruff, scipy, and GitHub CodeQL, keeping the project secure, modern, and reproducible. Recent bumps include ruff 0.16.x and scipy 1.18.x.
+- **Stable Educational Content** — No major new algorithm additions recently, but the codebase remains a gold standard for clean, readable robotics implementations. The maintenance activity signals long-term sustainability.
+- **Code Quality Tools** — Active linter and security scanning via ruff and CodeQL ensures the educational examples remain best-practice templates.
+
+**🎙️ Potential Episode Topics:**
+- "Why Python Robotics Education Still Matters in the Age of LLMs and Foundation Models"
+- "From Textbook to Deployment: Bridging the Gap Between Algorithmic Learning and Real Systems"
+- "The Role of Educational Open-Source in Building the Robotics Workforce"
+- "AETS, RSL, and the Chronopolitans: Counter-Path Planning and Decision-Making in Deep Mode"
+
+---
+
+## 🎙️ About the Podcast
+
+**Robotics OSS Radio** explores the open-source projects that are making autonomous systems real — from perception and planning to deployment and UX. Each episode dives into a tracked project, interviews maintainers, and discusses where the field is headed next.
 
 ---
 
 ## 📊 Quick Comparison
 
 | Project | Stars | Language | Focus | Latest Activity |
-|---------|-------|----------|-------|-----------------|
-| CARLA | 14.4K | C++ | Autonomous Driving Simulator | UE5 migration, sensor fixes |
-| Webots | 4.6K | C++ | Robot Simulation Platform | Bug fixes, release syncs |
-| Awesome-World-Models | 2.0K | Python | Research Paper Curation | Daily arXiv auto-ingestion |
+|---|---|---|---|---|
+| commaai/openpilot | 63.6K | Python | ADAS / Autonomous Driving OS | Daily — model compilation, UI, firmware |
+| ApolloAuto/apollo | 26.8K | C++ | Full-stack Autonomous Driving | Monthly — BEV+OCC, LiDAR drivers |
+| PythonRobotics | 30.5K | Python | Educational Algorithms | Ongoing — dependency maintenance |
 
 ---
 
 ## 📋 Tracking Checklist
 
-See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/22)** for a detailed tracking checklist of these 3 projects.
+See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues)** for a detailed tracking checklist of all 3 projects, review dates, and episode outreach status.
 
-## 🎙️ About This Project
+## 🤝 Contributing
 
-This repo is a companion to our podcast on open-source robotics and autonomous systems. We track the most active GitHub projects, analyze their latest commits, and develop episode ideas — so listeners can follow along and contribute.
+Have a project you think we should track? Found a major release or PR worth highlighting? Open an issue or submit a PR — this radar is community-driven!
 
----
+## 📜 License
 
-*Generated for the Robotics OSS Radar podcast. Stay curious, stay open-source.*
+MIT — use it, remix it, track your own radar.
