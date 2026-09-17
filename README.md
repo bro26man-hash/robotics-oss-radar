@@ -1,110 +1,93 @@
-# 🤖 Robotics OSS Radar
+# 🤖 Robotics & Autonomous Systems — Open-Source Radar
 
-> A living radar tracking the most active open-source robotics and autonomous-vehicle repositories — built for the **Robotics OSS Podcast**.
+> A living radar for the most active open-source robotics and autonomous-vehicles repos, with commit summaries distilled from live `git log` inspection and podcast episode ideas for **Robotics OSS**.
 
-This repo is our HQ for monitoring top-tier open-source projects, documenting recent development highlights, and brainstorming episode topics.
-
----
-
-## 📡 Tracked Projects
-
-### 1. [Autoware Universe](https://github.com/autowarefoundation/autoware_universe)
-**Owner:** autowarefoundation | **Language:** C++ | **License:** Apache-2.0 | **Stars:** ⭐ 1,756 | **Forks:** 🍴 964
-
-The extension layer of the Autoware ecosystem — a massive collection of ROS packages that supercharge Autoware Core with advanced autonomous-driving capabilities.
-
-**Package domains:** Common · Control · Evaluator · Localization · Map · Perception · Planning · Sensing · Simulator · System · Vehicle
-
-#### 🔬 Recent Development Highlights
-| Commit | Description | Date |
-|--------|-------------|------|
-| `d52d236` | Added `traffic_light_recognition` node to autoware_traffic_light_pipeline | 2026-09-17 |
-| `d7d242d` | Guarded mission_planner against empty planned path (SIGSEGV fix) | 2026-09-17 |
-| `a071cee` | Migrated deprecated NVML APIs for CUDA 13 compatibility | 2026-09-17 |
-| `956e938` | Refactored autoware_topic_relay_controller to agnocast_wrapper::Node | 2026-09-16 |
-| `9d3d964` | Aligned vehicle node designs with the packages they build | 2026-09-16 |
-
-#### 🎙️ Potential Episode Topics
-- **Traffic Light Recognition Pipeline** — How Autoware Universe is adding dedicated perception nodes for signal detection
-- **Safety-Critical Fixes** — Preventing SIGSEGVs in mission planning: what it means for real-world deployment
-- **CUDA 13 Migration** — Keeping huge C++ codebases current with GPU driver stacks
-- **Agnocast Migration** — The shift from ros2 topic relay to agnocast communication middleware
-- **Vehicle Interface Standardization** — Designing vehicle nodes that cleanly map to their packages
+_Last scan: 2026-09-17 · Sources: GitHub topic search on `autonomous-vehicles` & `robotics`, sorted by recent activity, followed by per-repo latest-commit inspection._
 
 ---
 
-### 2. [Autoware Core](https://github.com/autowarefoundation/autoware_core)
-**Owner:** autowarefoundation | **Language:** C++ | **License:** Apache-2.0 | **Stars:** ⭐ 186 | **Forks:** 🍴 167
+## 🔥 Top 3 Most Recently Active Repos
 
-The stable, minimal core of Autoware — a curated set of high-quality ROS packages for autonomous driving. Currently a thin layer; the real action happens in Universe and will port over once the Core/Universe interface freeze is resolved.
+### 1. [commaai / openpilot](https://github.com/commaai/openpilot)
+⭐ 63,671 stars · 💻 C++ · 📄 [Apache-2.0](https://github.com/commaai/openpilot/blob/master/LICENSE)
 
-#### 🔬 Recent Development Highlights
-| Commit | Description | Date |
-|--------|-------------|------|
-| `11f8749` | Characterized GNSS poser: orientation, antenna TF, and covariance | 2026-09-17 |
-| `cfac5ee` | Added node designs required by the AD API & motion planning design modules | 2026-09-17 |
-| `017dbf7` | Improved LaneletRTree::get_closest_lanelet performance | 2026-09-15 |
-| `41b16df` | Reorganized gyro_odometer test suite | 2026-09-15 |
-| `42d6b69` | Moved map_height_fitter, pose_initializer, adapi_adaptors to agnocast_wrapper::Node | 2026-09-14 |
+**About:** openpilot is an open-source operating system for robotics — currently upgrading the driver-assistance system on 300+ supported production vehicles. It's one of the most starred robotics repos on GitHub and the backbone of comma.ai's research into open autonomous driving.
 
-#### 🎙️ Potential Episode Topics
-- **Core vs. Universe Architecture Debate** — Why does Autoware split into two, and what's the philosophy?
-- **GNSS Poser Characterization** — How precise sensor calibration kills drift in localization
-- **AD API & Motion Planning Interface** — The design modules shaping the next generation of driving stacks
-- **Lanelet2 Performance Optimization** — Spatial indexing tricks for HD map queries
-- **Agnocast Adoption Across the Ecosystem** — How communication middleware choices ripple through the community
+**Latest Commits (Sep 16–17, 2026):**
+- `bd176cb` — ui: remove question marks (#38938) *(9/17)*
+- `4d9d1bc` — ui: not paired bookmark alert (#38936) *(9/17)*
+- `cab5343` — AGNOS 19.8 release (#38935) *(9/17)*
+- `6080cc6` — Use a precompiled eGPU driving model (#38930) *(9/16)*
+- `81ae1a2` — Use tinygrad generic ONNX compiler artifacts (#38926) *(9/16)*
 
----
+**What's Cooking:** openpilot is in the middle of a **model-compilation revolution**. The team is shipping precompiled eGPU driving-model artifacts using the tinygrad ONNX compiler — a major step toward reproducible, hardware-accelerated model runs on comma's custom hardware. The AGNOS 19.8 release is landing alongside UI polish (removing question marks, adding pairing alerts). Expect a big wave of community testing as new builds roll out to devices in the field.
 
-### 3. [Webots Robot Simulator](https://github.com/cyberbotics/webots)
-**Owner:** cyberbotics | **Language:** C++ | **License:** Apache-2.0 | **Stars:** ⭐ 4,634 | **Forks:** 🍴 2,057
-
-A full-featured open-source robot simulator — model, program, and simulate robots, vehicles, and mechanical systems. Originally designed at EPFL in 1996, open-sourced in 2018.
-
-#### 🔬 Recent Development Highlights
-| Commit | Description | Date |
-|--------|-------------|------|
-| `d2ba706` | Fixed controller pose cache removal logic | 2026-09-16 |
-| `777eee4` | Merged sync-released branch (release pipeline update) | 2026-09-12 |
-| `bc0f6e8` | Fixed regex patterns for websocket rules in documentation | 2026-09-11 |
-| `c1dc211` | Fixed relative texture URLs in web streaming | 2026-09-11 |
-
-#### 🎙️ Potential Episode Topics
-- **Web Streaming & Texture Fix** — How simulators are evolving for cloud-based and browser-powered robotics
-- **Pose Cache Architecture** — Why cached transforms matter for real-time simulation fidelity
-- **Release Pipeline Automation** — Sync-release branches and how large sim projects manage CI/CD
-- **Webots in Education & Research** — 25+ years of robotics simulation and why it still matters
-- **Open-Source Simulation vs. Gazebo/Ignition** — Competitive landscape and where Webots shines
+**🎙️ Episode Ideas:**
+- *"63K Stars and No Google: Inside openpilot's Open-Source AV Stack"* — how comma.ai built the most-starred robotics repo without any automaker backing.
+- *"eGPU Driving Models & tinygrad: The Compiler Wars Come to Cars"* — precompiled model artifacts and what they mean for on-device inference.
+- *"AGNOS: comma's Secret Operating System for Vehicles"* — the release cycle, the custom hardware, and why it matters.
 
 ---
 
-## 📊 Comparison Matrix
+### 2. [carla-simulator / carla](https://github.com/carla-simulator/carla)
+⭐ 14,403 stars · 💻 C++ · 📄 [MIT](https://github.com/carla-simulator/carla/blob/master/LICENSE)
 
-| Project | Stars | Language | Focus Area | Activity Level |
-|---------|-------|----------|------------|---------------|
-| [Autoware Universe](https://github.com/autowarefoundation/autoware_universe) | 1,756 | C++ | AV perception/planning/control extensions | 🔥 Daily commits |
-| [Autoware Core](https://github.com/autowarefoundation/autoware_core) | 186 | C++ | Foundational AV ROS packages | 📅 Daily commits |
-| [Webots](https://github.com/cyberbotics/webots) | 4,634 | C++ | Robot simulation & virtual testing | 📅 Daily commits |
+**About:** CARLA is the go-to open-source simulator for autonomous-driving research — built on Unreal Engine, it provides high-fidelity sensor simulation (LiDAR, camera, radar), urban scenarios, and a rich API for benchmarking perception, planning, and control stacks.
 
----
+**Latest Commits (Jul 10–Sep 2, 2026):**
+- `1360bb9` — Deploy UE5 nightly to Cloudflare R2 (#9859) *(9/2)*
+- `0a5ce0d` — Fix lidar smoke helper signature *(7/14)*
+- `39c4fda` — fix(nav): guard against null traffic light in WalkerManager *(7/14)*
+- `dd3a9d7` — feat(sensor): add V2X sensor family — CAM service, path-loss, CustomV2X, V2I *(7/13)*
+- `6279162` — feat(cmake): add CARLA_MAPS_TO_COOK for packaged maps *(7/10)*
 
-## 🗓️ Podcast Workflow
+**What's Cooking:** CARLA is pushing hard on **V2X communication simulation** — a new sensor family covers C-V2X (Cellular Vehicle-to-Everything), including path-loss modeling and V2I/V2V message exchange. The UE5 nightly deployment to Cloudflare R2 means cloud-based simulation is becoming a first-class use case. Navigation fixes (null traffic-light guard) and map-packaging tooling round out a busy cycle that bridges real-world connectivity and realistic urban simulation.
 
-1. **Weekly sweep** — Pull latest commits from each repo
-2. **Highlight extraction** — Summarize what changed and why it matters
-3. **Episode brainstorming** — Add topics to this README or open an issue
-4. **Release tracking** — Use the issue tracker for upcoming releases
-
----
-
-## 📋 Quick Links
-
-| Project | GitHub | Docs |
-|---------|--------|------|
-| Autoware Universe | [github.com/autowarefoundation/autoware_universe](https://github.com/autowarefoundation/autoware_universe) | [autoware_universe docs](https://autowarefoundation.github.io/autoware_universe/) |
-| Autoware Core | [github.com/autowarefoundation/autoware_core](https://github.com/autowarefoundation/autoware_core) | [autoware_core docs](https://autowarefoundation.github.io/autoware_core/) |
-| Webots | [github.com/cyberbotics/webots](https://github.com/cyberbotics/webots) | [Cyberbotics docs](https://cyberbotics.com/doc/reference/index) |
+**🎙️ Episode Ideas:**
+- *"Simulating the Connected Car: CARLA's V2X Sensor Family"* — why vehicle-to-everything simulation matters for AV safety validation.
+- *"From Unreal Engine to Cloudflare: Cloud-Based Autonomous Driving Simulation"* — the R2 deployment and the future of remote sim infrastructure.
+- *"The traffic_light that Wasn't There: Defensive Programming in AV Simulators"* — null-pointer safety in autonomous-stack simulation.
 
 ---
 
-_🔄 Last updated: September 2026 · Radar refreshed weekly_
+### 3. [isaac-sim / IsaacLab](https://github.com/isaac-sim/IsaacLab)
+⭐ 8,151 stars · 💻 Python · 📄 [Apache-2.0](https://github.com/isaac-sim/IsaacLab/blob/main/LICENSE)
+
+**About:** Isaac Lab is NVIDIA's unified framework for robot learning — built on Isaac Sim's multi-physics simulation renderer, it gives researchers an end-to-end environment for training, evaluating, and deploying robot policies via RL, imitation learning, and world models.
+
+**Latest Commits (Sep 16–17, 2026):**
+- `237fe2b` — [CI][Auto Version Bump] Compile changelog fragments (schedule) *(9/17)*
+- `7a7575d` — [Docs] Fix develop README documentation links (#7770) *(9/16)*
+- `8b58e0c` — [CI] Prepare develop as repository and docs default *(9/16)*
+- `94a8ad5` — [Bump] Bump Newton to 1.6.0 *(9/16)*
+- `0c12bab` — Avoid Newton VBD graph coloring hangs *(9/16)*
+
+**What's Cooking:** Isaac Lab is in a **release-cadence sprint** — auto version-bumping and changelog compilation signal a mature CI pipeline gearing up for the next stable release. The Newton physics engine just bumped to 1.6.0 with a fix for VBD (Velocity-Based Dynamics) graph-coloring hangs — a performance issue that could stall large-scale parallel simulation. Docs are being cleaned up for the develop branch, suggesting a documentation refresh alongside the upcoming Isaac Lab release.
+
+**🎙️ Episode Ideas:**
+- *"Newton 1.6: The Physics Engine Behind Robot Learning at Scale"* — VBD, graph coloring, and why physics simformance matters for RL.
+- *"Training a Robot in a Simulator: Inside Isaac Lab's Pipeline"* — from URDF to trained policy, end-to-end.
+- *"NVIDIA's Playbook for Open-Source Robot Learning"* — how Isaac Lab fits into the broader Isaac ecosystem and the AV research stack.
+
+---
+
+## 🎙️ About This Radar
+
+Curated for the **Robotics OSS** podcast and refreshed periodically. Selection priorities:
+- Genuine open-source robotics / autonomous-vehicle projects
+- Active recent commit cadence (truly "being worked on")
+- Strong narrative potential for podcast episodes
+
+See the companion issue **[Projects to Revisit & Upcoming Releases](../../issues/13)** for the tracking checklist.
+
+---
+
+## 🔎 How to Use
+
+1. Scan the **Top 3** above for current development highlights.
+2. Pick an episode idea that resonates.
+3. Check the companion issue for follow-up items (revisit dates, upcoming releases to watch).
+
+---
+
+_Licensed as part of the open-source robotics podcast ecosystem. Contributions and episode suggestions welcome._
