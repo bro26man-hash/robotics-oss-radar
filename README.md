@@ -6,85 +6,92 @@
 
 ---
 
-### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
-**⭐ 63,671 stars | Language:** Python | **License:** MIT | **Last commit:** Sep 17, 2026
+### 1. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
+**⭐ 26,829 stars | Language: C++ | License: Apache-2.0 | Last updated: Sept 17, 2026**
 
-> openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.
+*An open autonomous driving platform — a high-performance, flexible architecture that accelerates the development, testing, and deployment of Autonomous Vehicles. From GPS waypoint following (v1.0) to curb-to-curb urban driving (v5.5+) to large-scale functional deployment (v11.0).*
 
 **Recent Development Highlights:**
-- **UI Cleanup** (`bd176cb`, Sep 17, 2026) — Removed stray question-mark placeholders from the UI for a cleaner user experience.
-- **Not-Paired Bookmark Alert** (`4d9d1bc`, Sep 17, 2026) — New alert when a device bookmark isn't paired, improving device management UX.
-- **AGNOS 19.8 Release** (`cab5343`, Sep 17, 2026) — Latest on-device OS version shipped, continuing rapid release cadence.
+- **Apollo 11.0 BEV+OCC perception** (`539f546`, Feb 27, 2026) — new bird's-eye-view and occupancy-grid perception models for enhanced 3D scene understanding
+- **Beyond Lidar driver recovery** (`40c8a01`, Feb 28, 2026) — PR #15762 restores and hardens the lidar driver pipeline for robust sensor data ingestion
+- **README cleanup** (`d53aa3d`, Apr 16, 2026) — removed invalid build status badges, improving project credibility
+- **Apollo 11.0 focus on large-scale deployment** — comprehensive upgrades to perception, localization, planning, and development toolchains; support for ARM/Orin architecture; 4D millimeter-wave radar integration; functional safety framework reinforcement
+- **Apollo Studio & Data Pipeline** — introduced in v7.0, matured through v10/11 as a one-stop online development platform
 
-**What's Being Worked On:** Active daily development focused on UI/UX polish, device pairing reliability, and on-device OS releases. The project ships multiple commits per day, indicating a very healthy and active codebase.
-
-**Key Features:** Open-source driver assistance for 300+ car models, end-to-end ML pipeline, on-device inference, crowdsourced driving data.
+**Key Modules:** Perception (BEV+OCC), Localization (HD maps, GPS/IMU), Prediction, Planning & Control (PnC), Decider, CyberRT middleware, Dreamview Plus visualization, Package management v2.0, Apollo Studio.
 
 **🎙️ Potential Episode Topics:**
-- "From Driver-Assistance to Full OS: The openpilot Vision"
-- "UI/UX in Safety-Critical Robotics Interfaces"
-- "What AGNOS 19.8 Means for On-Device Robotics"
-- "How openpilot Scales Across 300+ Car Models"
+- "Apollo 11.0: from research to production — the BEV+OCC revolution"
+- "Inside Baidu's Apollo: 11 versions of open-source autonomous driving"
+- "Beyond Lidar: why sensor redundancy is the key to safe AVs"
+- "Apollo Studio: the one-stop dev platform for autonomous driving"
+- "What's new in Apollo 11.0 — ARM support, 4D radar, and functional safety"
+- "Package management and plugin architecture: how Apollo scales for production"
 
 ---
 
-### 2. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
-**⭐ 26,829 stars | Language:** C++ | **License:** Apache-2.0 | **Last commit:** Apr 16, 2026
+### 2. [carla-simulator/carla](https://github.com/carla-simulator/carla)
+**⭐ 14,405 stars | Language: C++ | License: MIT | Last updated: Sept 17, 2026**
 
-> An open autonomous driving platform
+*Open-source simulator for autonomous driving research — developed from the ground up to support development, training, and validation of autonomous driving systems. Now running on Unreal Engine 5.5 with open digital assets, flexible sensor suites, and environmental conditions.*
 
 **Recent Development Highlights:**
-- **Apollo 11.0 BEV + OCC** (`539f546`, Feb 27, 2026) — Major feature release adding Bird's-Eye-View perception and Occupancy-based collision checking, pushing the frontier of 3D scene understanding.
-- **LiDAR Driver Recovery** (`40c8a01`, Feb 28, 2026) — PR merged to recover and stabilize the LiDAR driver subsystem, signalling active sensor-stack maintenance.
-- **README Documentation Cleanup** (`d53aa3d`, Apr 16, 2026) — Removed invalid build-status badges, focusing on accurate and maintainable documentation.
+- **UE5 nightly builds deployed to Cloudflare R2** (`1360bb9`, Sep 2, 2026, PR #9859) — streamlined distribution of nightly builds for the UE5.5 branch, making it easier for researchers to stay current
+- **Lidar smoke helper signature fix** (`0a5ce0d`, Jul 14, 2026, PR #9791) — corrected the lidar sensor simulation helper, improving accuracy of LiDAR point-cloud generation
+- **WalkerManager null traffic light guard** (`39c4fda`, Jul 14, 2026, PR #9758) — defensive fix preventing crashes when traffic lights are absent in navigation scenarios
+- **UE5.5 branch active in parallel with UE4.26** — significant differences between versions; UE5.5 requires Ubuntu 22.04/24.04 or Windows 11
+- **ROS2 bridge maintained** — continued support for connecting CARLA to ROS 2 ecosystems
 
-**What's Being Worked On:** Apollo 11.0 introduces BEV (Bird's-Eye-View) perception and OCC (Occupancy-based collision checking) — cutting-edge 3D scene understanding. The LiDAR driver recovery shows ongoing hardware abstraction layer maintenance. The project is in a maintenance phase with periodic major releases.
-
-**Key Features:** BEV perception, OCC collision checking, multi-sensor fusion (LiDAR, camera, radar), HD map integration, planning & control stack.
+**Key Features:** UE5.5-based high-fidelity rendering, open digital assets (urban layouts, buildings, vehicles), Python API, sensor suite (camera, LiDAR, radar, IMU), WalkerManager for NPC traffic, ROS2 bridge, Driving Benchmarks, Scenario Runner, Cloudflare-hosted nightlies.
 
 **🎙️ Potential Episode Topics:**
-- "BEV Perception: The New Paradigm for Autonomous Driving"
-- "Apollo 11.0 — What's New in the Open-Source Stack?"
-- "Sensor Reliability: Inside the LiDAR Driver Recovery"
-- "From Apollo 8.0 to 11.0: How the Stack Has Evolved"
+- "CARLA goes UE5.5: what's new in the latest simulation engine"
+- "Why nightly builds matter: how CARLA democratizes access to cutting-edge simulation"
+- "Lidar simulation done right: the smoke helper fix and sensor fidelity"
+- "WalkerManager and safe navigation: defensive coding in autonomous simulators"
+- "ROS 2 meets CARLA: bridging simulation and real-world robotics stacks"
+- "From CoRL'17 to now: the evolution of CARLA as an open research platform"
 
 ---
 
-### 3. [carla-simulator/carla](https://github.com/carla-simulator/carla)
-**⭐ 14,405 stars | Language:** C++ | **License:** MIT | **Last commit:** Sep 2, 2026
+### 3. [autonomous-ai/autonomous-os](https://github.com/autonomous-ai/autonomous-os)
+**⭐ 347 stars | Language: Python | License: Apache-2.0 | Last updated: Sept 17, 2026**
 
-> Open-source simulator for autonomous driving research.
+*The open-source operating system for robots — install it and your robot comes alive. An agentic reasoning stack with swappable engines (Hermes, Claude Code, OpenCode), a skill-based architecture, hardware abstraction layer (HAL), and a built-in learning loop that creates skills from experience.*
 
 **Recent Development Highlights:**
-- **UE5 Nightly on Cloudflare R2** (`1360bb9`, Sep 2, 2026) — Deployed an Unreal Engine 5 nightly build to Cloudflare R2, enabling researchers to pull the latest simulator builds faster and more reliably.
-- **LiDAR Smoke Helper Fix** (`0a5ce0d`, Jul 14, 2026) — Patched a signature bug in the LiDAR smoke helper, improving simulation fidelity for sensor modeling.
-- **WalkerManager Null Guard** (`39c4fda`, Jul 14, 2026) — Added null-traffic-light guards in the WalkerManager navigation module, hardening pedestrian-scenario simulations against crashes.
+- **Scene speaker mute/unmute fix** (`2a11eea`, Sep 17, 2026) — HAL fix to drain scene speaker mute state and restore scene-muted peripherals on wake, improving user experience
+- **Branch merge for speaker fix** (`d0e158d`, Sep 17, 2026) — integration merge bringing the speaker mute/restoration fix into main
+- **General update** (`98bdf6b`, Sep 17, 2026) — ongoing maintenance and feature updates
+- **6 agentic runtimes behind AgentGateway** — Hermes, OpenClaw, PicoClaw, Codex, Claude Code, OpenCode — all swappable via a 76-method interface
+- **13 robot capabilities** — audio, vision, sensing, presence, motion, light, display, expression, lifelike, media, connectivity, companion, system
+- **Safety gate as pure function** — SAFETY.md defines bounds (brightness, quiet hours, speed) with no model in the loop
 
-**What's Being Worked On:** CARLA is evolving its UE5 integration (deploying nightly builds via Cloudflare R2 for faster distribution), improving sensor simulation fidelity (LiDAR fixes), and hardening scenario stability (null-pointer guards in pedestrian AI). The project balances feature development with robustness improvements.
-
-**Key Features:** UE5-based high-fidelity rendering, ROS integration, flexible API, weather/lighting control, pedestrian & traffic simulation, sensor modeling (LiDAR, camera, radar, IMU).
+**Key Architecture:** Apps (web UI), Skills (markdown-defined behaviors), Agentic Runtime (6 engines), System Services (Go daemon on :5000), Realtime Voice (Gemini Live / OpenAI Realtime), HAL (hardware abstraction, :5001), Drivers (per-subsystem classes), Boards (JSON-matched hardware).
 
 **🎙️ Potential Episode Topics:**
-- "Sim-to-Real: How CARLA Bridges the Gap"
-- "UE5 in Robotics Simulation — What's Changing?"
-- "Defensive Coding in Simulators: Null Guards & Sensor Fixes"
-- "Cloudflare R2 for Simulator Distribution — A New Model?"
+- "Autonomous OS: the 'Android' for robots — install it and they come alive"
+- "Agentic runtimes compared: Hermes vs Claude Code vs OpenCode for robotics"
+- "Why HAL matters: hardware abstraction as the foundation of robot OS"
+- "Skills as markdown: the democratization of robot programming"
+- "Safety first: how Autonomous OS puts bounds on AI-driven robots"
+- "From Lamp to Reachy Mini: bringing autonomous OS to real hardware"
 
 ---
 
 ## 📊 Quick Comparison
 
-| Project | Stars | Language | Focus | Last Activity | Status |
-|---------|-------|----------|-------|---------------|--------|
-| openpilot | 63.7k | Python | Open-source driver assistance OS | Sep 2026 (daily) | 🟢 Very Active |
-| Apollo | 26.8k | C++ | Autonomous driving platform | Apr 2026 (periodic) | 🟡 Maintenance |
-| CARLA | 14.4k | C++ | Autonomous driving simulator | Sep 2026 (ongoing) | 🟢 Active |
+| Project | Stars | Language | Focus | Activity Status |
+|---------|-------|----------|-------|-----------------|
+| Apollo | 26,829 | C++ | Full autonomous driving platform (v11.0) | Active (BEV+OCC, lidar recovery, ARM support) |
+| CARLA | 14,405 | C++ | Autonomous driving simulator (UE5.5) | Active (nightly builds, sensor fixes, nav safety) |
+| Autonomous OS | 347 | Python | Open-source OS for robots (agentic) | Active (HAL fixes, speaker restoration, runtime updates) |
 
 ---
 
 ## 📋 Tracking Checklist
 
-See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/28)** for a detailed tracking checklist of these 3 projects.
+See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/29)** for a detailed tracking checklist of these 3 projects.
 
 ## 🎙️ About This Project
 
