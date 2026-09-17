@@ -2,71 +2,72 @@
 
 > A living radar for the most active open-source robotics and autonomous-vehicles repos, with commit summaries distilled from live `git log` inspection and podcast episode ideas for **Robotics OSS**.
 
-_Last scan: 2026-09-10 · Sources: GitHub topic search on `robotics` & `autonomous-vehicles`, sorted by recent activity, followed by per-repo latest-commit inspection._
+_Last scan: 2026-09-17 · Sources: GitHub topic search on `autonomous-vehicles` & `robotics`, sorted by recent activity, followed by per-repo latest-commit inspection._
 
 ---
 
 ## 🔥 Top 3 Most Recently Active Repos
 
-### 1. [NVIDIA / elements](https://github.com/NVIDIA/elements)
-⭐ 85 stars · 🦶 TypeScript
+### 1. [autowarefoundation / autoware_universe](https://github.com/autowarefoundation/autoware_universe)
+⭐ 1,756 stars · 💻 C++
 
-**About:** NVIDIA Design System and UI Agent Harness for AI/ML Factories, Robotics, and Autonomous Vehicles. A web-based design-system plus agent-harness patterns layer that underpins robotics and autonomy software factories.
+**About:** Autoware Universe is the world's leading open-source autonomous driving software stack. It provides a modular, extensible framework for perception, planning, control, and driver abstraction — built on ROS 2 and designed for real-world deployment.
 
-**Latest Commits (Sep 2026):**
-- `9577c5c` — chore(ci): update svgo *(9/9)*
-- `5b9b0ee` — chore(starters): update dependencies *(9/8)*
-- `2c79c02` — chore(forms): drop unnecessary boolean conversions in checkbox mixin *(9/10, 🤖 Cursor Agent)*
-- `d6dc590` — chore(core): cover connected move in format-truncate *(9/9, 🤖 Cursor Agent)*
-- `6126e1c` — fix(docs): update responsive pattern icon *(9/8)*
+**Latest Commits (Sep 16–17, 2026):**
+- `d52d236` — feat(autoware_traffic_light_pipeline): add traffic_light_recognition node *(9/17)*
+- `d7d242d` — fix(mission_planner): guard against empty planned path to prevent SIGSEGV *(9/17)*
+- `a071cee` — fix(autoware_system_monitor): migrate deprecated NVML APIs for CUDA 13 *(9/17)*
+- `956e938` — refactor(autoware_topic_relay_controller): migrate to agnocast_wrapper::Node *(9/16)*
+- `9d3d964` — fix(design): align the vehicle node designs with the packages they build *(9/16)*
 
-**What's Cooking:** Steady maintenance on CI tooling, component mixins/accessibility, and docs — and notably several commits were authored by a **Cursor Agent**, hinting that NVIDIA's own software-factory tooling is agentic. A fascinating signal: the design system feeding robotics/AV factory UIs is partly authored by AI agents.
+**What's Cooking:** The team is deep in a **hardware-abstraction migration** — moving legacy NVIDIA NVML API calls to the new `agnocast_wrapper::Node` interface (ROS 2 compatibility layer), while simultaneously hardening the mission planner against crash conditions and adding a dedicated traffic-light recognition node. This is a pivotal moment: Autoware is modernizing its driver abstraction layer while expanding perception capabilities.
 
 **🎙️ Episode Ideas:**
-- *"When a Design System Runs on Agentic Code"* — NVIDIA elements and AI-assisted UI infrastructure for autonomy.
-- *"Software Factories for Autonomy"* — how design systems & UI agent harnesses enable AV/robotics software factories.
-- *"Open-Sourcing the UI Layer of a Robot Factory"* — trade-offs of an open design system in safety-critical robotics.
+- *"Migrating a Million-Line AV Stack to a New Hardware Abstraction"* — the `agnocast_wrapper::Node` transition and why it matters.
+- *"From Traffic Lights to Crash Guards: Hardening an Autonomous Stack"* — how perception and planning robustness go hand-in-hand.
+- *"Autoware Universe: The World's Open-Source Driving Brain"* — an overview of the stack and its role in the AV ecosystem.
 
 ---
 
-### 2. [haidmoham / spider](https://github.com/haidmoham/spider)
-⭐ Community · 🐍 Python
+### 2. [cyberbotics / webots](https://github.com/cyberbotics/webots)
+⭐ 4,634 stars · 💻 C++
 
-**About:** **C-1N** — a MuJoCo hexapod simulation for reproducible standing control, locomotion experiments, and evaluation. A research/teaching bench for curricular reinforcement and control learning on a six-legged robot.
+**About:** Webots is a mature, open-source 3D robot simulator with a long history dating back to the 1990s. It supports a vast library of robot models ( wheeled, legged, aerial, manipulators) and is widely used in education, research, and industry prototyping.
 
-**Latest Commits (Sep 2026):**
-- `722428d` — Merge pull request #23 from haidmoham/codex/assignment-scaffolding *(9/10)*
-- `0c9f7ea` — docs(practice): use assignment-sized policy exercises *(9/10)*
-- `7abb115` — Merge pull request #22 from haidmoham/codex/first-c1n-policy-lesson *(9/10)*
-- `c6243a2` — docs(learning): scaffold one policy line at a time *(9/10)*
-- `cb21c4c` — docs(learning): prepare the first C1N policy lesson *(9/10)*
+**Latest Commits (Sep 11–16, 2026):**
+- `d2ba706` — fix-controller-pose-cache-removal *(9/16)*
+- `777eee4` — Merge pull request #7018: sync released bc0f6e839 *(9/12)*
+- `a6f0361` — Merge branch 'master' into sync-released branch *(9/12)*
+- `bc0f6e8` — Fix regex patterns for websocket rules in documentation *(9/11)*
+- `c1dc211` — Fix relative texture URLs in web streaming *(9/11)*
 
-**What's Cooking:** Momentum has shifted strongly toward **documentation and pedagogy** — a flurry of PRs scaffolding the "C1N" policy lessons and assignment-sized exercises. The project is evolving from pure simulation into a reproducible locomotion-control curriculum — a great angle on teaching RL/control.
+**What's Cooking:** Activity is Focused on **stability and portability** — a controller pose-cache removal (likely a long-standing rendering bug), a branch sync for a released version (indicating an upcoming or recent stable release), and documentation fixes for WebSocket and texture-loading edge cases in web-streamed simulations. The cadence suggests a maintenance/quality-release cycle.
 
 **🎙️ Episode Ideas:**
-- *"Teaching a Hexapod to Stand: Curricular Reinforcement Learning"* — the C1N approach and policy scaffolding.
-- *"MuJoCo as a Classroom"* — building reproducible robotics micro-experiments.
-- *"From Simulation to a Locomotion Curriculum"* — structuring RL training via lesson-style scaffolding.
+- *"Webots at 30: How a '90s Simulator Still Leads Robotic Simulation"* — history, philosophy, and why it endures.
+- *"Web Streaming Your Robot: The Rise of Browser-Based Sim"* — web streaming, WebSocket rule fixes, and cloud robotics.
+- *"Controller Caches, Texture URLs, and the Hidden Bugs of Simulation"* — what it takes to keep a simulator reliable at scale.
 
 ---
 
-### 3. [willv678 / autolab-harness](https://github.com/willv678/autolab-harness)
-⭐ New / early · 🐍 Python
+### 3. [autowarefoundation / autoware_core](https://github.com/autowarefoundation/autoware_core)
+⭐ 186 stars · 💻 C++
 
-**About:** An **agentic test harness and orchestration framework** for LLM-driven autonomous vehicle safety verification and automated red-teaming in closed-loop simulators.
+**About:** Autoware Core is the foundational layer of the Autoware ecosystem — low-level perception, localization, planning, and control nodes that powers autonomous vehicle prototypes. It's the engine beneath Autoware Universe's higher-level abstractions.
 
-**Latest Commits (Sep 2026):**
-- `71513c0` — [draft] training script *(9/10)*
-- `bdeb1b2` — result processing shell script *(9/10)*
-- `068b046` — feat: complete initial harness, SFT formatter, and failure boundary plotting *(9/10)*
-- `9f4f7ab` — feat: Initial commit of AutoLab agent harness and orchestrator *(9/9)*
+**Latest Commits (Sep 14–17, 2026):**
+- `11f8749` — test(autoware_gnss_poser): characterize orientation, antenna TF composition and covariance *(9/17)*
+- `cfac5ee` — feat(api, motion_velocity_planner): add the node designs required by the AD API and motion planning design modules *(9/17)*
+- `017dbf7` — perf(autoware_lanelet2_utils): improve LaneletRTree::get_closest_lanelet *(9/15)*
+- `41b16df` — test(gyro_odometer): reorganized test suite *(9/15)*
+- `42d6b69` — feat(map_height_fitter, pose_initializer, adapi_adaptors): move the nodes to agnocast_wrapper::Node *(9/14)*
 
-**What's Cooking:** Very early and fast-moving. The initial harness, orchestrator, SFT (supervised fine-tuning) formatter, and failure-boundary plotting landed in a single day, and a **training script** + result-processing shell script are now in draft. The trajectory: turn red-team AV-safety failures into training data via closed-loop simulation.
+**What's Cooking:** Core is mirroring Universe's **`agnocast_wrapper::Node` migration** at the lower level — moving foundational nodes (map-height-fitter, pose-initializer, ADAPI adaptors) to the new abstraction. Meanwhile, GPS/IMU sensor characterization is being formalized into tests, and the motion planner is being redesigned around a new AD API spec. Lanelet2 lookup performance is also getting a boost. This is the foundational modernization of the entire stack.
 
 **🎙️ Episode Ideas:**
-- *"Red-Teaming Autonomous Vehicles with LLMs"* — agentic harnesses for closed-loop AV safety testing.
-- *"From Safety Failures to Training Data"* — SFT formatters, failure-boundary plotting, and result pipelines.
-- *"AutoLab: Orchestrating a Robot Red Team"* — building test harnesses that run autonomy in a loop against an LLM "adversary."
+- *"The Layer Beneath the Stack: Inside Autoware Core"* — how foundational perception and localization modules are engineered.
+- *"When the Foundation Migrates: Coordinating a refactor Across a Full AV Stack"* — the agnocast_wrapper rollout and its challenges.
+- *"Lanelet2 at Speed: Performance Engineering for HD Map Lookups"* — spatial-indexing optimizations in autonomous driving.
 
 ---
 
