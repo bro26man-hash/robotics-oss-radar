@@ -1,93 +1,81 @@
-# 🤖 Robotics & Autonomous Systems — Open-Source Radar
+# 🤖 Robotics OSS Radar
 
-> A living radar for the most active open-source robotics and autonomous-vehicles repos, with commit summaries distilled from live `git log` inspection and podcast episode ideas for **Robotics OSS**.
-
-_Last scan: 2026-09-17 · Sources: GitHub topic search on `autonomous-vehicles` & `robotics`, sorted by recent activity, followed by per-repo latest-commit inspection._
+> A living research hub tracking the most active open-source robotics & autonomous systems projects — curated for our podcast.
 
 ---
 
-## 🔥 Top 3 Most Recently Active Repos
+## Top 3 Most Recently Active Repos
 
-### 1. [autowarefoundation / autoware_universe](https://github.com/autowarefoundation/autoware_universe)
-⭐ 1,756 stars · 💻 C++
+### 1. [comma.ai/openpilot](https://github.com/commaai/openpilot) — *63,671 ⭐*
+**Language:** Python | **Topic:** `robotics`  
+**Tagline:** *openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.*
 
-**About:** Autoware Universe is the world's leading open-source autonomous driving software stack. It provides a modular, extensible framework for perception, planning, control, and driver abstraction — built on ROS 2 and designed for real-world deployment.
+#### 🔬 Latest Development Highlights (Sept 2026)
+- **AGNOS 19.8** released — the latest superbike/vehicle integration stack
+- **Precompiled eGPU driving model** — pushing inference to external GPUs for higher-performance setups
+- **tinygrad generic ONNX compiler artifacts** — switching to a more portable, lightweight ML compiler for driving models
+- **UI polish** — removing question marks, adding "not paired" bookmark alerts for better user experience
 
-**Latest Commits (Sep 16–17, 2026):**
-- `d52d236` — feat(autoware_traffic_light_pipeline): add traffic_light_recognition node *(9/17)*
-- `d7d242d` — fix(mission_planner): guard against empty planned path to prevent SIGSEGV *(9/17)*
-- `a071cee` — fix(autoware_system_monitor): migrate deprecated NVML APIs for CUDA 13 *(9/17)*
-- `956e938` — refactor(autoware_topic_relay_controller): migrate to agnocast_wrapper::Node *(9/16)*
-- `9d3d964` — fix(design): align the vehicle node designs with the packages they build *(9/16)*
-
-**What's Cooking:** The team is deep in a **hardware-abstraction migration** — moving legacy NVIDIA NVML API calls to the new `agnocast_wrapper::Node` interface (ROS 2 compatibility layer), while simultaneously hardening the mission planner against crash conditions and adding a dedicated traffic-light recognition node. This is a pivotal moment: Autoware is modernizing its driver abstraction layer while expanding perception capabilities.
-
-**🎙️ Episode Ideas:**
-- *"Migrating a Million-Line AV Stack to a New Hardware Abstraction"* — the `agnocast_wrapper::Node` transition and why it matters.
-- *"From Traffic Lights to Crash Guards: Hardening an Autonomous Stack"* — how perception and planning robustness go hand-in-hand.
-- *"Autoware Universe: The World's Open-Source Driving Brain"* — an overview of the stack and its role in the AV ecosystem.
+#### 🎙️ Potential Episode Topics
+- On-device vs. cloud ML compilation for autonomous driving (tinygrad story)
+- The "300+ supported cars" question — how does openpilot handle such fragmentation?
+- eGPU licensing & the future of modular autonomous driving hardware
+- AGNOS releases: what's inside the latest vehicle integration stack?
 
 ---
 
-### 2. [cyberbotics / webots](https://github.com/cyberbotics/webots)
-⭐ 4,634 stars · 💻 C++
+### 2. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo) — *26,828 ⭐*
+**Language:** C++ | **Topic:** `autonomous-vehicles`  
+**Tagline:** *An open autonomous driving platform.*
 
-**About:** Webots is a mature, open-source 3D robot simulator with a long history dating back to the 1990s. It supports a vast library of robot models ( wheeled, legged, aerial, manipulators) and is widely used in education, research, and industry prototyping.
+#### 🔬 Latest Development Highlights (Early 2026)
+- **Apollo 11.0 — BEV+OCC** — the latest feature release combining Bird's-Eye-View perception with Occupancy Network predictions
+- **Seyond LiDAR driver updates** — new configuration and documentation for the Seyond sensor ecosystem
+- Ongoing maintenance & documentation cleanup after the Apollo 11.0 milestone
 
-**Latest Commits (Sep 11–16, 2026):**
-- `d2ba706` — fix-controller-pose-cache-removal *(9/16)*
-- `777eee4` — Merge pull request #7018: sync released bc0f6e839 *(9/12)*
-- `a6f0361` — Merge branch 'master' into sync-released branch *(9/12)*
-- `bc0f6e8` — Fix regex patterns for websocket rules in documentation *(9/11)*
-- `c1dc211` — Fix relative texture URLs in web streaming *(9/11)*
-
-**What's Cooking:** Activity is Focused on **stability and portability** — a controller pose-cache removal (likely a long-standing rendering bug), a branch sync for a released version (indicating an upcoming or recent stable release), and documentation fixes for WebSocket and texture-loading edge cases in web-streamed simulations. The cadence suggests a maintenance/quality-release cycle.
-
-**🎙️ Episode Ideas:**
-- *"Webots at 30: How a '90s Simulator Still Leads Robotic Simulation"* — history, philosophy, and why it endures.
-- *"Web Streaming Your Robot: The Rise of Browser-Based Sim"* — web streaming, WebSocket rule fixes, and cloud robotics.
-- *"Controller Caches, Texture URLs, and the Hidden Bugs of Simulation"* — what it takes to keep a simulator reliable at scale.
+#### 🎙️ Potential Episode Topics
+- Apollo 11.0's BEV+OCC architecture — how perception and prediction are merging
+- The LiDAR sensor war: Apollo's support for niche players like Seyond vs. Velodyne/Ouster
+- C++ vs. Python in autonomous driving stacks — Apollo's engineering choices
+- Apollo's industry partnerships and the open-source vs. proprietary tension in robotaxi
 
 ---
 
-### 3. [autowarefoundation / autoware_core](https://github.com/autowarefoundation/autoware_core)
-⭐ 186 stars · 💻 C++
+### 3. [microsoft/AirSim](https://github.com/microsoft/AirSim) — *18,487 ⭐*
+**Language:** C++ | **Topic:** `autonomous-vehicles`  
+**Tagline:** *Open source simulator for autonomous vehicles built on Unreal Engine / Unity, from Microsoft AI & Research.*
 
-**About:** Autoware Core is the foundational layer of the Autoware ecosystem — low-level perception, localization, planning, and control nodes that powers autonomous vehicle prototypes. It's the engine beneath Autoware Universe's higher-level abstractions.
+#### 🔬 Latest Development Highlights (2025–2026)
+- **GitHub Actions pinned to full-length commit SHAs** — improved CI security & reproducibility traceability
+- **README updates & maintenance** — ongoing documentation refresh
+- Unreal Engine / Unity simulator integration continues to evolve for autonomous driving research
 
-**Latest Commits (Sep 14–17, 2026):**
-- `11f8749` — test(autoware_gnss_poser): characterize orientation, antenna TF composition and covariance *(9/17)*
-- `cfac5ee` — feat(api, motion_velocity_planner): add the node designs required by the AD API and motion planning design modules *(9/17)*
-- `017dbf7` — perf(autoware_lanelet2_utils): improve LaneletRTree::get_closest_lanelet *(9/15)*
-- `41b16df` — test(gyro_odometer): reorganized test suite *(9/15)*
-- `42d6b69` — feat(map_height_fitter, pose_initializer, adapi_adaptors): move the nodes to agnocast_wrapper::Node *(9/14)*
-
-**What's Cooking:** Core is mirroring Universe's **`agnocast_wrapper::Node` migration** at the lower level — moving foundational nodes (map-height-fitter, pose-initializer, ADAPI adaptors) to the new abstraction. Meanwhile, GPS/IMU sensor characterization is being formalized into tests, and the motion planner is being redesigned around a new AD API spec. Lanelet2 lookup performance is also getting a boost. This is the foundational modernization of the entire stack.
-
-**🎙️ Episode Ideas:**
-- *"The Layer Beneath the Stack: Inside Autoware Core"* — how foundational perception and localization modules are engineered.
-- *"When the Foundation Migrates: Coordinating a refactor Across a Full AV Stack"* — the agnocast_wrapper rollout and its challenges.
-- *"Lanelet2 at Speed: Performance Engineering for HD Map Lookups"* — spatial-indexing optimizations in autonomous driving.
+#### 🎙️ Potential Episode Topics
+- Simulation-first development: why AirSim (and its Unreal Engine roots) still matters for AV research
+- The cost of simulation fidelity — Unreal vs. Unity vs. CARLA: tradeoffs for robotics teams
+- CI/CD in sim: how pinning GitHub Actions to SHAs improves reproducibility
+- Microsoft's commitment to open-source AV tooling — what's next for AirSim?
 
 ---
 
-## 🎙️ About This Radar
+## 📊 Comparison Matrix
 
-Curated for the **Robotics OSS** podcast and refreshed periodically. Selection priorities:
-- Genuine open-source robotics / autonomous-vehicle projects
-- Active recent commit cadence (truly "being worked on")
-- Strong narrative potential for podcast episodes
-
-See the companion issue **[Projects to Revisit & Upcoming Releases](../../issues/1)** for the tracking checklist.
-
----
-
-## 🔎 How to Use
-
-1. Scan the **Top 3** above for current development highlights.
-2. Pick an episode idea that resonates.
-3. Check the companion issue for follow-up items (revisit dates, upcoming releases to watch).
+| Project | Stars | Language | Focus Area | Activity Level |
+|---------|-------|----------|------------|---------------|
+| [openpilot](https://github.com/commaai/openpilot) | 63,671 | Python | On-device ADAS | 🔥 Daily commits |
+| [Apollo](https://github.com/ApolloAuto/apollo) | 26,828 | C++ | Full-stack autonomy | 📅 Bi-weekly updates |
+| [AirSim](https://github.com/microsoft/AirSim) | 18,487 | C++ | Simulation & training | 📅 Monthly updates |
 
 ---
 
-_Licensed as part of the open-source robotics podcast ecosystem. Contributions and episode suggestions welcome._
+## 🎧 Podcast Episode Ideas (Bundled)
+
+1. **"The Stack Wars"** — Comparing openpilot, Apollo, and AirSim: what each one owns and where they overlap
+2. **"From Python to C++"** — Language choices in autonomous systems and why it matters
+3. **"Sim or Real?"** — The role of simulation (AirSim) vs. on-vehicle deployment (openpilot/Apollo)
+4. **"Hardware & the Open-Source Tension"** — Can open software keep up with proprietary sensor/hardware?
+5. **"Compiling Autonomy"** — How ML compilers like tinygrad change the AV deployment landscape
+
+---
+
+_🔄 Last updated: September 2026 · Radar refreshed weekly_
