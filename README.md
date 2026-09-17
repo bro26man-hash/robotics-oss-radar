@@ -6,87 +6,79 @@
 
 ---
 
-### 1. [AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)
-**⭐ 30,533 stars | Language: Python | License: MIT | Last updated: Sept 17, 2026**
+### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
+**⭐ 63,671 stars | Language:** Python | **License:** MIT | **Last commit:** Sep 17, 2026
 
-*Python sample codes and textbook for robotics algorithms. A comprehensive, educational code collection covering localization, mapping, SLAM, path planning, path tracking, arm navigation, aerial navigation, and bipedal locomotion — designed to be easy to read with minimum dependencies.*
+> openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.
 
 **Recent Development Highlights:**
-- **SciPy 1.18.1 dependency bump** (`069e0fb`, Sept 2, 2026) — staying current with the latest scientific Python ecosystem
-- **Ruff 0.16.5 linter upgrade** (`8c3f761`, Sept 2, 2026) — improved code quality checks across the codebase
-- **CodeQL 4.37.9 security scanning update** (`08b453a`, Sept 2, 2026) — continuous security posture improvement
-- **Python 3.13 support** — latest Python version fully supported with active CI on Linux, macOS, and Windows
-- **Ongoing documentation maintenance** — textbook at [atsushisakis.github.io/PythonRobotics](https://atsushisakai.github.io/PythonRobotics/) with animation GIFs hosted separately
+- **UI Cleanup** (`bd176cb`, Sep 17, 2026) — Removed stray question-mark placeholders from the UI for a cleaner user experience.
+- **Not-Paired Bookmark Alert** (`4d9d1bc`, Sep 17, 2026) — New alert when a device bookmark isn't paired, improving device management UX.
+- **AGNOS 19.8 Release** (`cab5343`, Sep 17, 2026) — Latest on-device OS version shipped, continuing rapid release cadence.
 
-**Key Modules:** EKF/PF/Histogram Filter localization, ICP & FastSLAM, Dijkstra/A*/D*/RRT*/LQR-RRT* planning, Stanley/MPC/LQR path tracking, arm navigation, drone 3D trajectory following, rocket-powered landing, bipedal inverted pendulum planner.
+**What's Being Worked On:** Active daily development focused on UI/UX polish, device pairing reliability, and on-device OS releases. The project ships multiple commits per day, indicating a very healthy and active codebase.
+
+**Key Features:** Open-source driver assistance for 300+ car models, end-to-end ML pipeline, on-device inference, crowdsourced driving data.
 
 **🎙️ Potential Episode Topics:**
-- "PythonRobotics: the textbook that teaches a generation of roboticists"
-- "RRT* vs LQR-RRT*: choosing the right path planner for your robot"
-- "From EKF to particle filters: how robots localize themselves"
-- "Model Predictive Control in Python: a hands-on walkthrough"
-- "Why minimum dependencies matter: the PythonRobotics philosophy"
-- "SLAM from ICP to FastSLAM 1.0"
+- "From Driver-Assistance to Full OS: The openpilot Vision"
+- "UI/UX in Safety-Critical Robotics Interfaces"
+- "What AGNOS 19.8 Means for On-Device Robotics"
+- "How openpilot Scales Across 300+ Car Models"
 
 ---
 
-### 2. [microsoft/AirSim](https://github.com/microsoft/AirSim)
-**⭐ 18,490 stars | Language: C++ | License: MIT | Last updated: Sept 17, 2026**
+### 2. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
+**⭐ 26,829 stars | Language:** C++ | **License:** Apache-2.0 | **Last commit:** Apr 16, 2026
 
-*Open-source simulator for autonomous vehicles built on Unreal Engine (with experimental Unity release). Supports drones, cars, PX4/ArduPilot flight controllers, software-in-loop and hardware-in-loop simulation. Developed by Microsoft AI & Research as a platform for deep learning, computer vision, and RL experiments.*
+> An open autonomous driving platform
 
 **Recent Development Highlights:**
-- **GitHub Actions pinning to full-length SHAs** (`44f3f43`, Aug 12, 2026) — improved build reproducibility and supply-chain security
-- **ROS2 wrapper** (PR #3976) — native ROS 2 integration expanding the simulator's reach in the robotics community
-- **Cinematographic Camera** (PR #3949) — advanced camera API for high-fidelity visual data capture
-- **Optical flow camera** (PR #3938) — new sensor modality for optical flow-based navigation experiments
-- **simSetKinematics API** (PR #4066) — direct kinematic state control for more precise simulation experiments
-- **Multiple drones in Unity** (PR #3128) — experimental Unity release now supports multi-drone scenarios
-- **movetoGPS API** (PR #3746) — GPS-based positioning for realistic outdoor simulation workflows
+- **Apollo 11.0 BEV + OCC** (`539f546`, Feb 27, 2026) — Major feature release adding Bird's-Eye-View perception and Occupancy-based collision checking, pushing the frontier of 3D scene understanding.
+- **LiDAR Driver Recovery** (`40c8a01`, Feb 28, 2026) — PR merged to recover and stabilize the LiDAR driver subsystem, signalling active sensor-stack maintenance.
+- **README Documentation Cleanup** (`d53aa3d`, Apr 16, 2026) — Removed invalid build-status badges, focusing on accurate and maintainable documentation.
 
-**Key Features:** Unreal/Unity-based high-fidelity rendering, PX4 & ArduPilot SIT/HITL, Python/C++/C#/Java APIs, weather effects, Computer Vision mode, data logging for deep learning training, reinforced learning tutorials.
+**What's Being Worked On:** Apollo 11.0 introduces BEV (Bird's-Eye-View) perception and OCC (Occupancy-based collision checking) — cutting-edge 3D scene understanding. The LiDAR driver recovery shows ongoing hardware abstraction layer maintenance. The project is in a maintenance phase with periodic major releases.
+
+**Key Features:** BEV perception, OCC collision checking, multi-sensor fusion (LiDAR, camera, radar), HD map integration, planning & control stack.
 
 **🎙️ Potential Episode Topics:**
-- "Inside AirSim: how Microsoft builds a virtual world for autonomous vehicles"
-- "ROS 2 meets Unreal Engine: the new AirSim ROS2 wrapper explained"
-- "Hardware-in-loop with PX4: from simulation to real flight"
-- "Computer Vision mode: when you don't need physics, you need pixels"
-- "Reinforcement learning in AirSim: training drones to fly"
-- "Supply chain security in open-source robotics simulators"
+- "BEV Perception: The New Paradigm for Autonomous Driving"
+- "Apollo 11.0 — What's New in the Open-Source Stack?"
+- "Sensor Reliability: Inside the LiDAR Driver Recovery"
+- "From Apollo 8.0 to 11.0: How the Stack Has Evolved"
 
 ---
 
-### 3. [zhm-real/MotionPlanning](https://github.com/zhm-real/MotionPlanning)
-**⭐ 2,743 stars | Language: Python | License: Not specified | Last updated: Sept 17, 2026**
+### 3. [carla-simulator/carla](https://github.com/carla-simulator/carla)
+**⭐ 14,405 stars | Language:** C++ | **License:** MIT | **Last commit:** Sep 2, 2026
 
-*Motion planning algorithms commonly used on autonomous vehicles (path planning + path tracking). Implements Hybrid A*, Frenet Optimal Trajectory, H-OBCA (incomplete), and controllers including Pure Pursuit, Rear-Wheel Feedback, Stanley, LQR, and Linear MPC — with both simple car and car-pulling-trailers models.*
+> Open-source simulator for autonomous driving research.
 
 **Recent Development Highlights:**
-- **README workflow format fix** (`7a6b43d`, Nov 18, 2020) — last documented code contribution; currently maintained as a reference/educational resource
-- **Curated paper references** — links to key papers from Stanford, CMU, UC Berkeley, and ApolloAuto for every algorithm
-- **Reeds-Shepp curves integration** — dependency on the companion [ReedsSheppCurves](https://github.com/zhm-real/ReedsSheppCurves) repo for curvature-continuous path generation
-- **cvxpy optimization stack** — uses CVXPY for convex optimization in MPC and LQR controllers
-- **Car-pulling-trailers model** — unique among educational repos, includes a bicycle+trailer vehicle model for more realistic planning scenarios
+- **UE5 Nightly on Cloudflare R2** (`1360bb9`, Sep 2, 2026) — Deployed an Unreal Engine 5 nightly build to Cloudflare R2, enabling researchers to pull the latest simulator builds faster and more reliably.
+- **LiDAR Smoke Helper Fix** (`0a5ce0d`, Jul 14, 2026) — Patched a signature bug in the LiDAR smoke helper, improving simulation fidelity for sensor modeling.
+- **WalkerManager Null Guard** (`39c4fda`, Jul 14, 2026) — Added null-traffic-light guards in the WalkerManager navigation module, hardening pedestrian-scenario simulations against crashes.
 
-**Key Algorithms:** Hybrid A* (with continuation), Frenet Optimal Trajectory (dynamic street scenarios), H-OBCA (hierarchical optimization-based collision avoidance, incomplete), Pure Pursuit, Rear-Wheel Feedback, Stanley/Front-Wheel Feedback, LQR + PID, Linear MPC.
+**What's Being Worked On:** CARLA is evolving its UE5 integration (deploying nightly builds via Cloudflare R2 for faster distribution), improving sensor simulation fidelity (LiDAR fixes), and hardening scenario stability (null-pointer guards in pedestrian AI). The project balances feature development with robustness improvements.
+
+**Key Features:** UE5-based high-fidelity rendering, ROS integration, flexible API, weather/lighting control, pedestrian & traffic simulation, sensor modeling (LiDAR, camera, radar, IMU).
 
 **🎙️ Potential Episode Topics:**
-- "Hybrid A* vs Frenet: two philosophies for autonomous vehicle path planning"
-- "What is H-OBCA? Hierarchical optimization for collision avoidance"
-- "From Stanley to LQR: the evolution of path-tracking controllers"
-- "Why the car-pulling-trailers model matters for realistic motion planning"
-- "cvxpy and convex optimization: the hidden math behind MPC"
-- "Educational open-source repos: the long-tail of robotics algorithm reference implementations"
+- "Sim-to-Real: How CARLA Bridges the Gap"
+- "UE5 in Robotics Simulation — What's Changing?"
+- "Defensive Coding in Simulators: Null Guards & Sensor Fixes"
+- "Cloudflare R2 for Simulator Distribution — A New Model?"
 
 ---
 
 ## 📊 Quick Comparison
 
-| Project | Stars | Language | Focus | Activity Status |
-|---------|-------|----------|-------|-----------------|
-| PythonRobotics | 30,533 | Python | Robotics algorithms textbook & code | Active (CI, deps, Python 3.13) |
-| AirSim | 18,490 | C++ | Autonomous vehicle simulator (UE/Unity) | Active (PRs, ROS2, new APIs) |
-| MotionPlanning | 2,743 | Python | Motion planning & path tracking | Reference (last code 2020, curated) |
+| Project | Stars | Language | Focus | Last Activity | Status |
+|---------|-------|----------|-------|---------------|--------|
+| openpilot | 63.7k | Python | Open-source driver assistance OS | Sep 2026 (daily) | 🟢 Very Active |
+| Apollo | 26.8k | C++ | Autonomous driving platform | Apr 2026 (periodic) | 🟡 Maintenance |
+| CARLA | 14.4k | C++ | Autonomous driving simulator | Sep 2026 (ongoing) | 🟢 Active |
 
 ---
 
