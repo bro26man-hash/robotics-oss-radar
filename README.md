@@ -1,71 +1,81 @@
 # 🤖 Robotics & Autonomous Systems — Open-Source Radar
 
-> A living radar for the most active open-source robotics and autonomous-vehicles repos, with commit summaries distilled from live `git log` inspection and podcast episode ideas for **Robotics OSS**.
+> A living radar for the most active open-source robotics and autonomous-vehicle repos, with commit summaries distilled from live `git log` inspection and podcast episode ideas for the **Robotics OSS** podcast.
 
-_Last scan: 2026-09-17 · Sources: GitHub topic search on `robotics` & `autonomous-vehicles`, sorted by recent activity, followed by per-repo latest-commit inspection._
+_Last scan: 2026-09-17 · Sources: GitHub topic/keyword search on `robotics` & `autonomous-vehicles`, sorted by recent activity, followed by per-repo latest-commit inspection._
 
 ---
 
 ## 🔥 Top 3 Most Recently Active Repos
 
-### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
-⭐ 63,671 stars · 🐍 Python
+### 1. [carla-simulator / carla](https://github.com/carla-simulator/carla)
+⭐ 14,403 ⭐ · 🏎️ C++ · 🏷️ `autonomous-vehicles`
 
-**About:** openpilot is an open-source **operating system for robotics**, primarily deployed as an aftermarket advanced driver-assistance system (ADAS) upgrade for 300+ consumer vehicles. Built by comma.ai, it turns a $200 device into a lane-centering, adaptive cruise control system powered by end-to-end neural networks.
+**About:** Open-source simulator for autonomous driving research. Industry-standard reference simulator used by academia and industry worldwide for AV perception, planning, and control research.
 
-**Latest Commits (Sep 17, 2026):**
-- `bd176cb` — ui: remove question marks (#38938) *(9/17, Shane Smiskol)*
-- `4d9d1bc` — ui: not paired bookmark alert (#38936) *(9/17, stef)*
-- `cab5343` — AGNOS 19.8 (#38935) *(9/17, Daniel Koepping)*
+**Latest Commits (Sep 2026):**
+- `1360bb9` — **Deploy UE5 nightly to Cloudflare R2** *(9/2)* — Automating Unreal Engine 5 nightly builds to edge CDN, reducing simulator download friction for global users.
+- `dd3a9d7` — **Add V2X sensor family (CAM service, path-loss, CustomV2X, V2I)** *(7/13)* — Major feature: full Vehicle-to-Everything communication layer with custom channel models and V2I messaging.
+- `39c4fda` — Guard against null traffic light in WalkerManager *(7/14)* — Robustness fix for pedestrian/npc edge cases.
+- `6279162` — Add `CARLA_MAPS_TO_COOK` cmake option for packaged maps *(7/10)* — Streamlined map distribution via Unreal Engine's Cook pipeline.
 
-**What's Cooking:** A fresh wave of UI polish landed — removing confusing question marks, fixing the "not paired" bookmark alert, and shipping **AGNOS 19.8**, the latest version of comma.ai's automotive-grade operating system. Three separate commits on the same day signals a rapid release cadence for their closed-platform device software. The "not paired bookmark" fix suggests active work on the reconnect/linking UX flow between the device and phone app. Expect the next big story to be the AGNOS 19.8 feature drop.
+**What's Cooking:** CARLA is pushing hard on **V2X connectivity** — a rare and important feature in open-source AV simulators. Combined with the UE5 nightly-to-CDN deployment, the team is removing every friction point that keeps researchers from running large-scale multi-agent experiments. The V2X sensor family (CAM service, path-loss modeling, CustomV2X, V2I) is a standout: very few open-source simulators model vehicle-to-everything communication with realistic channel effects.
 
 **🎙️ Episode Ideas:**
-- *"AGNOS 19.8: What's Inside comma.ai's Latest OS Release"* — Deep-dive into what AGNOS ships each cycle and why it matters for edge autonomy.
-- *"The $200 Self-Driving Upgrade, Still Going Strong"* — How openpilot maintains daily commits 5+ years after launch.
-- *"UI Failures in Autonomy: When the Dashboard Confuses the Driver"* — Why removing question marks and fixing pairing alerts are safety-critical engineering work.
-- *"Operating Systems for Cars: comma.ai's Vertical Stack"* — How a small team runs an entire vehicle OS from end-to-end.
+- *"When Cars Talk to Everything: V2X Simulation Goes Open-Source"* — CARLA's new V2X sensor family and why it matters for AV safety validation.
+- *"Shipping UE5 Nightlies to 190 Countries"* — Cloudflare R2 deployment patterns for heavy-duty research simulators.
+- *"The Map-Pipeline Problem: CARLA's Cook Strategy"* — how simulator teams solve map distribution at scale.
 
 ---
 
-### 2. [AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)
-⭐ 30,531 stars · 🐍 Python
+### 2. [autowarefoundation / autoware](https://github.com/autowarefoundation/autoware)
+⭐ 12,065 ⭐ · 🐧 Dockerfile/YAML · 🏷️ `autonomous-vehicles`
 
-**About:** Python sample codes and textbook for robotics algorithms. Covers everything from path planning (A*, D*, RRT) to SLAM, computer vision, and control — the go-to educational repository for learning robotics algorithms in Python.
+**About:** Autoware — the world's leading open-source software project for autonomous driving. Full-stack AV software: perception, planning, control, localization, and HD map integration.
 
-**Latest Commits (Sep 2, 2026):**
-- `08b453a` — build(deps): bump github/codeql-action from 4.37.4 to 4.37.9 (#1423) *(9/2, dependabot)*
-- `8c3f761` — build(deps): bump ruff from 0.16.1 to 0.16.5 in /requirements (#1424) *(9/2, dependabot)*
-- `069e0fb` — build(deps): bump scipy from 1.17.1 to 1.18.1 in /requirements (#1425) *(9/2, dependabot)*
+**Latest Commits (Sep 2026):**
+- `a45f9ba` — Minor update to `managed_transform_buffer` to v0.3.0 *(9/16)* — Internal dependency bump improving TF2 management for real-time AV transforms.
+- `79446c0` — Add CARLA 0.10 Town10HD_Opt map to demo_artifacts *(9/9)* — New simulation map for end-to-end demo validation.
+- `87f7b60` — Fix simple-planning-simulator Docker build with core packages *(9/8)* — CI/Docker packaging fix, ensuring the built-in simulator always works.
+- `3354a27` — Pin CasADi to 3.7.2 for Humble ARM64 *(9/7)* — Cross-platform stability fix for ARM64/Ubuntu systems (critical for in-vehicle deployment).
+- `c0a32e8` — Trim CI health-check PR matrix to amd64 main legs *(9/7)* — CI optimization to reduce CI resource waste.
 
-**What's Cooking:** The latest commits are all dependency maintenance — CodeQL security scanning updates, ruff linter bumps, and scipy version upgrades. While not feature-facing, this is a healthy signal: the project is actively maintaining its CI/CD pipeline and keeping dependencies current, which is essential for a widely-used educational resource that thousands of students and researchers rely on. The scipy bump to 1.18.1 is notable — it supports newer Python versions and may bring performance improvements to the numerical algorithms that underpin the path-planning and control examples.
+**What's Cooking:** Autoware's recent work is all about **reliability and reproducibility** — dependency pinning, Docker build fixes, ARM64 compatibility, and CI optimization. The CasADi pin for ARM64 Humble is especially significant: it signals the project is maturing for on-vehicle (edge) deployment, not just cloud-based validation. The Town10HD_Opt map addition keeps the demo pipeline fresh.
 
 **🎙️ Episode Ideas:**
-- *"The Invisible Labor of Open-Source Maintenance"* — Why dependency bumps matter more than they look (security, performance, compatibility).
-- *"Teaching Robotics with Python"* — How PythonRobotics became the de facto textbook for robotics algorithms.
-- *"Scipy 1.18 & Numerical Computing in Robotics"* — What the latest scipy release means for robotics algorithm performance.
-- *"From Textbook to Training Wheels"* — The role of well-maintained READMEs and sample code in lowering the barrier to entry for robotics engineering.
+- *"Reasoning on the Edge: Autoware's ARM64 Journey"* — why pinning math libraries for ARM64 matters for in-vehicle autonomy.
+- *"The Dockerfiles Behind an Autonomous Vehicle"* — how Autoware's CI/CD pipeline keeps a 12,000-star AV stack reproducible.
+- *"Town10HD_Opt & the Demo Pipeline Problem"* — keeping reference simulations current in open-source autonomy.
 
 ---
 
-### 3. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
-⭐ 26,828 stars · ⬜ C++
+### 3. [rpng / open_vins](https://github.com/rpng/open_vins)
+⭐ 3,104 ⭐ · 🔬 C++ · 🏷️ `robotics`
 
-**About:** Apollo is Baidu's **open autonomous driving platform** — one of the most comprehensive full-stack AV systems available in open source. It covers perception, prediction, planning, control, HD mapping, and simulation, and is used by dozens of automotive OEMs and research institutions worldwide.
+**About:** An open-source platform for visual-inertial navigation research. Provides modular, publishable algorithms for camera + IMU fusion — used in UAVs, ground robots, and AR/VR.
 
-**Latest Commits (Apr 16, 2026):**
-- `d53aa3d` — docs: fix README - remove invalid build status badges *(4/16, xiaoxinyu)*
-- `40c8a01` — Merge pull request #15762 from guyuechaocc/recover_seyond_lidar_driver *(2/28, yuxin)*
-- `539f546` — feat: add Apollo 11.0 bev+occ *(2/27, yuxin)*
+**Latest Commits (Nov 2025):**
+- `6948812` — Merge PR #530: Android support *(11/30)* — Full Android logging and build integration, extending VINS-Mono to mobile platforms.
+- `6cf212d` — Merge PR #520: Android feature branch *(11/30)* — Additional Android feature consolidation.
+- `6b4abfd` — Merge branch 'master' into Android *(11/16)* — Branch sync for Android port stability.
+- `77ec88d` — Add Android logging support *(11/16)* — Logcat integration for on-device debugging.
 
-**What's Cooking:** The most significant recent work is **Apollo 11.0's BEV + Occupancy perception stack** — a major architectural shift toward Bird's Eye View transformers and 3D occupancy grids, replacing traditional LiDAR-centric pipelines. The "recover seyond lidar driver" PR restores support for Seyond LiDAR hardware, expanding the sensor ecosystem. The README badge fix is routine maintenance, but the fact that the two most substantive commits are from late February suggests Apollo 11.0's release cycle was still the dominant activity through spring. The BEV+occ work is the big one to watch — it signals Apollo is investing in the same perception paradigm that's becoming industry standard.
+**What's Cooking:** Open-VINS has shipped **full Android support** — a significant milestone that moves visual-inertial navigation from the research lab onto commodity mobile hardware. The Android logging and build integration means researchers can now run VINS on phones, which opens doors for consumer robotics, AR/VR, and edge-based SLAM. The 6-month gap between the last set of commits suggests the team is in a stabilization/catch-up phase.
 
 **🎙️ Episode Ideas:**
-- *"Apollo 11.0 & the BEV Revolution"* — How Bird's Eye View transformers are replacing point cloud processing in AV perception.
-- *"Occupancy Networks: The New Map"* — Why 3D occupancy grids may be the future of scene understanding for autonomous driving.
-- *"Open-Source AV at Scale"* — How Baidu open-sourced a production AV stack and what that means for the industry.
-- *"LiDAR Wars & Hardware Ecosystems"* — The sensor hardware landscape (Velodyne, Ouster, Seyond) and how open-source drivers shape adoption.
-- *"From Apollo to Robotaxi"* — Tracing how open-source Apollo code ends up in commercial robotaxi fleets.
+- *"VINS on Your Phone: Visual-Inertial Navigation Goes Mobile"* — the implications of Android support for consumer robotics and AR.
+- *"Why Visual-Inertial Fusion Matters for Edge Robots"* — camera + IMU complementarity on resource-constrained hardware.
+- *"From Research Paper to Android APK: Shipping VINS for Everyone"* — the engineering journey to mobile deployment.
+
+---
+
+## 📊 Radar Summary
+
+| # | Repo | Stars | Language | Domain | Key Trend |
+|---|------|-------|----------|--------|-----------|
+| 1 | carla-simulator/carla | 14,403 | C++ | AV Simulator | V2X connectivity & UE5 deployment automation |
+| 2 | autowarefoundation/autoware | 12,065 | Docker/YAML | AV Stack | ARM64 edge deployment & CI hardening |
+| 3 | rpng/open_vins | 3,104 | C++ | Visual-Inertial Nav | Android/mobile platform expansion |
 
 ---
 
@@ -76,7 +86,7 @@ Curated for the **Robotics OSS** podcast and refreshed periodically. Selection p
 - Active recent commit cadence (truly "being worked on")
 - Strong narrative potential for podcast episodes
 
-See the companion issue **[Projects to Revisit & Upcoming Releases](../../issues/11)** for the tracking checklist.
+See the companion issue **[Projects to Revisit & Upcoming Releases](../../issues/15)** for the tracking checklist.
 
 ---
 
