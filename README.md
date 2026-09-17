@@ -6,76 +6,66 @@
 
 ---
 
-### 1. [autowarefoundation/openadkit](https://github.com/autowarefoundation/openadkit)
-**⭐ 11 stars | Language: Shell | License: Apache-2.0 | Last updated: Sept 17, 2026**
+### 1. [carla-simulator/carla](https://github.com/carla-simulator/carla)
+**⭐ 14,405 stars | Language: C++ | License: MIT | Last updated: Sept 2026**
 
-*Open AD Kit — the first SOAFEE blueprint for deploying Autoware as containerized, cloud/edge-ready software-defined vehicle components. Provides component images, deployment configurations, a versioned runtime bundle, and CI metadata to run and ship Autoware-based stacks more predictably.*
+*Open-source simulator for autonomous driving research — developed from the ground up to support development, training, and validation of autonomous driving systems.*
 
 **Recent Development Highlights:**
-- **Unified dual-distro release pipeline** (`98137cc`, Sept 15, 2026) — new CI pipeline enabling releases for both Ubuntu 22.04 and 24.04, expanding platform reach
-- **Manifest-driven deployment CLI** (`21bc68e`, Sept 9, 2026) — major feature: a CLI tool that uses manifest files to orchestrate deployment of the entire Autoware stack with a single command
-- **MRM before/after demo with stop-distance grading** (`aa7a28a`, Sept 2, 2026) — new demonstration showcasing the MRM (Motion Reasoning Module) with quantitative stop-distance evaluation
-- **Open AD Kit component stack on AutoSD for R-Car X5H** (`774c459`, Sept 1, 2026) — hardware-specific integration for Renesas R-Car X5H SoC, pushing Autoware onto real edge hardware
-- **Documentation alignment & publication** (`ba151c1`, Sept 17, 2026) — docs overhaul ensuring product documentation matches the latest release
-
-**Key Deployments:** planning-simulation, logging-simulation, scenario-simulation, carla-simulation (Humble, amd64, GPU), and a standalone zenoh-bridge for bridging isolated edge and visualization ROS domains.
+- **Deploy UE5 nightly to Cloudflare R2** (`1360bb9`, Sept 2, 2026) — the Unreal Engine 5.5 version of CARLA is now readily accessible via cloud storage, lowering the barrier to entry for researchers
+- **Fix lidar smoke helper signature** (`0a5ce0d`, July 14, 2026) — bug fix improving sensor simulation accuracy for lidar data
+- **Guard against null traffic light in WalkerManager** (`39c4fda`, July 14, 2026) — critical safety fix preventing crashes when traffic light data is missing in scenarios
+- **V2X sensor family added** — new Vehicle-to-Everything sensor family (CAM service, path-loss, CustomV2X, V2I) enabling connected-autonomy research
+- **CARLA_MAPS_TO_COOK CMake option** — lets developers select packaged maps at build time, streamlining custom scenario setups
+- Currently on the `ue5-dev` branch (Unreal Engine 5.5), with the `ue4-dev` branch (UE 4.26) maintained in parallel
 
 **🎙️ Potential Episode Topics:**
-- "SOAFEE and the future of cloud-edge autonomous driving — inside Open AD Kit's containerized stack"
-- "From source to deploy: how the manifest-driven CLI changes Autoware adoption"
-- "Running Autoware on real hardware: the R-Car X5H integration story"
-- "What is MRM? Understanding Motion Reasoning in open-source AV stacks"
-- "Zenoh and ROS 2: bridging isolated domains for edge autonomy"
+- "CARLA goes UE5: how the latest simulator upgrade changes autonomous driving research"
+- "Why sensor fidelity matters: inside CARLA's lidar and traffic light fixes"
+- "V2X in simulation: why connected-autonomy research needs CARLA's new sensor family"
+- "Open-source simulators vs. proprietary tools — can CARLA compete with Waymo/Cruise's internal stacks?"
+- "Building a self-driving car from scratch using CARLA's Python API"
 
 ---
 
-### 2. [lololem/diamants-collab](https://github.com/lololem/diamants-collab)
-**⭐ 0 stars | Language: JavaScript | License: PolyForm Noncommercial 1.0.0 | Last updated: Sept 17, 2026**
+### 2. [cyberbotics/webots](https://github.com/cyberbotics/webots)
+**⭐ 4,635 stars | Language: C++ | License: Apache-2.0 | Last updated: Sept 2026**
 
-*DIAMANTS — an open-source platform for distributed intelligence and swarm robotics. Unites ROS 2, Python/Mesa, WebGL, and Kubernetes into a scalable stack enabling real-time orchestration of autonomous systems, from collaborative simulation to large-scale drone operations. "Fly a drone swarm in your browser, and plug in your own intelligence."*
+*Webots — a fast, easy-to-use, open-source robot simulator with a complete physics engine, sensors models, and a wide range of robots. Used in research, education, and industry.*
 
 **Recent Development Highlights:**
-- **Bring Your Own Drone & Model — neurosymbolic contract** (`256a5c5`, Sept 17, 2026) — landmark feature: users can now plug in custom drone profiles (JSON) and their own decision models (LLM, RL policy, ONNX, etc.) into the swarm simulator through a well-defined interface
-- **Demonstration films released** (Sept 2026) — two 1080p films showcasing the wildfire response mission (distributed air-ground coordination with no dispatcher) and unmapped sector reconnaissance (heterogeneous swarm with decentralized architecture)
-- **Live online demo** — browser-based demo now live at diamants-hypervision.pages.dev, letting anyone try DIAMANTS in their browser
-- **Neurosymbolic architecture refined** — model proposals are vetted by a deterministic symbolic rule layer before execution, ensuring safety guarantees even with neural network decision-makers
-- **Documentation & badge polish** (`f763e46`, `7909c36`, `66286da`, `85f84d0`, Sept 16, 2026) — multiple doc and UX improvements to make the project more accessible
-
-**Architecture Highlights:** Three-tier wildfire response (Crazyflie survey → X500/S500 inspect → Colossus suppress), stigmergy-based exploration, SLAM reconstruction, federated RL, and P2P communication tracking — all running in the browser with WebGL.
+- **Fix controller pose cache removal** (`d2ba706`, Sept 16, 2026) — bug fix ensuring correct controller pose rendering, critical for accurate simulation feedback
+- **Sync released branch** (`777eee4`, Sept 12, 2026) — major release sync, keeping the stable branch aligned with latest features and bug fixes
+- **Merge master into released branch** (`a6f0361`, Sept 12, 2026) — ongoing stabilization ensuring the released version incorporates all critical updates
+- Active release branch management — Webots maintains a disciplined branching strategy with regular syncs between master and released branches
 
 **🎙️ Potential Episode Topics:**
-- "Swarm robotics in your browser: the DIAMANTS open-source drone simulator"
-- "Neurosymbolic AI for drones: why your model proposes and rules dispose"
-- "Wildfire response with no dispatcher: how distributed autonomy emerges"
-- "Fly a swarm in your browser: the democratization of robotics simulation"
-- "From stigmergy to federated learning: the math behind swarm intelligence"
-- "Privacy in swarm robotics: why federated learning matters for multi-agent systems"
+- "Why Webots is the simulator you're not using (but should be)"
+- "Inside Webots: how a commercial-grade physics engine powers open-source robotics research"
+- "From classroom to research lab: Webots' dual identity in education and cutting-edge robotics"
+- "The branching strategy that keeps Webots stable: released vs. master branches explained"
+- "Webots vs. Gazebo vs. Isaac Sim — the great robot simulator showdown"
 
 ---
 
-### 3. [mstfcen/flydrone-connectome](https://github.com/mstfcen/flydrone-connectome)
-**⭐ 0 stars | Language: Python | License: MIT | Last updated: Sept 17, 2026**
+### 3. [ros-navigation/navigation2](https://github.com/ros-navigation/navigation2)
+**⭐ 4,715 stars | Language: C++ | License: Apache-2.0 | Last updated: Sept 2026**
 
-*FlyDrone — Connectome-inspired reactive obstacle avoidance for micro-UAVs. Investigates whether compact Drosophila-inspired visuomotor motifs (from the FlyWire connectome) can provide robust reactive obstacle avoidance for micro-UAVs, validated from deterministic 2D arenas through to PX4/Gazebo SITL.*
+*ROS 2 Navigation Framework and System — the standard for autonomous mobile robot navigation in the ROS 2 ecosystem, used from research labs to warehouse robots.*
 
 **Recent Development Highlights:**
-- **MIT license & citation metadata added** (`561c1db`, Sept 17, 2026) —正式开源 with CITATION.cff, making it easier for researchers to cite in academic papers
-- **v0.2: Learned sparse connectome study** (`24d03aa`, Sept 16, 2026) — groundbreaking result: a 24-neuron learned mask matched the 377-neuron model's 83.3% success rate, with 85.0–86.7% in the 32–40 neuron sweet spot. Random masks averaged only 14.3%, proving the learned gate ranking carries task-relevant pruning information
-- **PX4/Gazebo avoidance experiment finalized** (`61f0a14`, Sept 15, 2026) — completed the final experiment in the validation ladder, bridging simulation to real flight software
-- **Public research presentation polished** (`0d9938a`, Sept 15, 2026) — documentation and validation status cleaned up for broader audience access
-- **Hard timeout & flight-stage diagnostics** (`7aa2035`, Sept 15, 2026) — improved experimental rigor with timeout handling and per-stage diagnostics
-
-**Headline Result:** Modified fly-inspired controller retained 100% success across all tested perturbations (clean, sensor noise + dropout, 160ms latency, gusty wind, combined), outperforming both Bilateral FlyWire and Classical VFH under stress.
-
-**Validation Ladder:** 2D arena ✅ → Idealized 3D ✅ → 6-DoF quadcopter ✅ → PX4/Gazebo flight boundary ✅ → Gazebo x500_lidar_2d ✅ → Runtime obstacle spawn ✅ → MAVLink obstacle bridge ⚠️ → Learned connectome sparsification ✅ → Closed-loop PX4 avoidance 🚧
+- **Fix Assisted Teleop lateral projection sign + unit tests** (`76b2d4d`, Sept 17, 2026) — critical bug fix ensuring correct lateral movement in teleop mode, plus new test coverage preventing regressions
+- **Clear MPPI costs between optimization iterations** (`e9e77d6`, Sept 17, 2026) — fix preventing cost accumulation across iterations, improving path-planning stability and repeatability
+- **Fix missing fstream include in Nav2 panel** (`c8a2812`, Sept 17, 2026) — build fix for the GUI panel component
+- **MPPI noise distribution refresh on reset** (`f1f8070`, Sept 16, 2026) — ensures stochastic planner resets properly between planning runs
+- **Steep footprint edge cell fix** (`0e572ba`, Sept 16, 2026) — grid map fix preventing navigation failures on sharp obstacle edges
 
 **🎙️ Potential Episode Topics:**
-- "Nature-inspired robotics: what a fly's brain can teach us about drone obstacle avoidance"
-- "Connectome computing: reverse engineering 377 neurons for autonomous flight"
-- "The 24-neuron breakthrough: learned sparsification in biological-inspired controllers"
-- "From simulation to reality: the Validation Ladder approach in robotics research"
-- "Why failsafe matters: "
-- "Open science in robotics: the FlyDrone 
+- "MPPI deep-dive: how Model Predictive Path Integral control is changing robot navigation"
+- "The unsung heroes: bug fixes that prevent real-world robot crashes"
+- "ROS 2 Navigation2 vs. custom stacks — why the standard matters"
+- "From teleop to autonomy: the full stack of mobile robot development"
+- "Testing the untestable: how unit tests are improving navigation reliability"
 
 ---
 
@@ -83,9 +73,9 @@
 
 | Project | Stars | Language | Focus | Latest Activity |
 |---------|-------|----------|-------|-----------------|
-| Open AD Kit | 11 | Shell | Containerized Autoware / SOAFEE | Dual-distro pipeline, manifest CLI, R-Car X5H integration |
-| DIAMANTS | 0 | JavaScript | Swarm Robotics / Neurosymbolic AI | BYO model contract, wildfire demo films, live browser demo |
-| FlyDrone | 0 | Python | Connectome-inspired UAV avoidance | Learned sparse connectome, PX4/Gazebo validation, MIT license |
+| CARLA | 14.4K | C++ | Autonomous Driving Simulator | UE5 migration, V2X sensors, safety fixes |
+| Webots | 4.6K | C++ | Robot Simulation | Controller pose fixes, release branch sync |
+| Nav2 | 4.7K | C++ | ROS 2 Robot Navigation | MPPI improvements, teleop fixes, grid map bug fixes |
 
 ---
 
