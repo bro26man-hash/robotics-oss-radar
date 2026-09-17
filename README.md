@@ -92,7 +92,7 @@
 
 ## 📋 Tracking Checklist
 
-See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/22)** for a detailed tracking checklist of these 3 projects.
+See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/28)** for a detailed tracking checklist of these 3 projects.
 
 ## 🎙️ About This Project
 
