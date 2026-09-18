@@ -10,36 +10,40 @@ We track the top recently active open-source repos tagged with **autonomous-vehi
 
 ---
 
-### 1. 🚗 [commaai/openpilot](https://github.com/commaai/openpilot)
+### 1. 🦾 [autonomous-ai/autonomous-os](https://github.com/autonomous-ai/autonomous-os)
 
-> An operating system for robotics — currently upgrading driver assistance on **300+ supported cars**.
+> The open-source operating system for robots — install it and your robot comes alive.
 
 | ⭐ Stars | 🍴 Forks | Language | Last Updated |
 |----------|----------|----------|--------------|
-| 63,676   | —        | Python   | Sep 18, 2026 |
+| 348      | —        | Python   | Sep 18, 2026 |
 
 **Latest Commits (Sep 18, 2026):**
 
 | Commit | Message | Author |
 |--------|---------|--------|
-| `df7e0e5` | Use upstream tinygrad disk tensors for model loading (#38956) | Harald Schäfer |
-| `6c69ebe` | cabana: improve heatmap readability (#38955) | Trey Moen |
-| `c504b92` | cabana: clarify signal button states (#38953) | Trey Moen |
+| `6c828c6` | chore: bump lamp device profile version | leo |
+| `ce220c5` | lamp: reverse MPR121 swipe axis to match mirrored pad wiring | leo |
+| `39d7914` | lamp: max_volume 15 for the C-Media speaker card | leo |
+| `63c921e` | lamp: C-Media card id device_cmedia backs speaker and sensing mic; ZVCAI gain 64 | leo |
+| `8b5c343` | lamp: swap primary/factory-reset GPIO lines to match wiring (99/100) | leo |
 
 **Development Highlights:**
-- **Model loading optimization** — migrating to upstream tinygrad disk tensors for faster, more efficient model inference. This signals a major push toward lighter-edge deployment and reduced memory footprint on commodity hardware.
-- **Cabana UI overhaul** — heatmap readability improvements and clearer signal button states, indicating investment in driver-facing UX clarity. Better interpretability = more trust in autonomous systems.
-- **Rapid iteration pace** — 3 commits in a single day shows a highly active, responsive development team.
+- **Hardware bring-up momentum** — five commits in a single day all focused on "lamp," a physical robot device. This is raw, hands-on embedded work: GPIO wiring, audio driver configuration, and capacitive touch sensor calibration.
+- **Audio system integration** — C-Media speaker card and mic characterization with ZVCAI gain staging. This shows the project is maturing beyond "just ROS" into real hardware audio pipelines — critical for voice-interactive robots.
+- **Capacitive touch debugging** — reversing the MPR121 swipe axis to match mirrored pad wiring. This is the kind of bug that only surfaces when software meets the physical world. Great podcast material on the frustration and triumph of hardware bring-up.
+- **Device profile versioning** — systematic bumping of device profiles signals a growing ecosystem of supported hardware platforms.
 
 **🎙️ Potential Episode Topics:**
-- "TinyGrad & Edge Inference: How openpilot is shrinking its model footprint"
-- "UX Matters: Why driver-facing UIs make or break ADAS adoption"
-- "300+ Cars, One OS: The scaling challenges of open-source ADAS"
-- "From Pilot to Production: How commaai ships to 300+ car models"
+- "From Software to Silicon: What Happens When Your Robot Won't Boot"
+- "The MPR121 Nightmare: Capacitive Touch Debugging at 2 AM"
+- "Audio Pipelines for Robots: Why Your C-Media Card Matters"
+- "autonomous-os: Installing an OS That Makes Your Robot Come Alive"
+- "GPIO Wiring 101: The Undocumented Art of connecting Robots to Reality"
 
 ---
 
-### 2. 🛰️ [autowarefoundation/autoware](https://github.com/autowarefoundation/autoware)
+### 2. 🚗 [autowarefoundation/autoware](https://github.com/autowarefoundation/autoware)
 
 > The world's leading open-source software project for autonomous driving.
 
@@ -61,14 +65,14 @@ We track the top recently active open-source repos tagged with **autonomous-vehi
 - **Infrastructure-as-code** — using Ansible for demo artifact management, signaling professionalism in how they manage complex multi-robot demo environments.
 
 **🎙️ Potential Episode Topics:**
-- "Autoware 1.11: What's new in the latest release and why it matters"
-- "Simulation as a Service: How CARLA HD maps are shaping autonomous testing"
-- "The ROS 2 Ecosystem: Inside Autoware's dependency management strategy"
-- "From Research to Road: How Autoware bridges the gap between simulation and real-world deployment"
+- "Autoware 1.11: What's New in the Latest Release and Why It Matters"
+- "Simulation as a Service: How CARLA HD Maps Are Shaping Autonomous Testing"
+- "The ROS 2 Ecosystem: Inside Autoware's Dependency Management Strategy"
+- "From Research to Road: How Autoware Bridges the Gap Between Simulation and Real-World Deployment"
 
 ---
 
-### 3. 🦾 [Hebbian-Robotics/hflow](https://github.com/Hebbian-Robotics/hflow)
+### 3. 🛡️ [Hebbian-Robotics/hflow](https://github.com/Hebbian-Robotics/hflow)
 
 > SDK for robotics teams to verify the quality of data used for AI model training.
 
@@ -80,20 +84,24 @@ We track the top recently active open-source repos tagged with **autonomous-vehi
 
 | Commit | Message | Author | Date |
 |--------|---------|---------|------|
+| `4d17559` | fix(lerobot): refuse task_index referencing unpublished tasks before … (#559) | Shobhit agnihotri | Sep 18, 2026 |
 | `e7a615b` | fix(import): guard meta/episodes tree loop against missing 'path' (#555) | Sravan Avvaru | Sep 18, 2026 |
 | `1ae107d` | chore(deps): bump astral-sh/setup-uv in github-actions (#557) | dependabot | Sep 18, 2026 |
 | `9c9fd21` | feat(examples): reproducible real-camera LeRobot workflow (#552) | Ayam | Sep 16, 2026 |
+| `f2e3cf0` | fix(checks): fail closed on unmeasurable joint-motion steps (#546) (#549) | Sagar Kharal | Sep 16, 2026 |
 
 **Development Highlights:**
-- **Robustness fixes** — guarding against missing path keys in meta/episodes trees. This is a real-world data pipeline edge case that breaks when datasets are imperfect. Good sign they're listening to user pain points.
+- **Robustness fixes** — guarding against missing path keys in meta/episodes trees and refusing unpublished task references. These are real-world data pipeline edge cases that break when datasets are imperfect. Good sign they're listening to user pain points.
 - **LeRobot integration** — new reproducible real-camera example workflow, bridging the gap between simulation-trained models and real-world deployment. This is the sim-to-real story everyone wants to hear.
+- **Safety-first validation** — "fail closed on unmeasurable joint-motion steps" means the SDK refuses to pass data it can't verify, which is a philosophy worth discussing on a podcast about responsible robotics.
 - **DevEx improvements** — migrating to `setup-uv` for faster, more reliable Python environment setup in CI. Small but meaningful: faster CI = faster feedback = faster shipping.
 
 **🎙️ Potential Episode Topics:**
-- "Data Quality is the Real Robot Problem: Why hflow exists"
-- "Sim-to-Real: How LeRobot workflows are closing the gap"
-- "From 0 to 1: Building a robotics data verification SDK from scratch"
-- "The 90% Problem: Why data quality eats 90% of robotics dev time"
+- "Data Quality Is the Real Robot Problem: Why hflow Exists"
+- "Sim-to-Real: How LeRobot Workflows Are Closing the Gap"
+- "From 0 to 1: Building a Robotics Data Verification SDK from Scratch"
+- "The 90% Problem: Why Data Quality Eats 90% of Robotics Dev Time"
+- "Fail Closed: The Philosophy of Refusing to Ship Unverifiable Robots"
 
 ---
 
@@ -101,7 +109,7 @@ We track the top recently active open-source repos tagged with **autonomous-vehi
 
 | Repo | Domain | Stars | Activity | Podcast Potential |
 |------|--------|-------|----------|-------------------|
-| openpilot | Autonomous Driving (Production) | 63K | 🔥 Daily | High — mass adoption story |
+| autonomous-os | Robot OS / Hardware Bring-up | 348 | 🔥 Daily | High — the physical robot story |
 | autoware | Autonomous Driving (Stack) | 12K | 🔥 Daily | High — L4 roadmap |
 | hflow | Robotics Data Quality | 272 | 🔥 Daily | Medium — niche but critical |
 
