@@ -1,131 +1,107 @@
 # 🤖 Robotics OSS Radar
 
-> Tracking the most active open-source robotics & autonomous-vehicle projects. Weekly progress snapshots, development highlights, and podcast episode ideas.
+> **Open-Source Robotics & Autonomous Systems Podcast**
+> Tracking the projects, commits, and conversations that are shaping the future of autonomous systems.
 
 ---
 
-## 🔍 Why This Project?
+## 🎙️ What Is This?
 
-Open-source robotics and autonomous systems are evolving at breakneck speed. This repo is the backbone of our podcast **"Robotics OSS Radar"** — a weekly deep-dive into the projects shaping the future of autonomous machines. We track commits, highlight development trends, and translate technical progress into compelling episodes.
+**Robotics OSS Radar** is a podcast (and accompanying tracker) that dives into the most actively developed open-source robotics and autonomous-vehicle projects on GitHub. Each episode profiles a project, interviews maintainers, and breaks down the latest commits so you don't have to read the diffs yourself.
 
 ---
 
-## 📡 Projects Under the Microscope
+## 📡 Projects Currently Tracked
 
-### 1. 🔵 [Rerun](https://github.com/rerun-io/rerun)
+### 1. 🚗 AlpaSim — `NVlabs/alpasim`
 
 | | |
 |---|---|
-| **Stars** | ⭐ 11,472 |
-| **Language** | Rust + Python + C++ |
-| **License** | Apache-2.0 |
-| **Focus** | Multimodal data visualization & streaming for physical AI |
-| **Last Activity** | September 18, 2026 (multiple commits same day) |
-
-**What it does:** Rerun is the data layer for physical AI. It ingests multi-rate, multimodal data (images, point clouds, transforms, time series, joint states, video) from robot logs, human-data rigs, sim, and web video. The built-in viewer renders everything in sync, in realtime — scrub episodes, compare sensors, watch CV pipelines run live. Data is queryable with dataframes or SQL, and streams directly into training.
-
-**Recent Development Highlights:**
-- 🔦 **Volume Raymarcher** — New volume rendering capability for 3D scalar field visualization (Gábor Gyebnár)
-- 🤖 **LeRobot Import Diagnostics** — `re_lerobot`: Collect and categorize import warnings when migrating LeRobot datasets into Rerun (Eric Leijonmarck)
-- 🏗️ **Logging Architecture Refactor** — Lifted `LogMsg`, `ArrowMsg` and friends out of `re_log_types` into a dedicated `re_log_msg` crate, improving modularity (Antoine Beyeler)
-- 🔧 **Changeset Type System** — Added `misc` as a new changeset type, expanding the granular update tracking system (Jochen Görtler)
-- 📦 **Build Pinning** — Pinned `hatchling` to `v1.30.1` for reproducible Python builds (Jochen Görtler)
-
-**🎙️ Potential Episode Topics:**
-- "The Data Layer for Physical AI — Why Rerun Could Replace Rviz"
-- "Rust for Robotics: Building a Columnar Storage Engine for Multi-Rate Sensor Data"
-- "From LeRobot to Rerun: The Challenge of Standardizing Robotics Dataset Formats"
-- "Volume Rendering for Robot Perception: What's Inside the Black Box?"
-
----
-
-### 2. 🟢 [Autoware](https://github.com/autowarefoundation/autoware)
-
-| | |
-|---|---|
-| **Stars** | ⭐ 12,068 |
-| **Language** | C++ + Dockerfile |
-| **License** | Apache-2.0 |
-| **Focus** | World's leading open-source autonomous driving framework |
-| **Last Activity** | September 18, 2026 (latest commit) |
-
-**What it does:** Autoware is the world's leading open-source autonomous driving framework. It provides a comprehensive, production-ready software stack designed to accelerate the commercial deployment of autonomous vehicles across diverse platforms and use cases. From perception and planning to control and simulation, it's the de facto standard for open-source AV development.
-
-**Recent Development Highlights:**
-- 🚀 **autoware_utils v1.11.0** — Minor update to the core utilities package, keeping downstream tools current (awf-autoware-bot)
-- 🔄 **Managed Transform Buffer v0.3.0** — Updated the transform coordinate management library, critical for multi-sensor calibration (awf-autoware-bot)
-- 🗺️ **CARLA 0.10 Town10HD_Opt Map** — Added the high-definition optronic Town10 map to demo artifacts, expanding simulation scenarios (Masaya Kataoka)
-- 🐳 **Docker Build Fix** — Fixed the simple planning simulator build with core modules, improving CI reliability (Mete Fatih Cırıt)
-- 🔒 **CasADi 3.7.2 Pin for Humble ARM64** — Resolved compatibility issues for ARM64 platforms, broadening hardware support (Mete Fatih Cırıt)
-
-**🎙️ Potential Episode Topics:**
-- "Autoware: The Open-Source Stack Powering the Future of Autonomous Driving"
-- "ROS 2 in Production — How Autoware Manages 12K+ Lines of C++"
-- "Sim-to-Real with CARLA: From Town10HD to the Real World"
-- "Why Transform Buffers Matter: The Hidden Complexity of Multi-Sensor Calibration"
-
----
-
-### 3. 🟣 [Isaac Lab](https://github.com/isaac-sim/IsaacLab)
-
-| | |
-|---|---|
-| **Stars** | ⭐ 8,162 |
+| **Stars** | ⭐ 1,239 |
 | **Language** | Python |
-| **License** | BSD-3-Clause |
-| **Focus** | GPU-accelerated robot learning framework (RL, imitation, motion planning) |
-| **Last Activity** | September 18, 2026 (multiple commits same day) |
-
-**What it does:** Isaac Lab is a GPU-accelerated, open-source framework designed to unify and simplify robotics research workflows — reinforcement learning, imitation learning, and motion planning. Built on NVIDIA Isaac Sim, it combines fast physics and sensor simulation (RTX-based cameras, LIDAR, contact sensors) for effective sim-to-real transfer. Supports 16+ robot models, 30+ ready-to-train environments, and multi-agent RL.
+| **Focus** | End-to-end autonomous vehicle simulation |
+| **Last Activity** | August 2026 |
 
 **Recent Development Highlights:**
-- 🖥️ **Isaac Sim Image Bump (600fa643bb36)** — Updated the underlying simulation container to the latest Isaac Sim image, ensuring access to newest physics and rendering features (isaaclab-bot)
-- 🔐 **Trusted Checkout Fix in Backport Workflow** — Secured the automated backport pipeline, preventing untrusted code from being merged into release branches (Kelly Guo)
-- 📖 **Historical Documentation Build Fixes** — Resolved redirect issues in the docs, improving navigation for users referencing older API versions (Kelly Guo)
-- ⏱️ **Arms Demo Smoke Timeout Increase** — Bumped the CI timeout for the arms demo smoke test, reducing flaky failures on slower hardware (Kelly Guo)
-- 🍔 **Compiled Docs Menu Fix** — Fixed the hamburger menu in compiled documentation, improving mobile/responsive UX (Kelly Guo)
+- **Reproducible Rollouts** — Commit `9a3832b` (Aug 17, 2026) made rollout seeds selectable and reproducible via `RolloutSpec`, a huge win for researchers who need identical simulation runs for benchmarking.
+- **High-Speed MPC** — Commit `1e801ca` (Aug 12, 2026) increased the linear MPC speed bound to **40 m/s** (~90 mph), pushing the platform toward real-world highway-speed scenario testing.
+- **CI Pipeline Overhaul** — Commits `affc2ea` & `0d0f522` (Aug 11, 2026) eliminated LFS downloads during replay and fixed self-hosted build jobs, signaling serious investment in developer experience.
+- **GitLab Sync** — Regular sync from internal GitLab (commit `6870924`, Aug 11, 2026) shows NVIDIA is using this as a production-grade internal tool, not just a research demo.
 
 **🎙️ Potential Episode Topics:**
-- "GPU-Accelerated Robot Learning: Inside Isaac Lab's Simulation Pipeline"
-- "Sim-to-Real Transfer: Can You Trust a Simulation to Predict Real-World Behavior?"
-- "From Orbit to Isaac Lab: The Evolution of NVIDIA's Robotics Framework"
-- "Reinforcement Learning at Scale — Training 30+ Environments in Parallel"
+- *"Why Reproducible Rollouts Change Everything"* — The science of benchmarking AV policies
+- *"From 5 m/s to 90 mph: Inside AlpaSim's Speed Revolution"*
+- *"NVIDIA's Secret Sauce: How Internal CI Shapes Open-Source AV Dev"*
 
 ---
 
-## 📊 Activity Snapshot (as of September 18, 2026)
+### 2. 🚢 BlueOS — `bluerobotics/BlueOS`
 
-| Project | Stars | Language | Latest Commit | Key Theme |
-|---------|-------|----------|---------------|-----------|
-| Rerun | 11,472 | Rust | Volume raymarcher + architecture refactor | Data infrastructure & rendering |
-| Autoware | 12,068 | C++ | ROS 2 Humble updates + CARLA maps | AV stack maturity & simulation |
-| Isaac Lab | 8,162 | Python | Isaac Sim image bump + CI hardening | Sim-to-real & GPU acceleration |
+| | |
+|---|---|
+| **Stars** | ⭐ 456 |
+| **Language** | Vue (frontend) + backend services |
+| **Focus** | Open-source operational platform for ROVs, USVs & robotic systems |
+| **Last Activity** | September 2026 |
 
----
+**Recent Development Highlights:**
+- **Version Chooser Overhaul** — Five commits on a single day (Sep 15, 2026, all by Patrick José Pereira) rebuilt the entire version-selection UI: new `VersionChooser` component, `VersionCard` with commit button, `NestedVersion` & `parent_sha` types, and dedicated service-layer tests. This is a major UX upgrade for fleet operators who need to manage software versions across fleets of underwater robots.
+- **Commit-Level Traceability** — The new "commit dialog" and "commit button" features mean every deployed version is traceable to its exact source commit — critical for safety-certified ROV operations.
+- **Test-First Approach** — Commit `91e81ab` added tests for commit and parent detection, showing the team is prioritizing reliability as the UI grows more complex.
 
-## 🎙️ Podcast Alignment
-
-Each project maps to a natural episode arc:
-
-1. **Infrastructure Episode** → Rerun: "What happens under the hood when a robot logs 100 sensor streams?"
-2. **Production Episode** → Autoware: "How does an open-source AV stack actually ship to production?"
-3. **Simulation Episode** → Isaac Lab: "Is simulation the future of robot training?"
-
----
-
-## 📋 Tracking
-
-See the open issue **[Projects to Revisit & Upcoming Releases](#)** for the running checklist of items to revisit before the next episode cycle.
+**🎙️ Potential Episode Topics:**
+- *"Underwater Robots Need Software Updates Too — Inside BlueOS's Version Revolution"*
+- *"From Play to Production: How BlueOS Is Making ROVOps Developer-Friendly"*
+- *"Commit Traceability for Safety-Critical Robots — Why It Matters"*
 
 ---
 
-## 🤝 Contributing
+### 3. 🧠 Autonomous-OS — `autonomous-ai/autonomous-os`
 
-Pull requests and suggestions are welcome! To propose a new project or episode topic:
-1. Open an issue describing the project and why it matters
-2. Tag it with `proposal` and `episode-topic`
-3. The maintainers will review and add to the radar
+| | |
+|---|---|
+| **Stars** | ⭐ 348 |
+| **Language** | Python |
+| **Focus** | Open-source operating system that brings robots to life |
+| **Last Activity** | September 2026 (very active!) |
 
-## 📄 License
+**Recent Development Highlights:**
+- **Rapid Release Cadence** — Commit `2668ac9` (Sep 18, 2026) bumped `os-server` to **v0.1.142** and `web` to **v0.1.64** — an incredibly fast release cycle, suggesting a mature CI/CD pipeline and agile development.
+- **Schedule Connector Guard** — PR #455 (merged Sep 18, 2026) introduced a `schedule-connector-guard` feature, likely a safety mechanism to prevent scheduling conflicts or runaway task dispatching in multi-robot environments.
+- **Voice-Enabled Real-Time Controls** — Commit `71dbd54` (Sep 18, 2026) added a "realtime wait filler before the post-capture session handshake" for voice commands, indicating they're building voice-controlled robot interaction with low-latency guarantees.
+- **Daily Deployments** — Multiple commits on Sep 18 alone (`2e9deab` — "deploy") show this team ships daily, a hallmark of a serious production-grade project.
 
-This project is open-source under the [MIT License](LICENSE).
+**🎙️ Potential Episode Topics:**
+- *"Daily Deploys & 142 Versions: What We Can Learn from Autonomous-OS's Velocity"*
+- *"Talking to Your Robot: The Science of Voice-Controlled Autonomous Systems"*
+- *"Schedule Guards & Safety: How to Prevent Multi-Robot Chaos"*
+
+---
+
+## 🗓️ Episode Planning Calendar
+
+| Episode | Project | Focus Area | Status |
+|---------|---------|-----------|--------|
+| 01 | AlpaSim | Reproducible Rollouts & AV Benchmarking | 📋 Planned |
+| 02 | BlueOS | Version Traceability for Underwater Robots | 📋 Planned |
+| 03 | Autonomous-OS | Voice Controls & Daily Deploy Cadence | 📋 Planned |
+
+---
+
+## 📡 How to Contribute
+
+1. Fork this repo
+2. Add your favorite OSS robotics project to `projects/`
+3. Open a PR with commit highlights and episode ideas
+4. Subscribe to the podcast!
+
+## 🔗 Related Resources
+
+- [GitHub Topics: Robotics](https://github.com/topics/robotics)
+- [GitHub Topics: Autonomous Vehicles](https://github.com/topics/autonomous-vehicles)
+- [ROS 2 Documentation](https://docs.ros.org/)
+- [Autoware Foundation](https://autoware.org/)
+
+---
+
+*Built for the open-source robotics community. Built with ❤️ and a lot of `git log`.*
