@@ -1,101 +1,111 @@
 # 🤖 Robotics OSS Radar
 
-> Tracking the most active open-source robotics & autonomous vehicle projects — for our podcast.
+> Open-source robotics & autonomous systems radar — tracking the most active projects, recent development highlights, and podcast episode ideas.
 
-## 📡 Top 3 Projects Under the Lens
+## 📡 Tracked Projects
 
----
-
-### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
-**⭐ 63,675 stars | Language: Python | License: GPLv3 | Last updated: Sept 17, 2026**
-
-*openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars — turning every commodity sensor setup into an advanced driver-assistance system (ADAS).*
-
-**Recent Development Highlights:**
-- **Model chunking removed & LFS adopted for Chestnut releases** (`1328ace`, Sep 17, 2026, PR #38941) — by Harald Schäfer; streamlines model storage and release management using Git LFS, making CI faster and more reliable
-- **Chestnut power test removed** (`7db7735`, Sep 17, 2026, PR #38943) — by Daniel Koepping; cleanup of deprecated power testing infrastructure for the new Chestnut hardware generation
-- **modeld: 2× faster Chestnut build** (`cd1490a`, Sep 17, 2026, PR #38656) — by Adeeb Shihadeh; major performance optimization cutting model compilation time in half for the upcoming Chestnut release
-- **UI: question marks removed** (`bd176cb`, Sep 17, 2026, PR #38938) — by Shane Smiskol; UI polish removing ambiguous placeholder icons
-- **UI: not-paired bookmark alert** (`4d9d1bc`, Sep 17, 2026, PR #38936) — by stef; new user-facing alert when a phone isn't paired, improving onboarding experience
-
-**Key Architecture:** modeld (deep learning model runner), managerc (process manager), controls (actuator & state management), ui (React Native dashboard), boardd (CAN bus interface), panda (hardware security & CAN bridge), Chestnut hardware support, RAML-based release pipeline.
-
-**🎙️ Potential Episode Topics:**
-- "63K stars and 300+ cars: inside commaai's openpilot"
-- "Chestnut is coming: 2× faster builds and LFS-based releases"
-- "Why modeld matters: how openpilot runs neural nets on the edge"
-- "panda and boardd: the hardware backbone of open-source ADAS"
-- "From comma one to commodity hardware: the openpilot hardware saga"
-- "UI polish as a feature: how small UX fixes move open-source forward"
+We monitor three flagship open-source projects at the intersection of robotics and autonomous vehicles. Here's what's happening right now:
 
 ---
 
-### 2. [NVIDIA/cosmos](https://github.com/NVIDIA/cosmos)
-**⭐ 11,843 stars | Language: Jupyter Notebook | License: Apache-2.0 | Last updated: Sept 17, 2026**
+### 1. 🚗 [commaai/openpilot](https://github.com/commaai/openpilot)
+**⭐ 63,675 stars | Python**
 
-*NVIDIA Cosmos is an open platform of world models, datasets, and tools that enables developers to build Physical AI for robots, autonomous vehicles, and synthetic data pipelines — from text-to-video world generation to certifiable NIM deployment.*
+> *openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.*
 
-**Recent Development Highlights:**
-- **Cosmos3-Super distilled examples fixed for vllm-omni** (`b0e54e8`, Sep 14, 2026, PR #350) — by MaciejBalaNV; bug fix ensuring distilled checkpoint examples work correctly with the vLLM-OMNI inference server, unblocking researchers using quantized models
-- **Cookbook: reasoner user guide for sglang added** (`5a68d9d`, Sep 12, 2026, PR #322) — by Kedi Wu; comprehensive documentation for serving Cosmos world models with SGLang, lowering the barrier to production deployment
-- **Cookbook (action): RoboCasa mobile-manipulation post-training recipe** (`a9aa3bc`, Sep 10, 2026, PR #318) — by hyzhou-nv; new actionable recipe for post-training robots in mobile manipulation tasks using Cosmos simulation
-- **Docs: issue templates & security policy added** (`c92f947`, Sep 10, 2026, PR #348) — by Rickz; professional open-source governance improvements
-- **Cookbooks: Cosmos3 Certified NIM added to environment setup guide** (`18d0542`, Sep 4, 2026, PR #345) — by Rickz; streamlined path from research to certified NVIDIA NIM deployment
+**Recent Development Highlights (as of Sep 17, 2026):**
 
-**Key Architecture:** Cosmos World Foundation Models (text-to-video, image-to-video), Cosmos Transfer (real-to-synthetic domain transfer), Cosmos Predict (video prediction), SGLang & vLLM-OMNI serving, Certified NIM containers, RoboCasa integration, Cookbook recipes.
+| Commit | What's Happening |
+|---|---|
+| `1328ace` — Remove model chunking & use LFS for Chestnut releases | Refactoring model storage — switching from chunked files to Git LFS for the new "Chestnut" release, streamlining CI and download sizes. |
+| `cd1490a` — modeld: 2× faster chestnut build | **Big performance win** — the model inference engine (`modeld`) build time cut in half for the Chestnut release. Faster iteration for contributors. |
+| `7db7735` — rm chestnut power test | Cleaning up experimental power-test scripts that were only needed during hardware validation. |
+| `bd176cb` — ui: remove question marks | UI polish — removing deprecated help icons from the interface. |
+| `4d9d1bc` — ui: not paired bookmark alert | New UX feature: alerts drivers when their phone bookmark isn't paired correctly. |
 
-**🎙️ Potential Episode Topics:**
-- "NVIDIA Cosmos: world models that generate reality for AI training"
-- "From text to video: how Cosmos world models train robots"
-- "Cosmos3-Super distilled: running world models on a single GPU"
-- "RoboCasa + Cosmos: the path from simulation to real-world manipulation"
-- "Certified NIM: how NVIDIA ships world models to production"
-- "SGLang vs vLLM-OMNI: serving world models at scale"
-
----
-
-### 3. [NVlabs/alpasim](https://github.com/NVlabs/alpasim)
-**⭐ 1,238 stars | Language: Python | License: Apache-2.0 | Last updated: Sept 17, 2026**
-
-*AlpaSim is an open-source autonomous vehicle simulation platform designed for development and testing of end-to-end AV policies — built for reproducibility, high-fidelity sensor simulation, and seamless integration with the Apollo planning stack.*
-
-**Recent Development Highlights:**
-- **CI: avoid LFS downloads while replaying GitHub changes to GitLab** (`affc2ea`, Aug 18, 2026, PR #154) — by jarcherNV; CI pipeline optimization that avoids heavy Git LFS downloads during cross-platform sync, cutting build times significantly
-- **Runtime: rollout seeds selectable & reproducible via RolloutSpec** (`9a3832b`, Aug 17, 2026, PR #149) — by Alba María Téllez Fernández; major reproducibility improvement letting researchers pin random seeds for exact scenario replay — critical for scientific rigor
-- **Controller: linear MPC speed bound increased to 40 m/s** (`1e801ca`, Aug 12, 2026, PR #144) — by Ding-ray; MPC controller now supports speeds up to 144 km/h, enabling highway-speed scenario testing
-- **GitLab sync (2026-08-11)** (`6870924`, Aug 11, 2026, PR #145) — by mwatson-nvidia; regular cross-platform repository synchronization
-- **Fix uv install in self-hosted build jobs** (`0d0f522`, Aug 11, 2026, PR #146) — by jarcherNV; build infrastructure fix for self-hosted runners
-
-**Key Architecture:** RolloutSpec (reproducible scenario specification), Linear MPC controller (with 40 m/s speed support), Sensor simulation (camera, LiDAR, radar), Apollo planning integration, GitLab↔GitHub sync pipeline, uv-based Python environment management.
-
-**🎙️ Potential Episode Topics:**
-- "AlpaSim: the simulator built for end-to-end AV policy testing"
-- "Reproducibility is everything: why rollout seeds matter in AV research"
-- "From 0 to 40 m/s: how AlpaSim is pushing highway-speed simulation"
-- "GitLab meets GitHub: the cross-platform CI challenge in open-source AV"
-- "AlpaSim + Apollo: a full-stack simulation-to-planning pipeline"
-- "uv, LFS, and CI pain: the infrastructure story behind AV simulators"
+**🎙️ Potential Podcast Episode Topics:**
+- *"Why commaai Switched to Git LFS for Model Releases"* — A deep-dive into how they manage 5GB+ model files at scale.
+- *"2× Faster Builds: Inside the modeld Optimization"* — What CI/CD tricks enabled a 2× speedup in model compilation.
+- *"300+ Cars on One Open-Source Stack"* — How openpilot maintains compatibility across an enormous vehicle matrix.
+- *"Chestnut on the Horizon: What's Next for openpilot?"* — Roadmap discussion with the community.
 
 ---
 
-## 📊 Quick Comparison
+### 2. 🧠 [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
+**⭐ 26,830 stars | C++**
 
-| Project | Stars | Language | Focus | Latest Activity |
-|---------|-------|----------|-------|-----------------|
-| openpilot | 63,675 | Python | Open-source ADAS OS for 300+ cars | Chestnut build optimization, LFS migration, UI fixes |
-| NVIDIA Cosmos | 11,843 | Jupyter | World models & Physical AI platform | Distilled model fixes, SGLang guide, RoboCasa recipes |
-| AlpaSim | 1,238 | Python | End-to-end AV simulation platform | Reproducible rollouts, 40 m/s MPC, CI optimization |
+> *An open autonomous driving platform*
+
+**Recent Development Highlights (as of Feb 28, 2026):**
+
+| Commit | What's Happening |
+|---|---|
+| `539f546` — feat: add Apollo 11.0 bev+occ | **Major release** — Apollo 11.0 introduces **Bird's-Eye-View (BEV) + Occupancy (OCC)** perception pipelines. This is a leap in 3D scene understanding for autonomous driving. |
+| `40c8a01` — Recover Seyond lidar driver | Lidar hardware support restored — re-enabling compatibility with the Seyond lidar line after a driver regression. |
+| `d53aa3d` — docs: fix README build status badges | Maintenance cleanup — removing stale CI badges from the README. |
+| `6680288` / `995b75a` — Seyond lidar driver config & readme updates | Documentation improvements for lidar integration, making it easier for new users to configure hardware. |
+
+**🎙️ Potential Podcast Episode Topics:**
+- *"BEV + OCC: How Apollo 11.0 Changes the Perception Game"* — What Bird's-Eye-View and Occupancy networks mean for the future of autonomous driving stacks.
+- *"Open-Source Autonomous Driving at Baidu Scale"* — The story behind Apollo, from internal Baidu project to the world's leading open autonomous driving platform.
+- *"When Lidar Drivers Break: Hardware Compatibility in Open Source"* — Lessons from the Seyond lidar regression and recovery.
+- *"Apollo vs. Autoware: Two Giants, Two Philosophies"* — A comparative episode on China's Apollo and the Autoware Foundation.
 
 ---
 
-## 📋 Tracking Checklist
+### 3. 🌍 [carla-simulator/carla](https://github.com/carla-simulator/carla)
+**⭐ 14,405 stars | C++**
 
-See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/31)** for a detailed tracking checklist of these 3 projects.
+> *Open-source simulator for autonomous driving research.*
 
-## 🎙️ About This Project
+**Recent Development Highlights (as of Sep 2, 2026):**
 
-This repo is a companion to our podcast on open-source robotics and autonomous systems. We track the most active GitHub projects, analyze their latest commits, and develop episode ideas — so listeners can follow along and contribute.
+| Commit | What's Happening |
+|---|---|
+| `1360bb9` — Deploy UE5 nightly to Cloudflare R2 | **Infrastructure upgrade** — CARLA's Unreal Engine 5 nightlies are now served via Cloudflare R2, dramatically improving global download reliability and speed. |
+| `dd3a9d7` — feat(sensor): add V2X sensor family (CAM, path-loss, CustomV2X, V2I) | **New sensor suite** — added a full **Vehicle-to-Everything (V2X)** sensor family, enabling communication-aware simulations. This is huge for connected/autonomous vehicle research. |
+| `0a5ce0d` — Fix lidar smoke helper signature | Bug fix for lidar rendering helpers — ensuring correct point-cloud visualization in debug sessions. |
+| `39c4fda` — guard against null traffic light in WalkerManager | Robustness fix — WalkerManager (pedestrian/AI traffic controller) no longer crashes when traffic light entities are missing. |
+| `6279162` — add CARLA_MAPS_TO_COOK to select packaged maps | Build system improvement — developers can now selectively cook packaged maps via CMake option, reducing build times for minimal installations. |
+
+**🎙️ Potential Podcast Episode Topics:**
+- *"V2X in Simulation: Why CARLA's New Sensor Family Changes Everything"* — How Vehicle-to-Everything simulation enables research into connected autonomy that was impossible before.
+- *"From UE4 to UE5: The CARLA Graphics Overhaul"* — What migrating to Unreal Engine 5 means for photorealistic autonomous driving simulation.
+- *"Cloudflare R2 vs. S3: How CARLA Scaled Global Downloads"* — A practical episode on infrastructure choices for open-source projects with large binary assets.
+- *"Sim-to-Real: Can CARLA's V2X Predictions Transfer to the Real World?"* — The eternal simulation-to-reality gap, and whether V2X adds new capabilities or new uncertainties.
 
 ---
 
-*Generated for the Robotics OSS Radar podcast. Stay curious, stay open-source.*
+## 📋 Episode Planning Checklist
+
+| # | Project | Episode Idea | Status |
+|---|---|---|---|
+| 1 | commaai/openpilot | "Why commaai Switched to Git LFS for Model Releases" | 🔴 Not started |
+| 2 | commaai/openpilot | "2× Faster Builds: Inside the modeld Optimization" | 🔴 Not started |
+| 3 | ApolloAuto/apollo | "BEV + OCC: How Apollo 11.0 Changes the Perception Game" | 🔴 Not started |
+| 4 | ApolloAuto/apollo | "Open-Source Autonomous Driving at Baidu Scale" | 🔴 Not started |
+| 5 | carla-simulator/carla | "V2X in Simulation: Why CARLA's New Sensor Family Changes Everything" | 🔴 Not started |
+| 6 | carla-simulator/carla | "From UE4 to UE5: The CARLA Graphics Overhaul" | 🔴 Not started |
+
+---
+
+## 🔗 Quick Links
+
+- [commaai/openpilot](https://github.com/commaai/openpilot)
+- [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
+- [carla-simulator/carla](https://github.com/carla-simulator/carla)
+
+## 📌 How This Repo Works
+
+This repo is a **living tracker** for the *Robotics OSS Radar* podcast. We:
+
+1. **Monitor** the most active open-source robotics & autonomous-vehicle repos on GitHub.
+2. **Log** recent commits and development highlights.
+3. **Brainstorm** podcast episode topics tied to real code changes.
+4. **Track** upcoming releases and milestones to revisit.
+
+Contributions are welcome! Open an issue to suggest a new project or episode idea.
+
+---
+
+*Built for makers, by makers. 🛠️*
