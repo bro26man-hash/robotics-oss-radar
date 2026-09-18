@@ -1,125 +1,94 @@
-# 📡 Robotics OSS Radar
+# 🤖 Robotics OSS Radar
 
-> Tracking the most active open-source robotics & autonomous-vehicle projects. Weekly progress snapshots, development highlights, and podcast episode ideas.
-
----
-
-## 🔍 Why This Project?
-
-Open-source robotics and autonomous systems are evolving at breakneck speed. This repo is the backbone of our podcast **"Robotics OSS Radar"** — a weekly deep-dive into the projects shaping the future of autonomous machines. We track commits, highlight development trends, and translate technical progress into compelling episodes.
+> Open-Source Robotics & Autonomous Systems Radar — tracking the most active repos, recent development highlights, and podcast episode ideas.
 
 ---
 
-## 🏆 Top 3 Projects Under the Microphone
+## 📡 Tracked Projects
 
-These are the three most relevant and active repositories discovered via GitHub's `robotics` and `autonomous-vehicles` topics, with latest commit analysis as of September 18, 2026.
+### 1. [Sinan Robo](https://github.com/sinanlabs/robo) — `sinanlabs/robo`
+**Tag:** `robotics` · **Language:** Astro · **Focus:** VLA Foundation Model Index
 
----
+**What it is:**
+Sinan Robo (司南·机脑) is an **auditable index of open and open-weight Vision-Language-Action (VLA) robot foundation models**. It catalogues 25+ models (GR00T N1.6/N1.7, π0/π0.5, OpenVLA, Octo, RDT-1B, MolmoAct, and others) across 12 robot bodies (Unitree G1/H1, Franka FR3, ALOHA 2, and others), with every field backed by an evidence URL — licence, parameter count, target embodiment, and more.
 
-### 1. 🟢 [commaai/openpilot](https://github.com/commaai/openpilot)
-
-| | |
-|---|---|
-| **Stars** | ⭐ 63,680 |
-| **Language** | Python |
-| **Focus** | Open-source driver assistance system — an operating system for robotics that upgrades the DAC on 300+ supported cars |
-| **Last Activity** | September 18, 2026 (5 commits same day — extremely active!) |
-
-**What it does:** openpilot is a community-developed, open-source driver assistance system that replaces factory ADAS with a more capable, continuously improving alternative. It's part operating system, part perception stack, and part control engine — running real-time neural networks on embedded hardware to deliver adaptive cruise control, lane centering, and automated driving across a massive fleet of 300+ supported vehicles.
-
-**Recent Development Highlights (as of Sep 18, 2026):**
-- 🚗 **Cinque v3 Hardware Support** — Major new release (`Cinque v3`, PR #38932) bringing support for comma's latest hardware platform, enabling more vehicles with newer chip architecture for improved performance and power efficiency (Harald Schäfer)
-- 📡 **Replay: Fix Ranges with Omitted Start** — Critical bugfix in the replay tooling ensuring time-range queries work correctly when the start timestamp is omitted, improving debugging reliability for developers analyzing driving logs (Trey Moen)
-- 🖥️ **UI: Prime Menu Redesign** — New prime menu interface in the car UI, refreshing the user experience for swiping between passages, map, and settings (stef)
-- 🔧 **Cabana: Fix Stale Message Size Warnings** — Resolved incorrect warning messages in Cabana (the CAN bus analysis tool) when message sizes were reported incorrectly, cleaning up the diagnostic experience (Trey Moen)
-- 📊 **Cabana: Filter Multiplexed Signals in Binary Grid** — New filtering capability for multiplexed CAN signals in the binary grid view, making it far easier to analyze complex vehicle networks with overlapping signal protocols (Trey Moen)
+**Recent Development Highlights (as of Sep 2026):**
+- 🔴 **Real-world GPU benchmarking underway** — Active testing of 5 VLA models on both A800 80GB and RTX 5090 GPUs, with RTX 4090 vs 5090 head-to-head comparisons and per-1k-inference cost tracking being written into the data layer.
+- 🟡 **"Robo 2.0" workspace redesign** — A major architectural pivot from a static index to an interactive workbench, adding: activity signals (daily GitHub/HF/ModelScope scraping with model-page activity cards & 3 leaderboard views), deployment recipes (generalized steps, environment gotchas tables, 5 published recipes, unreproducible-items list), a cost/frequency workbench, dataset tracking, Jetson edge support, and crowd-testing workflows.
+- 🟢 **Hardware reference layer expanded** — Added A800 80GB with rental-price fallbacks to AutoDL domestic on-demand median pricing, giving users real-world cost context.
+- 📊 **Q4 2026 target:** 40+ models, 25+ bodies, first reproducible latency measurements published.
 
 **🎙️ Potential Episode Topics:**
-- "Cinque v3: What's Inside comma's Newest Hardware — and Why It Matters for Open-Source ADAS"
-- "Inside Cabana: Reverse-Engineering CAN Bus Networks One Signal at a Time"
-- "From 300 Cars to 2000: How openpilot Built the Largest Real-World Driving Dataset"
-- "Replay-ability Is Everything: How openpilot's Logging Stack Enables Scientific Driving Analysis"
-- "UI/UX in a Moving Vehicle: Designing interfaces Drivers Actually Trust"
+- *"The VLA Model Landscape: Why We Can't Agree on What's Open"* — The licensing hell between code licences and weight licences, and why Sinan Robo refuses to rank.
+- *"From Index to Workbench: Robo 2.0 and the Future of Auditable Robotics AI"* — What happens when an index becomes a living research tool.
+- *"GPU Benchmarking VLA Models: A800 vs 5090 and the Real Cost of Inference"* — Hard numbers on what it actually costs to run these models.
 
 ---
 
-### 2. 🔵 [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
+### 2. [InterFuser-UI](https://github.com/zubairm8580/InterFuser-UI) — `zubairm8580/InterFuser-UI`
+**Tag:** `autonomous-vehicles` · **Language:** Python · **License:** Apache-2.0 · **Stars:** 1
 
-| | |
-|---|---|
-| **Stars** | ⭐ 26,828 |
-| **Language** | C++ |
-| **License** | Apache-2.0 |
-| **Focus** | Open autonomous driving platform — modular AV stack from Baidu |
-| **Last Activity** | April 16, 2026 (latest commit); periodic updates with major feature drops |
+**What it is:**
+A **real-time Pygame-based monitoring dashboard** for the InterFuser autonomous driving stack in the CARLA simulator. It consolidates front/rear/side camera feeds, a bird's-eye LiDAR map, route data, vehicle control states, safety rule alerts, and scene data into a single screen — making it easy to watch how a self-driving stack perceives and reacts to its environment.
 
-**What it does:** Apollo is one of the most comprehensive open-source autonomous driving platforms ever created. It provides a full modular stack — perception, planning, control, simulation, and cloud services — enabling researchers and companies to build complete self-driving systems. It powers Baidu's Robotaxi service in China and is used by academic labs and industrial R&D teams worldwide.
-
-**Recent Development Highlights:**
-- 🚀 **Apollo 11.0: BEV + OCC (Bird's Eye View + Occupancy)** — Major architectural leap with native Bird's Eye View perception and Occupancy Grid-based 3D scene understanding (`feat: add Apollo 11.0 bev+occ`, PR by yuxin). This brings Apollo into the BEV+OCC paradigm that dominates current top-tier AV research (CourtesyNUSCENE, OccNet), enabling holistic 3D scene representation from multi-camera inputs.
-- 🔧 **Seyond Lidar Driver Recovery** — Full merge of the Seyond lidar driver (`recover_seyond_lidar_driver`, PR #15762), restoring support for Seyond's 3D lidar sensors with updated configuration files and documentation. This expands Apollo's hardware compatibility for researchers using newer lidar setups.
-- 📋 **README Build Status Badge Cleanup** — Removed invalid CI badges from the README, signaling a focus on documentation accuracy and maintainer hygiene (xiaoxinyu).
-- 📖 **Seyond Lidar Driver Configuration & Readme Updates** — Comprehensive documentation for the newly restored lidar driver, including calibration parameters and integration guides (Yuechao.Gu).
+**Recent Development Highlights (as of Sep 2026):**
+- 🔴 **v3.3 released** — Latest version packaged for Windows with a dedicated download, indicating mature stabilization.
+- 🟡 **Full application buildout completed** — The `interfuser_core/` module and `UI.py` (41KB) are in place, with comprehensive documentation and requirements pinned.
+- 🟢 **Multi-sensor fusion visualization** — Simultaneous camera + LiDAR bird's-eye view with route-aware control tracing and safety rule overlay, which is rare for open-source CARLA tooling.
+- 📦 **Windows-first deployment** — Pre-packaged ZIP distributions lower the barrier to entry for non-Linux users, which is a common pain point in the CARLA community.
 
 **🎙️ Potential Episode Topics:**
-- "Apollo 11.0 and the BEV Revolution: Why Every AV Stack Is Going Bird's Eye View"
-- "Occupancy Networks Meet Autonomous Driving: What Apollo 11.0's OCC Module Means for 3D Perception"
-- "The Modular Stack Debate: Is Apollo's Architecture Still State-of-the-Art in the Age of End-to-End Learning?"
-- "Lidar Driver Wars: Why Hardware Compatibility Is the Unsung Hero of Open-Source AV"
-- "From Baidu's Robotaxis to Your Garage: The Global Reach of Apollo"
+- *"Seeing Is Believing: Why Real-Time Sensor Fusion Dashboards Matter"* — How tools like InterFuser-UI democratize self-driving stack debugging.
+- *"CARLA in the Wild: From Simulation to Validation"* — The gap between simulated driving and real-world deployment, and what open-source monitoring tools reveal.
+- *"InterFuser Under the Hood: Transformer-Based Sensor Fusion for Autonomous Driving"* — The architecture behind multi-camera + LiDAR fusion.
 
 ---
 
-### 3. 🟣 [AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)
+### 3. [Rumi](https://github.com/josemanuelm9203/rumi) — `josemanuelm9203/rumi`
+**Tag:** `autonomous-vehicles` · **Focus:** Autonomous Scientific Research Agents
 
-| | |
-|---|---|
-| **Stars** | ⭐ 30,536 |
-| **Language** | Python |
-| **License** | MIT |
-| **Focus** | Python sample codes and textbook for robotics algorithms — the "learn-by-doing" reference |
-| **Last Activity** | September 2, 2026 (dependabot updates); repository is well-maintained with steady hygiene |
+**What it is:**
+A **terminal-native framework for building autonomous scientific research agents** that use computer models to process data, find patterns, and generate new experimental hypotheses. Rumi runs an 88-module "brain pipeline" inside your terminal, performing hypothesis generation, knowledge mapping, contradiction mining, and skeptic review — essentially an AI-powered research assistant that challenges its own assumptions.
 
-**What it does:** PythonRobotics is the go-to open-source textbook-turned-codebase for robotics algorithms. It covers everything from localization (Kalman filters, particle filters, SLAM) to motion planning (RRT*, A*, D*), control (PID, LQR, MPC), and kinematics — all implemented in clean, readable Python with equations and diagrams. It's used in university courses worldwide and is the first stop for anyone learning robotics programming.
-
-**Recent Development Highlights (as of Sep 2, 2026):**
-- 🐍 **Scipy 1.18.1 Bump** — Updated to the latest SciPy release, ensuring compatibility with the newest sparse matrix operations and spatial transform functions that many algorithms depend on (dependabot)
-- 🧹 **Ruff 0.16.5 Linter Update** — Upgraded to the latest Ruff release for faster, more accurate Python linting, keeping the codebase clean and consistent with modern Python style standards (dependabot)
-- 🔒 **GitHub CodeQL Action 4.37.9** — Updated security scanning to the latest version, ensuring continuous vulnerability detection across the entire dependency tree (dependabot)
-- 🔒 **Ongoing Dependency Hygiene** — Regular dependabot PRs for codeql-action (4.37.4 → 4.37.9) and ruff (0.15.16 → 0.16.1 → 0.16.5) show a healthy, security-conscious maintenance posture
+**Recent Development Highlights (as of Sep 2026):**
+- 🔴 **v3.6 released (Sept 2026)** — Latest version with improved parsing tools and faster analysis, available as a Windows .exe installer.
+- 🟡 **10-stage pipeline documented** — The full hypothesis discovery workflow (topic decomposition → entity extraction → knowledge graph construction → contradiction flagging → skepticism review → experiment design) is now fully documented in the README.
+- 🟢 **Contradiction Mining & Skeptic Review modules** — Unique among research agents for having a built-in "critic" module that actively challenges assumptions, reducing confirmation bias in automated research.
+- ⚠️ **Active maintenance cadence** — Monthly commits with focused updates (June: documentation overhaul + module completeness, September: v3.6 release).
 
 **🎙️ Potential Episode Topics:**
-- "PythonRobotics: The Textbook That Teaches 100,000 Engineers to Code Robots"
-- "From Equations to Execution: How PythonRobotics Bridges Theory and Practice"
-- "Kalman Filters to RRT*: The 8 Algorithms Every Robotics Engineer Should Know Inside-Out"
-- "Why Clean Code Matters in Robotics: Lessons from 30,000 Stars and Zero Hype"
-- "Teaching Robots to Think: A Conversation with PythonRobotics Creator Atsushi Sakai"
+- *"Autonomous Research Agents: Can an AI Do Science Without Biasing It?"* — The promise and peril of self-correcting research pipelines.
+- *"88 Brains, One Terminal: Inside Rumi's Modular Architecture"* — How micro-agents cooperate for macro-level scientific discovery.
+- *"From Hypothesis to Experiment: The Autonomous Research Loop"* — What fully automated scientific discovery looks like — and when we can trust it.
+
+---
+
+## 🗓️ Episode Calendar (Suggested)
+
+| Episode | Project | Angle |
+|---------|---------|-------|
+| #1 | Sinan Robo | The VLA licensing maze & why auditability matters |
+| #2 | InterFuser-UI | Democratizing self-driving stack visualization |
+| #3 | Rumi | Can an autonomous agent do unbiased science? |
+| #4 | Sinan Robo (follow-up) | GPU benchmarking deep-dive: real inference costs |
+| #5 | InterFuser-UI (follow-up) | From CARLA simulation to real-world validation |
+| #6 | Rumi (follow-up) | The skeptic review module and AI research ethics |
 
 ---
 
 ## 📊 Activity Snapshot (as of September 18, 2026)
 
-| Project | Stars | Language | Latest Commit | Key Theme |
-|---------|-------|----------|---------------|-------------------------------|
-| openpilot | 63,680 | Python | Sep 18, 2026 — Cinque v3 + Cabana improvements + UI redesign | Fleet-scale ADAS hardware & tooling |
-| Apollo | 26,828 | C++ | Apr 16, 2026 — Apollo 11.0 BEV+OCC + Seyond lidar | Modularity, BEV perception, sensor I/O |
-| PythonRobotics | 30,536 | Python | Sep 2, 2026 — SciPy/Ruff/CodeQL updates | Algorithm education & dependency hygiene |
-
----
-
-## 🎙️ Podcast Alignment
-
-Each project maps to a natural episode arc:
-
-1. **Fleet Episode** → openpilot: "What happens when 300 cars run open-source ADAS every day?"
-2. **Architecture Episode** → Apollo: "Is the modular stack dead? Apollo 11.0 bets on BEV+OCC"
-3. **Education Episode** → PythonRobotics: "How do you teach a robot to think — in Python?"
+| Project | Stars | Language | Key Theme |
+|---------|-------|----------|-------------------------------|
+| Sinan Robo | — | Astro | VLA model auditability & GPU benchmarking |
+| InterFuser-UI | 1 | Python | Real-time CARLA sensor fusion visualization |
+| Rumi | — | — | Autonomous scientific research agents |
 
 ---
 
 ## 📋 Tracking
 
-See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/53)** for the running checklist of items to revisit before the next episode cycle.
+See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/54)** for the running checklist of items to revisit before the next episode cycle.
 
 ---
 
