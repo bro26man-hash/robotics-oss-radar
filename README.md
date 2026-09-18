@@ -12,98 +12,98 @@ Open-source robotics and autonomous systems are evolving at breakneck speed. Thi
 
 ## 🏆 Top 3 Projects Under the Microphone
 
-These are the three most recently active, high-impact repositories tagged with `robotics` or `autonomous-vehicles`, curated from GitHub's latest activity as of September 18, 2026.
+These are the three most relevant and active repositories discovered via GitHub's `robotics` and `autonomous-vehicles` topics, with latest commit analysis as of September 18, 2026.
 
 ---
 
-### 1. 🟢 [MuJoCo](https://github.com/google-deepmind/mujoco)
+### 1. 🟢 [commaai/openpilot](https://github.com/commaai/openpilot)
 
 | | |
 |---|---|
-| **Stars** | ⭐ 15,214 |
+| **Stars** | ⭐ 63,680 |
+| **Language** | Python |
+| **Focus** | Open-source driver assistance system — an operating system for robotics that upgrades the DAC on 300+ supported cars |
+| **Last Activity** | September 18, 2026 (5 commits same day — extremely active!) |
+
+**What it does:** openpilot is a community-developed, open-source driver assistance system that replaces factory ADAS with a more capable, continuously improving alternative. It's part operating system, part perception stack, and part control engine — running real-time neural networks on embedded hardware to deliver adaptive cruise control, lane centering, and automated driving across a massive fleet of 300+ supported vehicles.
+
+**Recent Development Highlights (as of Sep 18, 2026):**
+- 🚗 **Cinque v3 Hardware Support** — Major new release (`Cinque v3`, PR #38932) bringing support for comma's latest hardware platform, enabling more vehicles with newer chip architecture for improved performance and power efficiency (Harald Schäfer)
+- 📡 **Replay: Fix Ranges with Omitted Start** — Critical bugfix in the replay tooling ensuring time-range queries work correctly when the start timestamp is omitted, improving debugging reliability for developers analyzing driving logs (Trey Moen)
+- 🖥️ **UI: Prime Menu Redesign** — New prime menu interface in the car UI, refreshing the user experience for swiping between passages, map, and settings (stef)
+- 🔧 **Cabana: Fix Stale Message Size Warnings** — Resolved incorrect warning messages in Cabana (the CAN bus analysis tool) when message sizes were reported incorrectly, cleaning up the diagnostic experience (Trey Moen)
+- 📊 **Cabana: Filter Multiplexed Signals in Binary Grid** — New filtering capability for multiplexed CAN signals in the binary grid view, making it far easier to analyze complex vehicle networks with overlapping signal protocols (Trey Moen)
+
+**🎙️ Potential Episode Topics:**
+- "Cinque v3: What's Inside comma's Newest Hardware — and Why It Matters for Open-Source ADAS"
+- "Inside Cabana: Reverse-Engineering CAN Bus Networks One Signal at a Time"
+- "From 300 Cars to 2000: How openpilot Built the Largest Real-World Driving Dataset"
+- "Replay-ability Is Everything: How openpilot's Logging Stack Enables Scientific Driving Analysis"
+- "UI/UX in a Moving Vehicle: Designing interfaces Drivers Actually Trust"
+
+---
+
+### 2. 🔵 [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
+
+| | |
+|---|---|
+| **Stars** | ⭐ 26,828 |
 | **Language** | C++ |
 | **License** | Apache-2.0 |
-| **Focus** | Multi-joint dynamics with contact — general-purpose physics simulator for robotics |
-| **Last Activity** | September 18, 2026 (4 commits same day) |
+| **Focus** | Open autonomous driving platform — modular AV stack from Baidu |
+| **Last Activity** | April 16, 2026 (latest commit); periodic updates with major feature drops |
 
-**What it does:** MuJoCo (Multi-Joint dynamics with Contact) is the gold-standard open-source physics simulator for robotics and biomechanics. It provides fast, accurate simulation of articulated bodies under contact forces, and is widely used for robot control research, reinforcement learning, and human-body modeling. It's the simulator behind countless papers at CoRL, RSS, and ICRA.
+**What it does:** Apollo is one of the most comprehensive open-source autonomous driving platforms ever created. It provides a full modular stack — perception, planning, control, simulation, and cloud services — enabling researchers and companies to build complete self-driving systems. It powers Baidu's Robotaxi service in China and is used by academic labs and industrial R&D teams worldwide.
 
 **Recent Development Highlights:**
-- 🔧 **Error Handling for Finite-Difference Functions** — `mjd_transitionFD` and `mjd_inverseFD` now raise proper errors when sleeping is enabled, preventing silent miscalculations in sensitivity analysis (Yuval Tassa)
-- 📦 **Archive Resource Providers** — New abstraction for loading resources from archived bundles, improving portability and reproducibility of simulation setups (Sam Haves)
-- 🦴 **Spring & Damper Disable Flags in Discrete Metric** — Honored spring/damper disable flags in fluid and passive contact terms, giving users finer control over contact modeling in the discrete metric framework (Alessio Quaglino)
-- 🧵 **Flex Stretch Forces from Edge Tensions** — Computed flex stretch forces from edge tensions, advancing soft-body and cable simulation capabilities (Alessio Quaglino)
-- 🚀 **GIL Release in Filament Renderer** — Released the Python GIL in the filament renderer, enabling true multi-threaded rendering pipelines from Python (Sam Haves)
+- 🚀 **Apollo 11.0: BEV + OCC (Bird's Eye View + Occupancy)** — Major architectural leap with native Bird's Eye View perception and Occupancy Grid-based 3D scene understanding (`feat: add Apollo 11.0 bev+occ`, PR by yuxin). This brings Apollo into the BEV+OCC paradigm that dominates current top-tier AV research (CourtesyNUSCENE, OccNet), enabling holistic 3D scene representation from multi-camera inputs.
+- 🔧 **Seyond Lidar Driver Recovery** — Full merge of the Seyond lidar driver (`recover_seyond_lidar_driver`, PR #15762), restoring support for Seyond's 3D lidar sensors with updated configuration files and documentation. This expands Apollo's hardware compatibility for researchers using newer lidar setups.
+- 📋 **README Build Status Badge Cleanup** — Removed invalid CI badges from the README, signaling a focus on documentation accuracy and maintainer hygiene (xiaoxinyu).
+- 📖 **Seyond Lidar Driver Configuration & Readme Updates** — Comprehensive documentation for the newly restored lidar driver, including calibration parameters and integration guides (Yuechao.Gu).
 
 **🎙️ Potential Episode Topics:**
-- "The Physics Engine Under 1,000 Robotics Papers — Inside MuJoCo"
-- "Soft-Body Simulation Is Hard: How MuJoCo Models Cables and Muscles"
-- "Releasing the GIL: Why Python Robotics Simulators Are Slow (And How to Fix It)"
-- "From MuJoCo to Humanoids: The Simulator That Borrowed from Biomechanics"
+- "Apollo 11.0 and the BEV Revolution: Why Every AV Stack Is Going Bird's Eye View"
+- "Occupancy Networks Meet Autonomous Driving: What Apollo 11.0's OCC Module Means for 3D Perception"
+- "The Modular Stack Debate: Is Apollo's Architecture Still State-of-the-Art in the Age of End-to-End Learning?"
+- "Lidar Driver Wars: Why Hardware Compatibility Is the Unsung Hero of Open-Source AV"
+- "From Baidu's Robotaxis to Your Garage: The Global Reach of Apollo"
 
 ---
 
-### 2. 🔵 [Rerun](https://github.com/rerun-io/rerun)
+### 3. 🟣 [AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)
 
 | | |
 |---|---|
-| **Stars** | ⭐ 11,472 |
-| **Language** | Rust + Python + C++ |
-| **License** | Apache-2.0 |
-| **Focus** | Visualize, query, and stream multimodal robotics data for physical AI |
-| **Last Activity** | September 18, 2026 (5 commits same day) |
-
-**What it does:** Rerun is the data layer for physical AI. It ingests multi-rate, multimodal data (images, point clouds, transforms, time series, joint states, video) from robot logs, human-data rigs, sim, and web video. The built-in viewer renders everything in sync, in realtime — scrub episodes, compare sensors, watch CV pipelines run live. Data is queryable with dataframes or SQL, and streams directly into training workflows.
-
-**Recent Development Highlights:**
-- 🔦 **Volume Raymarcher** — Brand-new volume rendering capability for 3D scalar field visualization, enabling ray-march-based rendering of density fields, temperature maps, and FAHR data (Gábor Gyebnár)
-- 🤖 **LeRobot Import Diagnostics** — `re_lerobot`: Collect and categorize import warnings when migrating LeRobot datasets into Rerun, addressing the growing demand for HuggingFace robotics dataset interop (Eric Leijonmarck)
-- 🏗️ **Logging Architecture Refactor** — Lifted `LogMsg`, `ArrowMsg` and friends out of `re_log_types` into a dedicated `re_log_msg` crate, improving code modularity and separation of concerns (Antoine Beyeler)
-- 🔧 **Changeset Type System Expansion** — Added `misc` as a new changeset type, expanding the granular update tracking system for more precise change impact analysis (Jochen Görtler)
-- 📦 **Build Reproducibility** — Pinned `hatchling` to `v1.30.1` for reproducible Python builds, ensuring consistent CI across environments (Jochen Görtler)
-
-**🎙️ Potential Episode Topics:**
-- "The Data Layer for Physical AI — Why Rerun Could Replace Rviz"
-- "Rust for Robotics: Building a Columnar Storage Engine for Multi-Rate Sensor Data"
-- "From LeRobot to Rerun: The Challenge of Standardizing Robotics Dataset Formats"
-- "Volume Rendering for Robot Perception: What's Inside the Black Box?"
-
----
-
-### 3. 🟣 [AlpaSim](https://github.com/NVlabs/alpasim)
-
-| | |
-|---|---|
-| **Stars** | ⭐ 1,239 |
+| **Stars** | ⭐ 30,536 |
 | **Language** | Python |
-| **License** | Apache-2.0 |
-| **Focus** | Open-source autonomous vehicle simulation platform for end-to-end AV policy development & testing |
-| **Last Activity** | August 18, 2026 (latest commit); actively synced from internal GitLab |
+| **License** | MIT |
+| **Focus** | Python sample codes and textbook for robotics algorithms — the "learn-by-doing" reference |
+| **Last Activity** | September 2, 2026 (dependabot updates); repository is well-maintained with steady hygiene |
 
-**What it does:** AlpaSim is NVIDIA's open-source autonomous vehicle simulation platform designed for development and testing of end-to-end AV policies. Unlike traditional modular AV stacks, AlpaSim focuses on simulating complete, monolithic driving policies — from perception to control — in a photorealistic, high-fidelity environment. It's built for researchers who want to train and evaluate neural network-based driving agents in a loop.
+**What it does:** PythonRobotics is the go-to open-source textbook-turned-codebase for robotics algorithms. It covers everything from localization (Kalman filters, particle filters, SLAM) to motion planning (RRT*, A*, D*), control (PID, LQR, MPC), and kinematics — all implemented in clean, readable Python with equations and diagrams. It's used in university courses worldwide and is the first stop for anyone learning robotics programming.
 
-**Recent Development Highlights:**
-- 🔄 **CI Pipeline Overhaul — Avoid LFS Downloads During GitLab Replay** — Major CI improvement to avoid Large File Storage downloads when replaying GitHub changes to GitLab, dramatically speeding up sync times (jarcherNV)
-- 🎲 **Reproducible Rollout Seeds via RolloutSpec** — Made rollout seeds selectable and reproducible through the `RolloutSpec` API, a critical step for scientific rigor in RL training evaluation (Alba María Téllez Fernández)
-- 🚀 **Linear MPC Speed Bound Increased to 40 m/s** — Pushed the linear Model Predictive Controller speed limit from previous thresholds to 40 m/s (~90 mph), expanding the envelope for high-speed autonomous driving scenarios (Ding-ray)
-- 🔄 **GitLab Sync (2026-08-11)** — Regular sync from NVIDIA's internal GitLab, bringing the latest proprietary improvements into the open-source codebase (mwatson-nvidia)
-- 🐛 **Self-Hosted Build Job Fix** — Resolved `uv` install issues in self-hosted CI runners, improving build reliability for the AlpaSim ecosystem (jarcherNV)
+**Recent Development Highlights (as of Sep 2, 2026):**
+- 🐍 **Scipy 1.18.1 Bump** — Updated to the latest SciPy release, ensuring compatibility with the newest sparse matrix operations and spatial transform functions that many algorithms depend on (dependabot)
+- 🧹 **Ruff 0.16.5 Linter Update** — Upgraded to the latest Ruff release for faster, more accurate Python linting, keeping the codebase clean and consistent with modern Python style standards (dependabot)
+- 🔒 **GitHub CodeQL Action 4.37.9** — Updated security scanning to the latest version, ensuring continuous vulnerability detection across the entire dependency tree (dependabot)
+- 🔒 **Ongoing Dependency Hygiene** — Regular dependabot PRs for codeql-action (4.37.4 → 4.37.9) and ruff (0.15.16 → 0.16.1 → 0.16.5) show a healthy, security-conscious maintenance posture
 
 **🎙️ Potential Episode Topics:**
-- "End-to-End AV Learning: Why Monolithic Neural Networks Are Replacing Modular Stacks"
-- "Reproducibility in RL: Why Your Rollout Seeds Matter (And How AlpaSim Is Fixing It)"
-- "40 m/s in Simulation: Pushing the Limits of MPC-Based Autonomous Driving"
-- "NVIDIA's Open Source Strategy: What AlpaSim Tells Us About the Future of AV Research"
+- "PythonRobotics: The Textbook That Teaches 100,000 Engineers to Code Robots"
+- "From Equations to Execution: How PythonRobotics Bridges Theory and Practice"
+- "Kalman Filters to RRT*: The 8 Algorithms Every Robotics Engineer Should Know Inside-Out"
+- "Why Clean Code Matters in Robotics: Lessons from 30,000 Stars and Zero Hype"
+- "Teaching Robots to Think: A Conversation with PythonRobotics Creator Atsushi Sakai"
 
 ---
 
 ## 📊 Activity Snapshot (as of September 18, 2026)
 
 | Project | Stars | Language | Latest Commit | Key Theme |
-|---------|-------|----------|---------------|-----------|
-| MuJoCo | 15,214 | C++ | Soft-body forces + GIL release + archive providers | Physics engine maturity & soft-body simulation |
-| Rerun | 11,472 | Rust | Volume raymarcher + architecture refactor + LeRobot interop | Data infrastructure & rendering |
-| AlpaSim | 1,239 | Python | MPC speed bump + reproducible rollouts + CI overhaul | End-to-end AV policy evaluation |
+|---------|-------|----------|---------------|-------------------------------|
+| openpilot | 63,680 | Python | Sep 18, 2026 — Cinque v3 + Cabana improvements + UI redesign | Fleet-scale ADAS hardware & tooling |
+| Apollo | 26,828 | C++ | Apr 16, 2026 — Apollo 11.0 BEV+OCC + Seyond lidar | Modularity, BEV perception, sensor I/O |
+| PythonRobotics | 30,536 | Python | Sep 2, 2026 — SciPy/Ruff/CodeQL updates | Algorithm education & dependency hygiene |
 
 ---
 
@@ -111,15 +111,15 @@ These are the three most recently active, high-impact repositories tagged with `
 
 Each project maps to a natural episode arc:
 
-1. **Physics Episode** → MuJoCo: "What happens inside a physics engine when a robot touches the world?"
-2. **Data Episode** → Rerun: "How do you log, query, and stream 100 sensor streams from a robot?"
-3. **AV Policy Episode** → AlpaSim: "Can a single neural network learn to drive at 90 mph?"
+1. **Fleet Episode** → openpilot: "What happens when 300 cars run open-source ADAS every day?"
+2. **Architecture Episode** → Apollo: "Is the modular stack dead? Apollo 11.0 bets on BEV+OCC"
+3. **Education Episode** → PythonRobotics: "How do you teach a robot to think — in Python?"
 
 ---
 
 ## 📋 Tracking
 
-See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/50)** for the running checklist of items to revisit before the next episode cycle.
+See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/53)** for the running checklist of items to revisit before the next episode cycle.
 
 ---
 
