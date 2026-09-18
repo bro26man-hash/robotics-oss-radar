@@ -1,130 +1,144 @@
 # 🤖 Robotics OSS Radar
 
-> **Your weekly scan of the most active open-source repos in autonomous vehicles & robotics** — tracking commits, development highlights, and podcast-ready story angles.
+> **Your podcast companion for open-source robotics & autonomous systems.**
+> Tracking the most recently active repositories, recent commits, and episode-worthy stories — all in one place.
 
 ---
 
-## 🔍 Why This Repo Exists
+## 🎙 What Is This?
 
-The open-source robotics ecosystem moves fast. Every day, builders around the world are pushing code that brings us closer to fully autonomous systems. This repo is the **central scratchpad** for the *Robotics OSS Radar* podcast — cataloguing the projects worth knowing about, the commits worth discussing, and the episodes worth recording.
+**Robotics OSS Radar** is a living research hub curated for the *Robotics OSS Radar* podcast. We scan GitHub for the most recently active projects tagged with `robotics` and `autonomous-vehicles`, dig into their latest commits, and surface the development highlights that make great podcast episodes.
 
 ---
 
-## 📡 This Week's Tracked Projects
+## 📡 Projects Under the Lens
 
 ### 1. 🧠 Rumi — Autonomous Scientific Research Agents
 **Repo:** [josemanuelm9203/rumi](https://github.com/josemanuelm9203/rumi)  
-**Topic:** `autonomous-vehicles`  
+**Last Updated:** September 18, 2026  
 **Language:** Cross-platform (Windows)  
 **License:** Not specified
 
 **What it is:**  
-Rumi is a terminal-native framework for building autonomous scientific research agents. It uses 88 small "brain programs" to process data, find patterns, and generate testable hypotheses. Think of it as an automated research assistant that works inline with your workflow — from hypothesis generation and knowledge mapping to contradiction mining and skeptical self-review.
-
-**Latest Commit (Sep 18, 2026):**  
-`b95ad14` — *Update README.md*  
-The project is actively refreshing documentation, signaling preparation for broader adoption or an upcoming release.
+Rumi is a terminal-native framework for building autonomous scientific research agents. It uses **88 small "brain programs"** to check facts, map knowledge, and challenge assumptions — all through a 10-stage pipeline that turns a raw idea into a testable hypothesis.
 
 **Recent Development Highlights:**
-- **10-stage pipeline** now fully documented: topic decomposition → entity extraction → knowledge graph construction → pattern finding → logical trap detection → hypothesis formatting → experiment planning
-- **88 modular brain programs** for multi-modal reasoning
-- **Contradiction Mining** module flags inconsistencies against verified data
-- **Skeptic Review** module challenges assumptions before conclusions
-- **Jun 2026 docs overhaul** — Two parallel commits added all missing module docs and removed `benchmark_runner`, suggesting a v1.0 release is being polished
+| Date | Commit | What Happened |
+|------|--------|-----------------|
+| Sep 18, 2026 | `b95ad14` | README refreshed — docs updated with all missing modules |
+| Jun 9, 2026 | `23e3723` | Benchmark runner removed; documentation overhauled |
+| Jun 2, 2026 | `260ca5f` | Initial commit — project bootstrap |
 
-🎙️ **Episode Angle:** *"Can an AI Do Your Research For You? Inside the autonomous agent pipeline"* — Explore how autonomous agents are moving from simple chatbots to structured scientific workflows with deterministic, multi-stage pipelines.
+**Key Features:**
+- **Hypothesis Generation** — Converts raw ideas into structured, testable experimental plans
+- **Knowledge Mapping** — Builds visual graphs linking data points to spot hidden connections
+- **Contradiction Mining** — Flags inconsistencies against verified data automatically
+- **Skeptic Review Module** — Acts as an automated critic to challenge assumptions
+
+**🎙 Potential Episode Topics:**
+- *"Can AI Be a Devil's Advocate? Meet Rumi's Skeptic Review Module"*
+- *"The 88 Brain Programs: How Modular Architecture Enables Autonomous Research"*
+- *"From Hypothesis to Experiment: The 10-Stage Pipeline Inside Rumi"*
 
 ---
 
-### 2. 🚗 InterFuser-UI — Real-Time CARLA Autonomous Driving Monitor
+### 2. 🚗 InterFuser-UI — Real-Time Autonomous Driving Visualization for CARLA
 **Repo:** [zubairm8580/InterFuser-UI](https://github.com/zubairm8580/InterFuser-UI)  
-**Topic:** `autonomous-vehicles`  
+**Last Updated:** September 18, 2026  
 **Language:** Python  
 **License:** Apache-2.0 ⭐ 1 star
 
 **What it is:**  
-A Pygame-based real-time visualization dashboard for the **InterFuser** autonomous driving stack, running inside the **CARLA** simulator. It fuses camera feeds, LiDAR bird's-eye maps, route data, vehicle control states, and safety rule alerts into a single monitor view — making it ideal for debugging, demos, and understanding how multi-modal sensor fusion works in practice.
-
-**Latest Commit (Sep 18, 2026):**  
-`d60a7af` — *Update README.md*  
-Documentation refresh suggests the project is stabilizing and preparing for community feedback.
+A Pygame-based real-time UI that live-models an autonomous driving stack inside the **CARLA simulator**. It fuses camera feeds, LiDAR bird's-eye views, route data, and safety checks into a single dashboard — so you can watch how a self-driving car perceives and reacts to the world in real time.
 
 **Recent Development Highlights:**
-- **Multi-camera view** — front, rear, and side feeds rendered simultaneously
-- **LiDAR bird's-eye view** — top-down occupancy map for obstacle detection
-- **Safety rule overlay** — real-time alerts when driving behavior violates constraints
-- **Route-aware control visualization** — lane changes, turns, and road-edge tracking
-- **InterFuser sensor fusion data view** — watch how camera + LiDAR + radar inputs combine
-- **Apr 2026 — Full UI application shipped** — Three rapid commits added the complete InterFuser application with model core, UI.py (41 KB!), and comprehensive documentation
+| Date | Commit | What Happened |
+|------|--------|-----------------|
+| Sep 18, 2026 | `d60a7af` | README updated with latest usage documentation |
+| Apr 3, 2026 | `3b73310` | Full UI application + model core added with documentation |
+| Apr 2, 2026 | `d40d68b` | UI application and model core iteration |
+| Mar 17, 2026 | `92be73f` | Initial contribution by justinbrianhwang |
+| Mar 17, 2026 | `7974159` | Project bootstrap by Sunjun Hwang |
 
-🎙️ **Episode Angle:** *"Seeing Is Believing: Watch a self-driving car perceive the world in real-time"* — A hands-on walkthrough of sensor fusion visualization, from raw LiDAR points to a drivable bird's-eye map.
+**Key Features:**
+- 🎥 **Multi-Camera View** — Front, rear, and side cameras simultaneously
+- 🗺️ **LiDAR Bird's-Eye Map** — Top-down occupancy visualization for detecting vehicles and lanes
+- ⚠️ **Safety Rule Alerts** — Real-time flags for traffic rule violations
+- 🛣️ **Route-Aware Control** — Live tracking of planned routes, turns, and lane changes
+- 🤖 **Sensor Fusion View** — Watch how InterFuser's transformer architecture combines camera + LiDAR
+
+**🎙 Potential Episode Topics:**
+- *"Watching a Self-Driving Car Think: Inside InterFuser's Real-Time Dashboard"*
+- *"Sensor Fusion 101: How Camera + LiDAR = Safer Autonomous Driving"*
+- *"CARLA vs. The Real World: What Simulation Gets Right (and Wrong)"*
 
 ---
 
-### 3. 🗺️ slam-regression-ci — CI Regression Gate for SLAM & Odometry
-**Repo:** [pyy52/slam-regression-ci](https://github.com/pyy52/slam-regression-ci)  
-**Topic:** `robotics`  
-**Language:** Python 3.8+  
-**License:** MIT ✨ **Under active development — v0.1.0 in progress**
+### 3. 💻 C++ for ROS 2 — A 50-Exercise Journey from Zero to rclcpp
+**Repo:** [sai2311-eng/cpp-for-ros2](https://github.com/sai2311-eng/cpp-for-ros2)  
+**Last Updated:** September 18, 2026  
+**Language:** C++ (C++23)  
+**License:** Not specified
 
 **What it is:**  
-A lightweight, dependency-minimal CI tool that acts as a **regression gate** for SLAM (Simultaneous Localization and Mapping) and odometry trajectories. It compares a candidate trajectory against a committed baseline, applies configurable per-metric thresholds (ATE RMSE, RPE translation RMSE), and fails CI builds with both a human-readable Markdown report and a machine-readable JSON report. Fills a critical gap: how do you catch performance regressions in iterative robotics localization code?
-
-**Latest Commit (Sep 18, 2026):**  
-`0163184` — *feat: TUM trajectory loading, association, and ATE/RPE metrics (#6)*  
-Major feature drop: full TUM trajectory format support, trajectory association algorithms, and the core ATE/RPE metric computations are now implemented.
+A beautifully transparent learning log: 50 hand-written C++ exercises that take a mechanical engineer from absolute zero to writing ROS 2 nodes in `rclcpp`. Every file is annotated with what concept it practices, every bug fix is documented with a `FIXED:` note, and the entire progression is organized into four stages — from basics through compound types to ROS 2 in C++.
 
 **Recent Development Highlights:**
-- **TUM trajectory loading** — native support for the standard TUM dataset format
-- **Trajectory association** — aligns candidate and baseline trajectories for fair comparison
-- **ATE (Absolute Trajectory Error)** — RMSE computation against ground truth
-- **RPE (Relative Pose Error)** — translation RMSE for local drift detection
-- **Dual reporting** — Markdown for humans, JSON for CI pipelines
-- **CODE_OF_CONDUCT.md & SECURITY.md** — community-first governance from day one
-- **Sep 2026 — Repository bootstrapped** — Full community scaffolding: `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `pyproject.toml` — professional-grade open-source setup from day one
+| Date | Commit | What Happened |
+|------|--------|-----------------|
+| Sep 18, 2026 | `d7a5fd0` | Bug fixes documented in NOTE comments across all exercises |
+| Sep 18, 2026 | `93acbc5` | Explanatory comments added to every exercise + README updated |
+| Sep 18, 2026 | `e896a5e` | Full reorganization into topic folders with descriptive names |
+| Sep 15, 2026 | `92a8124` | Arrays stage completed — `std::vector` and 3-D arrays explored |
+| Sep 14, 2026 | `7a68079` | Remaining practice problems from the 50 Questions set added |
 
-🎙️ **Episode Angle:** *"The Boring Thing That Saves Robotics: Why regression testing for SLAM is harder than you think"* — A deep dive into how continuous integration meets iterative robotics development.
+**Key Features:**
+- 📝 **Every File Documented** — Each exercise starts with a comment explaining what it does and which concepts it practices
+- 🐛 **FIXED: Notes** — Bug fixes are preserved in-line so the lesson isn't lost
+- 🗺️ **4-Stage Roadmap** — Basics → Advanced → Practice → ROS 2 in C++ (`rclcpp`)
+- 🔧 **Build-Ready** — Compiles with `g++ -std=c++23 -Wall -Wextra` on Ubuntu 24.04
+- 🏠 **Hardware Context** — Part of a wider track: ROS 2 Jazzy, micro-ROS on ESP32, differential-drive robot designed in Fusion 360
 
----
-
-## 🎙️ Podcast Episode Planner
-
-| # | Project | Episode Title | Priority | Status |
-|---|---------|----------------|----------|--------|
-| 1 | Rumi | *"Can an AI Do Your Research For You?"* | 🔴 High | 📝 Idea |
-| 2 | InterFuser-UI | *"Seeing Is Believing: Real-Time Sensor Fusion in CARLA"* | 🔴 High | 📝 Idea |
-| 3 | slam-regression-ci | *"The Boring Thing That Saves Robotics"* | 🟡 Medium | 📝 Idea |
-
-### Episode Flow Suggestions:
-1. **Cold Open:** Show a 30-second clip of InterFuser-UI running in CARLA — LiDAR point clouds, camera feeds, safety alerts. Ask: *"What does a self-driving car see?"*
-2. **Act I:** Rumi — Can autonomous agents do science? Walk through the 10-stage pipeline.
-3. **Act II:** InterFuser-UI — Inside the sensor fusion stack. Live demo walkthrough.
-4. **Act III:** slam-regression-ci — The unsung hero of robotics CI. Why metrics matter.
-5. **Wrap-Up:** What's next? Link to the tracking issue and invite listener submissions.
+**🎙 Potential Episode Topics:**
+- *"Why Every Robotics Engineer Needs C++ — And Why It's Scary to Start"*
+- *"From Python to rclcpp: Bridging the Gap That Keeps Robots Up at Night"*
+- *"The Art of Learning in Public: 50 Exercises, 50 Bugs, 50 Lessons"*
+- *"Deadline-Driven Code: Why ROS 2 Nodes Demand C++ Performance"*
 
 ---
 
-## 📋 Contribution Guide
+## 🔍 How We Track Projects
 
-This is a living repo! To add a new project:
-
-1. Fork this repository
-2. Add your project summary under `projects/`
-3. Include: repo link, topic tags, latest commit SHA, 3–5 bullet highlights, and a suggested episode angle
-4. Open a Pull Request with the title `Add: [Project Name] to radar`
-
----
-
-## 📡 Data Sources
-
-- **GitHub Search API** — `topic:autonomous-vehicles`, `topic:robotics`
-- **Commit tracking** — Latest 5 commits per repo
-- **Issue tracking** — See the open issue: [*Projects to Revisit & Upcoming Releases*](https://github.com/bro26man-hash/robotics-oss-radar/issues)
+| Step | Tool | What We Do |
+|------|------|-------------|
+| 1 | **GitHub Search** | Query repos tagged `robotics` and `autonomous-vehicles`, sorted by last update |
+| 2 | **Commit Archaeology** | Pull the 5 most recent commits per repo to map the development rhythm |
+| 3 | **Read the Docs** | Study READMEs and structure to understand architecture and intent |
+| 4 | **Episode Ideation** | Surface the stories, features, and tensions that make great podcast content |
 
 ---
 
-*Built for the open-source robotics community. See something missing? Open an issue or submit a PR!*
+## 🎙 About the Podcast
+
+**Robotics OSS Radar** is a podcast for engineers, researchers, and enthusiasts who want to understand where open-source robotics is headed — by following the code. Each episode dives deep into one project: what it builds, how it's evolving, and what it means for the future of autonomous systems.
 
 ---
 
-**Tags:** `#robotics` `#autonomous-vehicles` `#SLAM` `#CARLA` `#open-source` `#podcast` `#CI/CD` `#sensor-fusion` `#autonomous-agents`
+## 📌 Quick Links
+
+| Section | Link |
+|---------|------|
+| 📡 Projects Index | This README |
+| 📋 Tracking Issue | [Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/55) |
+| 🔍 Search `autonomous-vehicles` | [GitHub Search](https://github.com/search?q=topic%3Aautonomous-vehicles&type=repositories&s=updated&o=desc) |
+| 🔍 Search `robotics` | [GitHub Search](https://github.com/search?q=topic%3Arobotics&type=repositories&s=updated&o=desc) |
+
+---
+
+## 🤝 Contribute
+
+Have a project you think we should spotlight? Found a repo with killer commits? Open an issue or submit a PR — the radar is built by the community, for the community.
+
+---
+
+*Built for the podcast. Powered by GitHub. Driven by curiosity.* 🤖
