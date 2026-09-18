@@ -52,24 +52,24 @@ Every episode of the **Robotics OSS Radar** podcast dives deep into a real open-
 
 ---
 
-### 3. [RobotWebTools/rclnodejs](https://github.com/RobotWebTools/rclnodejs)
-**Stars:** 448 ⭐ | **Language:** JavaScript | **Focus:** ROS 2 client library for Node.js with browser integration
+### 3. [Hebbian-Robotics/hflow](https://github.com/Hebbian-Robotics/hflow)
+**Stars:** 272 ⭐ | **Language:** Python | **Focus:** SDK for robotics teams to verify the quality of their data used for AI model training
 
-> *"ROS 2 client library for Node.js, with browser integration"*
+> *"SDK for robotics teams to verify the quality of their data used for AI model training."*
 
 **Recent Development Highlights (as of Sep 18, 2026):**
 
 | Commit | What's Happening |
 |---|---|
-| `a66e983` — Fix Windows test execution and WebSocket cleanup (#1610) | Cross-platform CI fix — Windows test execution and WebSocket resource cleanup. Critical for anyone running rclnodejs on Windows dev machines. |
-| `58411a9` — Preserve native type-description responses and prevent test leaks (#1608) | Hardening around type-description handling and preventing test leaks — signs of maturing reliability for production ROS 2 + Node.js deployments. |
-| `c8cf887` — Report CI failures and resolve Node.js 26 test regressions (#1601) | Proactive CI failure reporting and fixing regressions on the bleeding-edge Node.js 26 — keeping the library compatible with the latest runtime. |
+| `e7a615b` — fix(import): guard the meta/episodes tree loop against a missing 'path' (#555) | Robustness fix — preventing crashes when a `path` key is missing in the metadata tree. Signals growing real-world usage where incomplete metadata is common. |
+| `1ae107d` — chore(deps): bump astral-sh/setup-uv in the github-actions group (#557) | Keeping CI tooling current with the latest `setup-uv` action — faster, cleaner Python environment setup for tests and builds. |
+| `9c9fd21` — feat(examples): reproducible real-camera LeRobot workflow (fixes #191) (#552) | Major new example showing a fully reproducible pipeline using real camera data with LeRobot — bridges the gap between simulation and real-world robotics data collection. |
 
 **🎙️ Potential Episode Topics:**
-- "ROS 2 in the Browser: What rclnodejs makes possible for web developers"
-- "Cross-platform robotics: Why Windows support matters for the ROS ecosystem"
-- "From Node.js to ROS 2: Bridging the web and robotics worlds"
-- "Node.js 26 compatibility — how open-source libraries keep pace with runtime changes"
+- "Data Quality is the Next Bottleneck in Robotics AI — why hflow matters"
+- "From Simulation to Reality: hflow's LeRobot camera workflow explained"
+- "Building a Robotics Data SDK: what it takes to validate training data at scale"
+- "The gap between imitation learning and real-world data — hflow's approach"
 
 ---
 
