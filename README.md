@@ -1,126 +1,137 @@
 # 🤖 Robotics OSS Radar
 
-> **Open-Source Robotics & Autonomous Systems — Podcast Radar**
-> Tracking the most actively developed open-source projects, their latest commits, and potential episode topics for the *Robotics OSS Radar* podcast.
+> **Open-source robotics & autonomous systems — podcast companion**
+> Tracking the most recently active repositories, recent commits, and episode ideas for your show.
 
 ---
 
-## 🎙️ About This Project
+## 📡 Why This Radar?
 
-This repo is the companion hub for the **Robotics OSS Radar** podcast — a show dedicated to the people, projects, and behind-the-scenes engineering driving open-source robotics and autonomous systems forward. Between episodes, we use this repo to **monitor, summarize, and spotlight** the repos that matter most.
+The open-source robotics and autonomous-vehicles ecosystem is moving fast. To keep your podcast audience informed, we track the **most recently active** projects, distill what's being worked on, and surface **episode-worthy stories** — from safety-cage research to cloud-based RL training to industrial simulation.
 
 ---
 
-## 📡 Tracked Projects
+## 🔍 Tracked Projects
 
-### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
+### 1. 🚗 PhysiCar DeepRacer for Cloud
 | | |
 |---|---|
-| ⭐ Stars | **63,679** |
-| 🛠 Language | Python |
-| 📜 License | MIT |
-| 🔗 Repo | [github.com/commaai/openpilot](https://github.com/commaai/openpilot) |
+| **Repo** | [PoetAndPoem4Hu/physicar-deepracer-for-cloud](https://github.com/PoetAndPoem4Hu/physicar-deepracer-for-cloud) |
+| **Language** | Java |
+| **Topic** | `autonomous-vehicles` |
+| **Last Activity** | **September 18, 2026** — README overhaul |
+| **Stars** | 0 |
 
-**What it is:** An open-source operating system for robotics that upgrades the driver assistance system on **300+ supported cars**. It's the most-starred active robotics project on GitHub and a flagship example of real-world autonomous driving deployed at scale.
+**What it is:** A platform from PhysiCar AI that lets you train AWS DeepRacer reinforcement-learning models in the cloud. It simplifies the setup of cloud-based RL environments for autonomous-vehicle research and education.
 
-**Recent Development Highlights (as of Sept 18, 2026):**
+**Recent development highlights:**
+- **README redesigned** (Sept 2026) — the project just refreshed its documentation, signaling renewed community interest and onboarding improvements.
+- **Version 1.2** released back in 2019, with README updates in 2025 and 2026 suggesting the maintainer is re-activating the project after a long dormancy.
 
-| Commit | What's Happening |
-|---|---|
-| `d06711b` — *ui: prime menu (#38860)* | Full redesign of the Prime UI menu — improving driver-facing UX and usability |
-| `c6d13eb` — *Cinque v3 (#38932)* | New vehicle hardware generation support (Cinque v3), expanding the 300+ car compatibility list |
-| `9a95fdc` — *cabana: fix stale message size warnings (#38961)* | Bug fix in Cabana (the data replay tool) — improving diagnostic reliability |
-| `c8d56a1` — *cabana: filter multiplexed signals in binary grid (#38960)* | Enhanced signal processing in the data analysis pipeline |
-| `df7e0e5` — *Use upstream tinygrad disk tensors for model loading (#38956)* | Performance optimization — leveraging upstream tinygrad improvements for faster model loading |
-
-**🎙️ Potential Episode Topics:**
-- *"Inside openpilot: How 300+ Cars Run Open-Source Autonomous Driving"* — The architecture, safety model (ISO 26262), and how the panda security chip works
-- *"From DIY to Deployment: The comma.ai Hardware Pipeline"* — comma four, comma three, and the new Cinque hardware generations
-- *"Tinygrad & the Edge: Running Deep Models on Car Hardware"* — The model-loading optimization story and what it means for on-device inference
-- *"Cabana & Data-Driven Development: Replaying the Real World"* — How comma.ai uses route replay and signal analysis to debug and improve models
+**🎙️ Potential episode topics:**
+- *"Cloud-Native RL: Training Autonomous Cars Without a Garage"* — how cloud platforms are democratizing RL for AV research.
+- *"From Toy Car to Thermal Runway: The DeepRacer Ecosystem"* — the gap between simulation toys and real autonomy stacks.
+- *"Why Did PhysiCar Revive This Repo?"* — discovering what re-awakens dormant open-source projects.
 
 ---
 
-### 2. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
+### 2. 🛡️ SE4AI Safety Cages for Autonomous Driving (CobraFlex)
 | | |
 |---|---|
-| ⭐ Stars | **26,829** |
-| 🛠 Language | C++ |
-| 📜 License | Apache-2.0 |
-| 🔗 Repo | [github.com/ApolloAuto/apollo](https://github.com/ApolloAuto/apollo) |
+| **Repo** | [snchz46/MT-SE4AI-Safe-RL-Cobraflex](https://github.com/snchz46/MT-SE4AI-Safe-RL-Cobraflex) |
+| **Language** | Python |
+| **Topic** | `autonomous-vehicles` |
+| **Last Activity** | **September 18, 2026** — 5 commits on draft writing (Chapter 6 of thesis) |
+| **Stars** | 1 |
+| **License** | MIT |
 
-**What it is:** Baidu's **open autonomous driving platform** — a full-stack, end-to-end software framework for developing, testing, and deploying autonomous vehicles. From geo-fenced waypoint following (v1.0) to curb-to-curb urban driving (v5.5+) to large-scale functional deployment (v11.0), Apollo has been the leading open-source AV platform since 2017.
+**What it is:** Full research artifacts for a master's thesis at Hochschule Esslingen investigating how **runtime safety cages** can constrain a Reinforcement Learning agent in an autonomous driving context. Built on a 1:14 scale physical vehicle (CobraFlex) with 360° LiDAR, stereo camera, and skid-steer drive, all simulated in Gazebo with ROS 2.
 
-**Recent Development Highlights (as of Feb 27, 2026):**
+**Recent development highlights:**
+- **Active thesis writing** — 5 commits on September 18 alone, all titled "E6: draft writing v6," showing the author is in the final sprint of Chapter 6 (closure & defence, Gate G6).
+- **Phase 5 (physical deployment) just closed** on September 1, 2026 — the sim-to-real transfer was validated: the PPO policy drove 18.05 m of the real circuit uninterrupted with **zero safety interventions**.
+- **Massive validation campaign** — 1,890 simulation runs across 27 scenarios (nominal, edge-case, perturbed) are complete; the verdict campaign data is fresh and being analyzed.
+- **Traceability gate is rigorous** — every hazard (H-01…H-12) traces through safety requirements → cage rules → scenarios → metrics → logged evidence. A mechanical check (`check_traceability.py`) blocks any Gate review with orphans.
+- **Key finding:** The reward-peak checkpoint (475k steps) was actually the *worst* performer; selecting by training reward alone would have picked the wrong model. The cage-intervention rate was the discriminating signal.
+- **Results at a glance:** 5.32 continuous laps on `complex_b`, 8.6 mm mean lateral error, 27 mm max, **0 emergencies, 0 safety interventions** — only the benign C-06 rate limiter fired.
 
-| Commit | What's Happening |
-|---|---|
-| `539f546` — *feat: add Apollo 11.0 bev+occ* | 🚀 **Major release:** Apollo 11.0 introduces **BEV (Bird's Eye View) + OCC (Occupancy)** perception — a paradigm shift from camera/LiDAR-based 3D detection to top-down representation, aligning with the industry trend pioneered by Tesla and Waymo |
-| `40c8a01` — *Merge PR #15762: recover_seyond_lidar_driver* | New **Seyond LiDAR driver** integration — expanding hardware support for next-generation LiDAR sensors |
-| `6680288` / `995b75a` — *Seyond LiDAR driver config & docs* | Full documentation and configuration support for the new lidar sensor |
-| `d53aa3d` — *docs: fix README - remove invalid build status badges* | Maintenance cleanup — keeping docs current |
-
-**🎙️ Potential Episode Topics:**
-- *"BEV & OCC: The Paradigm Shift in Autonomous Perception"* — Why Bird's Eye View + Occupancy networks are replacing traditional 3D object detection, and what Apollo 11.0 means for the field
-- *"From Apollo 1.0 to 11.0: 9 Years of Open-Source AV"* — The full evolution story, from GPS waypoint following to large-scale functional deployment
-- *"CyberRT: The Middleware That Powers a Platoon of Robotaxis"* — Deep dive into Apollo's real-time communication framework
-- *"Sensors & the Software Stack: Integrating Next-Gen LiDAR"* — What it takes to add a new sensor to a production-grade AV platform
+**🎙️ Potential episode topics:**
+- *"Wrapping AI in a Safety Cage: Can We Trust an RL Driver?"* — the SE4AI methodology and why traceability matters.
+- *"The Checkpoint That Looked Best But Was Actually Worst"* — why training reward is a terrible proxy for real-world safety.
+- *"Sim-to-Real Transfer of an End-to-End Camera Policy"* — what it takes to move from Gazebo to a physical 1:14 car.
+- *"12 Hazards, 14 Requirements, 6 Cage Rules: The Math of Autonomous Safety"* — the engineering behind runtime monitoring.
+- *"From Simulation to Hardware: Phase 5 Closes on CobraFlex"* — the emotional journey of a thesis defense.
 
 ---
 
-### 3. [microsoft/AirSim](https://github.com/microsoft/AirSim)
+### 3. 🏭 Sim-Foundry — Virtual Factory Simulator
 | | |
 |---|---|
-| ⭐ Stars | **18,492** |
-| 🛠 Language | C++ |
-| 📜 License | MIT |
-| 🔗 Repo | [github.com/microsoft/AirSim](https://github.com/microsoft/AirSim) |
+| **Repo** | [wailhoud/sim-foundry](https://github.com/wailhoud/sim-foundry) |
+| **Language** | Python |
+| **Topic** | `autonomous-vehicles` (industrial automation & robotics) |
+| **Last Activity** | **September 18, 2026** — initial commit (`88a953b`) |
+| **Stars** | 0 |
+| **License** | MIT |
 
-**What it is:** Microsoft Research's **open-source, high-fidelity simulator** for autonomous vehicles — built on Unreal Engine (with an experimental Unity release). It supports drones, cars, and more, with software-in-the-loop (PX4/ArduPilot) and hardware-in-the-loop simulation. It's the go-to platform for AI research in deep learning, computer vision, and reinforcement learning for autonomous systems.
+**What it is:** A free, open-source platform that simulates PLCs, industrial cameras, sensors, conveyor belts, robotic arms, and more — so you can test HMI, IoT gateway, and SCADA software without waiting for hardware. Supports Modbus, OPC-UA, MQTT, and cloud integrations (AWS IoT, Azure IoT Hub).
 
-**Recent Development Highlights (as of Sept 15, 2026):**
+**Recent development highlights:**
+- **Brand-new repo** — first commits landed on September 17–18, 2026. This is a fresh project looking for early adopters and contributors.
+- **Full-stack architecture** — includes Docker/Kubernetes deployment, a web frontend, Grafana dashboards, database migrations (Alembic), and an SDK for custom device profiles (JavaScript).
+- **Enterprise-ready design** — built with security in mind (local-only execution, corporate IT policy compliance) and designed for VMs and containers.
+- **Rich documentation** — comprehensive README covers setup, troubleshooting, use cases, and FAQ. Migration scripts and CI/CD pipelines already in place.
+- **Protocol support** — Modbus TCP, OPC-UA, MQTT out of the box; cloud-compatible with AWS IoT Core, Azure IoT Hub, Google Cloud IoT.
 
-| Commit | What's Happening |
-|---|---|
-| `1ca93f6` — *Merge PR #9836: Pin GitHub Actions to full-length commit SHAs* | 🔒 **CI/CD hardening:** Pinning GitHub Actions to full-length commit SHAs — a security best practice that prevents supply-chain attacks via compromised upstream actions |
-| `44f3f43` — *Pin GitHub Actions to full-length commit SHAs* | Same security improvement — demonstrates Microsoft's commitment to open-source security hygiene |
-| `d109f0d` — *Updated README (June 28, 2026)* | Documentation refresh — keeping the project accessible to new researchers |
-| Recent added features (from README "What's New") | ROS2 wrapper, Cinematographic Camera, Optical Flow Camera, moveToGPS API, multiple drone support in Unity, simSetKinematics API, dynamic texture/object control, light spawning & control |
-
-**🎙️ Potential Episode Topics:**
-- *"Sim-to-Real: How AirSim Bridges Simulation and the Physical World"* — The challenges of transfer learning and why simulation is the secret weapon behind modern autonomy
-- *"Reinforcement Learning in Unreal: Training Drones That Fly"* — A practical walkthrough of using AirSim for RL experiments
-- *"Why Security Hygiene Matters in Open Source (Even for Simulators)"* — The GitHub Actions pinning story and what it teaches about supply-chain security
-- *"ROS2 Meets AirSim: The Integration That Changes Everything"* — How the new ROS2 wrapper opens up AirSim to the broader robotics ecosystem
-- *"From Academic Paper to Industry Standard: The AirSim Story"* — The journey from a 2017 FSR paper to one of the most-cited robotics simulators
-
----
-
-## 📋 Roadmap & Episode Planner
-
-See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues)** for a living checklist of each project's milestones to track, upcoming releases to watch, and interview angles to explore.
+**🎙️ Potential episode topics:**
+- *"Why You Shouldn't Need $50K in Hardware to Test Your Robot"* — the case for industrial simulation.
+- *"From PLC to Kubernetes: How Sim-Foundry Modernizes Factory Testing"* — bridging legacy industrial protocols with modern DevOps.
+- *"Build Your Own Digital Twin (For Free)"* — getting started with Sim-Foundry for robotics R&D.
+- *"Robotics in the Enterprise: When Simulation Replaces the Hardware Roundtrip"* — real stories from engineers who ditched the procurement queue.
 
 ---
 
-## 🔧 How to Use This Repo
+## 📊 Summary Dashboard
 
-- **Browse the README above** for at-a-glance project summaries and episode ideas
-- **Open issues** to suggest new projects, propose episode topics, or flag major upstream releases
-- **PRs welcome** for additional project entries, commit analysis, or content improvements
-- **RSS/Atom feeds** from each project's GitHub can be piped into the podcast production workflow
-
----
-
-## 🎙️ Listen & Subscribe
-
-*Robotics OSS Radar* — exploring the code, the people, and the machines that are making autonomous systems real.
-
-| Platform | Link |
-|---|---|
-| 🌐 Website | _Coming soon_ |
-| 📡 RSS | _Coming soon_ |
-| 🐦 Twitter/X | @RoboticsOSSRadar |
+| Project | Domain | Activity Level | Episode Potential | Maturity |
+|---|---|---|---|---|
+| PhysiCar DeepRacer | Cloud RL Training | 🔄 Re-activating | ⭐⭐⭐ | Early / Dormant |
+| SE4AI CobraFlex | Safety-Caged RL | 🔥 Very High (thesis sprint) | ⭐⭐⭐⭐⭐ | Advanced / Publishing |
+| Sim-Foundry | Industrial Simulation | 🆕 Brand New | ⭐⭐⭐⭐ | Early / Fresh |
 
 ---
 
-*Built for the open-source robotics community. MIT License.*
+## 🎙️ Podcast Episode Pipeline
+
+| Priority | Episode Title | Featured Project | Angle |
+|---|---|---|---|
+| 🔴 **1** | *"The Safety Cage: Wrapping AI in a Life-or-Death Box"* | SE4AI CobraFlex | Deep-dive into runtime safety monitoring |
+| 🔴 **2** | *"Why Your Robot Doesn't Need Your Hardware Budget"* | Sim-Foundry | Industrial simulation for robotics |
+| 🟡 **3** | *"Cloud Kernels: Training Autonomy at Scale"* | PhysiCar DeepRacer | Cloud RL and the democratization of AV research |
+| 🟡 **4** | *"The Checkpoint That Lied"* | SE4AI CobraFlex | Why training metrics deceive and how to catch it |
+| 🟢 **5** | *"From Garage to Gazebo: Sim-to-Real Transfers"* | SE4AI CobraFlex | The full journey from simulation to hardware |
+
+---
+
+## 🔧 How to Use This Radar
+
+1. **Browse** the tracked projects above for ready-to-record episode ideas.
+2. **Watch** the `Projects to Revisit & Upcoming Releases` issue for a checklist of what to track next.
+3. **Contribute** by opening a PR with your own project picks or episode drafts.
+4. **Subscribe** to each repo's release notifications so you never miss an update.
+
+---
+
+## 🤝 Contributing
+
+- Found an active robotics repo worth tracking? Open an issue!
+- Have an episode outline? PRs welcome.
+- Want to co-host a segment? Let's discuss.
+
+## 📜 License
+
+This radar is open-source under the [MIT License](LICENSE). All tracked project repos have their own licenses — check each one before reusing code.
+
+---
+
+*Built for the open-source robotics community. Follow the radar, don't get lost in the noise.*
