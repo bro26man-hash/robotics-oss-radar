@@ -4,8 +4,6 @@
 
 ## 📡 Top 3 Projects Under the Lens
 
-These three repos were selected as the most recently active, highest-impact open-source projects in the `autonomous-vehicles` and `robotics` topic spaces on GitHub (as of September 2026). Each is pushing real, substantive code changes weekly.
-
 ---
 
 ### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
@@ -13,14 +11,18 @@ These three repos were selected as the most recently active, highest-impact open
 
 *openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.*
 
-**Recent Development Highlights (latest commits — Sept 17, 2026):**
-- **Remove model chunking / use LFS for Chestnut releases** (`1328ace`, PR #38941) — Harald Schäfer migrated model storage to Git LFS for the new Chestnut hardware platform, streamlining release artifacts
-- **rm chestnut power test** (`7db7735`, PR #38943) — Daniel Koepping cleaned up a transient power test for the Chestnut device
-- **modeld: 2× faster Chestnut build** (`cd1490a`, PR #38656) — Adeeb Shihadeh doubled the inference build speed for Chestnut's modeld, a major performance win for on-device vision pipelines
-- **ui: remove question marks** (`bd176cb`, PR #38938) — Shane Smiskol cleaned up UI placeholders
-- **ui: not-paired bookmark alert** (`4d9d1bc`, PR #38936) — stef added a UX alert when a bookmarked device isn't paired
+**Latest Commit (Sept 17, 2026):**
+- **`1328ace` — "Remove model chunking and use LFS for Chestnut releases"** (PR #38941, by Harald Schäfer)
+  - Major infrastructure change: model files are no longer chunked but managed via Git LFS, streamlining the release pipeline for the upcoming **"Chestnut"** release codename.
+  - Signals that commaai is preparing a significant new release with improved model distribution.
 
-**Key Architecture:** Modeld (deep perception), Controld (longitudinal/lateral control), Params (parameter management), Logd (logging), SD (streaming), UI (comma three/ four dashboard), Panda (secure CAN bus hardware). Supports 300+ cars via the comma three/four device and car harness.
+**Additional Recent Commits:**
+- **`7db7735` — "rm chestnut power test"** (PR #38943) — Cleaned up a transient power test for the Chestnut device
+- **`cd1490a` — "modeld: 2× faster Chestnut build"** (PR #38656) — Doubled inference build speed for Chestnut's modeld, a major performance win for on-device vision pipelines
+- **`bd176cb` — "ui: remove question marks"** (PR #38938) — Cleaned up UI placeholders
+- **`4d9d1bc` — "ui: not-paired bookmark alert"** (PR #38936) — Added a UX alert when a bookmarked device isn't paired
+
+**Key Architecture:** Modeld (deep perception), Controld (longitudinal/lateral control), Params (parameter management), Logd (logging), SD (streaming), UI (comma three/four dashboard), Panda (secure CAN bus hardware). Supports 300+ cars via the comma three/four device and car harness.
 
 **🎙️ Potential Episode Topics:**
 - "openpilot at 63K stars: how a community-driven OS took on 300+ cars"
@@ -32,53 +34,59 @@ These three repos were selected as the most recently active, highest-impact open
 
 ---
 
-### 2. [carla-simulator/carla](https://github.com/carla-simulator/carla)
-**⭐ 14,405 stars | Language: C++ | License: MIT | Last updated: Sept 17, 2026**
+### 2. [AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)
+**⭐ 30,533 stars | Language: Python | License: MIT | Last updated: Sept 17, 2026**
 
-*Open-source simulator for autonomous driving research — developed from the ground up to support development, training, and validation of autonomous driving systems. Now running on Unreal Engine 5.5 with open digital assets, flexible sensor suites, and environmental conditions.*
+*Python sample codes and textbook for robotics algorithms — the go-to educational resource for understanding autonomous motion, search, localization, mapping, and path planning, all in clean Python.*
 
-**Recent Development Highlights (latest commits):**
-- **Deploy UE5 nightly to Cloudflare R2** (`1360bb9`, Sep 2, 2026, PR #9859) — germanros1987 automated nightly builds to Cloudflare R2, making the bleeding-edge UE5 builds instantly downloadable for researchers worldwide
-- **Fix lidar smoke helper signature** (`0a5ce0d`, Jul 14, 2026, PR #9791) — Yin Li corrected the lidar sensor helper signature, improving the accuracy of LiDAR point-cloud generation in the simulator
-- **WalkerManager null traffic light guard** (`39c4fda`, Jul 14, 2026, PR #9758) — Jesus Armando Anaya added a defensive null-check in WalkerManager's traffic-light handling, preventing crashes when scenarios lack traffic lights
-- **V2X sensor family** (`dd3a9d7`, Jul 13, 2026, PR #9757) — added CAM service, path-loss, CustomV2X, and V2I sensors — a major step toward connected-and-autonomous vehicle simulation
-- **CARLA_MAPS_TO_COOK CMake option** (`6279162`, Jul 10, 2026, PR #9800) — Jesus Armando Anaya added a build-time toggle to select packaged maps, streamlining builds for different use cases
+**Latest Commit (Sept 2, 2026):**
+- **`08b453a` — "build(deps): bump github/codeql-action from 4.37.4 to 4.37.9"** (PR #1423, by dependabot)
+  - A dependency bump for GitHub's CodeQL security scanning action. This indicates the repo maintains security best practices even while primarily being an educational/resource project.
 
-**Key Features:** UE5.5 high-fidelity rendering, open digital assets (urban layouts, buildings, vehicles), Python API, full sensor suite (camera, LiDAR, radar, IMU, V2X), WalkerManager for NPC traffic, ROS2 bridge, Driving Benchmarks, Scenario Runner, Cloudflare-hosted nightlies. Parallel UE5.5 and UE4.26 branches.
+**Recent Development Highlights:**
+- **Security hygiene maintained** — CodeQL action bump shows the maintainer cares about supply-chain security even in a textbook repo
+- **Broad algorithm coverage** — from particle filters and SLAM to RRT* and A*, the repo covers the full robotics algorithms curriculum
+- **Educational focus** — each algorithm includes clear explanations, visualizations, and step-by-step Python implementations
+- **Active dependency management** — regular updates to keep the environment current
+
+**Key Modules:** Localization (Kalman/particle filters, Monte Carlo), Mapping (grid, EKF, FastSLAM), SLAM (graph-based, EKF), Path Planning (A*, Dijkstra, RRT, RRT*, PRM), Trajectory Generation, Control (PID, LQR, MPC), and Sensor Fusion.
 
 **🎙️ Potential Episode Topics:**
-- "CARLA goes UE5.5: what's new in the latest simulation engine"
-- "Why nightly builds matter: how CARLA democratizes access to cutting-edge simulation"
-- "Lidar simulation done right: the smoke helper fix and sensor fidelity"
-- "WalkerManager and safe navigation: defensive coding in autonomous simulators"
-- "V2X is here: CARLA's new Vehicle-to-Everything sensor family"
-- "ROS 2 meets CARLA: bridging simulation and real-world robotics stacks"
-- "From CoRL'17 to now: the evolution of CARLA as an open research platform"
+- "PythonRobotics: the textbook that teaches the world robotics algorithms"
+- "From A* to RRT*: how Python makes robotics algorithms accessible"
+- "Why educational repos matter for the open-source robotics ecosystem"
+- "SLAM explained with 50 lines of Python — inside the PythonRobotics approach"
+- "Particle filters and Monte Carlo methods, practically implemented"
+- "How this 30K-star repo is shaping the next generation of roboticists"
 
 ---
 
-### 3. [isaac-sim/IsaacLab](https://github.com/isaac-sim/IsaacLab)
-**⭐ 8,157 stars | Language: Python | License: BSD-3-Clause | Last updated: Sept 17, 2026**
+### 3. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
+**⭐ 26,830 stars | Language: C++ | License: Apache-2.0 | Last updated: Sept 17, 2026**
 
-*Isaac Lab is a GPU-accelerated, open-source framework designed to unify and simplify robotics research workflows — reinforcement learning, imitation learning, and motion planning. Built on NVIDIA Isaac Sim, it combines fast physics and sensor simulation for sim-to-real transfer.*
+*An open autonomous driving platform — a high-performance, flexible architecture that accelerates the development, testing, and deployment of Autonomous Vehicles. From GPS waypoint following (v1.0) to curb-to-curb urban driving (v5.5+) to large-scale functional deployment (v11.0).*
 
-**Recent Development Highlights (latest commits — Sept 17, 2026):**
-- **Docs: Consolidate asset & Docker guides, repair tutorial examples** (`93d7bef`, PR #7819) — hujc reorganized documentation, merging asset and Docker guides and fixing broken tutorial examples — a major usability improvement
-- **Fix Isaac Lab 3.0 RC1 package installation** (`6941d59`, PR #7874) — Sheikh Dawood resolved installation issues for the 3.0 RC1 release, unblocking users from trying the latest features
-- **Fix operational-space feedback & task-frame consistency** (`e836331`, PR #7868) — ooctipus fixed a fundamental bug in operational-space feedback control, ensuring correct task-frame behavior for manipulation tasks
-- **Standalone demos: complete health check after startup** (`0921d32`, PR #7869) — ooctipus made standalone demos wait for the health check to complete, preventing race conditions on startup
-- **Update nightly image PR automation** (`24f61d9`, PR #7867) — Kelly Guo refreshed the CI automation for nightly Docker images
+**Latest Commit (Apr 16, 2026):**
+- **`d53aa3d` — "docs: fix README - remove invalid build status badges"** (by xiaoxinyu)
+  - Documentation cleanup: removed stale CI/CD badges that pointed to broken build pipelines. This suggests the repo's CI infrastructure may have undergone changes, and the maintainers are maintaining external credibility.
 
-**Key Features:** 16+ robot models (manipulators, quadrupeds, humanoids), 30+ ready-to-train environments, RSLgym/SKRL/RL Games/Stable Baselines integration, RTX-based sensors (RGB/depth/segmentation), IMU, contact sensors, ray casters, GPU-accelerated physics, cloud-distributed training, Isaac Sim 6.1 dependency.
+**Recent Development Highlights:**
+- **Apollo 11.0 BEB+OCC perception** — new bird's-eye-view and occupancy-grid perception models for enhanced 3D scene understanding
+- **Beyond Lidar driver recovery** — PR #15762 restores and hardens the lidar driver pipeline for robust sensor data ingestion
+- **README cleanup & documentation hygiene** — maintaining project credibility through careful docs management
+- **Apollo 11.0 focus on large-scale deployment** — comprehensive upgrades to perception, localization, planning, and development toolchains; support for ARM/Orin architecture; 4D millimeter-wave radar integration; functional safety framework reinforcement
+- **Apollo Studio & Data Pipeline** — introduced in v7.0, matured through v10/11 as a one-stop online development platform
+
+**Key Modules:** Perception (BEB+OCC), Localization (HD maps, GPS/IMU), Prediction, Planning & Control (PnC), Decider, CyberRT middleware, Dreamview Plus visualization, Package management v2.0, Apollo Studio.
 
 **🎙️ Potential Episode Topics:**
-- "Isaac Lab 3.0: the GPU-accelerated future of robot learning"
-- "Sim-to-real transfer: how Isaac Lab bridges simulation and the real world"
-- "Operational-space control: the math behind robot manipulation (and why it matters)"
-- "30 environments, 16 robots: a tour of Isaac Lab's benchmark-ready setups"
-- "Nightly builds and CI: how NVIDIA ships Isaac Lab at scale"
-- "Isaac Lab vs. CARLA: two simulators, two approaches to autonomous systems research"
-- "From Orbit to Isaac Lab: the evolution of NVIDIA's robotics simulation stack"
+- "Apollo 11.0: from research to production — the BEB+OCC revolution"
+- "Inside Baidu's Apollo: 11 versions of open-source autonomous driving"
+- "Beyond Lidar: why sensor redundancy is the key to safe AVs"
+- "Apollo Studio: the one-stop dev platform for autonomous driving"
+- "What's new in Apollo 11.0 — ARM support, 4D radar, and functional safety"
+- "Package management and plugin architecture: how Apollo scales for production"
+- "Why README badges matter: credibility and dead links in open-source"
 
 ---
 
@@ -86,19 +94,17 @@ These three repos were selected as the most recently active, highest-impact open
 
 | Project | Stars | Language | Focus | Latest Activity |
 |---------|-------|----------|-------|-----------------|
-| openpilot | 63,675 | Python | Open-source driving OS for 300+ cars | Chestnut HW prep, 2× modeld speedup, LFS migration |
-| CARLA | 14,405 | C++ | Autonomous driving simulator (UE5.5) | V2X sensors, nightly builds, nav safety fixes |
-| Isaac Lab | 8,157 | Python | GPU-accelerated robot learning framework | Isaac Sim 6.1, operational-space fix, docs overhaul |
-
----
-
-## 📋 Tracking Checklist
-
-See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/29)** for a detailed tracking checklist of these 3 projects.
+| openpilot | 63,675 | Python | Full-stack driver assistance OS | **Active** — Chestnut release LFS migration + 2× modeld speedup (Sept 17) |
+| PythonRobotics | 30,533 | Python | Educational robotics algorithms | **Maintained** — CodeQL security bump (Sept 2) |
+| Apollo | 26,830 | C++ | Full autonomous driving platform | **Moderate** — BEB+OCC perception, lidar recovery, docs cleanup (Apr 16) |
 
 ## 🎙️ About This Project
 
 This repo is a companion to our podcast on open-source robotics and autonomous systems. We track the most active GitHub projects, analyze their latest commits, and develop episode ideas — so listeners can follow along and contribute.
+
+## 📋 Tracking
+
+See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/29)** for a detailed tracking checklist of these 3 projects.
 
 ---
 
