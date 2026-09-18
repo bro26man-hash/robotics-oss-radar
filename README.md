@@ -1,100 +1,92 @@
 # 🤖 Robotics OSS Radar
 
-> Tracking the most active open-source robotics & autonomous vehicle projects — for our podcast.
+> Podcast companion repo tracking the most actively-developed open-source robotics & autonomous systems projects on GitHub.
 
-## 📡 Top 3 Projects Under the Lens
+## Why This Repo?
+
+Every episode of the **Robotics OSS Radar** podcast dives deep into a real open-source robotics project — what's shipping, what's breaking, and what it means for the future of autonomous systems. This repo is the living behind-the-scenes tracker: project summaries, recent commit highlights, and episode-ready topic ideas.
 
 ---
 
-### 1. [autonomous-ai/autonomous-os](https://github.com/autonomous-ai/autonomous-os)
-**⭐ 347 stars | Language: Python | License: Apache-2.0 | Last updated: Sept 17, 2026**
+## 📡 Projects on the Radar
 
-*Autonomous OS is the "Android" for robots — install it and your robot comes alive. It's a fully customizable operating system where every component is swappable: engine, model, voice, skills, board. Robots declare what they have in a `ROBOT.md`, and the OS mounts exactly that.*
+### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
+**Stars:** 63,676 ⭐ | **Language:** Python | **Focus:** Open-source driver assistance / autonomous driving OS
 
-**Recent Development Highlights:**
-- **fix(hal): drain scene speaker mute and restore scene-muted peripherals on wake** (`2a11eea`, Sep 17, 2026) — by Darren; resolves audio peripheral state corruption when a scene wakes from dormancy, ensuring speakers and mics reinitialize correctly
-- **FIX (hal): drain scene speaker mute and reopen scene-muted peripherals on scene off** (`8dcc596`, Sep 17, 2026) — by Darren; paired fix for the reverse transition (scene off → restore), closing the peripheral lifecycle gap
-- **CHORE (hal): drop scene drain test and its handle reset** (`463c08e`, Sep 17, 2026) — by Darren; cleanup of deprecated test infrastructure for the scene drain mechanism
-- **Update & merge** (`d0e158d` / `98bdf6b`, Sep 17, 2026) — by Darren & leo; integration merges for the HAL speaker/drain subsystem refactor
+> *"openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars."*
 
-**Key Architecture:** Agentic reasoning engine (Hermes, Claude Code, OpenClaw, PicoClaw, Codex, OpenCode behind a unified `AgentGateway`), Skills system (markdown-driven behaviors with `[HW:…]` hardware markers), HAL (Hardware Abstraction Layer with 13 capability interfaces), Safety gate (pure-function clamps on speed, brightness, quiet hours), Go daemon `os-server` on :5000, realtime voice (Gemini Live / OpenAI Realtime), swappable boards (RPi 4/5, CM4, OrangePi 4 Pro). Supports Lamp, Reachy Mini, and Intern robots out of the box.
+**Recent Development Highlights (as of Sep 18, 2026):**
+
+| Commit | What's Happening |
+|---|---|
+| `df7e0e5` — Use upstream tinygrad disk tensors for model loading (#38956) | Swapping in tinygrad's disk tensors for faster, more efficient model loading — a signal they're optimizing the inference pipeline at the TensorFlow level. |
+| `6c69ebe` — cabana: improve heatmap readability (#38955) | UX improvements in the **Cabana** debugging UI, making attention/heatmap visualizations clearer for developers tuning perception models. |
+| `c504b92` — cabana: clarify signal button states (#38953) | Further Cabana polish — clarifying interactive signal states so engineers can more easily diagnose input/output issues. |
 
 **🎙️ Potential Episode Topics:**
-- "The Android for robots: inside Autonomous OS"
-- "Skills as markdown: howgable AI behaviors replace code"
-- "Safety gates without ML: pure-function guarantees for robot hardware"
-- "Six agentic runtimes, one gateway: swapping brains mid-conversation"
-- "From Lamp to Reachy Mini: bring-your-own-robot in four markdown files"
-- "HAL Friday: the hardware abstraction layer that makes robots swappable"
+- "tinygrad vs. TensorFlow: What openpilot's model-loading pivot means for the autonomy stack"
+- "Building the Debugging UI: Inside openpilot's Cabana tool"
+- "300+ cars, one codebase — how openpilot maintains scalability across vehicle platforms"
+- "OpenPilot vs. Tesla FSD: The open-source advantage in data-driven driving"
 
 ---
 
-### 2. [aerostack2/aerostack2](https://github.com/aerostack2/aerostack2)
-**⭐ 385 stars | Language: C++ | License: BSD-3-Clause | Last updated: Sept 16, 2026**
+### 2. [autowarefoundation/autoware](https://github.com/autowarefoundation/autoware)
+**Stars:** 12,067 ⭐ | **Language:** Dockerfile / C++ / Python | **Focus:** The world's leading open-source autonomous driving software
 
-*Aerostack2 is a ROS 2 framework for building autonomous multi-aerial-robot systems — designed for modularity, Sim2Real deployment, and swarming orientation. Currently developed and tested on ROS 2 Humble (Ubuntu 22.04).*
+> *"Autoware — the world's leading open-source software project for autonomous driving"*
 
-**Recent Development Highlights:**
-- **[as2_motion_controller] Add the geometric controller plugin** (`19c3973`, Sep 16, 2026, PR #1001) — by Rafael Perez-Segui; brand-new geometric controller for aerial platforms, enabling more precise trajectory tracking with provable stability guarantees
-- **[as2_motion_controller] Plugin parameter contract and hover as a frozen reference** (`f049960`, Sep 16, 2026, PR #1000) — by Rafael Perez-Segui; formalizes the parameter interface for all motion controller plugins and establishes hover as a stable reference point — a foundational API contract
-- **[as2_motion_controller] Yaw reference, PID library name and debug topics** (`05fa631`, Sep 16, 2026, PR #999) — by Rafael Perez-Segui; adds yaw-reference handling, standardizes PID library naming, and introduces debug topics for real-time tuning visualization
-- **[as2_core] Fix getting latest transform with fixed frames** (`439ee79`, Sep 16, 2026, PR #996) — by Rafael Perez-Segui; resolves a TF2 bug where fixed-frame transforms returned stale data — critical for localization accuracy
-- **fix: upgrade pixi-build-ros / pin ros2 distro mutex** (`82d85ab`, Sep 7, 2026, PR #997) — by Alvaro Gaona; CI infrastructure upgrade for reliable ROS 2 builds
+**Recent Development Highlights (as of Sep 18, 2026):**
 
-**Key Architecture:** ROS 2 native (Humble), modular package ecosystem (as2_core, as2_motion_controller, as2_behavior_tree, as2_state_estimator, as2_hardware_drivers, as2_simulation_assets), behavior-tree-driven autonomy, swarming support, Sim2Real deployment pipeline, Python API bindings, Docker images on DockerHub, academic paper (arXiv:2303.18237).
+| Commit | What's Happening |
+|---|---|
+| `487474c` — Update autoware_utils to v1.11.0 (#7319) | Minor release bump on `autoware_utils` — the foundational utility library that everything else depends on. |
+| `a45f9ba` — Update managed_transform_buffer to v0.3.0 (#7316) | Another dependency bump — the `managed_transform_buffer` package (critical for coordinate-frame management in autonomous stacks) gets a patch release. |
+| `79446c0` — Add CARLA 0.10 Town10HD_Opt map to demo_artifacts (#7308) | High-Definition map support for CARLA 0.10 simulations — big for anyone testing Autoware in synthetic urban environments. |
 
 **🎙️ Potential Episode Topics:**
-- "Aerostack2: the ROS 2 framework for drone swarming"
-- "Geometric controllers for drones: PR #1001 explained"
-- "From hover to trajectory tracking: the motion controller architecture"
-- "TF2 bugs that can crash your drone: the fixed-frame transform story"
-- "Sim2Real: how Aerostack2 bridges simulation and the real world"
-- "Behavior trees for aerial robots: modular autonomy without the spaghetti"
+- "Inside Autoware's release cadence: how a 12K-star project manages dependencies"
+- "CARLA + HD Maps: Simulating the real world for autonomous driving testing"
+- "The Autoware Foundation: how open-source governance scales a global autonomy project"
+- "managed_transform_buffer — the unsung hero of coordinate-frame safety"
 
 ---
 
-### 3. [argoverse/av2-api](https://github.com/argoverse/av2-api)
-**⭐ 416 stars | Language: Python | License: MIT | Last updated: Sept 15, 2026**
+### 3. [RobotWebTools/rclnodejs](https://github.com/RobotWebTools/rclnodejs)
+**Stars:** 448 ⭐ | **Language:** JavaScript | **Focus:** ROS 2 client library for Node.js with browser integration
 
-*Argoverse 2 is the next-generation dataset and API for self-driving perception and forecasting — supporting 3D Object Detection, 4D Occupancy Forecasting, End-to-End Forecasting, Motion Forecasting, and Scenario Mining, plus the Trust-but-Verify Map Change Detection dataset.*
+> *"ROS 2 client library for Node.js, with browser integration"*
 
-**Recent Development Highlights:**
-- **Bump version to v0.3.6** (`b7321d1`, Feb 19, 2026, PR #334) — by Benjamin Wilson; latest stable release with all dataset APIs, scenario mining metrics, and evaluation tooling
-- **Update Scenario Mining Evaluation** (`f0b2889`, Feb 19, 2026, PR #333) — by Cainan Davidson; refined scenario mining evaluation pipeline with improved metrics and benchmarking
-- **Fix CI failures + package incompatibilities** (`529886a`, Feb 13, 2026, PR #331) — by Benjamin Wilson; critical CI repair resolving dependency conflicts and build breaks
-- **Update scenario mining classification metrics from F1 to balanced accuracy** (`6b22766`, Jun 11, 2025, PR #315) — by Cainan Davidson; metric methodology shift — balanced accuracy better captures class imbalance in autonomous driving scenarios
-- **Bump version** (`c06ecb7`, May 19, 2025, PR #314) — by Benjamin Wilson; maintenance release
+**Recent Development Highlights (as of Sep 18, 2026):**
 
-**Key Architecture:** Python API with Rust extensions (Cargo.toml), Scene-level data access, 3D Object Detection, 3D Scene Flow, 4D Occupancy Forecasting, End-to-End Forecasting, Motion Forecasting, Scenario Mining, Map Change Detection (Trust-but-Verify), PyPI-distributed (`av2` package), NeurIPS Datasets & Benchmarks 2021 paper.
+| Commit | What's Happening |
+|---|---|
+| `a66e983` — Fix Windows test execution and WebSocket cleanup (#1610) | Cross-platform CI fix — Windows test execution and WebSocket resource cleanup. Critical for anyone running rclnodejs on Windows dev machines. |
+| `58411a9` — Preserve native type-description responses and prevent test leaks (#1608) | Hardening around type-description handling and preventing test leaks — signs of maturing reliability for production ROS 2 + Node.js deployments. |
+| `c8cf887` — Report CI failures and resolve Node.js 26 test regressions (#1601) | Proactive CI failure reporting and fixing regressions on the bleeding-edge Node.js 26 — keeping the library compatible with the latest runtime. |
 
 **🎙️ Potential Episode Topics:**
-- "Argoverse 2: the dataset behind the future of self-driving perception"
-- "From F1 to balanced accuracy: why metric choice matters in AV benchmarking"
-- "Scenario mining: finding the edge cases that crash self-driving cars"
-- "4D Occupancy Forecasting: predicting the future of every pixel in the scene"
-- "Rust + Python: the hybrid architecture behind the av2 API"
-- "Trust, but Verify: detecting when HD maps go stale in production AVs"
+- "ROS 2 in the Browser: What rclnodejs makes possible for web developers"
+- "Cross-platform robotics: Why Windows support matters for the ROS ecosystem"
+- "From Node.js to ROS 2: Bridging the web and robotics worlds"
+- "Node.js 26 compatibility — how open-source libraries keep pace with runtime changes"
 
 ---
 
-## 📊 Quick Comparison
+## 📋 How to Use This Repo
 
-| Project | Stars | Language | Focus | Latest Activity |
-|---------|-------|----------|-------|-----------------|
-| Autonomous OS | 347 | Python | Open-source robot OS with agentic AI & swappable skills | HAL speaker/drain lifecycle fixes, peripheral state management |
-| Aerostack2 | 385 | C++ | ROS 2 framework for autonomous multi-aerial robots | Geometric controller plugin (#1001), parameter contracts, TF2 fix |
-| Argoverse 2 API | 416 | Python | Self-driving perception & forecasting datasets | v0.3.6 release, scenario mining eval, CI fixes |
+- **New episodes?** Update the relevant project section with latest commits & topic ideas.
+- **Spotted a trending PR?** Open an issue to flag it for a future episode.
+- **Listener contributions?** Accept pull requests with additional project suggestions or topic notes.
 
 ---
 
-## 📋 Tracking Checklist
+## 🔗 Links
 
-See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/31)** for a detailed tracking checklist of these 3 projects.
-
-## 🎙️ About This Project
-
-This repo is a companion to our podcast on open-source robotics and autonomous systems. We track the most active GitHub projects, analyze their latest commits, and develop episode ideas — so listeners can follow along and contribute.
+- **Podcast:** _[insert link]_
+- **Twitter/X:** _[insert link]_
+- **Discord/Community:** _[insert link]_
 
 ---
 
-*Generated for the Robotics OSS Radar podcast. Stay curious, stay open-source.*
+*Built for the open-source robotics community. Star the repos, fork the ideas, ship the future.* 🚀
