@@ -1,140 +1,131 @@
 # 🤖 Robotics OSS Radar
 
-> **Open-source robotics & autonomous systems — podcast companion**
-> Tracking the most recently active repositories, recent commits, and episode ideas for your show.
+> Tracking the most active open-source robotics & autonomous-vehicle projects. Weekly progress snapshots, development highlights, and podcast episode ideas.
 
 ---
 
-## 📡 Why This Radar?
+## 🔍 Why This Project?
 
-The open-source robotics and autonomous-vehicles ecosystem is moving fast. To keep your podcast audience informed, we track the **most recently active** projects, distill what's being worked on, and surface **episode-worthy stories** — from multi-UAV swarms to robot-cell observability to safety-caged RL training.
+Open-source robotics and autonomous systems are evolving at breakneck speed. This repo is the backbone of our podcast **"Robotics OSS Radar"** — a weekly deep-dive into the projects shaping the future of autonomous machines. We track commits, highlight development trends, and translate technical progress into compelling episodes.
 
 ---
 
-## 🔍 Tracked Projects
+## 📡 Projects Under the Microscope
 
-### 1. 🏭 Metriplane — Physical Observability for Robotics Workcells
+### 1. 🔵 [Rerun](https://github.com/rerun-io/rerun)
+
 | | |
 |---|---|
-| **Repo** | [Miko997/metriplane](https://github.com/Miko997/metriplane) |
-| **Language** | Python |
-| **Topic** | `robotics` |
-| **Last Activity** | **September 18, 2026** — PR #133 merged (production owner keyring delegation) |
-| **Stars** | 7 |
-| **Contributors** | Miko Parkkinen + automated health-publisher bot |
+| **Stars** | ⭐ 11,472 |
+| **Language** | Rust + Python + C++ |
+| **License** | Apache-2.0 |
+| **Focus** | Multimodal data visualization & streaming for physical AI |
+| **Last Activity** | September 18, 2026 (multiple commits same day) |
 
-**What it is:** Open-source **physical observability** for robotics workcells. It provides deterministic replay, verifiable incident evidence, and generated regression tests — essentially making robotics workflows auditable and reproducible the way software DevOps makes code deployments traceable.
+**What it does:** Rerun is the data layer for physical AI. It ingests multi-rate, multimodal data (images, point clouds, transforms, time series, joint states, video) from robot logs, human-data rigs, sim, and web video. The built-in viewer renders everything in sync, in realtime — scrub episodes, compare sensors, watch CV pipelines run live. Data is queryable with dataframes or SQL, and streams directly into training.
 
-**Recent development highlights:**
-- **PR #133 merged (Sept 18, 2026)** — Agent now registers production-delegation public keys, extending the security and traceability model to production environments.
-- **PR #85 merged (Sept 14, 2026)** — AMR (Autonomous Mobile Robot) perspective work lands, adding a dedicated view for AMR use cases including replay and quote generation.
-- **Active agent development** — Multiple agent-driven PRs (#131, #133) show the project is building toward automated, agent-assisted observability workflows.
-- **SoftwareX licence integration** — PR #131 adds proper licensing infrastructure, signaling maturity and readiness for broader adoption.
-- **Deterministic replay pipeline** is the killer feature: record a robot cell's execution, then replay it bit-for-bit to reproduce incidents or validate changes.
+**Recent Development Highlights:**
+- 🔦 **Volume Raymarcher** — New volume rendering capability for 3D scalar field visualization (Gábor Gyebnár)
+- 🤖 **LeRobot Import Diagnostics** — `re_lerobot`: Collect and categorize import warnings when migrating LeRobot datasets into Rerun (Eric Leijonmarck)
+- 🏗️ **Logging Architecture Refactor** — Lifted `LogMsg`, `ArrowMsg` and friends out of `re_log_types` into a dedicated `re_log_msg` crate, improving modularity (Antoine Beyeler)
+- 🔧 **Changeset Type System** — Added `misc` as a new changeset type, expanding the granular update tracking system (Jochen Görtler)
+- 📦 **Build Pinning** — Pinned `hatchling` to `v1.30.1` for reproducible Python builds (Jochen Görtler)
 
-**🎙️ Potential episode topics:**
-- *"Why Your Robot Can't Be Witnessed — and How Metriplane Fixes That"* — the case for observability in physical systems.
-- *"Deterministic Replay for Robotics: rrRulez?"* — how replay-driven development could change how we test robots.
-- *"From Black Box to Glass Box: Making Robot Cells Auditable"* — the intersection of safety compliance and open-source tooling.
-- *"Agents That Watch Robots Watch Themselves"* — the emerging role of AI agents in robotics observability.
+**🎙️ Potential Episode Topics:**
+- "The Data Layer for Physical AI — Why Rerun Could Replace Rviz"
+- "Rust for Robotics: Building a Columnar Storage Engine for Multi-Rate Sensor Data"
+- "From LeRobot to Rerun: The Challenge of Standardizing Robotics Dataset Formats"
+- "Volume Rendering for Robot Perception: What's Inside the Black Box?"
 
 ---
 
-### 2. 🛸 AeroWeaver — Multi-UAV Coordination Console
+### 2. 🟢 [Autoware](https://github.com/autowarefoundation/autoware)
+
 | | |
 |---|---|
-| **Repo** | [Admire-ljb/AeroWeaver](https://github.com/Admire-ljb/AeroWeaver) |
-| **Language** | Python |
-| **Topic** | `robotics` |
-| **Last Activity** | **September 18, 2026** — 5 commits: docs overhaul, CI stabilization, preprint citation |
-| **Stars** | 3 |
+| **Stars** | ⭐ 12,068 |
+| **Language** | C++ + Dockerfile |
+| **License** | Apache-2.0 |
+| **Focus** | World's leading open-source autonomous driving framework |
+| **Last Activity** | September 18, 2026 (latest commit) |
 
-**What it is:** A **multi-UAV coordination console** for planning and executing manual and LLM-driven missions. It bridges the gap between low-level swarm protocols and high-level mission intent, letting operators control fleets of drones through natural language or direct commands.
+**What it does:** Autoware is the world's leading open-source autonomous driving framework. It provides a comprehensive, production-ready software stack designed to accelerate the commercial deployment of autonomous vehicles across diverse platforms and use cases. From perception and planning to control and simulation, it's the de facto standard for open-source AV development.
 
-**Recent development highlights:**
-- **Massive docs overhaul (Sept 18, 2026)** — 4 of 5 commits were documentation work: restructuring the README around core capabilities, moving details into separate usage guides, replacing homepage screenshots with updated layouts, and citing the AeroWeaver preprint.
-- **CI stabilization** — Commit `685f5e9` fixed the pursuit (pursuit-evasion) test pipeline and formally cited the research preprint, signaling the project is transitioning from research prototype to citable, reproducible tool.
-- **README quickstart validation** — Commit `262b7d9` added automated validation tests for the README quickstart guide, a sign of serious engineering discipline.
-- **LLM-driven mission planning** — the headline feature: operators can describe missions in natural language and the system generates coordinated multi-UAV plans.
-- **Preprint now citable** — the project has a research paper behind it, making it credible for academic and industrial adoption.
+**Recent Development Highlights:**
+- 🚀 **autoware_utils v1.11.0** — Minor update to the core utilities package, keeping downstream tools current (awf-autoware-bot)
+- 🔄 **Managed Transform Buffer v0.3.0** — Updated the transform coordinate management library, critical for multi-sensor calibration (awf-autoware-bot)
+- 🗺️ **CARLA 0.10 Town10HD_Opt Map** — Added the high-definition optronic Town10 map to demo artifacts, expanding simulation scenarios (Masaya Kataoka)
+- 🐳 **Docker Build Fix** — Fixed the simple planning simulator build with core modules, improving CI reliability (Mete Fatih Cırıt)
+- 🔒 **CasADi 3.7.2 Pin for Humble ARM64** — Resolved compatibility issues for ARM64 platforms, broadening hardware support (Mete Fatih Cırıt)
 
-**🎙️ Potential episode topics:**
-- *"Swarming Drones with Your Voice: AeroWeaver's LLM Interface"* — how large language models are changing multi-robot command.
-- *"From Research Paper to Production Repo: The AeroWeaver Journey"* — what it takes to make a swarm framework citable and usable.
-- *"Pursuit-Evasion Swarms: The Math Behind Drone Tag"* — the game-theory algorithms powering coordinated UAV motion.
-- *"Why Every Swarm Needs a Console"* — the missing UX layer in multi-robot systems.
+**🎙️ Potential Episode Topics:**
+- "Autoware: The Open-Source Stack Powering the Future of Autonomous Driving"
+- "ROS 2 in Production — How Autoware Manages 12K+ Lines of C++"
+- "Sim-to-Real with CARLA: From Town10HD to the Real World"
+- "Why Transform Buffers Matter: The Hidden Complexity of Multi-Sensor Calibration"
 
 ---
 
-### 3. 🛡️ SE4AI Safety Cages for Autonomous Driving (CobraFlex)
+### 3. 🟣 [Isaac Lab](https://github.com/isaac-sim/IsaacLab)
+
 | | |
 |---|---|
-| **Repo** | [snchz46/MT-SE4AI-Safe-RL-Cobraflex](https://github.com/snchz46/MT-SE4AI-Safe-RL-Cobraflex) |
+| **Stars** | ⭐ 8,162 |
 | **Language** | Python |
-| **Topic** | `autonomous-vehicles` |
-| **Last Activity** | **September 18, 2026** — 5 commits on Chapter 6 draft writing (thesis closure) |
-| **Stars** | 1 |
-| **License** | MIT |
+| **License** | BSD-3-Clause |
+| **Focus** | GPU-accelerated robot learning framework (RL, imitation, motion planning) |
+| **Last Activity** | September 18, 2026 (multiple commits same day) |
 
-**What it is:** Full research artifacts for a master's thesis at Hochschule Esslingen investigating how **runtime safety cages** can constrain a Reinforcement Learning agent in an autonomous driving context. Built on a 1:14 scale physical vehicle (CobraFlex) with 360° LiDAR, stereo camera, and skid-steer drive, simulated in Gazebo with ROS 2.
+**What it does:** Isaac Lab is a GPU-accelerated, open-source framework designed to unify and simplify robotics research workflows — reinforcement learning, imitation learning, and motion planning. Built on NVIDIA Isaac Sim, it combines fast physics and sensor simulation (RTX-based cameras, LIDAR, contact sensors) for effective sim-to-real transfer. Supports 16+ robot models, 30+ ready-to-train environments, and multi-agent RL.
 
-**Recent development highlights:**
-- **Thesis sprint in full gear (Sept 18, 2026)** — 5 commits all titled "E6: draft writing v6," showing the author is in the final sprint of Chapter 6 (closure & defence, Gate G6).
-- **Phase 5 (physical deployment) just closed** — the sim-to-real transfer was validated: the PPO policy drove 18.05 m of the real circuit uninterrupted with **zero safety interventions**.
-- **1,890 simulation runs across 27 scenarios** completed — nominal, edge-case, and perturbed conditions all logged and traceable.
-- **Traceability gate is rigorous** — every hazard (H-01…H-12) traces through safety requirements → cage rules → scenarios → metrics → logged evidence. A mechanical check (`check_traceability.py`) blocks any Gate review with orphans.
-- **Shocking finding:** The reward-peak checkpoint (475k steps) was actually the *worst* performer; selecting by training reward alone would have picked the wrong model. The cage-intervention rate was the real discriminating signal.
-- **Results:** 5.32 continuous laps on `complex_b`, 8.6 mm mean lateral error, 27 mm max, **0 emergencies, 0 safety interventions** — only the benign C-06 rate limiter fired.
+**Recent Development Highlights:**
+- 🖥️ **Isaac Sim Image Bump (600fa643bb36)** — Updated the underlying simulation container to the latest Isaac Sim image, ensuring access to newest physics and rendering features (isaaclab-bot)
+- 🔐 **Trusted Checkout Fix in Backport Workflow** — Secured the automated backport pipeline, preventing untrusted code from being merged into release branches (Kelly Guo)
+- 📖 **Historical Documentation Build Fixes** — Resolved redirect issues in the docs, improving navigation for users referencing older API versions (Kelly Guo)
+- ⏱️ **Arms Demo Smoke Timeout Increase** — Bumped the CI timeout for the arms demo smoke test, reducing flaky failures on slower hardware (Kelly Guo)
+- 🍔 **Compiled Docs Menu Fix** — Fixed the hamburger menu in compiled documentation, improving mobile/responsive UX (Kelly Guo)
 
-**🎙️ Potential episode topics:**
-- *"Wrapping AI in a Safety Cage: Can We Trust an RL Driver?"* — the SE4AI methodology and why traceability matters.
-- *"The Checkpoint That Looked Best But Was Actually Worst"* — why training reward is a terrible proxy for real-world safety.
-- *"Sim-to-Real Transfer of an End-to-End Camera Policy"* — what it takes to move from Gazebo to a physical 1:14 car.
-- *"12 Hazards, 14 Requirements, 6 Cage Rules: The Math of Autonomous Safety"* — the engineering behind runtime monitoring.
-- *"From Simulation to Hardware: Phase 5 Closes on CobraFlex"* — the emotional journey of a thesis defense.
+**🎙️ Potential Episode Topics:**
+- "GPU-Accelerated Robot Learning: Inside Isaac Lab's Simulation Pipeline"
+- "Sim-to-Real Transfer: Can You Trust a Simulation to Predict Real-World Behavior?"
+- "From Orbit to Isaac Lab: The Evolution of NVIDIA's Robotics Framework"
+- "Reinforcement Learning at Scale — Training 30+ Environments in Parallel"
 
 ---
 
-## 📊 Summary Dashboard
+## 📊 Activity Snapshot (as of September 18, 2026)
 
-| Project | Domain | Activity Level | Episode Potential | Maturity |
-|---|---|---|---|---|
-| Metriplane | Robotics Observability | 🔥 Very High (agent-driven PRs) | ⭐⭐⭐⭐ | Advanced / Production |
-| AeroWeaver | Multi-UAV Coordination | 🔥 Very High (docs + CI sprint) | ⭐⭐⭐⭐⭐ | Research → Production |
-| SE4AI CobraFlex | Safety-Caged RL | 🔥 Very High (thesis sprint) | ⭐⭐⭐⭐⭐ | Advanced / Publishing |
-
----
-
-## 🎙️ Podcast Episode Pipeline
-
-| Priority | Episode Title | Featured Project | Angle |
-|---|---|---|---|
-| 🔴 **1** | *"The Safety Cage: Wrapping AI in a Life-or-Death Box"* | SE4AI CobraFlex | Deep-dive into runtime safety monitoring |
-| 🔴 **2** | *"Swarming Drones with Your Voice"* | AeroWeaver | LLM-driven multi-UAV coordination |
-| 🟡 **3** | *"Why Your Robot Can't Be Witnessed"* | Metriplane | Observability and deterministic replay |
-| 🟡 **4** | *"The Checkpoint That Lied"* | SE4AI CobraFlex | Why training metrics deceive |
-| 🟢 **5** | *"From Research Paper to Production Repo"* | AeroWeaver | Making a swarm framework citable |
-| 🟢 **6** | *"Agents That Watch Robots Watch Themselves"* | Metriplane | AI agents in robotics observability |
+| Project | Stars | Language | Latest Commit | Key Theme |
+|---------|-------|----------|---------------|-----------|
+| Rerun | 11,472 | Rust | Volume raymarcher + architecture refactor | Data infrastructure & rendering |
+| Autoware | 12,068 | C++ | ROS 2 Humble updates + CARLA maps | AV stack maturity & simulation |
+| Isaac Lab | 8,162 | Python | Isaac Sim image bump + CI hardening | Sim-to-real & GPU acceleration |
 
 ---
 
-## 🔧 How to Use This Radar
+## 🎙️ Podcast Alignment
 
-1. **Browse** the tracked projects above for ready-to-record episode ideas.
-2. **Watch** the `Projects to Revisit & Upcoming Releases` issue for a checklist of what to track next.
-3. **Contribute** by opening a PR with your own project picks or episode drafts.
-4. **Subscribe** to each repo's release notifications so you never miss an update.
+Each project maps to a natural episode arc:
+
+1. **Infrastructure Episode** → Rerun: "What happens under the hood when a robot logs 100 sensor streams?"
+2. **Production Episode** → Autoware: "How does an open-source AV stack actually ship to production?"
+3. **Simulation Episode** → Isaac Lab: "Is simulation the future of robot training?"
+
+---
+
+## 📋 Tracking
+
+See the open issue **[Projects to Revisit & Upcoming Releases](#)** for the running checklist of items to revisit before the next episode cycle.
+
+---
 
 ## 🤝 Contributing
 
-- Found an active robotics repo worth tracking? Open an issue!
-- Have an episode outline? PRs welcome.
-- Want to co-host a segment? Let's discuss.
+Pull requests and suggestions are welcome! To propose a new project or episode topic:
+1. Open an issue describing the project and why it matters
+2. Tag it with `proposal` and `episode-topic`
+3. The maintainers will review and add to the radar
 
-## 📜 License
+## 📄 License
 
-This radar is open-source under the [MIT License](LICENSE). All tracked project repos have their own licenses — check each one before reusing code.
-
----
-
-*Built for the open-source robotics community. Follow the radar, don't get lost in the noise.*
+This project is open-source under the [MIT License](LICENSE).
