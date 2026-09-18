@@ -1,121 +1,133 @@
 # 🤖 Robotics OSS Radar
 
-> **Open-Source Robotics & Autonomous Systems Podcast** — Tracking the projects, people, and trends shaping the future of self-driving tech, drones, and autonomous robots.
+> *A living research hub tracking the most active open-source robotics & autonomous systems projects — curated for the podcast.*
 
 ---
 
-## 🎙️ About This Project
+## 📡 What Is This?
 
-This repo is the companion hub for the **Robotics OSS Radar** podcast. We surface the most active, impactful, and intriguing open-source robotics projects on GitHub — and break down what's happening under the hood for builders, researchers, and enthusiasts.
+**Robotics OSS Radar** is a podcast companion project that monitors the most recently active open-source repositories in the robotics and autonomous-vehicles ecosystem. We track recent commits, highlight development trends, and generate episode ideas — so you never miss a story worth telling.
 
 ---
 
-## 📡 Featured Projects This Episode
+## 🔍 Current Radar: Top 3 Recently Active Projects
 
-### 1. 🚗 [Microsoft AirSim](https://github.com/microsoft/AirSim)
-| | |
-|---|---|
-| **Stars** | ⭐ 18,492 |
-| **Language** | C++ |
-| **License** | MIT |
-| **Last Active** | September 2026 |
+### 1. 🧠 Rumi — Autonomous Scientific Research Agents
 
-**What it is:** A photo- and physics-realistic simulator for drones, cars, and more, built on Unreal Engine (with an experimental Unity release). Developed by Microsoft AI & Research, it supports software-in-the-loop (PX4, ArduPilot) and hardware-in-the-loop simulation, plus a platform-independent API for deep learning, computer vision, and reinforcement learning research.
+| Field | Detail |
+|-------|--------|
+| **Repo** | [`josemanuelm9203/rumi`](https://github.com/josemanuelm9203/rumi) |
+| **Tag** | `autonomous-vehicles` |
+| **Language** | Multi-platform (Windows) |
+| **Latest Commit** | *Update README.md* — Sep 18, 2026 |
+| **Previous Activity** | Docs overhaul (Jun 2026), Initial commit (Jun 2026) |
+
+**What it does:** Rumi is a terminal-native framework for building autonomous scientific research agents. It runs a **10-stage pipeline** that breaks down a research topic into smaller parts, extracts entities, builds a knowledge graph, flags contradictions, and suggests new experiments. It uses **88 modular "brain" programs** to check facts and challenge assumptions.
 
 **Recent Development Highlights:**
-- **ROS2 wrapper** now available — bridging AirSim to the ROS2 ecosystem for seamless integration with autonomous stacks
-- **Cinematographic Camera** PR — new camera modes for high-fidelity data capture, perfect for training perception models
-- **`movetoGPS` API** and **`simSetKinematics` API** — expanded programmatic control for precise experiment reproducibility
-- **Optical flow camera** support — enabling motion-estimation research directly in simulation
-- **Multiple drone support in Unity** — scaling multi-agent experiments
-- **Dynamic object texture control** and **light spawning/destruction API** — richer scene authoring
+- 📝 **README refresh (Sep 2026)** — Documentation updated to reflect all modules, signaling growing feature completeness.
+- 📚 **Module documentation expansion (Jun 2026)** — Two parallel commits added missing module docs and removed the `benchmark_runner`, suggesting a v1.0 release is being polished.
+- 🚀 **Initial launch (Jun 2026)** — First commit established the 10-stage hypothesis-discovery pipeline.
 
 **🎙️ Potential Episode Topics:**
-- *"Sim-to-Real: How AirSim Is Bridging the Gap Between Virtual and Physical Autonomy"*
-- *"Why ROS2 Integration Changes Everything for Autonomous Vehicle Pipelines"*
-- *"Training Perception Models with Cinematographic Cameras — A Deep Dive"*
+- "Can AI Agents Do Science? Inside Rumi's 10-Stage Research Pipeline"
+- "The 88 Brain Programs: Modular AI for Autonomous Discovery"
+- "From Terminal to Lab Bench: How Autonomous Research Agents Work"
 
 ---
 
-### 2. 🐍 [PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)
-| | |
-|---|---|
-| **Stars** | ⭐ 30,536 |
+### 2. 🚗 InterFuser-UI — Real-Time CARLA Autonomous Driving Monitor
+
+| Field | Detail |
+|-------|--------|
+| **Repo** | [`zubairm8580/InterFuser-UI`](https://github.com/zubairm8580/InterFuser-UI) |
+| **Tag** | `autonomous-vehicles` |
 | **Language** | Python |
-| **License** | MIT |
-| **Last Active** | September 2026 |
+| **License** | Apache-2.0 |
+| **Latest Commit** | *Update README.md* — Sep 18, 2026 |
+| **Previous Activity** | UI application + model core (Apr 2026), Initial commit (Mar 2026) |
 
-**What it is:** The definitive Python textbook and code collection for robotics algorithms. Covers the full autonomy stack — localization, mapping, SLAM, path planning, path tracking, aerial navigation, and even bipedal locomotion — all in readable, minimal-dependency Python.
+**What it does:** InterFuser-UI is a **Pygame-based real-time dashboard** for monitoring autonomous driving runs in the CARLA simulator. It fuses multi-camera feeds, LiDAR bird's-eye views, route data, and safety-rule alerts into a single screen — giving researchers and developers a window into how a self-driving stack perceives and reacts to the world.
 
 **Recent Development Highlights:**
-- **Active dependabot maintenance** — regular bumps to CodeQL, ruff, scipy, and other core tooling keeping the project modern and secure
-- **Python 3.13 support** — latest language features benefiting type hints and performance
-- **New algorithms added:** Particle Swarm Optimization (PSO) for path planning, Nonlinear MPC with C-GMRES, LQR-RRT*, and Frenet-frame optimal trajectory generation
-- **Enhanced testing infrastructure** — pytest with parallel execution and mypy type-checking across the entire codebase
-- **Official documentation site** at [atsushisakai.github.io/PythonRobotics](https://atsushisakai.github.io/PythonRobotics/) with full mathematical derivations
+- 📝 **README update (Sep 2026)** — Documentation refreshed, likely for v3.3 release.
+- 🖥️ **Full UI application shipped (Apr 2026)** — Three commits in rapid succession added the complete InterFuser application with model core, UI.py (41 KB!), and comprehensive documentation.
+- 🏗️ **Initial commit (Mar 2026)** — Project bootstrapped with core architecture.
+
+**Key Features:**
+- 🎥 Multi-camera view (front, rear, side)
+- 🗺️ LiDAR bird's-eye map
+- ⚠️ Safety rule alerts
+- 🛣️ Route-aware control visualization
+- 🤖 InterFuser sensor-fusion data overlay
 
 **🎙️ Potential Episode Topics:**
-- *"From Textbook to Production: How PythonRobotics Became the World's Most-Starred Robotics Repo"*
-- *"SLAM for Everyone — Making Probabilistic Robotics Accessible with Python"*
-- *"MPC vs. LQR: Practical Trajectory Optimization for Autonomous Vehicles"*
+- "Seeing Through the Eyes of a Self-Driving Car: Inside CARLA & InterFuser"
+- "Sensor Fusion in Real-Time: How Pygame + Transformer Models Drive the View"
+- "From Simulation to Street: What CARLA Taught Us About Autonomous Driving"
 
 ---
 
-### 3. 🏗️ [LGSVL Simulator (SVL Simulator)](https://github.com/lgsvl/simulator)
-| | |
-|---|---|
-| **Stars** | ⭐ 2,456 |
-| **Language** | C# (Unity HDRP) |
-| **License** | Custom (non-commercial) |
-| **Last Active** | January 2022 (Sunsetted) |
+### 3. 📍 slam-regression-ci — CI Regression Gate for SLAM & Odometry
 
-**What it is:** An HDRP Unity-based multi-robot simulator for autonomous vehicle developers, originally built by LG Electronics America R&D Lab. Featured out-of-the-box integrations with **Autoware.auto** and **Baidu Apollo**, HD map generation, and high-fidelity sensor simulations (LiDAR, camera, GPS, CANBUS).
+| Field | Detail |
+|-------|--------|
+| **Repo** | [`pyy52/slam-regression-ci`](https://github.com/pyy52/slam-regression-ci) |
+| **Tag** | `robotics` |
+| **Language** | Python 3.8+ |
+| **License** | MIT |
+| **Latest Commit** | `feat: TUM trajectory loading, association, and ATE/RPE metrics (#6)` — Sep 18, 2026 |
+| **Previous Activity** | `chore: bootstrap repository structure` — Sep 18, 2026 |
 
-**⚠️ Important Note:** LG announced the **sunsetting of SVL Simulator** as of January 1, 2022. No further source code changes, bug fixes, or asset updates are planned. The code remains open-source on GitHub, and the community is free to fork and build upon it — with over **500 forks** already created.
+**What it does:** A **lightweight CI regression gate** specifically designed for SLAM (Simultaneous Localization and Mapping) and odometry trajectories. It compares a candidate trajectory against a committed baseline, applies configurable per-metric thresholds (ATE RMSE, RPE translation RMSE), and fails CI with both a **human-readable Markdown report** and a **machine-readable JSON report**.
 
-**Recent Development Highlights (Historic):**
-- **2D perception sensor ego-detection fix** — improving object recognition accuracy
-- **GPS and CANBUS sensor type name corrections** — better standardization for Apollo integration
-- **Developer Mode asset caching fix** — performance improvements for custom scene builds
-- **F1Tenth NPC light layer trigger size fix** — more realistic pedestrian and traffic scenarios
+**Recent Development Highlights:**
+- 🎉 **First feature release (v0.1.0 in progress)** — TUM trajectory loading and association landed, plus ATE/RPE metric computation. This is the repo's first real feature commit!
+- 🏗️ **Repository bootstrapped (Sep 2026)** — Full community scaffolding: `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `pyproject.toml` — professional-grade open-source setup from day one.
+- 🧪 **Test infrastructure** — Both `src/` and `tests/` directories established.
+
+**Why it matters:** SLAM is the backbone of indoor robotics, drones, and AR/VR. Without automated regression testing, a subtle algorithm change can silently degrade localization accuracy by centimeters — and this tool catches that before it ships.
 
 **🎙️ Potential Episode Topics:**
-- *"When Big Tech Walks Away: The Rise and Sunset of SVL Simulator"*
-- *"Community Forks & Open-Source Lifelines — Can the Community Keep SVL Alive?"*
-- *"Simulator Wars: AirSim vs. SVL vs. CARLA — A Head-to-Head Comparison"*
+- "Why Your SLAM Algorithm Needs CI: Ate, RPE, and the Metrics That Matter"
+- "From Lab to Pipeline: Making SLAM Testable with Regression Gates"
+- "The Silent Killer: How Small Numerical Drifts Break Autonomous Systems"
 
 ---
 
-## 🗓️ Episode Planning Calendar
+## 📊 Radar Summary
 
-| Episode | Project | Status |
-|---------|---------|--------|
-| 1 | AirSim — Sim-to-Real & ROS2 | 📝 In Research |
-| 2 | PythonRobotics — The Algorithms Behind Autonomy | 📝 In Research |
-| 3 | SVL Simulator Sunset — What Happens When OSS Loses Its Champion | 📝 In Research |
-| 4 | Viewer Request / Community Deep-Dive | 🔜 Up Next |
-
----
-
-## 🤝 How to Contribute
-
-We welcome contributions! Here's how you can help:
-
-1. **Suggest projects** — Open an issue with a repo you think we should cover
-2. **Share your build** — Record a demo using one of our featured projects and tag us
-3. **Submit episode ideas** — Pitch a topic or guest
-4. **Fix errors** — PRs for corrections in our show notes are always welcome
+| # | Project | Domain | Stars | Last Activity | Vibe |
+|---|---------|--------|-------|-----------------|------|
+| 1 | **Rumi** | Autonomous Research Agents | — | Sep 18, 2026 | 🧠 AI-first science |
+| 2 | **InterFuser-UI** | CARLA Self-Driving | 1 | Sep 18, 2026 | 🚗 Simulation & CV |
+| 3 | **slam-regression-ci** | SLAM/ODometry Testing | — | Sep 18, 2026 | 📍 Engineering rigor |
 
 ---
 
-## ⭐ Starring
+## 🎙️ About the Podcast
 
-| Rank | Project | Stars |
-|------|---------|-------|
-| 🥇 | PythonRobotics | 30,536 |
-| 🥈 | AirSim | 18,492 |
-| 🥉 | SVL Simulator | 2,456 |
+*Robotics OSS Radar* is a podcast exploring the stories behind the open-source projects that are shaping the future of robotics and autonomous systems. Each episode dives into a real repo — its code, its contributors, its challenges — and asks: *what's next?*
+
+**Subscribe & Follow:**
+- [RSS Feed](#) 
+- [Apple Podcasts](#)
+- [Spotify](#)
+- [YouTube](#) 
+- [GitHub](#)
 
 ---
 
-*"The future of autonomous systems is being built in the open. Let's cover it all."* 🤖🚀
+## 🤝 Contributing
+
+Found a great repo we should track? Open an issue or submit a PR! We love suggestions.
+
+1. Fork this repo
+2. Add your candidate to `projects/`
+3. Open a pull request with your rationale
+
+---
+
+## 📜 License
+
+This project is open-source and available under the [MIT License](LICENSE).
