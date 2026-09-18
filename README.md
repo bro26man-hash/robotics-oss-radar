@@ -7,53 +7,84 @@
 
 ## 📡 Why This Radar?
 
-The open-source robotics and autonomous-vehicles ecosystem is moving fast. To keep your podcast audience informed, we track the **most recently active** projects, distill what's being worked on, and surface **episode-worthy stories** — from safety-cage research to cloud-based RL training to industrial simulation.
+The open-source robotics and autonomous-vehicles ecosystem is moving fast. To keep your podcast audience informed, we track the **most recently active** projects, distill what's being worked on, and surface **episode-worthy stories** — from multi-UAV swarms to robot-cell observability to safety-caged RL training.
 
 ---
 
 ## 🔍 Tracked Projects
 
-### 1. 🚗 PhysiCar DeepRacer for Cloud
+### 1. 🏭 Metriplane — Physical Observability for Robotics Workcells
 | | |
 |---|---|
-| **Repo** | [PoetAndPoem4Hu/physicar-deepracer-for-cloud](https://github.com/PoetAndPoem4Hu/physicar-deepracer-for-cloud) |
-| **Language** | Java |
-| **Topic** | `autonomous-vehicles` |
-| **Last Activity** | **September 18, 2026** — README overhaul |
-| **Stars** | 0 |
+| **Repo** | [Miko997/metriplane](https://github.com/Miko997/metriplane) |
+| **Language** | Python |
+| **Topic** | `robotics` |
+| **Last Activity** | **September 18, 2026** — PR #133 merged (production owner keyring delegation) |
+| **Stars** | 7 |
+| **Contributors** | Miko Parkkinen + automated health-publisher bot |
 
-**What it is:** A platform from PhysiCar AI that lets you train AWS DeepRacer reinforcement-learning models in the cloud. It simplifies the setup of cloud-based RL environments for autonomous-vehicle research and education.
+**What it is:** Open-source **physical observability** for robotics workcells. It provides deterministic replay, verifiable incident evidence, and generated regression tests — essentially making robotics workflows auditable and reproducible the way software DevOps makes code deployments traceable.
 
 **Recent development highlights:**
-- **README redesigned** (Sept 2026) — the project just refreshed its documentation, signaling renewed community interest and onboarding improvements.
-- **Version 1.2** released back in 2019, with README updates in 2025 and 2026 suggesting the maintainer is re-activating the project after a long dormancy.
+- **PR #133 merged (Sept 18, 2026)** — Agent now registers production-delegation public keys, extending the security and traceability model to production environments.
+- **PR #85 merged (Sept 14, 2026)** — AMR (Autonomous Mobile Robot) perspective work lands, adding a dedicated view for AMR use cases including replay and quote generation.
+- **Active agent development** — Multiple agent-driven PRs (#131, #133) show the project is building toward automated, agent-assisted observability workflows.
+- **SoftwareX licence integration** — PR #131 adds proper licensing infrastructure, signaling maturity and readiness for broader adoption.
+- **Deterministic replay pipeline** is the killer feature: record a robot cell's execution, then replay it bit-for-bit to reproduce incidents or validate changes.
 
 **🎙️ Potential episode topics:**
-- *"Cloud-Native RL: Training Autonomous Cars Without a Garage"* — how cloud platforms are democratizing RL for AV research.
-- *"From Toy Car to Thermal Runway: The DeepRacer Ecosystem"* — the gap between simulation toys and real autonomy stacks.
-- *"Why Did PhysiCar Revive This Repo?"* — discovering what re-awakens dormant open-source projects.
+- *"Why Your Robot Can't Be Witnessed — and How Metriplane Fixes That"* — the case for observability in physical systems.
+- *"Deterministic Replay for Robotics: rrRulez?"* — how replay-driven development could change how we test robots.
+- *"From Black Box to Glass Box: Making Robot Cells Auditable"* — the intersection of safety compliance and open-source tooling.
+- *"Agents That Watch Robots Watch Themselves"* — the emerging role of AI agents in robotics observability.
 
 ---
 
-### 2. 🛡️ SE4AI Safety Cages for Autonomous Driving (CobraFlex)
+### 2. 🛸 AeroWeaver — Multi-UAV Coordination Console
+| | |
+|---|---|
+| **Repo** | [Admire-ljb/AeroWeaver](https://github.com/Admire-ljb/AeroWeaver) |
+| **Language** | Python |
+| **Topic** | `robotics` |
+| **Last Activity** | **September 18, 2026** — 5 commits: docs overhaul, CI stabilization, preprint citation |
+| **Stars** | 3 |
+
+**What it is:** A **multi-UAV coordination console** for planning and executing manual and LLM-driven missions. It bridges the gap between low-level swarm protocols and high-level mission intent, letting operators control fleets of drones through natural language or direct commands.
+
+**Recent development highlights:**
+- **Massive docs overhaul (Sept 18, 2026)** — 4 of 5 commits were documentation work: restructuring the README around core capabilities, moving details into separate usage guides, replacing homepage screenshots with updated layouts, and citing the AeroWeaver preprint.
+- **CI stabilization** — Commit `685f5e9` fixed the pursuit (pursuit-evasion) test pipeline and formally cited the research preprint, signaling the project is transitioning from research prototype to citable, reproducible tool.
+- **README quickstart validation** — Commit `262b7d9` added automated validation tests for the README quickstart guide, a sign of serious engineering discipline.
+- **LLM-driven mission planning** — the headline feature: operators can describe missions in natural language and the system generates coordinated multi-UAV plans.
+- **Preprint now citable** — the project has a research paper behind it, making it credible for academic and industrial adoption.
+
+**🎙️ Potential episode topics:**
+- *"Swarming Drones with Your Voice: AeroWeaver's LLM Interface"* — how large language models are changing multi-robot command.
+- *"From Research Paper to Production Repo: The AeroWeaver Journey"* — what it takes to make a swarm framework citable and usable.
+- *"Pursuit-Evasion Swarms: The Math Behind Drone Tag"* — the game-theory algorithms powering coordinated UAV motion.
+- *"Why Every Swarm Needs a Console"* — the missing UX layer in multi-robot systems.
+
+---
+
+### 3. 🛡️ SE4AI Safety Cages for Autonomous Driving (CobraFlex)
 | | |
 |---|---|
 | **Repo** | [snchz46/MT-SE4AI-Safe-RL-Cobraflex](https://github.com/snchz46/MT-SE4AI-Safe-RL-Cobraflex) |
 | **Language** | Python |
 | **Topic** | `autonomous-vehicles` |
-| **Last Activity** | **September 18, 2026** — 5 commits on draft writing (Chapter 6 of thesis) |
+| **Last Activity** | **September 18, 2026** — 5 commits on Chapter 6 draft writing (thesis closure) |
 | **Stars** | 1 |
 | **License** | MIT |
 
-**What it is:** Full research artifacts for a master's thesis at Hochschule Esslingen investigating how **runtime safety cages** can constrain a Reinforcement Learning agent in an autonomous driving context. Built on a 1:14 scale physical vehicle (CobraFlex) with 360° LiDAR, stereo camera, and skid-steer drive, all simulated in Gazebo with ROS 2.
+**What it is:** Full research artifacts for a master's thesis at Hochschule Esslingen investigating how **runtime safety cages** can constrain a Reinforcement Learning agent in an autonomous driving context. Built on a 1:14 scale physical vehicle (CobraFlex) with 360° LiDAR, stereo camera, and skid-steer drive, simulated in Gazebo with ROS 2.
 
 **Recent development highlights:**
-- **Active thesis writing** — 5 commits on September 18 alone, all titled "E6: draft writing v6," showing the author is in the final sprint of Chapter 6 (closure & defence, Gate G6).
-- **Phase 5 (physical deployment) just closed** on September 1, 2026 — the sim-to-real transfer was validated: the PPO policy drove 18.05 m of the real circuit uninterrupted with **zero safety interventions**.
-- **Massive validation campaign** — 1,890 simulation runs across 27 scenarios (nominal, edge-case, perturbed) are complete; the verdict campaign data is fresh and being analyzed.
+- **Thesis sprint in full gear (Sept 18, 2026)** — 5 commits all titled "E6: draft writing v6," showing the author is in the final sprint of Chapter 6 (closure & defence, Gate G6).
+- **Phase 5 (physical deployment) just closed** — the sim-to-real transfer was validated: the PPO policy drove 18.05 m of the real circuit uninterrupted with **zero safety interventions**.
+- **1,890 simulation runs across 27 scenarios** completed — nominal, edge-case, and perturbed conditions all logged and traceable.
 - **Traceability gate is rigorous** — every hazard (H-01…H-12) traces through safety requirements → cage rules → scenarios → metrics → logged evidence. A mechanical check (`check_traceability.py`) blocks any Gate review with orphans.
-- **Key finding:** The reward-peak checkpoint (475k steps) was actually the *worst* performer; selecting by training reward alone would have picked the wrong model. The cage-intervention rate was the discriminating signal.
-- **Results at a glance:** 5.32 continuous laps on `complex_b`, 8.6 mm mean lateral error, 27 mm max, **0 emergencies, 0 safety interventions** — only the benign C-06 rate limiter fired.
+- **Shocking finding:** The reward-peak checkpoint (475k steps) was actually the *worst* performer; selecting by training reward alone would have picked the wrong model. The cage-intervention rate was the real discriminating signal.
+- **Results:** 5.32 continuous laps on `complex_b`, 8.6 mm mean lateral error, 27 mm max, **0 emergencies, 0 safety interventions** — only the benign C-06 rate limiter fired.
 
 **🎙️ Potential episode topics:**
 - *"Wrapping AI in a Safety Cage: Can We Trust an RL Driver?"* — the SE4AI methodology and why traceability matters.
@@ -64,40 +95,13 @@ The open-source robotics and autonomous-vehicles ecosystem is moving fast. To ke
 
 ---
 
-### 3. 🏭 Sim-Foundry — Virtual Factory Simulator
-| | |
-|---|---|
-| **Repo** | [wailhoud/sim-foundry](https://github.com/wailhoud/sim-foundry) |
-| **Language** | Python |
-| **Topic** | `autonomous-vehicles` (industrial automation & robotics) |
-| **Last Activity** | **September 18, 2026** — initial commit (`88a953b`) |
-| **Stars** | 0 |
-| **License** | MIT |
-
-**What it is:** A free, open-source platform that simulates PLCs, industrial cameras, sensors, conveyor belts, robotic arms, and more — so you can test HMI, IoT gateway, and SCADA software without waiting for hardware. Supports Modbus, OPC-UA, MQTT, and cloud integrations (AWS IoT, Azure IoT Hub).
-
-**Recent development highlights:**
-- **Brand-new repo** — first commits landed on September 17–18, 2026. This is a fresh project looking for early adopters and contributors.
-- **Full-stack architecture** — includes Docker/Kubernetes deployment, a web frontend, Grafana dashboards, database migrations (Alembic), and an SDK for custom device profiles (JavaScript).
-- **Enterprise-ready design** — built with security in mind (local-only execution, corporate IT policy compliance) and designed for VMs and containers.
-- **Rich documentation** — comprehensive README covers setup, troubleshooting, use cases, and FAQ. Migration scripts and CI/CD pipelines already in place.
-- **Protocol support** — Modbus TCP, OPC-UA, MQTT out of the box; cloud-compatible with AWS IoT Core, Azure IoT Hub, Google Cloud IoT.
-
-**🎙️ Potential episode topics:**
-- *"Why You Shouldn't Need $50K in Hardware to Test Your Robot"* — the case for industrial simulation.
-- *"From PLC to Kubernetes: How Sim-Foundry Modernizes Factory Testing"* — bridging legacy industrial protocols with modern DevOps.
-- *"Build Your Own Digital Twin (For Free)"* — getting started with Sim-Foundry for robotics R&D.
-- *"Robotics in the Enterprise: When Simulation Replaces the Hardware Roundtrip"* — real stories from engineers who ditched the procurement queue.
-
----
-
 ## 📊 Summary Dashboard
 
 | Project | Domain | Activity Level | Episode Potential | Maturity |
 |---|---|---|---|---|
-| PhysiCar DeepRacer | Cloud RL Training | 🔄 Re-activating | ⭐⭐⭐ | Early / Dormant |
+| Metriplane | Robotics Observability | 🔥 Very High (agent-driven PRs) | ⭐⭐⭐⭐ | Advanced / Production |
+| AeroWeaver | Multi-UAV Coordination | 🔥 Very High (docs + CI sprint) | ⭐⭐⭐⭐⭐ | Research → Production |
 | SE4AI CobraFlex | Safety-Caged RL | 🔥 Very High (thesis sprint) | ⭐⭐⭐⭐⭐ | Advanced / Publishing |
-| Sim-Foundry | Industrial Simulation | 🆕 Brand New | ⭐⭐⭐⭐ | Early / Fresh |
 
 ---
 
@@ -106,10 +110,11 @@ The open-source robotics and autonomous-vehicles ecosystem is moving fast. To ke
 | Priority | Episode Title | Featured Project | Angle |
 |---|---|---|---|
 | 🔴 **1** | *"The Safety Cage: Wrapping AI in a Life-or-Death Box"* | SE4AI CobraFlex | Deep-dive into runtime safety monitoring |
-| 🔴 **2** | *"Why Your Robot Doesn't Need Your Hardware Budget"* | Sim-Foundry | Industrial simulation for robotics |
-| 🟡 **3** | *"Cloud Kernels: Training Autonomy at Scale"* | PhysiCar DeepRacer | Cloud RL and the democratization of AV research |
-| 🟡 **4** | *"The Checkpoint That Lied"* | SE4AI CobraFlex | Why training metrics deceive and how to catch it |
-| 🟢 **5** | *"From Garage to Gazebo: Sim-to-Real Transfers"* | SE4AI CobraFlex | The full journey from simulation to hardware |
+| 🔴 **2** | *"Swarming Drones with Your Voice"* | AeroWeaver | LLM-driven multi-UAV coordination |
+| 🟡 **3** | *"Why Your Robot Can't Be Witnessed"* | Metriplane | Observability and deterministic replay |
+| 🟡 **4** | *"The Checkpoint That Lied"* | SE4AI CobraFlex | Why training metrics deceive |
+| 🟢 **5** | *"From Research Paper to Production Repo"* | AeroWeaver | Making a swarm framework citable |
+| 🟢 **6** | *"Agents That Watch Robots Watch Themselves"* | Metriplane | AI agents in robotics observability |
 
 ---
 
@@ -119,8 +124,6 @@ The open-source robotics and autonomous-vehicles ecosystem is moving fast. To ke
 2. **Watch** the `Projects to Revisit & Upcoming Releases` issue for a checklist of what to track next.
 3. **Contribute** by opening a PR with your own project picks or episode drafts.
 4. **Subscribe** to each repo's release notifications so you never miss an update.
-
----
 
 ## 🤝 Contributing
 
