@@ -1,142 +1,126 @@
 # 🤖 Robotics OSS Radar
 
-> Open-source robotics & autonomous systems radar — tracking the most active projects, recent highlights, and podcast episode ideas.
+> **Open-Source Robotics & Autonomous Systems — Podcast Radar**
+> Tracking the most actively developed open-source projects, their latest commits, and potential episode topics for the *Robotics OSS Radar* podcast.
 
 ---
 
-## 📡 Monitored Projects
+## 🎙️ About This Project
 
-We track the top recently active open-source repos tagged with **autonomous-vehicles** or **robotics**, summarizing weekly development highlights and brainstorming podcast episode angles.
+This repo is the companion hub for the **Robotics OSS Radar** podcast — a show dedicated to the people, projects, and behind-the-scenes engineering driving open-source robotics and autonomous systems forward. Between episodes, we use this repo to **monitor, summarize, and spotlight** the repos that matter most.
 
 ---
 
-### 1. 🦾 [autonomous-ai/autonomous-os](https://github.com/autonomous-ai/autonomous-os)
+## 📡 Tracked Projects
 
-> The open-source operating system for robots — install it and your robot comes alive.
+### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
+| | |
+|---|---|
+| ⭐ Stars | **63,679** |
+| 🛠 Language | Python |
+| 📜 License | MIT |
+| 🔗 Repo | [github.com/commaai/openpilot](https://github.com/commaai/openpilot) |
 
-| ⭐ Stars | 🍴 Forks | Language | Last Updated |
-|----------|----------|----------|--------------|
-| 348      | —        | Python   | Sep 18, 2026 |
+**What it is:** An open-source operating system for robotics that upgrades the driver assistance system on **300+ supported cars**. It's the most-starred active robotics project on GitHub and a flagship example of real-world autonomous driving deployed at scale.
 
-**Latest Commits (Sep 18, 2026):**
+**Recent Development Highlights (as of Sept 18, 2026):**
 
-| Commit | Message | Author |
-|--------|---------|--------|
-| `6c828c6` | chore: bump lamp device profile version | leo |
-| `ce220c5` | lamp: reverse MPR121 swipe axis to match mirrored pad wiring | leo |
-| `39d7914` | lamp: max_volume 15 for the C-Media speaker card | leo |
-| `63c921e` | lamp: C-Media card id device_cmedia backs speaker and sensing mic; ZVCAI gain 64 | leo |
-| `8b5c343` | lamp: swap primary/factory-reset GPIO lines to match wiring (99/100) | leo |
-
-**Development Highlights:**
-- **Hardware bring-up momentum** — five commits in a single day all focused on "lamp," a physical robot device. This is raw, hands-on embedded work: GPIO wiring, audio driver configuration, and capacitive touch sensor calibration.
-- **Audio system integration** — C-Media speaker card and mic characterization with ZVCAI gain staging. This shows the project is maturing beyond "just ROS" into real hardware audio pipelines — critical for voice-interactive robots.
-- **Capacitive touch debugging** — reversing the MPR121 swipe axis to match mirrored pad wiring. This is the kind of bug that only surfaces when software meets the physical world. Great podcast material on the frustration and triumph of hardware bring-up.
-- **Device profile versioning** — systematic bumping of device profiles signals a growing ecosystem of supported hardware platforms.
+| Commit | What's Happening |
+|---|---|
+| `d06711b` — *ui: prime menu (#38860)* | Full redesign of the Prime UI menu — improving driver-facing UX and usability |
+| `c6d13eb` — *Cinque v3 (#38932)* | New vehicle hardware generation support (Cinque v3), expanding the 300+ car compatibility list |
+| `9a95fdc` — *cabana: fix stale message size warnings (#38961)* | Bug fix in Cabana (the data replay tool) — improving diagnostic reliability |
+| `c8d56a1` — *cabana: filter multiplexed signals in binary grid (#38960)* | Enhanced signal processing in the data analysis pipeline |
+| `df7e0e5` — *Use upstream tinygrad disk tensors for model loading (#38956)* | Performance optimization — leveraging upstream tinygrad improvements for faster model loading |
 
 **🎙️ Potential Episode Topics:**
-- "From Software to Silicon: What Happens When Your Robot Won't Boot"
-- "The MPR121 Nightmare: Capacitive Touch Debugging at 2 AM"
-- "Audio Pipelines for Robots: Why Your C-Media Card Matters"
-- "autonomous-os: Installing an OS That Makes Your Robot Come Alive"
-- "GPIO Wiring 101: The Undocumented Art of connecting Robots to Reality"
+- *"Inside openpilot: How 300+ Cars Run Open-Source Autonomous Driving"* — The architecture, safety model (ISO 26262), and how the panda security chip works
+- *"From DIY to Deployment: The comma.ai Hardware Pipeline"* — comma four, comma three, and the new Cinque hardware generations
+- *"Tinygrad & the Edge: Running Deep Models on Car Hardware"* — The model-loading optimization story and what it means for on-device inference
+- *"Cabana & Data-Driven Development: Replaying the Real World"* — How comma.ai uses route replay and signal analysis to debug and improve models
 
 ---
 
-### 2. 🚗 [autowarefoundation/autoware](https://github.com/autowarefoundation/autoware)
+### 2. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
+| | |
+|---|---|
+| ⭐ Stars | **26,829** |
+| 🛠 Language | C++ |
+| 📜 License | Apache-2.0 |
+| 🔗 Repo | [github.com/ApolloAuto/apollo](https://github.com/ApolloAuto/apollo) |
 
-> The world's leading open-source software project for autonomous driving.
+**What it is:** Baidu's **open autonomous driving platform** — a full-stack, end-to-end software framework for developing, testing, and deploying autonomous vehicles. From geo-fenced waypoint following (v1.0) to curb-to-curb urban driving (v5.5+) to large-scale functional deployment (v11.0), Apollo has been the leading open-source AV platform since 2017.
 
-| ⭐ Stars | 🍴 Forks | Language | Last Updated |
-|----------|----------|----------|--------------|
-| 12,068   | —        | C++ / Dockerfile | Sep 18, 2026 |
+**Recent Development Highlights (as of Feb 27, 2026):**
 
-**Latest Commits:**
-
-| Commit | Message | Author | Date |
-|--------|---------|---------|------|
-| `487474c` | feat(repositories/autoware.repos): minor update autoware_utils to 1.11.0 (#7319) | awf-bot | Sep 18, 2026 |
-| `a45f9ba` | feat(repositories/autoware.repos): minor update managed_transform_buffer to 0.3.0 (#7316) | awf-bot | Sep 16, 2026 |
-| `79446c0` | feat(ansible): add the CARLA 0.10 Town10HD_Opt map to demo_artifacts (#7308) | Masaya Kataoka | Sep 9, 2026 |
-
-**Development Highlights:**
-- **Dependency hygiene** — systematic minor-version bumps across the ecosystem (autoware_utils → 1.11.0, managed_transform_buffer → 0.3.0), showing mature CI/CD practices and a well-orchestrated release pipeline.
-- **Simulation expansion** — new CARLA 0.10 Town10HD_Opt high-definition map added for demo artifacts. This is a big deal — HD maps are essential for L4 autonomy testing and urban scenario replay.
-- **Infrastructure-as-code** — using Ansible for demo artifact management, signaling professionalism in how they manage complex multi-robot demo environments.
+| Commit | What's Happening |
+|---|---|
+| `539f546` — *feat: add Apollo 11.0 bev+occ* | 🚀 **Major release:** Apollo 11.0 introduces **BEV (Bird's Eye View) + OCC (Occupancy)** perception — a paradigm shift from camera/LiDAR-based 3D detection to top-down representation, aligning with the industry trend pioneered by Tesla and Waymo |
+| `40c8a01` — *Merge PR #15762: recover_seyond_lidar_driver* | New **Seyond LiDAR driver** integration — expanding hardware support for next-generation LiDAR sensors |
+| `6680288` / `995b75a` — *Seyond LiDAR driver config & docs* | Full documentation and configuration support for the new lidar sensor |
+| `d53aa3d` — *docs: fix README - remove invalid build status badges* | Maintenance cleanup — keeping docs current |
 
 **🎙️ Potential Episode Topics:**
-- "Autoware 1.11: What's New in the Latest Release and Why It Matters"
-- "Simulation as a Service: How CARLA HD Maps Are Shaping Autonomous Testing"
-- "The ROS 2 Ecosystem: Inside Autoware's Dependency Management Strategy"
-- "From Research to Road: How Autoware Bridges the Gap Between Simulation and Real-World Deployment"
+- *"BEV & OCC: The Paradigm Shift in Autonomous Perception"* — Why Bird's Eye View + Occupancy networks are replacing traditional 3D object detection, and what Apollo 11.0 means for the field
+- *"From Apollo 1.0 to 11.0: 9 Years of Open-Source AV"* — The full evolution story, from GPS waypoint following to large-scale functional deployment
+- *"CyberRT: The Middleware That Powers a Platoon of Robotaxis"* — Deep dive into Apollo's real-time communication framework
+- *"Sensors & the Software Stack: Integrating Next-Gen LiDAR"* — What it takes to add a new sensor to a production-grade AV platform
 
 ---
 
-### 3. 🛡️ [Hebbian-Robotics/hflow](https://github.com/Hebbian-Robotics/hflow)
+### 3. [microsoft/AirSim](https://github.com/microsoft/AirSim)
+| | |
+|---|---|
+| ⭐ Stars | **18,492** |
+| 🛠 Language | C++ |
+| 📜 License | MIT |
+| 🔗 Repo | [github.com/microsoft/AirSim](https://github.com/microsoft/AirSim) |
 
-> SDK for robotics teams to verify the quality of data used for AI model training.
+**What it is:** Microsoft Research's **open-source, high-fidelity simulator** for autonomous vehicles — built on Unreal Engine (with an experimental Unity release). It supports drones, cars, and more, with software-in-the-loop (PX4/ArduPilot) and hardware-in-the-loop simulation. It's the go-to platform for AI research in deep learning, computer vision, and reinforcement learning for autonomous systems.
 
-| ⭐ Stars | 🍴 Forks | Language | Last Updated |
-|----------|----------|----------|--------------|
-| 272      | —        | Python   | Sep 18, 2026 |
+**Recent Development Highlights (as of Sept 15, 2026):**
 
-**Latest Commits:**
-
-| Commit | Message | Author | Date |
-|--------|---------|---------|------|
-| `4d17559` | fix(lerobot): refuse task_index referencing unpublished tasks before … (#559) | Shobhit agnihotri | Sep 18, 2026 |
-| `e7a615b` | fix(import): guard meta/episodes tree loop against missing 'path' (#555) | Sravan Avvaru | Sep 18, 2026 |
-| `1ae107d` | chore(deps): bump astral-sh/setup-uv in github-actions (#557) | dependabot | Sep 18, 2026 |
-| `9c9fd21` | feat(examples): reproducible real-camera LeRobot workflow (#552) | Ayam | Sep 16, 2026 |
-| `f2e3cf0` | fix(checks): fail closed on unmeasurable joint-motion steps (#546) (#549) | Sagar Kharal | Sep 16, 2026 |
-
-**Development Highlights:**
-- **Robustness fixes** — guarding against missing path keys in meta/episodes trees and refusing unpublished task references. These are real-world data pipeline edge cases that break when datasets are imperfect. Good sign they're listening to user pain points.
-- **LeRobot integration** — new reproducible real-camera example workflow, bridging the gap between simulation-trained models and real-world deployment. This is the sim-to-real story everyone wants to hear.
-- **Safety-first validation** — "fail closed on unmeasurable joint-motion steps" means the SDK refuses to pass data it can't verify, which is a philosophy worth discussing on a podcast about responsible robotics.
-- **DevEx improvements** — migrating to `setup-uv` for faster, more reliable Python environment setup in CI. Small but meaningful: faster CI = faster feedback = faster shipping.
+| Commit | What's Happening |
+|---|---|
+| `1ca93f6` — *Merge PR #9836: Pin GitHub Actions to full-length commit SHAs* | 🔒 **CI/CD hardening:** Pinning GitHub Actions to full-length commit SHAs — a security best practice that prevents supply-chain attacks via compromised upstream actions |
+| `44f3f43` — *Pin GitHub Actions to full-length commit SHAs* | Same security improvement — demonstrates Microsoft's commitment to open-source security hygiene |
+| `d109f0d` — *Updated README (June 28, 2026)* | Documentation refresh — keeping the project accessible to new researchers |
+| Recent added features (from README "What's New") | ROS2 wrapper, Cinematographic Camera, Optical Flow Camera, moveToGPS API, multiple drone support in Unity, simSetKinematics API, dynamic texture/object control, light spawning & control |
 
 **🎙️ Potential Episode Topics:**
-- "Data Quality Is the Real Robot Problem: Why hflow Exists"
-- "Sim-to-Real: How LeRobot Workflows Are Closing the Gap"
-- "From 0 to 1: Building a Robotics Data Verification SDK from Scratch"
-- "The 90% Problem: Why Data Quality Eats 90% of Robotics Dev Time"
-- "Fail Closed: The Philosophy of Refusing to Ship Unverifiable Robots"
+- *"Sim-to-Real: How AirSim Bridges Simulation and the Physical World"* — The challenges of transfer learning and why simulation is the secret weapon behind modern autonomy
+- *"Reinforcement Learning in Unreal: Training Drones That Fly"* — A practical walkthrough of using AirSim for RL experiments
+- *"Why Security Hygiene Matters in Open Source (Even for Simulators)"* — The GitHub Actions pinning story and what it teaches about supply-chain security
+- *"ROS2 Meets AirSim: The Integration That Changes Everything"* — How the new ROS2 wrapper opens up AirSim to the broader robotics ecosystem
+- *"From Academic Paper to Industry Standard: The AirSim Story"* — The journey from a 2017 FSR paper to one of the most-cited robotics simulators
 
 ---
 
-## 🔍 Why These Three?
+## 📋 Roadmap & Episode Planner
 
-| Repo | Domain | Stars | Activity | Podcast Potential |
-|------|--------|-------|----------|-------------------|
-| autonomous-os | Robot OS / Hardware Bring-up | 348 | 🔥 Daily | High — the physical robot story |
-| autoware | Autonomous Driving (Stack) | 12K | 🔥 Daily | High — L4 roadmap |
-| hflow | Robotics Data Quality | 272 | 🔥 Daily | Medium — niche but critical |
-
-These three were selected from GitHub's **topic:autonomous-vehicles** and **topic:robotics** searches, filtered by recent commit activity (all three had commits within the last 48 hours).
+See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues)** for a living checklist of each project's milestones to track, upcoming releases to watch, and interview angles to explore.
 
 ---
 
-## 📋 Tracking Checklist
+## 🔧 How to Use This Repo
 
-See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues)** for a full checklist of projects to track going forward.
-
----
-
-## 🔧 How to Contribute
-
-1. Fork this repo
-2. Add your favorite robotics OSS project to `projects/`
-3. Submit a PR with weekly commit summaries and episode ideas
+- **Browse the README above** for at-a-glance project summaries and episode ideas
+- **Open issues** to suggest new projects, propose episode topics, or flag major upstream releases
+- **PRs welcome** for additional project entries, commit analysis, or content improvements
+- **RSS/Atom feeds** from each project's GitHub can be piped into the podcast production workflow
 
 ---
 
-## 📅 Update Cadence
+## 🎙️ Listen & Subscribe
 
-- **Weekly** — Latest commits reviewed & summarized
-- **Monthly** — Release notes & milestone deep-dives
-- **Per Episode** — In-depth project spotlights
+*Robotics OSS Radar* — exploring the code, the people, and the machines that are making autonomous systems real.
+
+| Platform | Link |
+|---|---|
+| 🌐 Website | _Coming soon_ |
+| 📡 RSS | _Coming soon_ |
+| 🐦 Twitter/X | @RoboticsOSSRadar |
 
 ---
 
-*Built for the open-source robotics community. ★ Star this repo if you find it useful!*
+*Built for the open-source robotics community. MIT License.*
