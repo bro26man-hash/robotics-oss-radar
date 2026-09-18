@@ -1,133 +1,100 @@
 # 🤖 Robotics OSS Radar
 
-> **Open-source robotics & autonomous systems radar** — tracking the most actively maintained open-source projects in robotics and autonomous driving. Curated for the *Robotics OSS Radar* podcast.
+> Tracking the most active open-source robotics & autonomous vehicle projects — for our podcast.
 
-This is a living catalog of the most active, well-established open-source projects at the intersection of robotics and autonomous vehicles. Each entry includes recent commit highlights, key technical themes, and suggested podcast episode topics.
-
----
-
-## 📡 Tracked Projects
-
-### 1. 🚗 CARLA Simulator — `carla-simulator/carla`
-
-| | |
-|---|---|
-| **Stars** | ⭐ 14,405 |
-| **Language** | C++ / Python |
-| **License** | MIT |
-| **Last commit** | Sep 2, 2026 |
-| **Repo** | [github.com/carla-simulator/carla](https://github.com/carla-simulator/carla) |
-
-**What it is:** CARLA is an open-source simulator for autonomous driving research, developed from the ground up to support development, training, and validation of ADAS and autonomous driving stacks. It provides open digital assets (urban layouts, buildings, vehicles) and flexible sensor suite configuration.
-
-**Recent development highlights:**
-
-| Commit | What's Happening |
-|---|---|
-| `1360bb9` — Deploy UE5 nightly to Cloudflare R2 | **Infrastructure upgrade** — CARLA's Unreal Engine 5 nightlies are now served via Cloudflare R2, dramatically improving global download reliability and speed. |
-| `dd3a9d7` — feat(sensor): add V2X sensor family (CAM, path-loss, CustomV2X, V2I) | **New sensor suite** — added a full **Vehicle-to-Everything (V2X)** sensor family, enabling communication-aware simulations. Huge for connected/autonomous vehicle research. |
-| `39c4fda` — guard against null traffic light in WalkerManager | **Robustness fix** — WalkerManager no longer crashes when traffic light entities are missing in scenarios. |
-| `0a5ce0d` — Fix lidar smoke helper signature | **Bug fix** — resolves lidar point-cloud visualization issue in debug sessions. |
-| `6279162` — add CARLA_MAPS_TO_COOK to select packaged maps | **Build system improvement** — developers can now selectively cook packaged maps via CMake option, reducing build times for minimal installations. |
-
-**🎙️ Potential Podcast Episode Topics:**
-- *"V2X in Simulation: Why CARLA's New Sensor Family Changes Everything"* — How Vehicle-to-Everything simulation enables research into connected autonomy.
-- *"From UE4 to UE5: The CARLA Graphics Overhaul"* — What migrating to Unreal Engine 5 means for photorealistic autonomous driving simulation.
-- *"Cloudflare R2 vs. S3: How CARLA Scaled Global Downloads"* — Infrastructure choices for open-source projects with large binary assets.
-- *"Sim-to-Real: Can CARLA's V2X Predictions Transfer to the Real World?"* — The simulation-to-reality gap, and whether V2X adds new capabilities or new uncertainties.
+## 📡 Top 3 Projects Under the Lens
 
 ---
 
-### 2. 🧭 Autoware — `autowarefoundation/autoware`
+### 1. [autonomous-ai/autonomous-os](https://github.com/autonomous-ai/autonomous-os)
+**⭐ 347 stars | Language: Python | License: Apache-2.0 | Last updated: Sept 17, 2026**
 
-| | |
-|---|---|
-| **Stars** | ⭐ 12,067 |
-| **Language** | C++ / Python (ROS 2) |
-| **License** | Apache-2.0 |
-| **Last commit** | Sep 16, 2026 |
-| **Repo** | [github.com/autowarefoundation/autoware](https://github.com/autowarefoundation/autoware) |
+*Autonomous OS is the "Android" for robots — install it and your robot comes alive. It's a fully customizable operating system where every component is swappable: engine, model, voice, skills, board. Robots declare what they have in a `ROBOT.md`, and the OS mounts exactly that.*
 
-**What it is:** Autoware is the world's leading open-source autonomous driving framework. It provides a comprehensive, production-ready software stack designed to accelerate commercial deployment of autonomous vehicles across diverse platforms and use cases. Built on ROS 2.
+**Recent Development Highlights:**
+- **fix(hal): drain scene speaker mute and restore scene-muted peripherals on wake** (`2a11eea`, Sep 17, 2026) — by Darren; resolves audio peripheral state corruption when a scene wakes from dormancy, ensuring speakers and mics reinitialize correctly
+- **FIX (hal): drain scene speaker mute and reopen scene-muted peripherals on scene off** (`8dcc596`, Sep 17, 2026) — by Darren; paired fix for the reverse transition (scene off → restore), closing the peripheral lifecycle gap
+- **CHORE (hal): drop scene drain test and its handle reset** (`463c08e`, Sep 17, 2026) — by Darren; cleanup of deprecated test infrastructure for the scene drain mechanism
+- **Update & merge** (`d0e158d` / `98bdf6b`, Sep 17, 2026) — by Darren & leo; integration merges for the HAL speaker/drain subsystem refactor
 
-**Recent development highlights:**
+**Key Architecture:** Agentic reasoning engine (Hermes, Claude Code, OpenClaw, PicoClaw, Codex, OpenCode behind a unified `AgentGateway`), Skills system (markdown-driven behaviors with `[HW:…]` hardware markers), HAL (Hardware Abstraction Layer with 13 capability interfaces), Safety gate (pure-function clamps on speed, brightness, quiet hours), Go daemon `os-server` on :5000, realtime voice (Gemini Live / OpenAI Realtime), swappable boards (RPi 4/5, CM4, OrangePi 4 Pro). Supports Lamp, Reachy Mini, and Intern robots out of the box.
 
-| Commit | What's Happening |
-|---|---|
-| `a45f9ba` — managed_transform_buffer 0.3.0 updated | **Core library bump** — improved timestamp handling and buffer management, critical for multi-sensor fusion pipelines. |
-| `79446c0` — CARLA 0.10 Town10HD_Opt map added to demo artifacts | **Simulation expansion** — the grand opt-in map for large-scale urban simulation is now available in Autoware's demo setup. |
-| `87f7b60` — fix(docker): build simple planning simulator with core | **CI fix** — the simulation subpackage now compiles correctly inside the Docker image, removing a major CI bottleneck. |
-| `3354a27` — pin CasADi to 3.7.2 for Humble ARM64 | **Edge-computing enablement** — resolves a build-breaking dependency conflict on ARM64 Ubuntu, opening the door for deeper learning on edge hardware. |
-| `c0a32e8` — ci(health-check): trim PR matrix to amd64 main legs | **CI maturity** — streamlining CI to reduce flake and noise, signalling a maturing release pipeline. |
-
-**🎙️ Potential Podcast Episode Topics:**
-- *"Autoware: The OS for Autonomous Vehicles — Can It Scale to Production?"*
-- *"ROS 2 in the Real World: What Autoware's CI Changes Tell Us About Maturity"*
-- *"Simulation Meets Reality: CARLA + Autoware Integration Workflows"*
-- *"Arm64 Autonomous: Running Autoware on Edge Hardware"*
+**🎙️ Potential Episode Topics:**
+- "The Android for robots: inside Autonomous OS"
+- "Skills as markdown: howgable AI behaviors replace code"
+- "Safety gates without ML: pure-function guarantees for robot hardware"
+- "Six agentic runtimes, one gateway: swapping brains mid-conversation"
+- "From Lamp to Reachy Mini: bring-your-own-robot in four markdown files"
+- "HAL Friday: the hardware abstraction layer that makes robots swappable"
 
 ---
 
-### 3. 🦾 Isaac Lab — `isaac-sim/IsaacLab`
+### 2. [aerostack2/aerostack2](https://github.com/aerostack2/aerostack2)
+**⭐ 385 stars | Language: C++ | License: BSD-3-Clause | Last updated: Sept 16, 2026**
 
-| | |
-|---|---|
-| **Stars** | ⭐ 8,157 |
-| **Language** | Python |
-| **License** | BSD-3-Clause |
-| **Last commit** | Sep 17, 2026 |
-| **Repo** | [github.com/isaac-sim/IsaacLab](https://github.com/isaac-sim/IsaacLab) |
+*Aerostack2 is a ROS 2 framework for building autonomous multi-aerial-robot systems — designed for modularity, Sim2Real deployment, and swarming orientation. Currently developed and tested on ROS 2 Humble (Ubuntu 22.04).*
 
-**What it is:** Isaac Lab is a GPU-accelerated, open-source framework designed to unify and simplify robotics research workflows — reinforcement learning, imitation learning, and motion planning. Built on NVIDIA Isaac Sim, it combines fast physics and sensor simulation for effective sim-to-real transfer.
+**Recent Development Highlights:**
+- **[as2_motion_controller] Add the geometric controller plugin** (`19c3973`, Sep 16, 2026, PR #1001) — by Rafael Perez-Segui; brand-new geometric controller for aerial platforms, enabling more precise trajectory tracking with provable stability guarantees
+- **[as2_motion_controller] Plugin parameter contract and hover as a frozen reference** (`f049960`, Sep 16, 2026, PR #1000) — by Rafael Perez-Segui; formalizes the parameter interface for all motion controller plugins and establishes hover as a stable reference point — a foundational API contract
+- **[as2_motion_controller] Yaw reference, PID library name and debug topics** (`05fa631`, Sep 16, 2026, PR #999) — by Rafael Perez-Segui; adds yaw-reference handling, standardizes PID library naming, and introduces debug topics for real-time tuning visualization
+- **[as2_core] Fix getting latest transform with fixed frames** (`439ee79`, Sep 16, 2026, PR #996) — by Rafael Perez-Segui; resolves a TF2 bug where fixed-frame transforms returned stale data — critical for localization accuracy
+- **fix: upgrade pixi-build-ros / pin ros2 distro mutex** (`82d85ab`, Sep 7, 2026, PR #997) — by Alvaro Gaona; CI infrastructure upgrade for reliable ROS 2 builds
 
-**Recent development highlights:**
+**Key Architecture:** ROS 2 native (Humble), modular package ecosystem (as2_core, as2_motion_controller, as2_behavior_tree, as2_state_estimator, as2_hardware_drivers, as2_simulation_assets), behavior-tree-driven autonomy, swarming support, Sim2Real deployment pipeline, Python API bindings, Docker images on DockerHub, academic paper (arXiv:2303.18237).
 
-| Commit | What's Happening |
-|---|---|
-| `93d7bef` — Docs consolidation & tutorial repair | **Documentation overhaul** — asset and Docker guides merged into a single coherent page; tutorial examples fixed for 3.0. |
-| `6941d59` — Fix Isaac Lab 3.0.0 RC1 package installation | **Release blocker removed** — hotfix ensuring the stable release candidate installs cleanly across Linux and Windows. |
-| `e836331` — Fix operational-space feedback & task-frame consistency | **Critical bugfix** — ensures accurate feedback loops for multi-DOF manipulators and humanoid robots. |
-| `0921d32` — Standalone demos complete health check after startup | **Race condition fix** — demo scripts now wait for full simulation initialization before running, eliminating flaky CI. |
-| `24f61d9` — Update nightly image pull-request automation | **DevEx improvement** — automated build pipeline for nightly Docker images gets refinements for faster breaking-change feedback. |
-
-**🎙️ Potential Podcast Episode Topics:**
-- *"Isaac Lab 3.0: What's New in the Biggest Robotics Sim Release Yet"*
-- *"GPU-Accelerated Robot Learning: Inside NVIDIA's Isaac Lab"*
-- *"Sim-to-Real Transfer: From Isaac Lab to the Real World"*
-- *"The Rise of GPU-Native Robotics Frameworks — Is This the Paradigm Shift?"*
+**🎙️ Potential Episode Topics:**
+- "Aerostack2: the ROS 2 framework for drone swarming"
+- "Geometric controllers for drones: PR #1001 explained"
+- "From hover to trajectory tracking: the motion controller architecture"
+- "TF2 bugs that can crash your drone: the fixed-frame transform story"
+- "Sim2Real: how Aerostack2 bridges simulation and the real world"
+- "Behavior trees for aerial robots: modular autonomy without the spaghetti"
 
 ---
 
-## 📋 Episode Planning Checklist
+### 3. [argoverse/av2-api](https://github.com/argoverse/av2-api)
+**⭐ 416 stars | Language: Python | License: MIT | Last updated: Sept 15, 2026**
 
-| # | Project | Episode Idea | Status |
-|---|---|---|---|
-| 1 | CARLA | "V2X in Simulation: Why CARLA's New Sensor Family Changes Everything" | 🔴 Not started |
-| 2 | CARLA | "From UE4 to UE5: The CARLA Graphics Overhaul" | 🔴 Not started |
-| 3 | Autoware | "Autoware: The OS for Autonomous Vehicles — Can It Scale to Production?" | 🔴 Not started |
-| 4 | Autoware | "ROS 2 in the Real World: What Autoware's CI Changes Tell Us" | 🔴 Not started |
-| 5 | Isaac Lab | "Isaac Lab 3.0: What's New in the Biggest Robotics Sim Release Yet" | 🔴 Not started |
-| 6 | Isaac Lab | "GPU-Accelerated Robot Learning: Inside NVIDIA's Isaac Lab" | 🔴 Not started |
+*Argoverse 2 is the next-generation dataset and API for self-driving perception and forecasting — supporting 3D Object Detection, 4D Occupancy Forecasting, End-to-End Forecasting, Motion Forecasting, and Scenario Mining, plus the Trust-but-Verify Map Change Detection dataset.*
 
----
+**Recent Development Highlights:**
+- **Bump version to v0.3.6** (`b7321d1`, Feb 19, 2026, PR #334) — by Benjamin Wilson; latest stable release with all dataset APIs, scenario mining metrics, and evaluation tooling
+- **Update Scenario Mining Evaluation** (`f0b2889`, Feb 19, 2026, PR #333) — by Cainan Davidson; refined scenario mining evaluation pipeline with improved metrics and benchmarking
+- **Fix CI failures + package incompatibilities** (`529886a`, Feb 13, 2026, PR #331) — by Benjamin Wilson; critical CI repair resolving dependency conflicts and build breaks
+- **Update scenario mining classification metrics from F1 to balanced accuracy** (`6b22766`, Jun 11, 2025, PR #315) — by Cainan Davidson; metric methodology shift — balanced accuracy better captures class imbalance in autonomous driving scenarios
+- **Bump version** (`c06ecb7`, May 19, 2025, PR #314) — by Benjamin Wilson; maintenance release
 
-## 🔗 Quick Links
+**Key Architecture:** Python API with Rust extensions (Cargo.toml), Scene-level data access, 3D Object Detection, 3D Scene Flow, 4D Occupancy Forecasting, End-to-End Forecasting, Motion Forecasting, Scenario Mining, Map Change Detection (Trust-but-Verify), PyPI-distributed (`av2` package), NeurIPS Datasets & Benchmarks 2021 paper.
 
-- [CARLA Simulator](https://github.com/carla-simulator/carla)
-- [Autoware](https://github.com/autowarefoundation/autoware)
-- [Isaac Lab](https://github.com/isaac-sim/IsaacLab)
-
-## 📌 How This Repo Works
-
-This repo is a **living tracker** for the *Robotics OSS Radar* podcast. We:
-
-1. **Monitor** the most active open-source robotics & autonomous-vehicle repos on GitHub.
-2. **Log** recent commits and development highlights.
-3. **Brainstorm** podcast episode topics tied to real code changes.
-4. **Track** upcoming releases and milestones to revisit.
-
-Contributions are welcome! Open an issue to suggest a new project or episode idea.
+**🎙️ Potential Episode Topics:**
+- "Argoverse 2: the dataset behind the future of self-driving perception"
+- "From F1 to balanced accuracy: why metric choice matters in AV benchmarking"
+- "Scenario mining: finding the edge cases that crash self-driving cars"
+- "4D Occupancy Forecasting: predicting the future of every pixel in the scene"
+- "Rust + Python: the hybrid architecture behind the av2 API"
+- "Trust, but Verify: detecting when HD maps go stale in production AVs"
 
 ---
 
-*Built for makers, by makers. 🛠️*
+## 📊 Quick Comparison
+
+| Project | Stars | Language | Focus | Latest Activity |
+|---------|-------|----------|-------|-----------------|
+| Autonomous OS | 347 | Python | Open-source robot OS with agentic AI & swappable skills | HAL speaker/drain lifecycle fixes, peripheral state management |
+| Aerostack2 | 385 | C++ | ROS 2 framework for autonomous multi-aerial robots | Geometric controller plugin (#1001), parameter contracts, TF2 fix |
+| Argoverse 2 API | 416 | Python | Self-driving perception & forecasting datasets | v0.3.6 release, scenario mining eval, CI fixes |
+
+---
+
+## 📋 Tracking Checklist
+
+See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/31)** for a detailed tracking checklist of these 3 projects.
+
+## 🎙️ About This Project
+
+This repo is a companion to our podcast on open-source robotics and autonomous systems. We track the most active GitHub projects, analyze their latest commits, and develop episode ideas — so listeners can follow along and contribute.
+
+---
+
+*Generated for the Robotics OSS Radar podcast. Stay curious, stay open-source.*
