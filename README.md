@@ -1,172 +1,91 @@
 # 🤖 Robotics OSS Radar
 
-> **Podcast companion for open-source robotics & autonomous systems**
-> Tracking the most active GitHub projects, recent development highlights, and episode opportunities.
+> Tracking the most active open-source robotics & autonomous-systems projects — with development highlights and podcast episode ideas.
 
 ---
 
-## 📡 What Is This?
+## 📡 Projects Under the Lens
 
-**Robotics OSS Radar** is a podcast companion that monitors the most recently active open-source repositories in the robotics and autonomous-vehicles ecosystem. We track recent commits, highlight development trends, and generate episode ideas — so you never miss a story worth telling.
+### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
+**Tag:** `robotics` · **Language:** Python · **Stars:** 63,682★
 
----
+**What it is:** openpilot is an operating system for robotics — currently it upgrades the driver assistance system on 300+ supported cars. It's the most-starred open-source project in our radar and a cornerstone of the OE (open piloting) movement.
 
-## 🔍 Current Radar: Top 3 Recently Active Projects
+**Recent development highlights:**
+- 🗓️ **Sep 19, 2026** — `cabana: improve theme contrast` (2eee697, @TreyMoen): UI polish for the cabana debugging interface, improving readability in bright sunlight conditions.
+- 🗓️ **Sep 19, 2026** — `DM: Super Leicht Model` (5ae0da0, @ZwX1616): A new "Super Leicht" (super light) model for the Decision Maker (DM), promising faster inference and lower compute overhead — critical for cost-sensitive hardware.
+- 🗓️ **Sep 18, 2026** — `ui: allow delay of scroller start` (a395610, @stef): UX improvement to prevent UI scroll jitter on startup.
 
----
-
-### 1. 🚗 commaai/openpilot — Open-Source Driver Assistance & Autonomous Driving
-
-| Field | Detail |
-|-------|--------|
-| **Repo** | [`commaai/openpilot`](https://github.com/commaai/openpilot) |
-| **Tag** | `robotics` |
-| **Language** | Python, C++ |
-| **⭐ Stars** | ~63,682 |
-| **License** | GPLv3 |
-| **Latest Commit** | `cabana: improve theme contrast` — **Sep 19, 2026** |
-
-**What it does:** openpilot is an **open-source operating system for robotics**, currently focused on upgrading the driver assistance system on 300+ supported cars. It replaces stock ADAS with a vision-based, neural-network-driven system that handles acceleration, braking, and lane-keeping — all running on consumer hardware.
-
-#### 📊 Recent Commit Activity
-
-| Date | SHA | Change | Why It Matters |
-|------|-----|--------|-----------------|
-| Sep 19, 2026 | `2eee697` | **cabana: improve theme contrast (#38965)** | UI polish — improving the driver-facing interface for better readability and safety |
-| Sep 19, 2026 | `5ae0da0` | **DM: Super Leicht Model (#38942)** | Core ML upgrade — a new lightweight model for the driver monitoring system, likely faster inference & lower power draw on edge devices |
-| Sep 18, 2026 | `a395610` | **ui: allow delay of scroller start (#38958)** | UX refinement — smoother scrolling in the UI, reducing visual glitches during critical driving moments |
-
-#### 🔑 Key Architecture Highlights
-- **Vision-based perception:** Camera-only pipeline (no LiDAR/radar reliance) using neural networks for path planning
-- **300+ car support:** Broad vehicle compatibility with community-contributed car interfaces
-- **Edge-optimized ML:** Models tuned for on-device inference (NVIDIA Tegra, Qualcomm Snapdragon)
-- **Driver Monitoring (DM):** Real-time drowsiness & distraction detection using the new "Super Leicht" model
-- **Open & community-driven:** 1,000+ contributors; car interfaces contributed by owners
-- **CI/CD at scale:** Daily merges, rapid iteration on both UI and core models
-
-#### 🎙️ Potential Episode Topics
-- *"How openpilot Teaches Your Car to Drive Themselves — 300+ Cars and Counting"*
-- *"Super Leicht: The Lightweight Model Revolutionizing On-Device Driver Monitoring"*
-- *"Vision-Only vs. Sensor Fusion: Why openpilot Chose Cameras"*
-- *"From Hobbyist to 63K Stars: The Community Behind openpilot"*
-- *"Driving on Edge: How openpilot Runs Neural Networks on Phone Chips"*
+🎙️ **Potential episode topics:**
+- *"Open Piloting at Scale"* — How openpilot went from a weekend project to 300+ car support and what that means for the future of ADAS.
+- *"The Super Leicht Model"* — What does it mean to make autonomy "lighter"? Exploring model compression techniques for edge devices.
+- *"Cabana & the Debugging Lifeline"* — Inside openpilot's tools that let developers and users see exactly what the car is thinking.
 
 ---
 
-### 2. 🏗️ ApolloAuto/apollo — The Open Autonomous Driving Platform
+### 2. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
+**Tag:** `autonomous-vehicles` · **Language:** C++ · **Stars:** 26,829★
 
-| Field | Detail |
-|-------|--------|
-| **Repo** | [`ApolloAuto/apollo`](https://github.com/ApolloAuto/apollo) |
-| **Tag** | `autonomous-vehicles` |
-| **Language** | C++, Python |
-| **⭐ Stars** | ~26,829 |
-| **License** | Apache-2.0 |
-| **Latest Commit** | `docs: fix README - remove invalid build status badges` — **Apr 16, 2026** |
+**What it is:** Apollo is Baidu's open autonomous driving platform — a full-stack solution covering perception, planning, control, and HD map infrastructure. It's one of the earliest and most comprehensive open-source AV stacks.
 
-**What it does:** Apollo is Baidu's **full-stack open autonomous driving platform**. It provides everything from hardware abstraction to perception, planning, and control — designed for developers building self-driving cars at scale. It's one of the most mature open-source AV stacks in production use.
+**Recent development highlights:**
+- 🗓️ **Apr 16, 2026** — `docs: fix README - remove invalid build status badges` (d53aa3d, @xiaoxinyu): Maintenance cleanup — removing stale CI badges, signaling a shift in their CI/CD pipeline.
+- 🗓️ **Feb 28, 2026** — `Merge PR #15762: recover_seyond_lidar_driver` (40c8a01, @yuxin): Recovery of the "Seyond" lidar driver — bringing back support for a specific lidar hardware platform, indicating ongoing hardware ecosystem expansion.
+- 🗓️ **Feb 27, 2026** — `feat: add Apollo 11.0 bev+occ` (539f546, @yuxin): Major feature drop — Apollo 11.0 introduces Bird's-Eye-View (BEV) and Occupancy (OCC) perception, aligning with the industry's shift from camera-only to multi-modal 3D perception.
 
-#### 📊 Recent Commit Activity
-
-| Date | SHA | Change | Why It Matters |
-|------|-----|--------|-----------------|
-| Apr 16, 2026 | `d53aa3d` | **docs: fix README — remove invalid build status badges** | Maintenance pass — cleaning up stale CI badges; signals a shift toward release-focused workflow |
-| Feb 28, 2026 | `40c8a01` | **Merge PR #15762 — recover_seyond_lidar_driver** | LiDAR driver recovery — restoring support for Beyondlidar sensors, expanding hardware compatibility |
-| Feb 27, 2026 | `539f546` | **feat: add Apollo 11.0 bev+occ** | Major release feature — Bird's-Eye View + Occupancy network for 3D scene understanding, a key step toward L4 autonomy |
-
-#### 🔑 Key Architecture Highlights
-- **Full-stack AV stack:** Perception → Prediction → Planning → Control, all open-source
-- **BEV + OCC (v11.0):** Bird's-Eye View representation with 3D occupancy grids — the industry's leading approach for 3D scene reconstruction
-- **Hardware-agnostic:** Supports multiple lidar, camera, and compute configurations
-- **Simulation & data pipeline:** Integrated tools for data labeling, simulation, and testing
-- **Industry-backed:** Used by Baidu's Robotaxi fleet (Apollo Go) — real production-grade code
-
-#### 🎙️ Potential Episode Topics
-- *"Apollo 11.0: What BEV + OCC Means for the Future of Autonomous Driving"*
-- *"From Baidu's Robotaxi to Your Garage: The Apollo Open-Stack Story"*
-- *"LiDAR Drivers & Sensor Recovery: The Unseen Complexity of AV Hardware"*
-- *"Full-Stack vs. Stack-of-Stacks: Why Apollo Ships Everything"*
-- *"The 26,000-Star AV Platform Nobody Talks About"*
+🎙️ **Potential episode topics:**
+- *"BEV + OCC: The Perception Revolution"* — Why Bird's-Eye-View and Occupancy networks are replacing traditional 3D object detectors, and how Apollo 11.0 implements them.
+- *"From Apollo to Autonomy: 10 Years of Open AV"* — A retrospective on Baidu's Apollo platform and its influence on the open-source AV ecosystem.
+- *"Lidar Driver Archaeology"* — Why maintaining hardware drivers matters and what happens when they break — a story of recovery and ecosystem fragility.
 
 ---
 
-### 3. 🎮 microsoft/AirSim — Open-Source Autonomous Vehicle Simulator
+### 3. [AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)
+**Tag:** `robotics` · **Language:** Python · **Stars:** 30,544★
 
-| Field | Detail |
-|-------|--------|
-| **Repo** | [`microsoft/AirSim`](https://github.com/microsoft/AirSim) |
-| **Tag** | `autonomous-vehicles` |
-| **Language** | C++, Python, Unreal Engine |
-| **⭐ Stars** | ~18,499 |
-| **License** | MIT |
-| **Latest Commit** | `Merge PR #9836 — pin actions to full-length SHAs` — **Sep 15, 2026** |
+**What it is:** Python sample codes and textbook for robotics algorithms — covering localization, mapping, path planning, control, and more. It's the go-to educational resource for anyone learning robotics programming in Python.
 
-**What it does:** AirSim is an **open-source simulator for autonomous vehicles** built on Unreal Engine and Unity, from Microsoft AI & Research. It provides photorealistic environments, realistic sensor simulations (cameras, LiDAR, IMU, GPS), and APIs for Python/C++ — making it the go-to platform for training and testing autonomous systems in simulation before deploying to the real world.
+**Recent development highlights:**
+- 🗓️ **Sep 2, 2026** — `build(deps): bump github/codeql-action from 4.37.4 to 4.37.9` (08b453a, @dependabot): Security tooling kept current — the CodeQL action update ensures static analysis catches vulnerabilities as the codebase evolves.
+- 🗓️ **Sep 2, 2026** — `build(deps): bump ruff from 0.16.1 to 0.16.5` (8c3f761, @dependabot): Linting toolchain updated — ruff 0.16.x brings new rules and performance improvements for the project's code quality pipeline.
+- 🗓️ **Sep 2, 2026** — `build(deps): bump scipy from 1.17.1 to 1.18.1` (069e0fb, @dependabot): Core scientific dependency bumped — scipy 1.18.x includes performance optimizations for the numerical routines that underpin many robotics algorithms in the repo.
 
-#### 📊 Recent Commit Activity
-
-| Date | SHA | Change | Why It Matters |
-|------|-----|--------|-----------------|
-| Sep 15, 2026 | `1ca93f6` | **Merge PR #9836 — pin actions to full-length SHAs** | Security hardening — pinning GitHub Actions to full-length commit SHAs prevents dependency confusion attacks; critical for a project used in research & production |
-| Aug 12, 2026 | `44f3f43` | **Pin GitHub Actions to full-length commit SHAs** | Follow-up security hardening — comprehensive supply-chain protection |
-| Jun 28, 2026 | `d109f0d` | **Updated README** | Documentation refresh — likely adding new features or setup improvements |
-
-#### 🔑 Key Architecture Highlights
-- **Unreal Engine-powered:** Photorealistic rendering for realistic visual perception testing
-- **Multi-sensor simulation:** Cameras, LiDAR, IMU, GPS, depth — all synchronized and configurable
-- **Python & C++ APIs:** Easy integration with ML pipelines (PyTorch, TensorFlow ROS)
-- **Pre-built environments:** Cities, racetracks, indoor spaces — ready to deploy
-- **Multi-vehicle support:** Simulate fleets of robots/vehicles simultaneously
-- **ROS integration:** Works seamlessly with the Robot Operating System
-- **Actively maintained by Microsoft Research:** Still receiving security & feature updates after 5+ years
-
-#### 🎙️ Potential Episode Topics
-- *"Training Self-Driving Cars in a Video Game: Inside Microsoft's AirSim"*
-- *"Why Simulation Is the Secret Weapon of Autonomous Systems"*
-- *"From Unreal Engine to ROS: How AirSim Bridges Simulation & Reality"*
-- *"Security in Open-Source Robotics: Microsoft's AirSim Supply-Chain Hardening"*
-- *"18,000 Stars and Still Counting — The Simulator That Built a Generation of AV Researchers"*
+🎙️ **Potential episode topics:**
+- *"Teaching Robots to Think in Python"* — How PythonRobotics makes algorithms like Kalman filters, RRT*, and PID control accessible to the next generation of roboticists.
+- *"The Dependency Drain"* — What happens when your educational repo depends on the scientific Python ecosystem: a story about keeping up with numpy, scipy, and tooling churn.
+- *"Code as Curriculum"* — Why reading working code is sometimes better than reading textbooks — and how PythonRobotics proves it.
 
 ---
 
-## 📊 Radar Summary
+## 🎙️ About This Radar
 
-| # | Project | Domain | Stars | Commit Cadence | Vibe |
-|---|---------|--------|-------|-----------------|------|
-| 1 | **openpilot** | Driver Assistance / AV | ~63.7K | **Daily** (3 commits in 2 days) | 🚗 Community & edge ML |
-| 2 | **Apollo** | Full-Stack AV Platform | ~26.8K | Steady (monthly maintains) | 🏗️ Industry-grade & full-stack |
-| 3 | **AirSim** | Autonomous Simulator | ~18.5K | Monthly (security & docs) | 🎮 Simulation & research |
+This repo is the companion data source for the **Robotics OSS Radar** podcast — a show exploring the open-source projects shaping the future of autonomous systems and robotics. Each episode dives deep into one project, interviewing maintainers, walking through the code, and discussing what's coming next.
 
----
-
-## 🎙️ Episode Pipeline
-
-| Priority | Project | Suggested Angle | Status |
-|----------|---------|-------------------|--------|
-| 🔴 **High** | openpilot | Community-driven ADAS — how 63K stars and 300 cars are changing driving | In progress |
-| 🟡 **Medium** | Apollo | Full-stack AV from Baidu — BEV + OCC and the road to L4 | TBD |
-| 🟡 **Medium** | AirSim | The simulator that makes robots before they hit the road | TBD |
+**Suggested episode cadence:**
+| Week | Project | Theme |
+|------|---------|-------|
+| 1 | openpilot | Open Piloting at Scale |
+| 2 | Apollo | BEV + OCC: The Perception Revolution |
+| 3 | PythonRobotics | Teaching Robots to Think in Python |
 
 ---
 
-## 📋 How to Contribute
+## 🔧 How to Contribute
 
-This is a **living document**. To suggest a project or submit an episode idea:
-
-1. Fork this repo
-2. Add your candidate to the radar (follow the format above)
-3. Open a PR with your suggestions
-4. Or open an **Issue** with the `episode-suggestion` label
+- Found a stale project? Open an issue with the repo URL and what you expected to see.
+- Want your project featured? Submit a link and a 2-line description.
+- Episode ideas? The issue tracker is the place.
 
 ---
 
-## 🔗 Useful Links
+## 📊 Radar Dashboard
 
-- [openpilot](https://github.com/commaai/openpilot) — Open-source driver assistance
-- [Apollo (Baidu)](https://github.com/ApolloAuto/apollo) — Full-stack autonomous driving
-- [AirSim (Microsoft)](https://github.com/microsoft/AirSim) — Autonomous vehicle simulator
-- [CARLA Simulator](https://carla.org/) — Another great open-source AV simulator
+| Project | Last Commit | Activity | Stars | Language |
+|---------|-------------|----------|-------|----------|
+| openpilot | Sep 19, 2026 | 🟢 Active (UI polish + new DM model) | 63,682★ | Python |
+| Apollo | Apr 16, 2026 | 🟡 Maintenance (docs cleanup + Apollo 11.0 BEV/OCC) | 26,829★ | C++ |
+| PythonRobotics | Sep 2, 2026 | 🟢 Active (dependency bumps + security tooling) | 30,544★ | Python |
 
 ---
 
-*Built for the open-source robotics community. Licensed under MIT.*
+*Built with 💡 and a lot of open-source love.*
