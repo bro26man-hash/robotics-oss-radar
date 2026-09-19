@@ -15,126 +15,125 @@
 
 ---
 
-### 1. 🧠 PythonRobotics — Robotics Algorithms Textbook & Reference
+### 1. 🏭 sim-foundry — Virtual Industrial Simulation for Robotics & IoT Testing
 
 | Field | Detail |
 |-------|--------|
-| **Repo** | [`AtsushiSakai/PythonRobotics`](https://github.com/AtsushiSakai/PythonRobotics) |
-| **Tag** | `robotics` |
+| **Repo** | [`wailhoud/sim-foundry`](https://github.com/wailhoud/sim-foundry) |
+| **Tag** | `autonomous-vehicles` (industrial automation) |
 | **Language** | Python |
-| **⭐ Stars** | 30,544 |
-| **Latest Commit** | `08b453a` — **Sep 2, 2026** |
-| **Activity Tier** | 🟢 Actively maintained |
-
-**What it does:** PythonRobotics is a **comprehensive textbook and reference library** for robotics algorithms — covering everything from basic kinematics to advanced SLAM, path planning, and computer vision. It's one of the most-starred open-source robotics education projects on GitHub and is used by universities, self-study enthusiasts, and engineers worldwide.
-
-#### 📊 Recent Commit Activity
-
-| Date | SHA | Change | Why It Matters |
-|------|-----|--------|-----------------|
-| Sep 2, 2026 | `08b453a` | `build(deps): bump github/codeql-action from 4.37.4 to 4.37.9` | Security scanning stays current — signals mature CI practices |
-| Sep 2, 2026 | `8c3f761` | `build(deps): bump ruff from 0.16.1 to 0.16.5` | Linting tooling kept up-to-date for code quality |
-| Sep 2, 2026 | `069e0fb` | `build(deps): bump scipy from 1.17.1 to 1.18.1` | Core scientific dependency updated — ensures numerical accuracy |
-
-#### 🔑 Key Architecture Highlights
-- **100+ algorithm implementations** — from 2D kinematics to 3D SLAM, Kalman filters, Monte Carlo localization, and more
-- **Jupyter Notebook integration** — every algorithm is executable and visualizable in notebooks
-- **Textbook structure** — each chapter builds on the previous, ideal for self-study or course adoption
-- **Clean, readable code** — serves as both reference and teaching material
-- **Active dependency management** — regular bumps keep it compatible with the latest Python ecosystem
-
-#### 🎙️ Potential Episode Topics
-- *"Learning Robotics From Scratch: How PythonRobotics Made Algorithms Accessible"*
-- *"From Kinematics to SLAM: The Full Pipeline Inside a 30k-Star Robotics Tutorial"*
-- *"Why Textbook-Code Matters More Than You Think for Robotics Engineers"*
-- *"The Hidden Maintenance Cost of Open-Source Education: Keeping Dependencies Current"*
-
----
-
-### 2. 🚗 AirSim — Open-Source Autonomous Vehicle Simulator
-
-| Field | Detail |
-|-------|--------|
-| **Repo** | [`microsoft/AirSim`](https://github.com/microsoft/AirSim) |
-| **Tag** | `autonomous-vehicles` |
-| **Language** | C++ (with Python API) |
-| **⭐ Stars** | 18,499 |
-| **Latest Commit** | `1ca93f6` — **Sep 15, 2026** |
-| **Activity Tier** | 🟢 Actively maintained |
-
-**What it does:** AirSim is Microsoft's **open-source, high-fidelity simulator for autonomous vehicles**, built on Unreal Engine and Unity. It supports cars, drones, and rover platforms with realistic sensors (cameras, LiDAR, IMU, GPS) and AI-friendly APIs. Researchers and companies worldwide use it to train and test autonomous driving algorithms in simulation before deploying to the real world.
-
-#### 📊 Recent Commit Activity
-
-| Date | SHA | Change | Why It Matters |
-|------|-----|--------|-----------------|
-| Sep 15, 2026 | `1ca93f6` | `Merge PR #9836: Pin GitHub Actions to full-length commit SHAs` | Security hardening — pins Actions to full SHAs to prevent dependency confusion attacks |
-| Aug 12, 2026 | `44f3f43` | `Pin GitHub Actions to full-length commit SHAs` | Continuation of security-focused maintenance — Microsoft taking supply-chain security seriously |
-| Jun 28, 2026 | `d109f0d` | `Updated README` | Documentation refresh — keeping setup guides current |
-
-#### 🔑 Key Architecture Highlights
-- **Unreal Engine / Unity rendering** — photorealistic environments for training perception models
-- **Multi-platform support** — cars, drones, rovers, with sensor suites (RGB, depth, LiDAR, IMU, GPS)
-- **Python & C++ APIs** — easy integration with ROS, PyTorch, TensorFlow
-- **AirLib** — lightweight C++ library for embedding AirSim into custom projects
-- **AI research ready** — built-in support for reinforcement learning, imitation learning, and domain randomization
-- **Microsoft-backed** — enterprise-grade maintenance and security practices
-
-#### 🎙️ Potential Episode Topics
-- *"Inside Microsoft's Autonomous Vehicle Simulator: How AirSim Trains Self-Driving Cars"*
-- *"Sim-to-Real: What Happens When Your AI Leaves the Unreal Engine"*
-- *"Why Security Patching Matters Even in Simulation Tools"*
-- *"From Gaming Engines to Research Labs: The Unlikely Origin of AirSim"*
-- *"AirSim vs CARLA: Comparing the Two Giants of Autonomous Driving Simulation"*
-
----
-
-### 3. ⚡ Robium — Physical AI Skills Harness for Robotics Agents
-
-| Field | Detail |
-|-------|--------|
-| **Repo** | [`robium-ai/robium`](https://github.com/robium-ai/robium) |
-| **Tag** | `robotics` |
-| **Language** | Python |
-| **⭐ Stars** | 14 |
 | **License** | MIT |
-| **Latest Commit** | `b945c8f` — **Sep 19, 2026** |
-| **Activity Tier** | 🔥 Very actively maintained (3 commits in last 2 days) |
+| **Latest Commit** | `24a4b81` — *Update README.md* — **Sep 19, 2026** |
 
-**What it does:** Robium is an **open-source, continuously evolving collection of field-tested robotics expertise** designed as a plugin harness for AI coding agents (Claude Code, Codex, Gemini CLI, Cursor). It covers ROS 2, Nav2, Gazebo, MuJoCo, NVIDIA Isaac Sim, Isaac Lab, and LeRobot — essentially giving any AI coding agent the robotics domain knowledge it needs to write, simulate, and deploy real robotic systems.
+**What it does:** sim-foundry creates a **complete virtual industrial environment** on your computer — simulating PLCs, cameras, sensors, robotic arms, conveyor belts, and more. It lets developers test HMI, SCADA, IoT gateway, and data-collection software without waiting for physical hardware to ship. Think of it as a "factory in a box."
 
 #### 📊 Recent Commit Activity
 
 | Date | SHA | Change | Why It Matters |
 |------|-----|--------|-----------------|
-| Sep 19, 2026 | `b945c8f` | **Release configurable editable workspaces and safe on-demand updates (#78)** | Major feature release — users can now configure custom workspace paths and safely update without risking local changes |
-| Sep 19, 2026 | `2d639c6` | **Fix CLI parsing of application hardware lists (#77)** | Bug fix — improving reliability of the setup CLI |
-| Sep 19, 2026 | `d044c77` | **Release example-first onboarding with plugin 0.5.1 (#76)** | New user experience — getting started is now faster with reference examples |
+| Sep 19, 2026 | `24a4b81` | README refreshed | Documentation keeps pace with feature growth |
+| Sep 18, 2026 | `88a953b` | Initial commit | Project bootstrapped |
+| Sep 17, 2026 | `87005ae` | Init commit | Early scaffolding |
 
 #### 🔑 Key Architecture Highlights
-- **Skills-based architecture** — each robotics tool (ROS 2, Gazebo, MuJoCo, Isaac Sim, etc.) is a standalone, validator-checked "skill"
-- **Multi-agent support** — native plugins for Claude Code, Codex, Gemini CLI, and Cursor
-- **Self-maintaining catalog** — hooks capture real build learnings, mine proven patterns from upstream repos, and absorb evidence-gated corrections
-- **Capture → Mine → Absorb → Verify loop** — robotics guidance that resists rot by continuously validating against current docs
-- **Reference applications** — `robium-apps` repo provides runnable examples for immediate hands-on learning
-- **MIT licensed** — fully open with no vendor lock-in
+- **Device Library:** 100+ virtual industrial components (PLC brands, cameras, temperature/humidity/pressure sensors, robotic arms, packaging machines)
+- **Multi-Protocol Support:** Modbus, OPC-UA, MQTT, EtherCAT — connects to any modern industrial stack
+- **Integration-Ready:** Works with SCADA, HMI, gateways, cloud platforms, MES, and data historians
+- **Custom Device Profiles:** Advanced users can define new virtual devices via JavaScript
+- **Docker / K8s Native:** Multiple `docker-compose` configs, Helm charts, and migration scripts for cloud deployments
+- **Grafana Dashboards:** Pre-built monitoring dashboards for live telemetry visualization
 
 #### 🎙️ Potential Episode Topics
-- *"Robium Explained: The Plugin That Gives AI Coding Agents Robotics Superpowers"*
-- *"From Claude Code to ROS 2: How Robium Bridges AI and Robotics"*
-- *"The Capture-Mine-Absorb-Verify Loop: How Robium Keeps Robotics Knowledge From Rotting"*
-- *"Example-First Onboarding: Teaching Robots (and AI) to Code Like Engineers"*
-- *"The New Robot Library: Why the Next Breakthrough in Robotics Might Be an AI Plugin"*
+- "Testing Your Robot Without a Robot: Inside sim-foundry's Virtual Factory"
+- "Why Hardware Delays Kill Robotics Startups (and How to Simulate First)"
+- "From PLC to Cloud: How sim-foundry Bridges OT and IT"
+- "Digital Twins for Everyone: Industrial Simulation Goes Open-Source"
+- "Modbus, OPC-UA, MQTT — Protocol Wars in the Factory of the Future"
+
+---
+
+### 2. 🌐 Air-Lingjing — Open Simulation Stack for LLM-Driven Embodied Agents
+
+| Field | Detail |
+|-------|--------|
+| **Repo** | [`glenuptoherneck646/Air-Lingjing`](https://github.com/glenuptoherneck646/Air-Lingjing) |
+| **Tag** | `autonomous-vehicles` (embodied AI) |
+| **Language** | Python |
+| **License** | Not specified |
+| **Latest Commit** | `5cdc1ea` — *Update README.md* — **Sep 19, 2026** |
+
+**What it does:** Air-Lingjing is an **open simulation stack** that connects LLM-driven AI agents to large 3D environments built in Unreal Engine. It enables **multi-agent orchestration** — multiple virtual characters, robots, or digital assistants can share a space, coordinate tasks, communicate, and react to each other and their surroundings in real time. It's essentially a brain for virtual worlds.
+
+#### 📊 Recent Commit Activity
+
+| Date | SHA | Change | Why It Matters |
+|------|-----|--------|-----------------|
+| Sep 19, 2026 | `5cdc1ea` | README updated | Docs refreshed after plugin work |
+| Aug 20, 2026 | `cb8ede7` | **Unreal plugin integration updated** | Core feature development — improving the Unreal Engine bridge |
+| Aug 20, 2026 | `a224cc3` | Unreal plugin integration updated (second pass) | Iterative refinement of the Unreal plugin — signals active dev |
+
+#### 🔑 Key Architecture Highlights
+- **Multi-Agent Orchestration:** Coordinates multiple AI agents simultaneously — they share information, plan tasks, and cooperate
+- **Seamless Unreal Engine Integration:** Purpose-built for UE — stunning visuals + realistic physics
+- **Real-Time Performance:** Optimized for live processing; agents react instantly to environmental changes
+- **Flexible & Extensible:** Customizable agent behavior, new capabilities, and external tool connections
+- **Embodied Intelligence Focus:** Designed for research in group behavior, intelligent NPCs, and industrial workflow simulation
+
+#### 🎙️ Potential Episode Topics
+- "Giving Virtual Worlds a Brain: Inside Air-Lingjing's Multi-Agent Engine"
+- "LLMs Meet Unreal Engine: What Happens When AI Agents Inhabit 3D Worlds"
+- "From Game NPCs to Warehouse Robots: The Shared Tech Stack"
+- "Multi-Agent Coordination: How AI Entities Learn to Cooperate (or Compete)"
+- "Embodied AI Goes Open-Source: Air-Lingjing's Ambition"
+
+---
+
+### 3. 🔧 robopartpicker — Open Robotics Project Discovery, BOM Compilation & Parts Sourcing
+
+| Field | Detail |
+|-------|--------|
+| **Repo** | [`brainbook0/robopartpicker`](https://github.com/brainbook0/robopartpicker) |
+| **Tag** | `robotics` |
+| **Language** | TypeScript (React + Cloudflare Workers) |
+| **License** | Not specified (source published for transparency) |
+| **Latest Commit** | `732febd` — *Link project pages to their related projects in the crawler view* — **Sep 19, 2026** |
+
+**What it does:** RoboPartPicker is the **PCPartPicker of robotics** — it discovers open-source robotics projects, compiles their bills of materials (BOMs) from the project's own artifacts (CSV, URDF, KiCad, Markdown, JSON, etc.), normalizes component identities, and shows real pricing with sourcing estimates. It currently indexes **2,445 robotics projects, 34,760 components, and 1,653 normalized BOM lines**. Every BOM line keeps its evidence source — unresolved items are never silently guessed.
+
+#### 📊 Recent Commit Activity (All on Sep 19!)
+
+| Date | SHA | Change | Why It Matters |
+|------|-----|--------|-----------------|
+| Sep 19, 2026 | `732febd` | **Crawler view now links related projects** | Knowledge graph enhances — users can discover connected designs |
+| Sep 19, 2026 | `4e71d6f` | Complete favicon set for search visibility | SEO polish — the site is maturing as a public platform |
+| Sep 19, 2026 | `f2ae3cf` | Server-render component specs & files on part pages | Performance + SEO — parts pages now render on the server |
+
+#### 🔑 Key Architecture Highlights
+- **Evidence-First BOMs:** Every BOM line keeps a source locator (file path, section, URDF element) — nothing is guessed
+- **Canonical Component Normalization:** Aggregates only on exact manufacturer + part-number matches
+- **Public HTTP API + MCP Server:** Robots can query the catalog directly — `search_projects`, `get_project`, `search_components`, `compare_components`, `validate_rpcs`
+- **MCP Registered:** Published to the official Model Context Protocol registry as `com.robopartpicker/robopartpicker`
+- **Data Honesty:** Observed prices are labeled as observations, not quotes; unresolved lines stay visible; no synthetic activity
+- **RPPS Draft Standard:** Vendor-neutral robotics parts data standard (0.1) published in-repo
+- **677 Unit Tests + 72 Integration Tests:** CI-enforced quality with `npm run check`
+
+#### 🎙️ Potential Episode Topics
+- "PCPartPicker for Robots: How robopartpicker Turned BOMs into a Public Good"
+- "Can a Bot Source Your Next Build? Inside the MCP-Powered Parts Catalog"
+- "2,445 Open Robotics Projects — What Did We Learn? (Data Deep-Dive)"
+- "Evidence Over Guesswork: Why Robotics BOMs Must Stay Honest"
+- "From URDF to Shopping Cart: The Pipeline That Turns Designs into Build Plans"
+- "RPPS: A Vendor-Neutral Standard for Robotics Parts Data — Is It Sticking?"
 
 ---
 
 ## 📊 Radar Summary
 
-| # | Project | Domain | Stars | Last Commit | Vibe |
-|---|---------|--------|-------|-------------|------|
-| 1 | **PythonRobotics** | Robotics Algorithms & Education | 30.5K | Sep 2, 2026 | 🧠 Textbook-grade reference |
-| 2 | **AirSim** | Autonomous Vehicle Simulation | 18.5K | Sep 15, 2026 | 🚗 Microsoft-backed sim platform |
-| 3 | **Robium** | Physical AI / Robotics Agent Harness | 14 | Sep 19, 2026 | ⚡ Cutting-edge agent tooling |
+| # | Project | Domain | Stars | Commit Cadence | Vibe |
+|---|---------|--------|-------|-----------------|------|
+| 1 | **sim-foundry** | Industrial Simulation / IoT | New (MIT) | Active (3 commits in 3 days) | 🏭 Factory floor virtualization |
+| 2 | **Air-Lingjing** | Embodied AI / 3D Simulation | New | Active (Unreal plugin dev) | 🌐 Virtual worlds with AI brains |
+| 3 | **robopartpicker** | Robotics Discovery / BOM Sourcing | New | Active (3 commits in 1 day) | 🔧 PCPartPicker for robots |
 
 ---
 
@@ -142,9 +141,9 @@
 
 | Priority | Project | Suggested Angle | Status |
 |----------|---------|-------------------|--------|
-| 🔴 **High** | Robium | The new wave — AI coding agents with robotics superpowers | In progress |
-| 🟡 **Medium** | AirSim | Simulation infrastructure — how Microsoft trains self-driving AI | TBD |
-| 🟡 **Medium** | PythonRobotics | Education & accessibility — how 30k developers learned robotics | TBD |
+| 🔴 **High** | sim-foundry | Industrial simulation — testing robots without hardware | In progress |
+| 🟡 **Medium** | Air-Lingjing | Embodied AI — LLM agents in 3D worlds | TBD |
+| 🟡 **Medium** | robopartpicker | Robotics discovery & sourcing — turning designs into build plans | TBD |
 
 ---
 
@@ -156,6 +155,15 @@ This is a **living document**. To suggest a project or submit an episode idea:
 2. Add your candidate to the radar (follow the format above)
 3. Open a PR with your suggestions
 4. Or open an **Issue** with the `episode-suggestion` label
+
+---
+
+## 🔗 Useful Links
+
+- [sim-foundry](https://github.com/wailhoud/sim-foundry) — Virtual industrial simulation
+- [Air-Lingjing](https://github.com/glenuptoherneck646/Air-Lingjing) — LLM-driven 3D agent simulation
+- [robopartpicker.com](https://robopartpicker.com) — Live robotics parts catalog & BOM tool
+- [robopartpicker MCP](https://registry.modelcontextprotocol.io/v0/servers?search=com.robopartpicker) — Model Context Protocol server
 
 ---
 
