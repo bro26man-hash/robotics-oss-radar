@@ -1,90 +1,78 @@
 # 🤖 Robotics OSS Radar
 
-> Tracking the most active open-source robotics & autonomous-systems projects — with development highlights and podcast episode ideas.
+> A living research hub tracking the most active open-source robotics & autonomous systems projects — curated for the podcast.
+
+## Why This Repo?
+
+The **Robotics OSS Radar** podcast dives into the projects shaping the future of autonomous systems. This repo is the companion tracker: we monitor the top repos, surface recent development highlights, and brainstorm episode topics so nothing slips through the cracks.
 
 ---
 
-## 📡 Projects Under the Lens
+## 🔍 Top Projects Under the Lens
 
-### 1. [Air-Lingjing](https://github.com/glenuptoherneck646/Air-Lingjing)
-**Tag:** `autonomous-vehicles` · **Language:** Python · **Stars:** 0
+### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
+**⭐ 63,682 stars | Python / C++ | Open-source driver assistance OS**
 
-**What it is:** An open simulation stack for LLM-driven embodied agents in large 3D environments. Air-Lingjing bridges AI to realistic Unreal Engine scenes, letting multiple intelligent agents coordinate tasks, communicate, and react to their surroundings in real time.
+> *"openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars."*
 
-**Recent development highlights:**
-- 🗓️ **Sep 19, 2026** — README overhaul (5cdc1ea): major documentation refresh covering system requirements, performance tiers, and usage guides.
-- 🗓️ **Aug 20, 2026** — Unreal plugin integration updated (cb8ede7, a224cc3): two commits in one day signalling active iteration on the Unreal Engine bridge.
+| Recent Highlight | Date |
+|---|---|
+| 🎨 **UI polish** — theme contrast improvements, scroller delay options, pairing notification alerts | Sep 2026 |
+| 🧠 **New model: "Super Leicht"** — fresh Driver Model (DM) architecture update | Sep 2026 |
+| 🔧 **Chestnut stress testing** — hardware validation on their custom device | Sep 2026 |
 
-**🎙️ Potential episode topics:**
-- *"LLMs Meet Simulated Worlds"* — How large language models are being orchestrated as multi-agent systems inside virtual environments.
-- *"Building a Digital Twin for Free"* — Walkthrough of Air-Lingjing's free simulation stack and how researchers can use it for embodied-AI experiments.
-- *"Unreal Engine as a Robotics Testbed"* — Why game engines are becoming the go-to simulator for autonomous-system training.
-
----
-
-### 2. [RoboPartPicker](https://github.com/brainbook0/robopartpicker)
-**Tag:** `robotics` · **Language:** TypeScript · **Stars:** 0
-
-**What it is:** Open robotics project discovery, bill-of-materials compilation, and parts sourcing — think PCPartPicker for robot builds. It currently indexes **2,445 published robotics projects**, **34,760 components**, and **1,653 normalized BOM lines** across open hardware, robotics software, and manufacturer showcases.
-
-**Recent development highlights:**
-- 🗓️ **Sep 19, 2026** — Linked project pages to related projects in the crawler view (732febd): improves discovery by connecting designs that share components or design patterns.
-- 🗓️ **Sep 19, 2026** — Complete favicon set deployed (4e71d6f): brand polish for search & browser tabs.
-- 🗓️ **Sep 19, 2026** — Server-rendered component specs & files on part pages (f2ae3cf): faster loads and better SEO for the 34k+ component catalog.
-
-**🎙️ Potential episode topics:**
-- *"PCPartPicker for Robots"* — How RoboPartPicker is solving the "where do I even start?" problem for open-source robot builds.
-- *"The Honesty Gap in Robotics Catalogs"* — Why showing unresolved BOM lines and partial prices is more useful than fake certainty.
-- *"MCP Servers for Robotics"* — How RoboPartPicker's Model Context Protocol server lets AI agents query real robotics data.
+**🎙️ Potential Episode Topics:**
+- "From Driver Assistance to Full Agent: How openpilot Is Turning Your Car into a Robot"
+- "On-Device ML at the Edge: Running Neural Models on Automotive Hardware"
+- "The Open-Stack vs. Proprietary AV Stack Debate"
 
 ---
 
-### 3. [Navigraph — Scenario Sketchpad](https://github.com/DuvanCardenas/scenario-sketchpad)
-**Tag:** `autonomous-vehicles` · **Language:** HTML · **Stars:** 1
+### 2. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
+**⭐ 26,829 stars | C++ | Open autonomous driving platform**
 
-**What it is:** An AI whiteboard for 2026 autonomous driving design. Navigraph is a visual orchestration platform for designing, simulating, and validating complex operational scenarios for self-driving cars, robotic fleets, and intelligent systems. Exports to OpenSCENARIO, ROS 2 world files, and CARLA JSON.
+> *"An open autonomous driving platform."*
 
-**Recent development highlights:**
-- 🗓️ **Sep 19, 2026** — Format update (58080d1): ongoing refinement of the scenario file format via automated CI (third automated commit in quick succession).
-- 🗓️ **Sep 19, 2026** — Merge & decrypt automation (087b53f): CI-driven merge and encryption workflows, suggesting active work on secure collaborative editing.
-- 🗓️ **Sep 19, 2026** — Hotfix notify (2d94385): push notification infrastructure for real-time collaboration alerts.
+| Recent Highlight | Date |
+|---|---|
+| 🚀 **Apollo 11.0 — BEV + OCC** — Bird's-Eye-View perception + Occupancy network integration (major architectural upgrade) | Feb 2026 |
+| 📡 **Seyond lidar driver support** — new sensor integration for beyond-1550nm lidar | Feb 2026 |
+| 📝 **README & docs refresh** — cleaning up build status badges and docs | Apr 2026 |
 
-**🎙️ Potential episode topics:**
-- *"Visual Scenario Design for Self-Driving Cars"* — How tools like Navigraph are turning edge-case scenario planning into an interactive, collaborative canvas.
-- *"From Whiteboard to CARLA"* — The pipeline from hand-drawn scenarios to simulation-ready OpenSCENARIO and ROS 2 files.
-- *"AI as a Co-Pilot for Safety Analysis"* — Using GPT-4 and Claude to review scenario graphs for logical paradoxes and edge cases before deployment.
-
----
-
-## 🎙️ About This Radar
-
-This repo is the companion data source for the **Robotics OSS Radar** podcast — a show exploring the open-source projects shaping the future of autonomous systems and robotics. Each episode dives deep into one project, interviewing maintainers, walking through the code, and discussing what's coming next.
-
-**Suggested episode cadence:**
-| Week | Project | Theme |
-|------|---------|-------|
-| 1 | Air-Lingjing | LLMs Meet Simulated Worlds |
-| 2 | RoboPartPicker | The Hardware Discovery Layer |
-| 3 | Navigraph | Visual Scenario Design for AVs |
+**🎙️ Potential Episode Topics:**
+- "BEV Perception is Changing Everything — Apollo 11.0 Deep Dive"
+- "Lidar at 1550nm+: What the Seyond Integration Means for AV Safety"
+- "From Apollo to Autonomy: The Road from L4 Prototypes to L2+ Consumer Deployments"
 
 ---
 
-## 🔧 How to Contribute
+### 3. [carla-simulator/carla](https://github.com/carla-simulator/carla)
+**⭐ 14,409 stars | C++ / Python | Open-source autonomous driving simulator**
 
-- Found a stale project? Open an issue with the repo URL and what you expected to see.
-- Want your project featured? Submit a link and a 2-line description.
-- Episode ideas? The issue tracker is the place.
+> *"Open-source simulator for autonomous driving research."*
+
+| Recent Highlight | Date |
+|---|---|
+| ☁️ **UE5 nightly deployed to Cloudflare R2** — cloud-hosted simulator instances for scalable testing | Sep 2026 |
+| 📡 **V2X sensor family** — new CAM (Cooperative Awareness Message), path-loss, CustomV2X, and V2I sensors | Jul 2026 |
+| 🚦 **WalkerManager null-traffic-light guard** — robustness fix for pedestrian/navigation stacks | Jul 2026 |
+| 🗺️ **CARLA_MAPS_TO_COOK** — CMake option to select packaged maps at build time | Jul 2026 |
+
+**🎙️ Potential Episode Topics:**
+- "Sim-to-Real: How CARLA is Bridging the Gap Between Simulation and the Real World"
+- "V2X in Simulation: Why Vehicle-to-Everything Connectivity is the Next Big Thing"
+- "Cloud-Native Simulation: Running CARLA on Cloudflare R2 at Scale"
 
 ---
 
-## 📊 Radar Dashboard
+## 📋 Tracking Checklist
 
-| Project | Last Push | Activity | Stars | Language |
-|---------|-----------|----------|-------|----------|
-| Air-Lingjing | Sep 19, 2026 | 🟢 Active (README refresh + Unreal plugin) | 0 | Python |
-| RoboPartPicker | Sep 19, 2026 | 🟢 Active (crawler + favicon + SSR) | 0 | TypeScript |
-| Navigraph | Sep 19, 2026 | 🟢 Active (CI automation + hotfixes) | 1 | HTML |
+See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/1)** for a structured tracker of these 3 projects — milestones, release watch-items, and episode status.
 
 ---
 
-*Built with 💡 and a lot of open-source love.*
+## 🎙️ About the Podcast
+
+**Robotics OSS Radar** is a podcast exploring the open-source projects that power the next generation of autonomous systems — from driver-assistance stacks to full sim-to-real pipelines. Each episode dives into a project's architecture, community, and roadmap.
+
+*Stay curious. Stay open-source.* 🤖
