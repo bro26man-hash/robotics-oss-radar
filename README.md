@@ -15,126 +15,127 @@
 
 ---
 
-### 1. 🧠 PythonRobotics — Robotics Algorithms Textbook & Reference
+### 1. 🚗 commaai/openpilot — Open-Source Driver Assistance & Autonomous Driving
 
 | Field | Detail |
 |-------|--------|
-| **Repo** | [`AtsushiSakai/PythonRobotics`](https://github.com/AtsushiSakai/PythonRobotics) |
+| **Repo** | [`commaai/openpilot`](https://github.com/commaai/openpilot) |
 | **Tag** | `robotics` |
-| **Language** | Python |
-| **⭐ Stars** | 30,544 |
-| **Latest Commit** | `08b453a` — **Sep 2, 2026** |
-| **Activity Tier** | 🟢 Actively maintained |
+| **Language** | Python, C++ |
+| **⭐ Stars** | ~63,682 |
+| **License** | GPLv3 |
+| **Latest Commit** | `cabana: improve theme contrast` — **Sep 19, 2026** |
 
-**What it does:** PythonRobotics is a **comprehensive textbook and reference library** for robotics algorithms — covering everything from basic kinematics to advanced SLAM, path planning, and computer vision. It's one of the most-starred open-source robotics education projects on GitHub and is used by universities, self-study enthusiasts, and engineers worldwide.
+**What it does:** openpilot is an **open-source operating system for robotics**, currently focused on upgrading the driver assistance system on 300+ supported cars. It replaces stock ADAS with a vision-based, neural-network-driven system that handles acceleration, braking, and lane-keeping — all running on consumer hardware.
 
 #### 📊 Recent Commit Activity
 
 | Date | SHA | Change | Why It Matters |
 |------|-----|--------|-----------------|
-| Sep 2, 2026 | `08b453a` | `build(deps): bump github/codeql-action from 4.37.4 to 4.37.9` | Security scanning stays current — signals mature CI practices |
-| Sep 2, 2026 | `8c3f761` | `build(deps): bump ruff from 0.16.1 to 0.16.5` | Linting tooling kept up-to-date for code quality |
-| Sep 2, 2026 | `069e0fb` | `build(deps): bump scipy from 1.17.1 to 1.18.1` | Core scientific dependency updated — ensures numerical accuracy |
+| Sep 19, 2026 | `2eee697` | **cabana: improve theme contrast (#38965)** | UI polish — improving the driver-facing interface for better readability and safety |
+| Sep 19, 2026 | `5ae0da0` | **DM: Super Leicht Model (#38942)** | Core ML upgrade — a new lightweight model for the driver monitoring system, likely faster inference & lower power draw on edge devices |
+| Sep 18, 2026 | `a395610` | **ui: allow delay of scroller start (#38958)** | UX refinement — smoother scrolling in the UI, reducing visual glitches during critical driving moments |
 
 #### 🔑 Key Architecture Highlights
-- **100+ algorithm implementations** — from 2D kinematics to 3D SLAM, Kalman filters, Monte Carlo localization, and more
-- **Jupyter Notebook integration** — every algorithm is executable and visualizable in notebooks
-- **Textbook structure** — each chapter builds on the previous, ideal for self-study or course adoption
-- **Clean, readable code** — serves as both reference and teaching material
-- **Active dependency management** — regular bumps keep it compatible with the latest Python ecosystem
+- **Vision-based perception:** Camera-only pipeline (no LiDAR/radar reliance) using neural networks for path planning
+- **300+ car support:** Broad vehicle compatibility with community-contributed car interfaces
+- **Edge-optimized ML:** Models tuned for on-device inference (NVIDIA Tegra, Qualcomm Snapdragon)
+- **Driver Monitoring (DM):** Real-time drowsiness & distraction detection using the new "Super Leicht" model
+- **Open & community-driven:** 1,000+ contributors; car interfaces contributed by owners
+- **CI/CD at scale:** Daily merges, rapid iteration on both UI and core models
 
 #### 🎙️ Potential Episode Topics
-- *"Learning Robotics From Scratch: How PythonRobotics Made Algorithms Accessible"*
-- *"From Kinematics to SLAM: The Full Pipeline Inside a 30k-Star Robotics Tutorial"*
-- *"Why Textbook-Code Matters More Than You Think for Robotics Engineers"*
-- *"The Hidden Maintenance Cost of Open-Source Education: Keeping Dependencies Current"*
+- *"How openpilot Teaches Your Car to Drive Themselves — 300+ Cars and Counting"*
+- *"Super Leicht: The Lightweight Model Revolutionizing On-Device Driver Monitoring"*
+- *"Vision-Only vs. Sensor Fusion: Why openpilot Chose Cameras"*
+- *"From Hobbyist to 63K Stars: The Community Behind openpilot"*
+- *"Driving on Edge: How openpilot Runs Neural Networks on Phone Chips"*
 
 ---
 
-### 2. 🚗 AirSim — Open-Source Autonomous Vehicle Simulator
+### 2. 🏗️ ApolloAuto/apollo — The Open Autonomous Driving Platform
+
+| Field | Detail |
+|-------|--------|
+| **Repo** | [`ApolloAuto/apollo`](https://github.com/ApolloAuto/apollo) |
+| **Tag** | `autonomous-vehicles` |
+| **Language** | C++, Python |
+| **⭐ Stars** | ~26,829 |
+| **License** | Apache-2.0 |
+| **Latest Commit** | `docs: fix README - remove invalid build status badges` — **Apr 16, 2026** |
+
+**What it does:** Apollo is Baidu's **full-stack open autonomous driving platform**. It provides everything from hardware abstraction to perception, planning, and control — designed for developers building self-driving cars at scale. It's one of the most mature open-source AV stacks in production use.
+
+#### 📊 Recent Commit Activity
+
+| Date | SHA | Change | Why It Matters |
+|------|-----|--------|-----------------|
+| Apr 16, 2026 | `d53aa3d` | **docs: fix README — remove invalid build status badges** | Maintenance pass — cleaning up stale CI badges; signals a shift toward release-focused workflow |
+| Feb 28, 2026 | `40c8a01` | **Merge PR #15762 — recover_seyond_lidar_driver** | LiDAR driver recovery — restoring support for Beyondlidar sensors, expanding hardware compatibility |
+| Feb 27, 2026 | `539f546` | **feat: add Apollo 11.0 bev+occ** | Major release feature — Bird's-Eye View + Occupancy network for 3D scene understanding, a key step toward L4 autonomy |
+
+#### 🔑 Key Architecture Highlights
+- **Full-stack AV stack:** Perception → Prediction → Planning → Control, all open-source
+- **BEV + OCC (v11.0):** Bird's-Eye View representation with 3D occupancy grids — the industry's leading approach for 3D scene reconstruction
+- **Hardware-agnostic:** Supports multiple lidar, camera, and compute configurations
+- **Simulation & data pipeline:** Integrated tools for data labeling, simulation, and testing
+- **Industry-backed:** Used by Baidu's Robotaxi fleet (Apollo Go) — real production-grade code
+
+#### 🎙️ Potential Episode Topics
+- *"Apollo 11.0: What BEV + OCC Means for the Future of Autonomous Driving"*
+- *"From Baidu's Robotaxi to Your Garage: The Apollo Open-Stack Story"*
+- *"LiDAR Drivers & Sensor Recovery: The Unseen Complexity of AV Hardware"*
+- *"Full-Stack vs. Stack-of-Stacks: Why Apollo Ships Everything"*
+- *"The 26,000-Star AV Platform Nobody Talks About"*
+
+---
+
+### 3. 🎮 microsoft/AirSim — Open-Source Autonomous Vehicle Simulator
 
 | Field | Detail |
 |-------|--------|
 | **Repo** | [`microsoft/AirSim`](https://github.com/microsoft/AirSim) |
 | **Tag** | `autonomous-vehicles` |
-| **Language** | C++ (with Python API) |
-| **⭐ Stars** | 18,499 |
-| **Latest Commit** | `1ca93f6` — **Sep 15, 2026** |
-| **Activity Tier** | 🟢 Actively maintained |
-
-**What it does:** AirSim is Microsoft's **open-source, high-fidelity simulator for autonomous vehicles**, built on Unreal Engine and Unity. It supports cars, drones, and rover platforms with realistic sensors (cameras, LiDAR, IMU, GPS) and AI-friendly APIs. Researchers and companies worldwide use it to train and test autonomous driving algorithms in simulation before deploying to the real world.
-
-#### 📊 Recent Commit Activity
-
-| Date | SHA | Change | Why It Matters |
-|------|-----|--------|-----------------|
-| Sep 15, 2026 | `1ca93f6` | `Merge PR #9836: Pin GitHub Actions to full-length commit SHAs` | Security hardening — pins Actions to full SHAs to prevent dependency confusion attacks |
-| Aug 12, 2026 | `44f3f43` | `Pin GitHub Actions to full-length commit SHAs` | Continuation of security-focused maintenance — Microsoft taking supply-chain security seriously |
-| Jun 28, 2026 | `d109f0d` | `Updated README` | Documentation refresh — keeping setup guides current |
-
-#### 🔑 Key Architecture Highlights
-- **Unreal Engine / Unity rendering** — photorealistic environments for training perception models
-- **Multi-platform support** — cars, drones, rovers, with sensor suites (RGB, depth, LiDAR, IMU, GPS)
-- **Python & C++ APIs** — easy integration with ROS, PyTorch, TensorFlow
-- **AirLib** — lightweight C++ library for embedding AirSim into custom projects
-- **AI research ready** — built-in support for reinforcement learning, imitation learning, and domain randomization
-- **Microsoft-backed** — enterprise-grade maintenance and security practices
-
-#### 🎙️ Potential Episode Topics
-- *"Inside Microsoft's Autonomous Vehicle Simulator: How AirSim Trains Self-Driving Cars"*
-- *"Sim-to-Real: What Happens When Your AI Leaves the Unreal Engine"*
-- *"Why Security Patching Matters Even in Simulation Tools"*
-- *"From Gaming Engines to Research Labs: The Unlikely Origin of AirSim"*
-- *"AirSim vs CARLA: Comparing the Two Giants of Autonomous Driving Simulation"*
-
----
-
-### 3. ⚡ Robium — Physical AI Skills Harness for Robotics Agents
-
-| Field | Detail |
-|-------|--------|
-| **Repo** | [`robium-ai/robium`](https://github.com/robium-ai/robium) |
-| **Tag** | `robotics` |
-| **Language** | Python |
-| **⭐ Stars** | 14 |
+| **Language** | C++, Python, Unreal Engine |
+| **⭐ Stars** | ~18,499 |
 | **License** | MIT |
-| **Latest Commit** | `b945c8f` — **Sep 19, 2026** |
-| **Activity Tier** | 🔥 Very actively maintained (3 commits in last 2 days) |
+| **Latest Commit** | `Merge PR #9836 — pin actions to full-length SHAs` — **Sep 15, 2026** |
 
-**What it does:** Robium is an **open-source, continuously evolving collection of field-tested robotics expertise** designed as a plugin harness for AI coding agents (Claude Code, Codex, Gemini CLI, Cursor). It covers ROS 2, Nav2, Gazebo, MuJoCo, NVIDIA Isaac Sim, Isaac Lab, and LeRobot — essentially giving any AI coding agent the robotics domain knowledge it needs to write, simulate, and deploy real robotic systems.
+**What it does:** AirSim is an **open-source simulator for autonomous vehicles** built on Unreal Engine and Unity, from Microsoft AI & Research. It provides photorealistic environments, realistic sensor simulations (cameras, LiDAR, IMU, GPS), and APIs for Python/C++ — making it the go-to platform for training and testing autonomous systems in simulation before deploying to the real world.
 
 #### 📊 Recent Commit Activity
 
 | Date | SHA | Change | Why It Matters |
 |------|-----|--------|-----------------|
-| Sep 19, 2026 | `b945c8f` | **Release configurable editable workspaces and safe on-demand updates (#78)** | Major feature release — users can now configure custom workspace paths and safely update without risking local changes |
-| Sep 19, 2026 | `2d639c6` | **Fix CLI parsing of application hardware lists (#77)** | Bug fix — improving reliability of the setup CLI |
-| Sep 19, 2026 | `d044c77` | **Release example-first onboarding with plugin 0.5.1 (#76)** | New user experience — getting started is now faster with reference examples |
+| Sep 15, 2026 | `1ca93f6` | **Merge PR #9836 — pin actions to full-length SHAs** | Security hardening — pinning GitHub Actions to full-length commit SHAs prevents dependency confusion attacks; critical for a project used in research & production |
+| Aug 12, 2026 | `44f3f43` | **Pin GitHub Actions to full-length commit SHAs** | Follow-up security hardening — comprehensive supply-chain protection |
+| Jun 28, 2026 | `d109f0d` | **Updated README** | Documentation refresh — likely adding new features or setup improvements |
 
 #### 🔑 Key Architecture Highlights
-- **Skills-based architecture** — each robotics tool (ROS 2, Gazebo, MuJoCo, Isaac Sim, etc.) is a standalone, validator-checked "skill"
-- **Multi-agent support** — native plugins for Claude Code, Codex, Gemini CLI, and Cursor
-- **Self-maintaining catalog** — hooks capture real build learnings, mine proven patterns from upstream repos, and absorb evidence-gated corrections
-- **Capture → Mine → Absorb → Verify loop** — robotics guidance that resists rot by continuously validating against current docs
-- **Reference applications** — `robium-apps` repo provides runnable examples for immediate hands-on learning
-- **MIT licensed** — fully open with no vendor lock-in
+- **Unreal Engine-powered:** Photorealistic rendering for realistic visual perception testing
+- **Multi-sensor simulation:** Cameras, LiDAR, IMU, GPS, depth — all synchronized and configurable
+- **Python & C++ APIs:** Easy integration with ML pipelines (PyTorch, TensorFlow ROS)
+- **Pre-built environments:** Cities, racetracks, indoor spaces — ready to deploy
+- **Multi-vehicle support:** Simulate fleets of robots/vehicles simultaneously
+- **ROS integration:** Works seamlessly with the Robot Operating System
+- **Actively maintained by Microsoft Research:** Still receiving security & feature updates after 5+ years
 
 #### 🎙️ Potential Episode Topics
-- *"Robium Explained: The Plugin That Gives AI Coding Agents Robotics Superpowers"*
-- *"From Claude Code to ROS 2: How Robium Bridges AI and Robotics"*
-- *"The Capture-Mine-Absorb-Verify Loop: How Robium Keeps Robotics Knowledge From Rotting"*
-- *"Example-First Onboarding: Teaching Robots (and AI) to Code Like Engineers"*
-- *"The New Robot Library: Why the Next Breakthrough in Robotics Might Be an AI Plugin"*
+- *"Training Self-Driving Cars in a Video Game: Inside Microsoft's AirSim"*
+- *"Why Simulation Is the Secret Weapon of Autonomous Systems"*
+- *"From Unreal Engine to ROS: How AirSim Bridges Simulation & Reality"*
+- *"Security in Open-Source Robotics: Microsoft's AirSim Supply-Chain Hardening"*
+- *"18,000 Stars and Still Counting — The Simulator That Built a Generation of AV Researchers"*
 
 ---
 
 ## 📊 Radar Summary
 
-| # | Project | Domain | Stars | Last Commit | Vibe |
-|---|---------|--------|-------|-------------|------|
-| 1 | **PythonRobotics** | Robotics Algorithms & Education | 30.5K | Sep 2, 2026 | 🧠 Textbook-grade reference |
-| 2 | **AirSim** | Autonomous Vehicle Simulation | 18.5K | Sep 15, 2026 | 🚗 Microsoft-backed sim platform |
-| 3 | **Robium** | Physical AI / Robotics Agent Harness | 14 | Sep 19, 2026 | ⚡ Cutting-edge agent tooling |
+| # | Project | Domain | Stars | Commit Cadence | Vibe |
+|---|---------|--------|-------|-----------------|------|
+| 1 | **openpilot** | Driver Assistance / AV | ~63.7K | **Daily** (3 commits in 2 days) | 🚗 Community & edge ML |
+| 2 | **Apollo** | Full-Stack AV Platform | ~26.8K | Steady (monthly maintains) | 🏗️ Industry-grade & full-stack |
+| 3 | **AirSim** | Autonomous Simulator | ~18.5K | Monthly (security & docs) | 🎮 Simulation & research |
 
 ---
 
@@ -142,9 +143,9 @@
 
 | Priority | Project | Suggested Angle | Status |
 |----------|---------|-------------------|--------|
-| 🔴 **High** | Robium | The new wave — AI coding agents with robotics superpowers | In progress |
-| 🟡 **Medium** | AirSim | Simulation infrastructure — how Microsoft trains self-driving AI | TBD |
-| 🟡 **Medium** | PythonRobotics | Education & accessibility — how 30k developers learned robotics | TBD |
+| 🔴 **High** | openpilot | Community-driven ADAS — how 63K stars and 300 cars are changing driving | In progress |
+| 🟡 **Medium** | Apollo | Full-stack AV from Baidu — BEV + OCC and the road to L4 | TBD |
+| 🟡 **Medium** | AirSim | The simulator that makes robots before they hit the road | TBD |
 
 ---
 
@@ -156,6 +157,15 @@ This is a **living document**. To suggest a project or submit an episode idea:
 2. Add your candidate to the radar (follow the format above)
 3. Open a PR with your suggestions
 4. Or open an **Issue** with the `episode-suggestion` label
+
+---
+
+## 🔗 Useful Links
+
+- [openpilot](https://github.com/commaai/openpilot) — Open-source driver assistance
+- [Apollo (Baidu)](https://github.com/ApolloAuto/apollo) — Full-stack autonomous driving
+- [AirSim (Microsoft)](https://github.com/microsoft/AirSim) — Autonomous vehicle simulator
+- [CARLA Simulator](https://carla.org/) — Another great open-source AV simulator
 
 ---
 
