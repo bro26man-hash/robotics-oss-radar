@@ -8,86 +8,75 @@ This repo is a living companion for the **Robotics OSS Radar** podcast. We monit
 
 ## 📡 Currently Tracked Projects
 
----
-
-### 1. [isaac-sim/IsaacLab](https://github.com/isaac-sim/IsaacLab)
-
-| | |
-|---|---|
-| ⭐ Stars | 8,170 |
-| 🛠 Language | Python |
-| 📜 License | BSD-3-Clause |
-| 📝 Description | Unified framework for robot learning with multi-physics / renderer support |
-
-**Latest Commits (as of Sep 20, 2026):**
-- `[Tests] Speed up contributed environment CI (#7905)` — Optimizing CI pipelines for contributed environments
-- `Bump PyTorch to 2.12 (#7674)` — Upgrading to the latest PyTorch for better performance & compatibility
-- `Deprecate IO descriptors (#7042)` — Cleaning up legacy IO descriptor APIs
-- `Handle near-singular operational-space control (#7903)` — Robustness fix for singular configurations in manipulator control
-- `Name one removal release across all deprecation notices (#7840)` — Coordinating deprecation cycle across the codebase
-
-**🔍 What's Being Worked On:**
-IsaacLab is in the middle of a **major 3.0 release cycle** targeting Isaac Sim 6.1. The team is actively cleaning up deprecated APIs, upgrading core dependencies (PyTorch 2.12), and hardening the simulation engine — particularly around near-singular operational-space control for manipulators. CI performance optimizations show they're scaling for broader community contributions. The deprecation notices signal a well-planned API transition ahead.
-
-**🎙️ Potential Episode Topics:**
-- "IsaacLab 3.0: What's Changing in NVIDIA's Robot-Learning Framework"
-- "PyTorch 2.12 & GPU-Accelerated Robotics — Why It Matters for Sim-to-Real"
-- "Deprecation Cycles & API Stability: How NVIDIA Manages a 8K-Star Open-Source Project"
-- "From Orbit to IsaacLab — The Evolution of NVIDIA's Robotics Simulation Stack"
-
----
-
-### 2. [commaai/openpilot](https://github.com/commaai/openpilot)
-
+### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
 | | |
 |---|---|
 | ⭐ Stars | 63,682 |
 | 🛠 Language | Python |
-| 📜 License | MIT |
 | 📝 Description | openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars. |
 
 **Latest Commits (as of Sep 19, 2026):**
-- `cabana: generate dbc files during builds (#38974)` — Automating DBC file generation in the Cabana tuning toolchain
-- `cabana: refine signal heatmap grid (#38964)` — Improving the signal visualization heatmap for CAN bus analysis
-- `cabana: preserve activity with a brighter baseline (#38971)` — UI/UX enhancement for the Cabana interactive signal explorer
-- `cabana: revert quiet signal brightness clamp (#38970)` — Addressing a UX regression in dark-mode signal display
-- `cabana: brighten quiet signals in dark mode (#38969)` — Improving readability of low-amplitude CAN signals
+- `1b1b60b` — cabana: generate dbc files during builds (#38974) — Automating DBC file generation in the Cabana tuning toolchain
+- `95ed021` — cabana: refine signal heatmap grid (#38964) — Improving the signal visualization heatmap for CAN bus analysis
+- `ea0afb6` — cabana: preserve activity with a brighter baseline (#38971) — UI/UX enhancement for the Cabana interactive signal explorer
+- `680aa6f` — cabana: revert quiet signal brightness clamp (#38970) — Polish on signal brightness controls
+- `d375e7f` — cabana: brighten quiet signals in dark mode (#38969) — Accessibility improvement for dark-mode signal inspection
 
 **🔍 What's Being Worked On:**
-The **Cabana** signal analysis and tuning tool is seeing heavy active development. Recent commits focus on automating DBC (Database CAN) file generation, refining signal heatmap visualizations, and iterating on the UI/UX experience — especially dark-mode readability for low-amplitude signals. This suggests comma.ai is doubling down on making low-level CAN signal inspection and vehicle tuning more accessible to the community.
+The **Cabana** signal analysis and tuning tool is seeing heavy active development. Recent commits focus on automating DBC (Database CAN) file generation, refining signal heatmap visualizations, and improving the UI/UX experience. This suggests comma.ai is doubling down on making low-level CAN signal inspection and vehicle tuning more accessible to the community.
 
 **🎙️ Potential Episode Topics:**
 - "Inside openpilot's Cabana Tool — How Community Members Tune CAN Signals"
 - "From 300+ Cars to One OS: The openpilot Approach to Mass-Scale ADAS"
 - "MIT vs. Apache: How Licensing Shapes the openpilot Ecosystem"
-- "The Hidden World of CAN Bus Signals — What openpilot Sees That You Don't"
 
 ---
 
-### 3. [carla-simulator/carla](https://github.com/carla-simulator/carla)
-
+### 2. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
 | | |
 |---|---|
-| ⭐ Stars | 14,410 |
+| ⭐ Stars | 26,829 |
 | 🛠 Language | C++ |
-| 📜 License | MIT |
-| 📝 Description | Open-source simulator for autonomous driving research. |
+| 📝 Description | An open autonomous driving platform |
 
-**Latest Commits (as of Sep 2, 2026):**
-- `Deploy UE5 nightly to Cloudflare R2 (#9859)` — Streamlining asset distribution via Cloudflare R2 storage
-- `Fix lidar smoke helper signature (#9791)` — Bug fix in the LiDAR sensor smoke visualization helper
-- `fix(nav): guard against null traffic light in WalkerManager (#9758)` — Robustness fix for pedestrian navigation
-- `feat(sensor): add V2X sensor family — CAM service, path-loss, CustomV2X, V2I (#9757)` — Major new vehicle-to-everything sensor suite
-- `feat(cmake): add CARLA_MAPS_TO_COOK to select packaged maps (#9800)` — Build-system improvement for map selection
+**Latest Commits (as of Apr 16, 2026):**
+- `d53aa3d` — docs: fix README - remove invalid build status badges — Maintenance / documentation cleanup
+- `40c8a01` — Merge PR #15762: recover_seyond_lidar_driver — Recovering and merging a LiDAR driver integration
+- `539f546` — feat: add Apollo 11.0 bev+occ — Introducing Bird's Eye View (BEV) and Occupancy (OCC) models for Apollo 11.0
+- `6680288` — [doc]: update seyond lidar driver conf — Documentation for new LiDAR hardware support
+- `995b75a` — [doc]: update seyond lidar driver readme — README updates for LiDAR integration docs
 
 **🔍 What's Being Worked On:**
-CARLA is undergoing a major transition to **Unreal Engine 5.5 (the `ue5-dev` branch)**. The biggest recent addition is a **V2X (Vehicle-to-Everything) sensor family** — CAM service, path-loss modeling, CustomV2X, and V2I — which is a huge leap for simulating connected/autonomous vehicle communication. They're also deploying UE5 nightlies via Cloudflare R2 for faster global distribution, hardening WalkManager against null references, and improving the CMake build system for map selection.
+Apollo 11.0 is on the horizon, bringing **BEV (Bird's Eye View) and OCC (Occupancy) perception models** — a major leap in 3D scene understanding for autonomous vehicles. There's also active work on recovering the SoliX/LiDAR driver, indicating ongoing hardware integration efforts. The platform continues to evolve toward large-scale functional autonomous vehicle deployment.
 
 **🎙️ Potential Episode Topics:**
-- "CARLA's Leap to Unreal Engine 5.5 — What Sim Researchers Need to Know"
-- "V2X Simulation Is Here: Inside CARLA's New Vehicle-to-Everything Sensor Suite"
-- "Cloudflare R2 & the Future of Open-Source Simulator Distribution"
-- "From Simulation to Reality: How CARLA Bridges the Sim-to-Real Gap"
+- "Apollo 11.0: BEV + OCC — How Baidu Is Pushing the Envelope on AV Perception"
+- "From Apollo 1.0 to 11.0 — 10 Years of Open-Source Autonomous Driving"
+- "LiDAR Driver Recovery & Hardware Integration Challenges in Open AV Stacks"
+
+---
+
+### 3. [AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)
+| | |
+|---|---|
+| ⭐ Stars | 30,544 |
+| 🛠 Language | Python |
+| 📝 Description | Python sample codes and textbook for robotics algorithms. |
+
+**Latest Commits (as of Sep 2, 2026):**
+- `08b453a` — build(deps): bump github/codeql-action from 4.37.4 to 4.37.9 (#1423) — Security scanning dependency update
+- `8c3f761` — build(deps): bump ruff from 0.16.1 to 0.16.5 in /requirements (#1424) — Linter version bump
+- `069e0fb` — build(deps): bump scipy from 1.17.1 to 1.18.1 in /requirements (#1425) — Scientific computing dependency update
+- `1fe4fb9` — build(deps): bump github/codeql-action from 4 to 4.37.4 (#1405) — Earlier security scanning update
+- `99716a0` — build(deps): bump ruff from 0.15.16 to 0.16.1 in /requirements (#1406) — Earlier linter update
+
+**🔍 What's Being Worked On:**
+PythonRobotics is in **maintenance mode** — recent activity is almost entirely automated dependency bumps (dependabot) for codeql-action, ruff, and scipy. No new robotics algorithm content has been added recently. This is a well-established educational resource that's stable but not actively evolving new features. The dependabot activity does signal that the project is still being maintained and kept secure.
+
+**🎙️ Potential Episode Topics:**
+- "Why the Best Robotics Textbook is Also a Codebase — PythonRobotics Deep Dive"
+- "From Textbook to Tutorial: How PythonRobotics Teaches 50+ Robotics Algorithms"
+- "Maintenance Mode vs. Active Development: What Happens to OSS Edu Projects After They 'Arrive'?"
 
 ---
 
@@ -99,7 +88,7 @@ CARLA is undergoing a major transition to **Unreal Engine 5.5 (the `ue5-dev` bra
 
 ## 📋 Roadmap
 
-See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues)** for a checklist of projects to track and potential episode plans.
+See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/73)** for a checklist of projects to track and potential episode plans.
 
 ---
 
@@ -116,4 +105,5 @@ Pull requests and suggestions are welcome! To suggest a project:
 All project data is pulled from GitHub in real-time. Stars, commits, and metadata reflect the most recent snapshot.
 
 ---
-*Built for the open-source robotics community. MIT Licensed.*
+
+*Built for the open-source robotics community.*
