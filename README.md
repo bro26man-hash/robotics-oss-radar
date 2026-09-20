@@ -1,106 +1,91 @@
 # 🤖 Robotics OSS Radar
 
-> Open-source robotics & autonomous systems — tracking the most active projects, recent commits, and podcast episode ideas.
-
-This repo is a living companion for the **Robotics OSS Radar** podcast. We monitor the hottest open-source projects in robotics and autonomous systems, summarize their latest development highlights, and brainstorm episode topics for each.
+> Tracking the most active open-source robotics & autonomous-systems projects — with development highlights and podcast episode ideas.
 
 ---
 
-## 📡 Currently Tracked Projects
+## 📡 Projects Under the Lens
 
-### 1. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
-| | |
-|---|---|
-| ⭐ Stars | 26,829 |
-| 🛠 Language | C++ |
-| 📜 License | Apache-2.0 |
-| 📝 Description | An open autonomous driving platform |
+### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
+**Tag:** `robotics` · **Language:** Python · **Stars:** 63,682★
 
-**Latest Commits (as of Apr 16, 2026):**
-- `docs: fix README - remove invalid build status badges` — Maintenance / documentation cleanup
-- `Merge pull request #15762: recover_seyond_lidar_driver` — Recovering and merging a LiDAR driver integration
-- `feat: add Apollo 11.0 bev+occ` — Introducing Bird's Eye View (BEV) and Occupancy (OCC) models for Apollo 11.0
+**What it is:** openpilot is an operating system for robotics — currently it upgrades the driver assistance system on 300+ supported cars. It's the most-starred open-source project in our radar and a cornerstone of the OE (open piloting) movement.
 
-**🔍 What's Being Worked On:**
-Apollo 11.0 is on the horizon, bringing **BEV (Bird's Eye View) and OCC (Occupancy) perception models** — a major leap in 3D scene understanding for autonomous vehicles. There's also active work on recovering the SoliX/LiDAR driver, indicating ongoing hardware integration efforts. The platform continues to evolve toward large-scale functional autonomous vehicle deployment.
+**Recent development highlights:**
+- 🗓️ **Sep 19, 2026** — `cabana: generate dbc files during builds` (1b1b60b, @TreyMoen): Automates DBC file generation in the cabana debugging tool — critical for parsing CAN bus signals across 300+ supported vehicle variants without manual effort.
+- 🗓️ **Sep 19, 2026** — `cabana: brighten quiet signals in dark mode` (d375e7f, @TreyMoen): UI polish — improved signal readability in dark mode by adjusting brightness clamps, making it easier to spot subtle CAN signals during debugging.
+- 🗓️ **Sep 19, 2026** — `cabana: refine signal heatmap grid` (95ed021, @TreyMoen): Visualization upgrade for the signal heatmap, helping developers quickly identify which CAN signals are active and which are noisy.
 
-**🎙️ Potential Episode Topics:**
-- "Apollo 11.0: BEV + OCC — How Baidu Is Pushing the Envelope on AV Perception"
-- "From Apollo 1.0 to 11.0 — 10 Years of Open-Source Autonomous Driving"
-- "LiDAR Driver Recovery & Hardware Integration Challenges in Open AV Stacks"
+🎙️ **Potential episode topics:**
+- *"Open Piloting at Scale"* — How openpilot went from a weekend project to 300+ car support and what that means for the future of ADAS.
+- *"The cabana Debugging Lifeline"* — Inside openpilot's tools that let developers and users see exactly what the car is thinking on the CAN bus.
+- *"DBC Files & the CAN Bus Maze"* — Why automated signal parsing matters when you support hundreds of different car models.
 
 ---
 
 ### 2. [carla-simulator/carla](https://github.com/carla-simulator/carla)
-| | |
-|---|---|
-| ⭐ Stars | 14,410 |
-| 🛠 Language | C++ |
-| 📜 License | MIT |
-| 📝 Description | Open-source simulator for autonomous driving research. |
+**Tag:** `autonomous-vehicles` · **Language:** C++ · **Stars:** 14,410★
 
-**Latest Commits (as of Sep 2, 2026):**
-- `Deploy UE5 nightly to Cloudflare R2 (#9859)` — Streamlining asset distribution via Cloudflare R2 storage
-- `Fix lidar smoke helper signature (#9791)` — Bug fix in the LiDAR sensor smoke visualization helper
-- `fix(nav): guard against null traffic light in WalkerManager (#9758)` — Robustness fix for pedestrian navigation
+**What it is:** CARLA is an open-source simulator for autonomous driving research — built on Unreal Engine, it provides photorealistic urban environments, sensor simulations (LiDAR, camera, radar), and a robust API for building and testing autonomous driving stacks.
 
-**🔍 What's Being Worked On:**
-CARLA is undergoing a major transition to **Unreal Engine 5.5 (the `ue5-dev` branch)**. Recent work includes deploying UE5 nightlies via Cloudflare R2 for faster global distribution, fixing LiDAR sensor bugs, and hardening the WalkerManager against null traffic light references. The community is actively maintaining the UE4.26 branch while propulsion shifts to UE5.
+**Recent development highlights:**
+- 🗓️ **Sep 2, 2026** — `Deploy UE5 nightly to Cloudflare R2` (1360bb9, @germanros1987): Major infrastructure upgrade — the Unreal Engine 5 nightly builds are now deployed to Cloudflare R2 object storage, improving global distribution and reducing setup friction for researchers using CARLA's UE5 branch.
+- 🗓️ **Jul 14, 2026** — `feat(sensor): add V2X sensor family` (dd3a9d7, @JesusA-Anaya): Game-changing feature — Vehicle-to-Everything (V2X) sensor support including CAM service, path-loss models, CustomV2X, and V2I (Vehicle-to-Infrastructure) communications. This opens the door for cooperative driving and C-V2X research inside CARLA.
+- 🗓️ **Jul 14, 2026** — `fix(nav): guard against null traffic light in WalkerManager` (39c4fda, @JesusA-Anaya): Robustness fix — WalkerManager now safely handles scenarios where traffic light references are null, preventing crashes in pedestrian-heavy simulations.
 
-**🎙️ Potential Episode Topics:**
-- "CARLA's Leap to Unreal Engine 5.5 — What Sim Researchers Need to Know"
-- "Cloudflare R2 & the Future of Open-Source Simulator Distribution"
-- "From Simulation to Reality: How CARLA Bridges the Sim-to-Real Gap"
+🎙️ **Potential episode topics:**
+- *"Inside CARLA: Building the World's Best Driving Simulator"* — A deep dive into the architecture that powers photorealistic autonomous driving simulation.
+- *"V2X: When Cars Start Talking to Each Other"* — How CARLA's new V2X sensor suite enables cooperative driving research and what it means for the future of vehicle-to-infrastructure communication.
+- *"UE5 in the Simulator: Why the Render Pipeline Matters"* — Why the shift to Unreal Engine 5 matters for sim-to-real transfer and photorealistic training data generation.
 
 ---
 
-### 3. [AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)
-| | |
-|---|---|
-| ⭐ Stars | 30,544 |
-| 🛠 Language | Python |
-| 📜 License | MIT |
-| 📝 Description | Python sample codes and textbook for robotics algorithms. |
+### 3. [autowarefoundation/autoware](https://github.com/autowarefoundation/autoware)
+**Tag:** `autonomous-vehicles` · **Language:** C++ (ROS 2) · **Stars:** 12,073★
 
-**Latest Commits (as of Sep 2, 2026):**
-- `build(deps): bump github/codeql-action from 4.37.4 to 4.37.9 (#1423)` — Security scanning dependency update
-- `build(deps): bump ruff from 0.16.1 to 0.16.5 in /requirements (#1424)` — Linter toolchain upgrade
-- `build(deps): bump scipy from 1.17.1 to 1.18.1 in /requirements (#1425)` — Scientific computing dependency bump
+**What it is:** Autoware is the world's leading open-source software project for autonomous driving — a full-stack ROS 2-based platform covering perception, planning, control, HD mapping, and simulation. It's the reference implementation for many autonomous vehicle companies and academic labs worldwide.
 
-**🔍 What's Being Worked On:**
-Recent activity is focused on **dependency maintenance and security** — CodeQL security scanning, ruff linter, and scipy upgrades. While the core algorithm library remains stable and educational, the project is keeping its toolchain modern and secure. This is a great example of how OSS educational projects maintain long-term health through automated dependency management.
+**Recent development highlights:**
+- 🗓️ **Sep 18, 2026** — `feat(repositories/autoware.repos): update autoware_utils to 1.11.0` (487474c, @awf-autoware-bot): Dependency bump — autoware_utils 1.11.0 brings updated math and utility functions used across the entire Autoware stack, keeping the foundation layer current.
+- 🗓️ **Sep 9, 2026** — `feat(ansible): add CARLA 0.10 Town10HD_Opt map to demo_artifacts` (79446c0, @MasayaKataoka): Demo enhancement — the Town10HD_Opt map from CARLA 0.10 is now available in Autoware's demo artifacts, making it easier to spin up a full Autoware + CARLA simulation with a large, optimized urban environment.
+- 🗓️ **Sep 8, 2026** — `fix(docker): build simple planning simulator with core` (87f7b60, @MeteFatihCirit): Docker fix — the simple planning simulator now builds correctly with the Autoware core image, unblocking developers who rely on Docker-based setups for rapid prototyping.
 
-**🎙️ Potential Episode Topics:**
-- "PythonRobotics: The Textbook That Teaches a Generation of Roboticists"
-- "Dependency Management as a Feature — Lessons from PythonRobotics"
-- "From Kalman Filters to RRT*: Core Algorithms Every Robotics Engineer Should Know"
+🎙️ **Potential episode topics:**
+- *"Autoware: The OSS Stack for Full-Stack Autonomy"* — How Autoware went from a Toyota research project to the de facto open-source AV platform, and what's in the roadmap next.
+- *"ROS 2 in Production: How Autoware Manages a Million-Line Codebase"* — The engineering challenges of maintaining a massive ROS 2 codebase with CI/CD, packaging, and dependency management at scale.
+- *"Sim-to-Real with Autoware + CARLA"* — How the integration between Autoware's planning stack and CARLA's simulation environment accelerates the path from simulation to real-world deployment.
 
 ---
 
-## 🎙️ About This Podcast
+## 🎙️ About This Radar
 
-**Robotics OSS Radar** is a podcast exploring the open-source projects powering the future of robotics and autonomous systems. Each episode dives into a tracked project — its architecture, its community, its latest breakthroughs, and what it means for the future of autonomous technology.
+This repo is the companion data source for the **Robotics OSS Radar** podcast — a show exploring the open-source projects shaping the future of autonomous systems and robotics. Each episode dives deep into one project, interviewing maintainers, walking through the code, and discussing what's coming next.
 
----
-
-## 📋 Roadmap
-
-See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/76)** for a checklist of projects to track and potential episode plans.
-
----
-
-## 🤝 Contributing
-
-Pull requests and suggestions are welcome! To suggest a project:
-1. Open an issue with the repo URL and a brief description of why it's interesting
-2. Tag it with `project-suggestion`
+**Suggested episode cadence:**
+| Week | Project | Theme |
+|------|---------|-------|
+| 1 | openpilot | Open Piloting at Scale & the CAN Bus Debugging Lifeline |
+| 2 | CARLA | Inside the World's Best Driving Simulator & V2X |
+| 3 | Autoware | The OSS Stack for Full-Stack Autonomy & Sim-to-Real |
 
 ---
 
-## 📡 Sources
+## 🔧 How to Contribute
 
-All project data is pulled from GitHub in real-time. Stars, commits, and metadata reflect the most recent snapshot.
+- Found a stale project? Open an issue with the repo URL and what you expected to see.
+- Want your project featured? Submit a link and a 2-line description.
+- Episode ideas? The issue tracker is the place.
 
 ---
 
-*Built for the open-source robotics community. MIT Licensed.*
+## 📊 Radar Dashboard
+
+| Project | Last Commit | Activity | Stars | Language |
+|---------|-------------|----------|-------|----------|
+| openpilot | Sep 19, 2026 | 🟢 Active (cabana DBC automation + UI polish) | 63,682★ | Python |
+| CARLA | Sep 2, 2026 | 🟢 Active (UE5 infra + V2X sensor family) | 14,410★ | C++ |
+| Autoware | Sep 18, 2026 | 🟢 Active (dependency bumps + CARLA map integration) | 12,073★ | C++ |
+
+---
+
+*Built with 💡 and a lot of open-source love.*
