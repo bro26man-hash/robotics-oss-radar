@@ -7,13 +7,13 @@
 ## 📡 Projects Under the Lens
 
 ### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
-**Tag:** `robotics` · **Language:** Python · **Stars:** 63,682★
+**Tag:** `robotics` · **Language:** Python · **Stars:** 63,694★
 
 **What it is:** openpilot is an operating system for robotics — currently it upgrades the driver assistance system on 300+ supported cars. It's the most-starred open-source project in our radar and a cornerstone of the OE (open piloting) movement.
 
 **Recent development highlights:**
+- 🗓️ **Sep 20, 2026** — `cabana: resize heatmap and prevent signal clipping` (3b2a75a, @TreyMoen): Critical visualization fix — the signal heatmap now resizes dynamically and clips signals properly, preventing data distortion when debugging CAN bus activity across different vehicle handles.
 - 🗓️ **Sep 19, 2026** — `cabana: generate dbc files during builds` (1b1b60b, @TreyMoen): Automates DBC file generation in the cabana debugging tool — critical for parsing CAN bus signals across 300+ supported vehicle variants without manual effort.
-- 🗓️ **Sep 19, 2026** — `cabana: brighten quiet signals in dark mode` (d375e7f, @TreyMoen): UI polish — improved signal readability in dark mode by adjusting brightness clamps, making it easier to spot subtle CAN signals during debugging.
 - 🗓️ **Sep 19, 2026** — `cabana: refine signal heatmap grid` (95ed021, @TreyMoen): Visualization upgrade for the signal heatmap, helping developers quickly identify which CAN signals are active and which are noisy.
 
 🎙️ **Potential episode topics:**
@@ -24,7 +24,7 @@
 ---
 
 ### 2. [carla-simulator/carla](https://github.com/carla-simulator/carla)
-**Tag:** `autonomous-vehicles` · **Language:** C++ · **Stars:** 14,410★
+**Tag:** `autonomous-vehicles` · **Language:** C++ · **Stars:** 14,412★
 
 **What it is:** CARLA is an open-source simulator for autonomous driving research — built on Unreal Engine, it provides photorealistic urban environments, sensor simulations (LiDAR, camera, radar), and a robust API for building and testing autonomous driving stacks.
 
@@ -82,8 +82,8 @@ This repo is the companion data source for the **Robotics OSS Radar** podcast �
 
 | Project | Last Commit | Activity | Stars | Language |
 |---------|-------------|----------|-------|----------|
-| openpilot | Sep 19, 2026 | 🟢 Active (cabana DBC automation + UI polish) | 63,682★ | Python |
-| CARLA | Sep 2, 2026 | 🟢 Active (UE5 infra + V2X sensor family) | 14,410★ | C++ |
+| openpilot | Sep 20, 2026 | 🟢 Active (cabana heatmap resize + DBC automation) | 63,694★ | Python |
+| CARLA | Sep 2, 2026 | 🟢 Active (UE5 infra + V2X sensor family) | 14,412★ | C++ |
 | Autoware | Sep 18, 2026 | 🟢 Active (dependency bumps + CARLA map integration) | 12,073★ | C++ |
 
 ---
