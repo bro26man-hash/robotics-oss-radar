@@ -6,54 +6,56 @@
 
 ## 📡 Projects Under the Lens
 
+---
+
 ### 1. [google-deepmind/mujoco](https://github.com/google-deepmind/mujoco)
 **Tag:** `robotics` · **Language:** C++ · **Stars:** 15,241★
 
-**What it is:** MuJoCo (Multi-Joint dynamics with Contact) is a general-purpose physics simulator designed for research and development in robotics, biomechanics, graphics, and animation. It's the gold standard for fast, accurate rigid-body simulation with contacts and is widely used in robot learning, manipulation research, and reinforcement learning environments.
+**What it is:** MuJoCo (Mu**Jo**int dynamics with **Co**ntact) is a general-purpose physics engine built by Google DeepMind for fast, accurate simulation of articulated structures — robots, biomechanics, grippers, and more. It's the backbone of countless research labs and RL pipelines, with Python bindings, a Unity plugin, and a thriving third-party ecosystem (MATLAB, Julia, Rust, Swift, and more).
 
 **Recent development highlights:**
-- 🗓️ **Sep 20, 2026** — `Support multi-input (MIMO) actuators in control history buffers and mj_readCtrl` (dc8bb13, @YuvalTassa): Major functionality upgrade — MIMO actuator support in control history buffers enables modeling of complex multi-input actuator systems (e.g., parallel actuators, differential drives) directly in MuJoCo's control API. This is a big deal for researchers simulating robots with non-trivial actuator configurations.
-- 🗓️ **Sep 20, 2026** — `mjx: isolate touch sensor evaluation from solver divergence in test_touch_sensor_nested_vmap` (451e66a, @YuvalTassa): Bug fix — Touch sensor evaluation is now isolated from solver divergence in nested VMAP tests, improving numerical stability for models with tactile sensors. This matters for dexterous manipulation and prosthetic research.
-- 🗓️ **Sep 20, 2026** — `Normalize velocity and semi-axes in ellipsoid fluid forces and derivatives` (b9ff593, @YuvalTassa): Physics accuracy improvement — Normalization of velocity and semi-axes in ellipsoid fluid force models ensures consistent behavior across different scale regimes, critical for underwater robotics and micro-air-vehicle simulations.
+- 🗓️ **Sep 20, 2026** — `Support multi-input (MIMO) actuators in control history buffers and mj_readCtrl` (dc8bb13, @YuvalTassa): Major update — MuJoCo now supports multi-input, multi-output actuators in its control history buffers and `mj_readCtrl` API, enabling more realistic actuator modeling for complex robotic systems with coupled dynamics.
+- 🗓️ **Sep 20, 2026** — `mjx: isolate touch sensor evaluation from solver divergence in test_touch_sensor_nested_vmap` (451e66a, @YuvalTassa): Bug fix — touch sensor evaluation in the MuJoCo XLA (JAX) branch is now isolated from solver divergence, preventing false negatives in contact-rich simulations.
+- 🗓️ **Sep 20, 2026** — `Normalize velocity and semi-axes in ellipsoid fluid forces and derivatives` (b9ff593, @YuvalTassa): Physics accuracy improvement — ellipsoid fluid force calculations now use normalized velocity and semi-axes, ensuring consistent behavior across different model scales and improving realism in fluid-structure interaction simulations.
 
 🎙️ **Potential episode topics:**
-- *"The Physics Engine Under Every Robot Lab"* — How MuJoCo went from CMU research project to DeepMind-owned gold standard, and why it powers so much of the robotics RL revolution.
-- *"MIMO Actuators & the Complexity of Real Robots"* — Why multi-input actuator modeling matters when your robot doesn't have a single clean motor per joint.
-- *"Touch Sensors & the Next Manipulation Breakthrough"* — How MuJoCo's tactile sensor improvements are enabling the next generation of dexterous manipulation research.
+- *"MuJoCo: The Physics Engine Powering Modern Robotics Research"* — How MuJoCo went from a research project at Stanford to the de facto standard for robot simulation, and what makes its contact dynamics so special.
+- *"MIMO Actuators & the Future of Robot Control"* — What multi-input actuator support means for simulating tendon-driven robots, soft actuators, and coupled dynamics.
+- *"Differentiable Physics: Training Robots with Analytical Gradients"* — How MuJoCo's differentiable simulation enables gradient-based policy optimization that's unleashing a wave of learned locomotion and manipulation behaviors.
 
 ---
 
-### 2. [carla-simulator/carla](https://github.com/carla-simulator/carla)
-**Tag:** `autonomous-vehicles` · **Language:** C++ · **Stars:** 14,412★
+### 2. [PetoiCamp/OpenCat-Quadruped-Robot](https://github.com/PetoiCamp/OpenCat-Quadruped-Robot)
+**Tag:** `robotics` · **Language:** C++ · **Stars:** 5,346★
 
-**What it is:** CARLA is an open-source simulator for autonomous driving research — built on Unreal Engine, it provides photorealistic urban environments, sensor simulations (LiDAR, camera, radar), and a robust API for building and testing autonomous driving stacks. It's the most widely used open-source driving simulator in academia and industry.
+**What it is:** OpenCat is an open-source quadruped robot framework by Petoi — the maker of Bittle (robot dog) and Nybble (robot cat). Running on Arduino and Raspberry Pi, it handles gait coordination, servo control, and IMU integration so makers, researchers, and educators can build on top of it. With 30,000+ robots shipped across 60+ countries, it's one of the most widely deployed open-source legged robotics platforms.
 
 **Recent development highlights:**
-- 🗓️ **Sep 2, 2026** — `Deploy UE5 nightly to Cloudflare R2` (1360bb9, @germanros1987): Major infrastructure upgrade — The Unreal Engine 5 nightly builds are now deployed to Cloudflare R2 object storage, improving global distribution and reducing setup friction for researchers using CARLA's UE5 branch. No more manual asset downloads — the simulator fetches the right build automatically.
-- 🗓️ **Jul 14, 2026** — `feat(sensor): add V2X sensor family` (dd3a9d7, @JesusA-Anaya): Game-changing feature — Vehicle-to-Everything (V2X) sensor support including CAM service, path-loss models, CustomV2X, and V2I (Vehicle-to-Infrastructure) communications. This opens the door for cooperative driving and C-V2X research inside CARLA — a first for open-source driving simulators.
-- 🗓️ **Jul 14, 2026** — `fix(nav): guard against null traffic light in WalkerManager` (39c4fda, @JesusA-Anaya): Robustness fix — WalkerManager now safely handles scenarios where traffic light references are null, preventing crashes in pedestrian-heavy simulations. Essential for realistic urban scenarios with complex traffic infrastructures.
+- 🗓️ **Sep 8, 2026** — `Merge PR #119: Readme / Quaddle growth update` (24563ca, @KaiMai): Documentation refresh — major README update covering the upcoming **Quaddle** Kickstarter launch (Sept 2, 2026), Petoi's newest mini quadruped with position-feedback servos and Puppet Mode.
+- 🗓️ **Sep 8, 2026** — `Remove Discord link and update Kickstarter referral code to 8t25yj` (4238b67, @KaiMai): Community shift — removed Discord link, updated Kickstarter referral, signaling a focus on Kickstarter launch and open-source code release before Quaddle delivery.
+- 🗓️ **Sep 2, 2026** — `Merge PR #118: Readme / Quaddle growth update` (532f016, @RongzhongLi): Pre-launch documentation — Quaddle growth update merged, building anticipation for the new desk-sized quadruped with 4-servo gait design.
 
 🎙️ **Potential episode topics:**
-- *"Inside CARLA: Building the World's Best Driving Simulator"* — A deep dive into the architecture that powers photorealistic autonomous driving simulation.
-- *"V2X: When Cars Start Talking to Each Other"* — How CARLA's new V2X sensor suite enables cooperative driving research and what it means for the future of vehicle-to-infrastructure communication.
-- *"UE5 in the Simulator: Why the Render Pipeline Matters"* — Why the shift to Unreal Engine 5 (and the Cloudflare R2 deployment) matters for sim-to-real transfer and photorealistic training data generation.
+- *"From Dorm Room to Kickstarter: The OpenCat Quadruped Story"* — How Dr. Rongzhong Li turned a Harvard dorm project into 30,000+ shipped robots across 60+ countries.
+- *"Quaddle: 4 Servos, Position Feedback, and Puppet Mode"* — Inside the engineering of Petoi's newest quadruped — how fewer servos with position feedback enables genuinely novel gaits and human-guided motion recording.
+- *"Sim-to-Real on a Budget: OpenCat + NVIDIA Isaac + RL"* — How the community is using OpenCat with Isaac Sim and reinforcement learning to train real behaviors on affordable hardware.
 
 ---
 
-### 3. [isaac-sim/IsaacLab](https://github.com/isaac-sim/IsaacLab)
-**Tag:** `robotics` · **Language:** Python · **Stars:** 8,176★
+### 3. [OpenDriveLab/UniAD](https://github.com/OpenDriveLab/UniAD)
+**Tag:** `autonomous-vehicles` · **Language:** Python · **Stars:** 4,761★
 
-**What it is:** Isaac Lab is a unified framework for robot learning — built on NVIDIA Isaac Sim, it provides multi-physics and multi-renderer support for training robots with reinforcement learning, imitation learning, and other modern RL paradigms. It's the go-to platform for scales-up parallel robot training on GPU.
+**What it is:** UniAD (UNified Autonomous Driving) is a planning-oriented unified framework for autonomous driving from OpenDriveLab (Shanghai AI Lab). It casts perception, prediction, and planning as a single hierarchical system — rather than modular pipelines — and achieved SOTA on nuScenes at CVPR 2023 (Best Paper Award). The just-released **UniAD 2.0** upgrades to mmdet3d 1.x & torch 2.x and integrates nuPlan and NAVSIM datasets.
 
 **Recent development highlights:**
-- 🗓️ **Sep 20, 2026** — `[RL] Unify and cleanup isaaclab_rl for 3.0 release` (4b1234b, @MustafaH): Major release prep — The RL module is being unified and cleaned up for the upcoming v3.0 release, consolidating codepaths and modernizing the API. This signals that Isaac Lab 3.0 is on the near-term horizon.
-- 🗓️ **Sep 20, 2026** — `[Scripts] Remove legacy benchmark_camera script and update documentation` (0daf5fe, @MustafaH): API modernization — Legacy benchmarking scripts are removed and documentation is updated, keeping the codebase clean and the docs current as the 3.0 release approaches.
-- 🗓️ **Sep 20, 2026** — `[Tasks] Final isaaclab_tasks cleanup pass for 3.0` (0c5dcbc, @MustafaH): Release readiness — The final cleanup pass on the tasks library ensures that all robotics tasks (locomotion, manipulation, etc.) are consistent and ready for the v3.0 launch.
+- 🗓️ **Oct 29, 2025** — `Update README for UniAD 2.0 Release` (609ee08, @TianyuLi): Major release documentation — comprehensive README overhaul for UniAD 2.0, including new framework architecture, dataset integrations, and benchmark results.
+- 🗓️ **Oct 29, 2025** — `🚀 Release Notes for UniAD v2.X (#251)` (7d7d0c1, @zzh-yun): Official v2.0 launch — migration to mmdet3d 1.0.0rc6 and torch 2.0.1+cu118; nuPlan and NAVSIM benchmark tools coming in 2025Q2; all existing workflows preserved.
+- 🗓️ **Oct 27, 2025** — `Update README.md` (713fd85, @JiazhiYang): Pre-release cleanup — final README touches ahead of the v2.0 launch.
 
 🎙️ **Potential episode topics:**
-- *"Isaac Lab 3.0: What's Changing and Why It Matters"* — A preview of the upcoming v3.0 release and what the RL API unification means for the robot learning community.
-- *"GPU-Scale Robot Training: Inside NVIDIA's Isaac Ecosystem"* — How Isaac Lab leverages massive GPU parallelism to train robots thousands of times faster than real-time.
-- *"From Isaac Sim to Isaac Lab: The Modularization of Robot RL"* — Why splitting the simulation engine from the RL training framework is a game-changer for the robotics research workflow.
+- *"UniAD 2.0: One Model to Rule All Autonomous Driving Tasks"* — How a single unified framework replaces the modular pipeline approach, and what the nuPlan/NAVSIM integration means for the field.
+- *"Planning-Oriented vs. Perception-First: The Great AV Debate"* — UniAD's philosophy that planning should drive perception, not the other way around — is this the right paradigm for self-driving?
+- *"From CVPR Best Paper to Open Source: The UniAD Story"* — The journey from a research paper to one of the most widely used autonomous driving codebases, and what the 2.0 rewrite teaches us about maintaining open-source research software.
 
 ---
 
@@ -64,9 +66,9 @@ This repo is the companion data source for the **Robotics OSS Radar** podcast �
 **Suggested episode cadence:**
 | Week | Project | Theme |
 |------|---------|-------|
-| 1 | MuJoCo | The Physics Engine Under Every Robot Lab & MIMO Actuators |
-| 2 | CARLA | Inside the World's Best Driving Simulator & V2X |
-| 3 | Isaac Lab | GPU-Scale Robot Training & the Road to v3.0 |
+| 1 | MuJoCo | MuJoCo: The Physics Engine Powering Modern Robotics Research & Differentiable Physics |
+| 2 | OpenCat | From Dorm Room to Kickstarter: The OpenCat Quadruped Story & Sim-to-Real on a Budget |
+| 3 | UniAD | UniAD 2.0: One Model to Rule All Autonomous Driving Tasks & Planning-Oriented vs. Perception-First |
 
 ---
 
@@ -83,8 +85,8 @@ This repo is the companion data source for the **Robotics OSS Radar** podcast �
 | Project | Last Commit | Activity | Stars | Language |
 |---------|-------------|----------|-------|----------|
 | MuJoCo | Sep 20, 2026 | 🟢 Active (MIMO actuators + touch sensor fix + fluid force normalization) | 15,241★ | C++ |
-| CARLA | Sep 2, 2026 | 🟢 Active (UE5 Cloudflare R2 deployment + V2X sensor family) | 14,412★ | C++ |
-| IsaacLab | Sep 20, 2026 | 🟢 Active (v3.0 RL unification + task cleanup + docs update) | 8,176★ | Python |
+| OpenCat | Sep 8, 2026 | 🟡 Moderate (Quaddle Kickstarter prep + README updates) | 5,346★ | C++ |
+| UniAD | Oct 29, 2025 | 🟡 Periodic (v2.0 release + framework migration) | 4,761★ | Python |
 
 ---
 
