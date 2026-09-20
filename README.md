@@ -4,60 +4,56 @@
 
 ---
 
-## 📡 Top 3 Projects Under the Lens
+## 📡 Projects Under the Lens
 
-Selected from the most recently active repos tagged `robotics` or `autonomous-vehicles` on GitHub (as of Sep 2026).
+### 1. [google-deepmind/mujoco](https://github.com/google-deepmind/mujoco)
+**Tag:** `robotics` · **Language:** C++ · **Stars:** 15,241★
+
+**What it is:** MuJoCo (Multi-Joint dynamics with Contact) is a general-purpose physics simulator designed for research and development in robotics, biomechanics, graphics, and animation. It's the gold standard for fast, accurate rigid-body simulation with contacts and is widely used in robot learning, manipulation research, and reinforcement learning environments.
+
+**Recent development highlights:**
+- 🗓️ **Sep 20, 2026** — `Support multi-input (MIMO) actuators in control history buffers and mj_readCtrl` (dc8bb13, @YuvalTassa): Major functionality upgrade — MIMO actuator support in control history buffers enables modeling of complex multi-input actuator systems (e.g., parallel actuators, differential drives) directly in MuJoCo's control API. This is a big deal for researchers simulating robots with non-trivial actuator configurations.
+- 🗓️ **Sep 20, 2026** — `mjx: isolate touch sensor evaluation from solver divergence in test_touch_sensor_nested_vmap` (451e66a, @YuvalTassa): Bug fix — Touch sensor evaluation is now isolated from solver divergence in nested VMAP tests, improving numerical stability for models with tactile sensors. This matters for dexterous manipulation and prosthetic research.
+- 🗓️ **Sep 20, 2026** — `Normalize velocity and semi-axes in ellipsoid fluid forces and derivatives` (b9ff593, @YuvalTassa): Physics accuracy improvement — Normalization of velocity and semi-axes in ellipsoid fluid force models ensures consistent behavior across different scale regimes, critical for underwater robotics and micro-air-vehicle simulations.
+
+🎙️ **Potential episode topics:**
+- *"The Physics Engine Under Every Robot Lab"* — How MuJoCo went from CMU research project to DeepMind-owned gold standard, and why it powers so much of the robotics RL revolution.
+- *"MIMO Actuators & the Complexity of Real Robots"* — Why multi-input actuator modeling matters when your robot doesn't have a single clean motor per joint.
+- *"Touch Sensors & the Next Manipulation Breakthrough"* — How MuJoCo's tactile sensor improvements are enabling the next generation of dexterous manipulation research.
 
 ---
 
-### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
-**Tag:** `robotics` · **Language:** Python · **Stars:** 63,694★
+### 2. [carla-simulator/carla](https://github.com/carla-simulator/carla)
+**Tag:** `autonomous-vehicles` · **Language:** C++ · **Stars:** 14,412★
 
-**What it is:** openpilot is an operating system for robotics — currently it upgrades the driver assistance system on 300+ supported cars. It's the most-starred open-source driving project in our radar and a cornerstone of the OE (open piloting) movement.
+**What it is:** CARLA is an open-source simulator for autonomous driving research — built on Unreal Engine, it provides photorealistic urban environments, sensor simulations (LiDAR, camera, radar), and a robust API for building and testing autonomous driving stacks. It's the most widely used open-source driving simulator in academia and industry.
 
 **Recent development highlights:**
-- 🗓️ **Sep 20, 2026** — `cabana: resize heatmap and prevent signal clipping` (3b2a75a, @TreyMoen): Critical visualization fix — the signal heatmap now resizes properly and prevents signal clipping, ensuring that large CAN signal values don't get truncated in the UI.
-- 🗓️ **Sep 19, 2026** — `cabana: generate dbc files during builds` (1b1b60b, @TreyMoen): Automates DBC file generation in the cabana debugging tool — critical for parsing CAN bus signals across 300+ supported vehicle variants without manual effort.
-- 🗓️ **Sep 19, 2026** — `cabana: refine signal heatmap grid` (95ed021, @TreyMoen): Visualization upgrade for the signal heatmap, helping developers quickly identify which CAN signals are active and which are noisy.
+- 🗓️ **Sep 2, 2026** — `Deploy UE5 nightly to Cloudflare R2` (1360bb9, @germanros1987): Major infrastructure upgrade — The Unreal Engine 5 nightly builds are now deployed to Cloudflare R2 object storage, improving global distribution and reducing setup friction for researchers using CARLA's UE5 branch. No more manual asset downloads — the simulator fetches the right build automatically.
+- 🗓️ **Jul 14, 2026** — `feat(sensor): add V2X sensor family` (dd3a9d7, @JesusA-Anaya): Game-changing feature — Vehicle-to-Everything (V2X) sensor support including CAM service, path-loss models, CustomV2X, and V2I (Vehicle-to-Infrastructure) communications. This opens the door for cooperative driving and C-V2X research inside CARLA — a first for open-source driving simulators.
+- 🗓️ **Jul 14, 2026** — `fix(nav): guard against null traffic light in WalkerManager` (39c4fda, @JesusA-Anaya): Robustness fix — WalkerManager now safely handles scenarios where traffic light references are null, preventing crashes in pedestrian-heavy simulations. Essential for realistic urban scenarios with complex traffic infrastructures.
 
 🎙️ **Potential episode topics:**
-- *"Open Piloting at Scale"* — How openpilot went from a weekend project to 300+ car support and what that means for the future of ADAS.
-- *"The cabana Debugging Lifeline"* — Inside openpilot's tools that let developers and users see exactly what the car is thinking on the CAN bus.
-- *"DBC Files & the CAN Bus Maze"* — Why automated signal parsing matters when you support hundreds of different car models.
+- *"Inside CARLA: Building the World's Best Driving Simulator"* — A deep dive into the architecture that powers photorealistic autonomous driving simulation.
+- *"V2X: When Cars Start Talking to Each Other"* — How CARLA's new V2X sensor suite enables cooperative driving research and what it means for the future of vehicle-to-infrastructure communication.
+- *"UE5 in the Simulator: Why the Render Pipeline Matters"* — Why the shift to Unreal Engine 5 (and the Cloudflare R2 deployment) matters for sim-to-real transfer and photorealistic training data generation.
 
 ---
 
-### 2. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
-**Tag:** `autonomous-vehicles` · **Language:** C++ · **Stars:** 26,830★
+### 3. [isaac-sim/IsaacLab](https://github.com/isaac-sim/IsaacLab)
+**Tag:** `robotics` · **Language:** Python · **Stars:** 8,176★
 
-**What it is:** Apollo is Baidu's open autonomous driving platform — a full-stack solution covering perception, planning, control, and HD map infrastructure. It's one of the most mature open-source AV platforms, used by numerous research groups and companies worldwide.
-
-**Recent development highlights:**
-- 🗓️ **Apr 16, 2026** — `docs: fix README - remove invalid build status badges` (d53aa3d, @xiaoxinyu): Maintenance cleanup — removed stale CI badges from the README that were pointing to deleted or renamed branches, keeping documentation accurate.
-- 🗓️ **Feb 28, 2026** — `Merge PR #15762: recover_seyond_lidar_driver` (40c8a01, @yuxin): Hardware support recovery — re-enabled a lidar driver for the beyond-series lidar units, expanding Apollo's sensor compatibility list.
-- 🗓️ **Feb 27, 2026** — `feat: add Apollo 11.0 bev+occ` (539f546, @yuxin): Major feature release — Apollo 11.0 introduces Bird's-Eye-View (BEV) perception and Occupancy (OCC) modules, bringing modern 3D scene understanding to the platform.
-
-🎙️ **Potential episode topics:**
-- *"Apollo 11.0: BEV + Occupancy in an Open AV Stack"* — What does adding modern BEV perception and occupancy grids mean for an open-source platform that's been around for years?
-- *"From Baidu Research to Industry Standard"* — How Apollo became the reference implementation for autonomous driving in China and beyond.
-- *"Lidar Driver Recovery & Hardware Ecosystem"* — Why maintaining sensor driver support matters and the politics of hardware compatibility in open-source AV.
-
----
-
-### 3. [AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)
-**Tag:** `robotics` · **Language:** Python · **Stars:** 30,555★
-
-**What it is:** PythonRobotics is a textbook-style collection of Python sample codes covering core robotics algorithms — from kinematics and path planning to SLAM and computer vision. It's the go-to resource for students and researchers learning robotics fundamentals.
+**What it is:** Isaac Lab is a unified framework for robot learning — built on NVIDIA Isaac Sim, it provides multi-physics and multi-renderer support for training robots with reinforcement learning, imitation learning, and other modern RL paradigms. It's the go-to platform for scales-up parallel robot training on GPU.
 
 **Recent development highlights:**
-- 🗓️ **Sep 2, 2026** — `build(deps): bump github/codeql-action from 4.37.4 to 4.37.9` (08b453a, @dependabot): Security hygiene — updated GitHub's code scanning action to the latest version for improved vulnerability detection across the codebase.
-- 🗓️ **Sep 2, 2026** — `build(deps): bump ruff from 0.16.1 to 0.16.5` (8c3f761, @dependabot): Linting modernization — updated the Ruff linter for improved performance and new rules.
-- 🗓️ **Sep 2, 2026** — `build(deps): bump scipy from 1.17.1 to 1.18.1` (069e0fb, @dependabot): Scientific computing upgrade — updated SciPy to the latest release, bringing performance improvements and new algorithms for the numerical routines used throughout the textbook.
+- 🗓️ **Sep 20, 2026** — `[RL] Unify and cleanup isaaclab_rl for 3.0 release` (4b1234b, @MustafaH): Major release prep — The RL module is being unified and cleaned up for the upcoming v3.0 release, consolidating codepaths and modernizing the API. This signals that Isaac Lab 3.0 is on the near-term horizon.
+- 🗓️ **Sep 20, 2026** — `[Scripts] Remove legacy benchmark_camera script and update documentation` (0daf5fe, @MustafaH): API modernization — Legacy benchmarking scripts are removed and documentation is updated, keeping the codebase clean and the docs current as the 3.0 release approaches.
+- 🗓️ **Sep 20, 2026** — `[Tasks] Final isaaclab_tasks cleanup pass for 3.0` (0c5dcbc, @MustafaH): Release readiness — The final cleanup pass on the tasks library ensures that all robotics tasks (locomotion, manipulation, etc.) are consistent and ready for the v3.0 launch.
 
 🎙️ **Potential episode topics:**
-- *"Why the Most Important Robotics Repo Has Almost No Commits"* — What does it mean when a 30k-star educational project is mostly dependency bumps? The quiet art of maintaining a textbook.
-- *"PythonRobotics as a Gateway Drug to Robotics Engineering"* — How this textbook-style repo feeds the pipeline of future robotics engineers.
-- *"From Textbook to Production: Can Educational Code Scale?"* — The tension between clean, pedagogical code and the messy reality of production robotics systems.
+- *"Isaac Lab 3.0: What's Changing and Why It Matters"* — A preview of the upcoming v3.0 release and what the RL API unification means for the robot learning community.
+- *"GPU-Scale Robot Training: Inside NVIDIA's Isaac Ecosystem"* — How Isaac Lab leverages massive GPU parallelism to train robots thousands of times faster than real-time.
+- *"From Isaac Sim to Isaac Lab: The Modularization of Robot RL"* — Why splitting the simulation engine from the RL training framework is a game-changer for the robotics research workflow.
 
 ---
 
@@ -68,9 +64,9 @@ This repo is the companion data source for the **Robotics OSS Radar** podcast �
 **Suggested episode cadence:**
 | Week | Project | Theme |
 |------|---------|-------|
-| 1 | openpilot | Open Piloting at Scale & the CAN Bus Debugging Lifeline |
-| 2 | Apollo | Apollo 11.0: BEV + Occupancy in an Open AV Stack |
-| 3 | PythonRobotics | Why the Most Important Robotics Repo Has Almost No Commits |
+| 1 | MuJoCo | The Physics Engine Under Every Robot Lab & MIMO Actuators |
+| 2 | CARLA | Inside the World's Best Driving Simulator & V2X |
+| 3 | Isaac Lab | GPU-Scale Robot Training & the Road to v3.0 |
 
 ---
 
@@ -86,9 +82,9 @@ This repo is the companion data source for the **Robotics OSS Radar** podcast �
 
 | Project | Last Commit | Activity | Stars | Language |
 |---------|-------------|----------|-------|----------|
-| openpilot | Sep 20, 2026 | 🟢 Active (cabana heatmap fix + DBC automation) | 63,694★ | Python |
-| Apollo | Apr 16, 2026 | 🟡 Moderate (README cleanup + Apollo 11.0 BEV+OCC) | 26,830★ | C++ |
-| PythonRobotics | Sep 2, 2026 | 🟡 Maintenance (dependency bumps) | 30,555★ | Python |
+| MuJoCo | Sep 20, 2026 | 🟢 Active (MIMO actuators + touch sensor fix + fluid force normalization) | 15,241★ | C++ |
+| CARLA | Sep 2, 2026 | 🟢 Active (UE5 Cloudflare R2 deployment + V2X sensor family) | 14,412★ | C++ |
+| IsaacLab | Sep 20, 2026 | 🟢 Active (v3.0 RL unification + task cleanup + docs update) | 8,176★ | Python |
 
 ---
 
