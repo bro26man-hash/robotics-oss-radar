@@ -1,109 +1,91 @@
 # 🤖 Robotics OSS Radar
 
-> Open-source robotics & autonomous systems — tracking the most active projects, recent commits, and podcast episode ideas.
-
-This repo is a living companion for the **Robotics OSS Radar** podcast. We monitor the hottest open-source projects in robotics and autonomous systems, summarize their latest development highlights, and brainstorm episode topics for each.
+> Tracking the most active open-source robotics & autonomous-systems projects — with development highlights and podcast episode ideas.
 
 ---
 
-## 📡 Currently Tracked Projects
+## 📡 Projects Under the Lens
 
 ### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
-| | |
-|---|---|
-| ⭐ Stars | 63,682 |
-| 🛠 Language | Python |
-| 📝 Description | openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars. |
+**Tag:** `robotics` · **Language:** Python · **Stars:** 63,682★ · **Last commit:** Sep 19, 2026
 
-**Latest Commits (as of Sep 19, 2026):**
-- `1b1b60b` — cabana: generate dbc files during builds (#38974) — Automating DBC file generation in the Cabana tuning toolchain
-- `95ed021` — cabana: refine signal heatmap grid (#38964) — Improving the signal visualization heatmap for CAN bus analysis
-- `ea0afb6` — cabana: preserve activity with a brighter baseline (#38971) — UI/UX enhancement for the Cabana interactive signal explorer
-- `680aa6f` — cabana: revert quiet signal brightness clamp (#38970) — Polish on signal brightness controls
-- `d375e7f` — cabana: brighten quiet signals in dark mode (#38969) — Accessibility improvement for dark-mode signal inspection
+**What it is:** openpilot is an operating system for robotics — currently it upgrades the driver assistance system on 300+ supported cars. It's the most-starred open-source project in our radar and a cornerstone of the OE (open piloting) movement.
 
-**🔍 What's Being Worked On:**
-The **Cabana** signal analysis and tuning tool is seeing heavy active development. Recent commits focus on automating DBC (Database CAN) file generation, refining signal heatmap visualizations, and improving the UI/UX experience. This suggests comma.ai is doubling down on making low-level CAN signal inspection and vehicle tuning more accessible to the community.
+**Recent development highlights:**
+- 🗓️ **Sep 19, 2026** — `cabana: generate dbc files during builds` (1b1b60b, @TreyMoen): Automated DBC file generation in the cabana debugging tool — no more manual DBC builds, streamlining the CAN signal reverse-engineering workflow.
+- 🗓️ **Sep 19, 2026** — `cabana: refine signal heatmap grid` (95ed021, @TreyMoen): Improved signal heatmap visualization for easier identification of relevant CAN signals during hardware bring-up.
+- 🗓️ **Sep 19, 2026** — `cabana: preserve activity with a brighter baseline` (ea0afb6, @TreyMoen): UI contrast improvement for the cabana interface — critical for outdoor/garage visibility.
 
-**🎙️ Potential Episode Topics:**
-- "Inside openpilot's Cabana Tool — How Community Members Tune CAN Signals"
-- "From 300+ Cars to One OS: The openpilot Approach to Mass-Scale ADAS"
-- "MIT vs. Apache: How Licensing Shapes the openpilot Ecosystem"
+🎙️ **Potential episode topics:**
+- *"Open Piloting at Scale"* — How openpilot went from a weekend project to 300+ car support and what that means for the future of ADAS.
+- *"The Cabana Workbench"* — Inside openpilot's debugging tools that let developers and users see exactly what the car is thinking via CAN signals.
+- *"DBCgen & the Reverse-Engineering Pipeline"* — How automated DBC generation is changing the game for third-party hardware integration.
 
 ---
 
-### 2. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
-| | |
-|---|---|
-| ⭐ Stars | 26,829 |
-| 🛠 Language | C++ |
-| 📝 Description | An open autonomous driving platform |
+### 2. [microsoft/AirSim](https://github.com/microsoft/AirSim)
+**Tag:** `autonomous-vehicles` · **Language:** C++ · **Stars:** 18,499★ · **Last commit:** Sep 15, 2026
 
-**Latest Commits (as of Apr 16, 2026):**
-- `d53aa3d` — docs: fix README - remove invalid build status badges — Maintenance / documentation cleanup
-- `40c8a01` — Merge PR #15762: recover_seyond_lidar_driver — Recovering and merging a LiDAR driver integration
-- `539f546` — feat: add Apollo 11.0 bev+occ — Introducing Bird's Eye View (BEV) and Occupancy (OCC) models for Apollo 11.0
-- `6680288` — [doc]: update seyond lidar driver conf — Documentation for new LiDAR hardware support
-- `995b75a` — [doc]: update seyond lidar driver readme — README updates for LiDAR integration docs
+**What it is:** AirSim is an open-source simulator for autonomous vehicles built on Unreal Engine / Unity, from Microsoft AI & Research. It provides high-fidelity photorealistic environments, sensor simulation (camera, LiDAR, IMU), and API access for path planning, computer vision, and reinforcement learning research.
 
-**🔍 What's Being Worked On:**
-Apollo 11.0 is on the horizon, bringing **BEV (Bird's Eye View) and OCC (Occupancy) perception models** — a major leap in 3D scene understanding for autonomous vehicles. There's also active work on recovering the SoliX/LiDAR driver, indicating ongoing hardware integration efforts. The platform continues to evolve toward large-scale functional autonomous vehicle deployment.
+**Recent development highlights:**
+- 🗓️ **Sep 15, 2026** — `Merge PR #9836: pin-actions` (1ca93f6, @ChrisGuagliano): Security hardening — pinned all GitHub Actions to full-length commit SHAs, eliminating supply-chain attack vectors from short-sha references.
+- 🗓️ **Aug 12, 2026** — `Pin GitHub Actions to full-length commit SHAs` (44f3f43, @DanFiedler): Continued CI security posture improvement.
+- 🗓️ **Jun 28, 2026** — `updated README` (d109f0d, @ShitalShah): Documentation refresh — improving onboarding experience for new researchers and contributors.
 
-**🎙️ Potential Episode Topics:**
-- "Apollo 11.0: BEV + OCC — How Baidu Is Pushing the Envelope on AV Perception"
-- "From Apollo 1.0 to 11.0 — 10 Years of Open-Source Autonomous Driving"
-- "LiDAR Driver Recovery & Hardware Integration Challenges in Open AV Stacks"
+🎙️ **Potential episode topics:**
+- *"Sim-to-Real: Why AirSim Still Matters"* — How high-fidelity simulation bridges the gap between synthetic training data and real-world autonomous driving.
+- *"Security in Open-Source AV Tooling"* — The GitHub Actions pinning story: a case study in supply-chain security for simulation frameworks.
+- *"Rebuilding AirSim for 2026"* — What it takes to maintain a years-old research simulator in the era of Ely Forge and neural renderers.
 
 ---
 
 ### 3. [AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)
-| | |
-|---|---|
-| ⭐ Stars | 30,544 |
-| 🛠 Language | Python |
-| 📝 Description | Python sample codes and textbook for robotics algorithms. |
+**Tag:** `robotics` · **Language:** Python · **Stars:** 30,544★ · **Last commit:** Sep 2, 2026
 
-**Latest Commits (as of Sep 2, 2026):**
-- `08b453a` — build(deps): bump github/codeql-action from 4.37.4 to 4.37.9 (#1423) — Security scanning dependency update
-- `8c3f761` — build(deps): bump ruff from 0.16.1 to 0.16.5 in /requirements (#1424) — Linter version bump
-- `069e0fb` — build(deps): bump scipy from 1.17.1 to 1.18.1 in /requirements (#1425) — Scientific computing dependency update
-- `1fe4fb9` — build(deps): bump github/codeql-action from 4 to 4.37.4 (#1405) — Earlier security scanning update
-- `99716a0` — build(deps): bump ruff from 0.15.16 to 0.16.1 in /requirements (#1406) — Earlier linter update
+**What it is:** Python sample codes and textbook for robotics algorithms — covering localization, mapping, path planning, control, and more. It's the go-to educational resource for anyone learning robotics programming in Python.
 
-**🔍 What's Being Worked On:**
-PythonRobotics is in **maintenance mode** — recent activity is almost entirely automated dependency bumps (dependabot) for codeql-action, ruff, and scipy. No new robotics algorithm content has been added recently. This is a well-established educational resource that's stable but not actively evolving new features. The dependabot activity does signal that the project is still being maintained and kept secure.
+**Recent development highlights:**
+- 🗓️ **Sep 2, 2026** — `build(deps): bump github/codeql-action from 4.37.4 to 4.37.9` (08b453a, @dependabot): Security tooling kept current — the CodeQL action update ensures static analysis catches vulnerabilities as the codebase evolves.
+- 🗓️ **Sep 2, 2026** — `build(deps): bump ruff from 0.16.1 to 0.16.5` (8c3f761, @dependabot): Linting toolchain updated — ruff 0.16.x brings new rules and performance improvements for the project's code quality pipeline.
+- 🗓️ **Sep 2, 2026** — `build(deps): bump scipy from 1.17.1 to 1.18.1` (069e0fb, @dependabot): Core scientific dependency bumped — scipy 1.18.x includes performance optimizations for the numerical routines that underpin many robotics algorithms in the repo.
 
-**🎙️ Potential Episode Topics:**
-- "Why the Best Robotics Textbook is Also a Codebase — PythonRobotics Deep Dive"
-- "From Textbook to Tutorial: How PythonRobotics Teaches 50+ Robotics Algorithms"
-- "Maintenance Mode vs. Active Development: What Happens to OSS Edu Projects After They 'Arrive'?"
+🎙️ **Potential episode topics:**
+- *"Teaching Robots to Think in Python"* — How PythonRobotics makes algorithms like Kalman filters, RRT*, and PID control accessible to the next generation of roboticists.
+- *"The Dependency Drain"* — What happens when your educational repo depends on the scientific Python ecosystem: a story about keeping up with numpy, scipy, and tooling churn.
+- *"Code as Curriculum"* — Why reading working code is sometimes better than reading textbooks — and how PythonRobotics proves it.
 
 ---
 
-## 🎙️ About This Podcast
+## 🎙️ About This Radar
 
-**Robotics OSS Radar** is a podcast exploring the open-source projects powering the future of robotics and autonomous systems. Each episode dives into a tracked project — its architecture, its community, its latest breakthroughs, and what it means for the future of autonomous technology.
+This repo is the companion data source for the **Robotics OSS Radar** podcast — a show exploring the open-source projects shaping the future of autonomous systems and robotics. Each episode dives deep into one project, interviewing maintainers, walking through the code, and discussing what's coming next.
 
----
-
-## 📋 Roadmap
-
-See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues/73)** for a checklist of projects to track and potential episode plans.
-
----
-
-## 🤝 Contributing
-
-Pull requests and suggestions are welcome! To suggest a project:
-1. Open an issue with the repo URL and a brief description of why it's interesting
-2. Tag it with `project-suggestion`
+**Suggested episode cadence:**
+| Week | Project | Theme |
+|------|---------|-------|
+| 1 | openpilot | Open Piloting at Scale + Cabana Deep-Dive |
+| 2 | AirSim | Sim-to-Real + Supply-Chain Security |
+| 3 | PythonRobotics | Teaching Robots to Think in Python |
 
 ---
 
-## 📡 Sources
+## 🔧 How to Contribute
 
-All project data is pulled from GitHub in real-time. Stars, commits, and metadata reflect the most recent snapshot.
+- Found a stale project? Open an issue with the repo URL and what you expected to see.
+- Want your project featured? Submit a link and a 2-line description.
+- Episode ideas? The issue tracker is the place.
 
 ---
 
-*Built for the open-source robotics community.*
+## 📊 Radar Dashboard
+
+| Project | Last Commit | Activity | Stars | Language |
+|---------|-------------|----------|-------|----------|
+| openpilot | Sep 19, 2026 | 🟢 Very Active (cabana DBCgen + heatmap + UI) | 63,682★ | Python |
+| AirSim | Sep 15, 2026 | 🟢 Active (GitHub Actions security hardening) | 18,499★ | C++ |
+| PythonRobotics | Sep 2, 2026 | 🟢 Active (dependency bumps + security tooling) | 30,544★ | Python |
+
+---
+
+*Built with 💡 and a lot of open-source love.*
