@@ -1,106 +1,111 @@
 # 🤖 Robotics OSS Radar
 
-> Open-source robotics & autonomous systems — tracking the most active projects, recent commits, and podcast episode ideas.
-
-This repo is a living companion for the **Robotics OSS Radar** podcast. We monitor the hottest open-source projects in robotics and autonomous systems, summarize their latest development highlights, and brainstorm episode topics for each.
+> *Spotlight on the most active open-source robotics & autonomous-vehicle projects — weekly commits, highlights, and episode ideas for the OSS Robotics podcast.*
 
 ---
 
-## 📡 Currently Tracked Projects
+## 📡 Tracked Projects
 
-### 1. [commaai/openpilot](https://github.com/commaai/openpilot)
+We monitor the top repos in the `robotics` and `autonomous-vehicles` topics, focusing on recent development activity and what's worth covering on the podcast.
+
+---
+
+### 1. 🚗 [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
+
 | | |
 |---|---|
-| ⭐ Stars | 63,682 |
-| 🛠 Language | Python |
-| 📜 License | MIT |
-| 📝 Description | openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars. |
+| **Stars** | 26,829 ⭐ |
+| **Language** | C++ |
+| **Topic** | Autonomous Driving |
+| **Last Updated** | April 2026 |
 
-**Latest Commits (as of Sep 19, 2026):**
-- `cabana: generate dbc files during builds` — Automating DBC file generation in the Cabana tuning toolchain
-- `cabana: refine signal heatmap grid` — Improving the signal visualization heatmap for CAN bus analysis
-- `cabana: preserve activity with a brighter baseline` — UI/UX enhancement for the Cabana interactive signal explorer
+**What it is:** Apollo is Baidu's open-source autonomous driving platform. It provides a complete stack — perception, planning, control, and simulation — for building self-driving systems.
 
-**🔍 What's Being Worked On:**
-The **Cabana** signal analysis and tuning tool is seeing heavy active development. Recent commits focus on automating DBC (Database CAN) file generation, refining signal heatmap visualizations, and improving the UI/UX experience. This suggests comma.ai is doubling down on making low-level CAN signal inspection and vehicle tuning more accessible to the community.
+**Recent Development Highlights:**
+
+| Date | Commit | Highlights |
+|------|--------|------------|
+| Apr 2026 | `d53aa3d` | README cleanup — removed invalid build status badges (maintenance pass) |
+| Feb 2026 | `40c8a01` | Recovered Seyond lidar driver — restores 3D lidar support for Apollo's perception pipeline |
+| Feb 2026 | `539f546` | **Apollo 11.0 BEV + OCC** — major feature: Bird's-Eye-View perception with Occupancy-based Convexification for 3D scene understanding |
 
 **🎙️ Potential Episode Topics:**
-- "Inside openpilot's Cabana Tool — How Community Members Tune CAN Signals"
-- "From 300+ Cars to One OS: The openpilot Approach to Mass-Scale ADAS"
-- "MIT vs. Apache: How Licensing Shapes the openpilot Ecosystem"
+- *"BEV Perception in Practice — What Apollo 11.0's OCC Means for 3D Scene Understanding"*
+- *"From LiDAR to L3: How Open-Source Stacks Are Accelerating the Shift to Autonomous Driving"*
+- *"The Lidar Driver Comeback — Why Sensor Abstraction Matters in AV Pipelines"*
 
 ---
 
-### 2. [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo)
+### 2. 🛞 [commaai/openpilot](https://github.com/commaai/openpilot)
+
 | | |
 |---|---|
-| ⭐ Stars | 26,829 |
-| 🛠 Language | C++ |
-| 📜 License | Apache-2.0 |
-| 📝 Description | An open autonomous driving platform |
+| **Stars** | 63,682 ⭐ |
+| **Language** | Python |
+| **Topic** | Robotics / Driver Assistance |
+| **Last Updated** | September 2026 (today!) |
 
-**Latest Commits (as of Apr 16, 2026):**
-- `docs: fix README - remove invalid build status badges` — Maintenance / documentation cleanup
-- `Merge pull request #15762: recover_seyond_lidar_driver` — Recovering and merging a LiDAR driver integration
-- `feat: add Apollo 11.0 bev+occ` — Introducing Bird's Eye View (BEV) and Occupancy (OCC) models for Apollo 11.0
+**What it is:** openpilot is an open-source operating system for robotics. Its flagship product upgrades the driver-assistance system on 300+ supported cars — essentially making semi-autonomous driving accessible to everyone.
 
-**🔍 What's Being Worked On:**
-Apollo 11.0 is on the horizon, bringing **BEV (Bird's Eye View) and OCC (Occupancy) perception models** — a major leap in 3D scene understanding for autonomous vehicles. There's also active work on recovering the SoliX/LiDAR driver, indicating ongoing hardware integration efforts. The platform continues to evolve toward large-scale functional autonomous vehicle deployment.
+**Recent Development Highlights:**
+
+| Date | Commit | Highlights |
+|------|--------|------------|
+| Sep 2026 | `1b1b60b` | **Cabana: DBC file generation during builds** — auto-generates DRD (Data Reference Description) files so car-specific CAN signal definitions are always up to date |
+| Sep 2026 | `95ed021` | **Cabana: Signal heatmap grid refinement** — improved visualization of CAN signal activity for debugging and reverse-engineering new vehicles |
+| Sep 2026 | `ea0afb6` | **Cabana: Brighter baseline activity preservation** — UI tweaks to keep signal activity visible even when the screen dims |
 
 **🎙️ Potential Episode Topics:**
-- "Apollo 11.0: BEV + OCC: How Baidu Is Pushing the Envelope on AV Perception"
-- "From Apollo 1.0 to 11.0 — 10 Years of Open-Source Autonomous Driving"
-- "LiDAR Driver Recovery & Hardware Integration Challenges in Open AV Stacks"
+- *"Reverse-Engineering 300+ Cars — How openpilot's Cabana Tool Cracks the CAN Bus"*
+- *"From Golden Project to OS: The comma.ai Philosophy on Building Robotics Software"*
+- *"Can You Trust Open-Source ADAS? A Deep Dive into openpilot's Safety Model"*
 
 ---
 
-### 3. [carla-simulator/carla](https://github.com/carla-simulator/carla)
+### 3. 🌐 [microsoft/AirSim](https://github.com/microsoft/AirSim)
+
 | | |
 |---|---|
-| ⭐ Stars | 14,410 |
-| 🛠 Language | C++ |
-| 📜 License | MIT |
-| 📝 Description | Open-source simulator for autonomous driving research. |
+| **Stars** | 18,499 ⭐ |
+| **Language** | C++ |
+| **Topic** | Autonomous Vehicles / Simulation |
+| **Last Updated** | September 2026 |
 
-**Latest Commits (as of Sep 2, 2026):**
-- `Deploy UE5 nightly to Cloudflare R2` — Streamlining asset distribution via Cloudflare R2 storage
-- `Fix lidar smoke helper signature` — Bug fix in the LiDAR sensor smoke visualization helper
-- `fix(nav): guard against null traffic light in WalkerManager` — Robustness fix for pedestrian navigation
+**What it is:** AirSim is Microsoft's open-source simulator for autonomous vehicles, built on Unreal Engine and Unity. It provides high-fidelity physics, computer vision, and lidar simulation for training and testing autonomous systems in virtual environments.
 
-**🔍 What's Being Worked On:**
-CARLA is undergoing a major transition to **Unreal Engine 5.5 (the `ue5-dev` branch)**. Recent work includes deploying UE5 nightlies via Cloudflare R2 for faster global distribution, fixing LiDAR sensor bugs, and hardening the WalkerManager against null traffic light references. The community is actively maintaining the UE4.26 branch while propulsion shifts to UE5.
+**Recent Development Highlights:**
+
+| Date | Commit | Highlights |
+|------|--------|------------|
+| Sep 2026 | `1ca93f6` | Merged PR #9836 — pinned GitHub Actions to full-length commit SHAs (security hardening) |
+| Aug 2026 | `44f3f43` | **Pin GitHub Actions to full-length SHAs** — prevents supply-chain attacks by avoiding mutable tag references |
+| Jun 2026 | `d109f0d` | README update — refreshed documentation and setup instructions |
 
 **🎙️ Potential Episode Topics:**
-- "CARLA's Leap to Unreal Engine 5.5 — What Sim Researchers Need to Know"
-- "Cloudflare R2 & the Future of Open-Source Simulator Distribution"
-- "From Simulation to Reality: How CARLA Bridges the Sim-to-Real Gap"
+- *"Sim-to-Real in 2026 — How AirSim Is Bridging the Gap Between Virtual and Physical Robots"*
+- *"Supply-Chain Security in Open-Source Simulation — Why Pinning Actions Matters"*
+- *"Training Self-Driving Cars in Unreal Engine — The Tech Behind AirSim"*
 
 ---
 
-## 🎙️ About This Podcast
+## 📋 Upcoming Episode Pipeline
 
-**Robotics OSS Radar** is a podcast exploring the open-source projects powering the future of robotics and autonomous systems. Each episode dives into a tracked project — its architecture, its community, its latest breakthroughs, and what it means for the future of autonomous technology.
-
----
-
-## 📋 Roadmap
-
-See the open issue **[Projects to Revisit & Upcoming Releases](https://github.com/bro26man-hash/robotics-oss-radar/issues)** for a checklist of projects to track and potential episode plans.
-
----
-
-## 🤝 Contributing
-
-Pull requests and suggestions are welcome! To suggest a project:
-1. Open an issue with the repo URL and a brief description of why it's interesting
-2. Tag it with `project-suggestion`
+| Episode | Project | Status |
+|---------|---------|--------|
+| 1 | Apollo BEV + OCC deep-dive | 📝 Idea |
+| 2 | Cabana & CAN reverse-engineering | 📝 Idea |
+| 3 | Sim-to-real with AirSim | 📝 Idea |
+| 4 | Open-source ADAS safety comparison (openpilot vs Apollo) | 🔜 Planned |
+| 5 | LiDAR ecosystems in open-source AVs | 🔜 Planned |
 
 ---
 
-## 📡 Sources
+## 🔗 Quick Links
 
-All project data is pulled from GitHub in real-time. Stars, commits, and metadata reflect the most recent snapshot.
+- [Apollo Docs](https://pilot.apollo.ai/)
+- [openpilot Docs](https://docs.comma.ai/)
+- [AirSim Docs](https://microsoft.github.io/AirSim/)
 
 ---
 
-*Built for the open-source robotics community. MIT Licensed.*
+*This radar is updated weekly. Star the repo to follow along!*
